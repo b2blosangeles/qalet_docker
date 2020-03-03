@@ -11,5 +11,5 @@ RUN rm -fr /var/qalet/ && mkdir /var/qalet/
 # COPY Dockerindocker /var/qalet/
 
 
-RUN (crontab -l ; dt =  date +"%m-%d-%y"; echo "* * * * * echo "Cron running $dt" >> /var/qalet/cron.log") | crontab
+RUN (crontab -l ; echo "* * * * * echo "Cron running $(date '+%Y-%m-%d')" >> /var/qalet/cron.log") | crontab
 ENTRYPOINT /etc/init.d/cron stop && touch /var/log/cron.log && cron && tail -f /var/log/cron.log && echo "Load ubuntu ..."
