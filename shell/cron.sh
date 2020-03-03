@@ -1,5 +1,5 @@
 #!/bin/bash
-FILES=/var/qalet/shell
+FILES=/var/qalet/cron
 for f in $FILES
 do
   echo "Processing $f file..."
