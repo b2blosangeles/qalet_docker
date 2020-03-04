@@ -1,6 +1,4 @@
 #!/bin/bash
-cd /var/site_docker
-git pull
 folder=/var/qalet/cron
 for f in "$folder"/*
 do
