@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /var/qalet/sites
+git pull
 folder=/var/qalet/cron
 for f in "$folder"/*
 do
