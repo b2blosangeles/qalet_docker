@@ -1,2 +1,2 @@
 FROM php:7.2-apache
-COPY /var/qalet/www/ /var/www/html/
+COPY /var/app_qalet/www/ /var/www/html/
