@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/qalet/sites
+cd /var/app_qalet/sites
 git pull
 folder=/var/qalet/crons
 for f in "$folder"/*
