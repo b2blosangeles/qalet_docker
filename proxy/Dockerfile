@@ -2,7 +2,7 @@
 FROM httpd:latest
 
 # Just my name who wrote this file
-MAINTAINER SaravAK (aksarav@middlewareinventory.com)
+MAINTAINER John Xu (b2blosangeles@gmail.com)
 
 # to Copy a file named httpd.conf from present working directory to the /usr/local/apache2/conf inside the container
 # I have taken the Standard httpd.conf file and enabled the necassary modules and adding Support for an additional Directory
