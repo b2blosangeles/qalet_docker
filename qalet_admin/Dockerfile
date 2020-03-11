@@ -7,7 +7,7 @@ RUN sudo apt -y install nodejs
 RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
-
+RUN mkdir -p /var/qalet/
 COPY qalet_admin/index.js /var/qalet/
 
 #RUN (crontab -l ; echo "* * * * * sh /var/qalet_master_cron/cron.sh >> /var/qalet/cron.log") | crontab
