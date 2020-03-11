@@ -1,3 +1,4 @@
+#!/bin/sh
 sec = "$(date +"%S")"
 if [ $sec == 36 ]
 then
