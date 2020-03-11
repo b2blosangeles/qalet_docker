@@ -1,6 +1,6 @@
 #!/bin/bash
-mkdir -p /tmp/task
-folder=/tmp/task
+mkdir -p /tmp/tasks
+folder=/tmp/tasks
 for f in "$folder"/*
 do
   echo "Processing $f task..."
