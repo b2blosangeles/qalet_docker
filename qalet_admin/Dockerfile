@@ -15,4 +15,4 @@ COPY qalet_admin/index.js /var/qalet/
 #ENTRYPOINT /etc/init.d/cron stop && touch /var/log/cron.log && cron && tail -f /var/log/cron.log && echo "Load ubuntu ..."
 
 #CMD ["node", "-D", "FOREGROUND"]
-CMD ["node", "index.js", "FOREGROUND"]
+CMD ["node", "/var/qalet/index.js", "FOREGROUND"]
