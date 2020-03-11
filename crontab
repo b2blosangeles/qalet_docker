@@ -23,7 +23,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 @reboot root /var/app_qalet/master/bootup.sh
 
-# -- msg cron ---
+# -- tasks cron ---
 * * * * * root /var/app_qalet/master/tasksCron.sh 
 * * * * * root sleep 1; /var/app_qalet/master/tasksCron.sh
 * * * * * root sleep 2; /var/app_qalet/master/tasksCron.sh
