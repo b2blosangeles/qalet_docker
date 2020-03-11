@@ -1,5 +1,5 @@
 * * * * * sleep 1; 
-* * * * * sleep 2; /usr/cron.sh
-* * * * * sleep 3; /usr/cron.sh
-* * * * * sleep 4; /usr/cron.sh
-* * * * * sleep 5; /usr/cron.sh
+* * * * * sleep 2; /var/app_qalet/master/cron.sh
+* * * * * sleep 3; /var/app_qalet/master/cron.sh
+* * * * * sleep 4; /var/app_qalet/master/cron.sh
+* * * * * sleep 5; /var/app_qalet/master/cron.sh
