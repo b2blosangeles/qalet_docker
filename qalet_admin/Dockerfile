@@ -8,7 +8,7 @@ RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
 
-COPY index.js /var/qalet/
+COPY qalet_admin/index.js /var/qalet/
 
 #RUN (crontab -l ; echo "* * * * * sh /var/qalet_master_cron/cron.sh >> /var/qalet/cron.log") | crontab
 #ENTRYPOINT /etc/init.d/cron stop && touch /var/log/cron.log && cron && tail -f /var/log/cron.log && echo "Load ubuntu ..."
