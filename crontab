@@ -1,4 +1,5 @@
-* * * * * sleep 1; 
+* * * * * /var/app_qalet/master/secCron.sh 
+* * * * * sleep 1; /var/app_qalet/master/secCron.sh
 * * * * * sleep 2; /var/app_qalet/master/secCron.sh
 * * * * * sleep 3; /var/app_qalet/master/secCron.sh
 * * * * * sleep 4; /var/app_qalet/master/secCron.sh
