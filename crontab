@@ -24,63 +24,63 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 @reboot root /var/app_qalet/master/bootup.sh
 
 # -- tasks cron ---
-* * * * * root /var/app_qalet/master/tasksCron.sh 
-* * * * * root sleep 1; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 2; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 3; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 4; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 5; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 6; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 7; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 8; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 9; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 10; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 11; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 12; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 13; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 14; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 15; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 16; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 17; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 18; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 19; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 20; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 21; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 22; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 23; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 24; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 25; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 26; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 27; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 28; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 29; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 30; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 31; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 32; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 33; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 34; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 35; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 36; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 37; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 38; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 39; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 40; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 41; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 42; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 43; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 44; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 45; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 46; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 47; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 48; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 49; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 50; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 51; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 52; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 53; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 54; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 55; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 56; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 57; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 58; /var/app_qalet/master/tasksCron.sh
-* * * * * root sleep 59; /var/app_qalet/master/tasksCron.sh
+* * * * * root sh /var/app_qalet/master/tasksCron.sh 
+* * * * * root sleep 1;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 2;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 3;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 4;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 5;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 6;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 7;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 8;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 9;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 10;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 11;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 12;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 13;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 14;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 15;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 16;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 17;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 18;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 19;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 20;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 21;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 22;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 23;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 24;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 25;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 26;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 27;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 28;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 29;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 30;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 31;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 32;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 33;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 34;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 35;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 36;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 37;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 38;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 39;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 40;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 41;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 42;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 43;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 44;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 45;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 46;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 47;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 48;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 49;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 50;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 51;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 52;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 53;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 54;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 55;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 56;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 57;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 58;  sh /var/app_qalet/master/tasksCron.sh
+* * * * * root sleep 59;  sh /var/app_qalet/master/tasksCron.sh
