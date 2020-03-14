@@ -12,7 +12,6 @@ RUN cd  /var/qalet/
 COPY qalet_admin/index.js /var/qalet/
 
 RUN (crontab -l ; echo "* * * * * sh /var/qalet_master_cron/cron.sh >> /var/qalet_admin.log") | crontab
-#ENTRYPOINT /etc/init.d/cron stop && touch /var/log/cron.log && cron && tail -f /var/log/cron.log && echo "Load ubuntu ..."
+ENTRYPOINT /etc/init.d/cron stop && touch /var/log/cron.log && cron && tail -f /var/log/cron.log && echo "Load ubuntu ..."
 
-#CMD ["node", "-D", "FOREGROUND"]
 CMD ["node", "/var/qalet/index.js", "FOREGROUND"]
