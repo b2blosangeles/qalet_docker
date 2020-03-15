@@ -11,7 +11,7 @@ RUN mkdir -p /var/qalet/cron/
 RUN cd  /var/qalet/
 COPY qalet_admin/index.js /var/qalet/
 COPY qalet_admin/localCron /var/qalet/localCron
-# RUN echo "* * * * * root sh /var/qalet/localCron/cronScript.sh" >> /etc/crontab
+RUN echo "* * * * * root sh /var/qalet/localCron/cronScript.sh" >> /etc/crontab
 # ENTRYPOINT /etc/init.d/cron stop &&  cron
 
 CMD ["node", "/var/qalet/index.js", "FOREGROUND"]
