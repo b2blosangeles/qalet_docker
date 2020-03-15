@@ -1,1 +1,1 @@
-node /var/localCron/codeUpdate.js
+node /var/qalet/localCron/codeUpdate.js
