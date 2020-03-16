@@ -15,5 +15,4 @@ RUN echo "* * * * * root sh /var/qalet/localCron/cronScript.sh >> /var/cronScrip
 ENTRYPOINT /etc/init.d/cron stop &&  cron && node /var/qalet/index.js
 
 # CMD cron && tail -f /var/log/cron.log
-
 # CMD ["node", "/var/qalet/index.js", "FOREGROUND"]
