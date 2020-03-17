@@ -1,0 +1,10 @@
+[{
+  "domain" : ["jxu.qalet.com"],
+  port : 10080,
+  github : "https://github.com/b2blosangeles/site_docker.git"
+},
+{
+  "domain" : ["niu.qalet.com"],
+  port : 10090,
+  github : "https://github.com/b2blosangeles/site_docker.git"
+}]
