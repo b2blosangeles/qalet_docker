@@ -7,7 +7,7 @@ MAINTAINER John Xu (b2blosangeles@gmail.com)
 # to Copy a file named httpd.conf from present working directory to the /usr/local/apache2/conf inside the container
 # I have taken the Standard httpd.conf file and enabled the necassary modules and adding Support for an additional Directory
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY index.html /usr/local/apache2/htdocs
+# COPY index.html /usr/local/apache2/htdocs
 # This is the Additional Directory where we are going to keep our Virtualhost configuraiton files
 # You can use the image to create N number of different virtual hosts
 RUN mkdir -p /usr/local/apache2/conf/sites/
