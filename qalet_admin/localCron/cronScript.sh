@@ -14,4 +14,4 @@ cd $qaletFolderSetup && git pull
 cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
 cp -rf "$qaletFolderSetup/Docker-Httpd-Reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
 
-node /var/qalet/localCron/codeUpdate.js >> /var/qalet/log/codeUpdate.js.log
+node /var/qalet/admin/localCron/codeUpdate.js >> /var/qalet/log/codeUpdate.js.log
