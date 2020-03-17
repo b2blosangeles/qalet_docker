@@ -1,5 +1,9 @@
 var http = require('http');
-//create a server object:
+var fs = require('fs');
 http.createServer(function (req, res) {
-  res.sendFile(__dirname + '/index.html'); //end the response
-}).listen(80); 
+  fs.readFile(__dirname + 'index.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+}).listen(80);
