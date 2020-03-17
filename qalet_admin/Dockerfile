@@ -7,10 +7,10 @@ RUN sudo apt -y install nodejs
 RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
-RUN mkdir -p /var/qalet/cron/
-RUN cd  /var/qalet/
-COPY qalet_admin/index.js /var/qalet/
-COPY qalet_admin/localCron /var/qalet/localCron
+# RUN mkdir -p /var/qalet/cron/
+# RUN cd  /var/qalet/
+# COPY qalet_admin/index.js /var/qalet/
+# COPY qalet_admin/localCron /var/qalet/localCron
 RUN echo "* * * * * root sh /var/qalet/localCron/cronScript.sh >> /var/cronScript.sh.log" >> /etc/crontab
 ENTRYPOINT /etc/init.d/cron stop &&  cron && node /var/qalet/index.js
 
