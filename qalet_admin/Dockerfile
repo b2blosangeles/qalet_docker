@@ -13,5 +13,3 @@ RUN npm install express
 RUN echo "* * * * * root sh /var/qalet/admin/localCron/cronScript.sh >> /var/cronScript.sh.log" >> /etc/crontab
 ENTRYPOINT /etc/init.d/cron stop &&  cron && cd /var/qalet/admin/ && node index.js
 
-# CMD cron && tail -f /var/log/cron.log
-# CMD ["node", "/var/qalet/index.js", "FOREGROUND"]
