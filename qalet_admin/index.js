@@ -34,13 +34,15 @@ app.post(/api\/(.+)$/i, function (req, res) {
     return true;
 });
 
+app.get('/\/$/i', function (req, res){
+    res.render('index.ect');
+});
+
 app.get('/(.+)$/i', function (req, res){
     res.send(req.params[0]);
 });
 
-app.get('/\/$/i', function (req, res){
-    res.render('index.ect');
-});
+
 
 app.listen(80);
 console.log('Listening on port 80');
