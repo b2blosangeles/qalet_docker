@@ -1,14 +1,3 @@
-/*
-var http = require('http');
-var fs = require('fs');
-http.createServer(function (req, res) {
-  fs.readFile(__dirname + '/index.html', function(err, data) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    res.end();
-  });
-}).listen(80);
-*/
 var express = require('express');
 var fs = require('fs');
 var app = express();
@@ -41,7 +30,7 @@ app.get(/\/$/i, function (req, res){
 });
 
 app.get(/(.+)$/i, function (req, res){
-    var fn = __dirname + '/views' + req.params[0];
+    var fn = __dirname + '/files' + req.params[0];
     fs.stat(fn, function(err, stat) {
       if(err == null) {
           res.sendFile(fn);
