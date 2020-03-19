@@ -12,12 +12,33 @@ http.createServer(function (req, res) {
 var express = require('express');
 var app = express();
 var ECT = require('ect');
-var ectRenderer = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
+var ectInty = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 
 // app.set('view engine', 'ect');
-app.engine('ect', ectRenderer.render);
+app.engine('ect', ectInty.render);
 
-app.get('/', function (req, res){
+app.all('*', function(req, res, next) {
+       res.header("Access-Control-Allow-Origin", "*");
+       res.header("Access-Control-Allow-Headers", "X-Requested-With");
+       res.header('Access-Control-Allow-Headers', 'Content-Type');
+       next();
+});
+
+app.get(/api\/(.+)$/i, function (req, res) {
+    res.send('api get');
+    return true;
+});
+
+app.post(/api\/(.+)$/i, function (req, res) {
+    res.send('api post');
+    return true;
+});
+
+app.get('/(.+)$/i', function (req, res){
+    res.send(req.params[0]);
+});
+
+app.get('/$/i', function (req, res){
     res.render('index.ect');
 });
 
