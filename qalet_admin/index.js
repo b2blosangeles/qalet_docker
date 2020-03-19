@@ -35,7 +35,7 @@ app.get(/(.+)$/i, function (req, res){
       if(err == null) {
           res.sendFile(fn);
       } else if(err.code === 'ENOENT') {
-          res.send('404');
+          res.render('404.ect');
       }
     });
     return true;
