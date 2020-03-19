@@ -41,7 +41,7 @@ app.get(/\/$/i, function (req, res){
 });
 
 app.get(/(.+)$/i, function (req, res){
-    var fn = __dirname + '/views/' + req.params[0];
+    var fn = __dirname + '/views' + req.params[0];
     fs.stat(fn, function(err, stat) {
       if(err == null) {
           res.sendFile(fn);
