@@ -38,7 +38,7 @@ app.get('/(.+)$/i', function (req, res){
     res.send(req.params[0]);
 });
 
-app.get('/$/i', function (req, res){
+app.get('/\/$/i', function (req, res){
     res.render('index.ect');
 });
 
