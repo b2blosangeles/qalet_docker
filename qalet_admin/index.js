@@ -10,6 +10,7 @@ http.createServer(function (req, res) {
 }).listen(80);
 */
 var express = require('express');
+var fs = require('fs');
 var app = express();
 var ECT = require('ect');
 var ectInty = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
@@ -40,7 +41,14 @@ app.get(/\/$/i, function (req, res){
 });
 
 app.get(/(.+)$/i, function (req, res){
-    res.send(req.params[0]);
+    var fn = __dirname + '/views/' + req.params[0];
+    fs.stat(fn, function(err, stat) {
+      if(err == null) {
+          res.sendFile(fn);
+      } else if(err.code === 'ENOENT') {
+          res.send('404');
+      }
+    });
     return true;
 });
 
