@@ -36,10 +36,12 @@ app.post(/api\/(.+)$/i, function (req, res) {
 
 app.get('/\/$/i', function (req, res){
     res.render('index.ect');
+    return true;
 });
 
 app.get('/(.+)$/i', function (req, res){
     res.send(req.params[0]);
+    return true;
 });
 
 
