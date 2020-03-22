@@ -180,7 +180,15 @@
 
    			res.render('index.ect');
 
-
+       /*
+    var fn = __dirname + '/files' + req.params[0];
+    fs.stat(fn, function(err, stat) {
+      if(err == null) {
+          res.sendFile(fn);
+      } else if(err.code === 'ENOENT') {
+          res.render('page404.ect');
+      }
+    });*/
 			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
