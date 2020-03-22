@@ -176,7 +176,7 @@
 		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-			res.send('1234');
+			res.send('1234_' + __dirname);
 			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
