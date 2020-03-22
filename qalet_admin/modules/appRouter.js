@@ -181,8 +181,8 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-					//	me.runApi(v[2]);
-					//	break;
+						res.render('index.ect', { module: "API code"});
+						break;
 					case 'checkip':
 					//	me.sendWhoami();
 					//	break;	
