@@ -176,27 +176,32 @@
 		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-			var fn = env.root + '/files' + req.params[0];
-			fs.stat(fn, function(err, stat) {
-			      if(err == null) {
-				  res.sendFile(fn);
-			      } else if(err.code === 'ENOENT') {
-				  res.render('page404.ect');
-			      }
-			});
-			// res.send('5678_' + __dirname + '_' + env.root);
-
-   			// res.render('index.ect');
-
-			       /*
-			    var fn = __dirname + '/files' + req.params[0];
-			    fs.stat(fn, function(err, stat) {
-			      if(err == null) {
-				  res.sendFile(fn);
-			      } else if(err.code === 'ENOENT') {
-				  res.render('page404.ect');
-			      }
-			    });*/
+			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
+			var v = p.match(patt);
+			if ((v) && typeof v == 'object') {
+				switch (v[1]) {
+					case 'api':
+					//	me.runApi(v[2]);
+					//	break;
+					case 'checkip':
+					//	me.sendWhoami();
+					//	break;	
+					case 'package':
+					//	me.sendPackage(v[2]);
+					//	break;					
+					default:
+						res.render('index.ect');
+				}		
+			} else {
+				var fn = env.root + '/files' + req.params[0];
+				fs.stat(fn, function(err, stat) {
+				      if(err == null) {
+					  res.sendFile(fn);
+				      } else if(err.code === 'ENOENT') {
+					  res.render('page404.ect');
+				      }
+				});
+			}
 			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
