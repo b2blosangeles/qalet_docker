@@ -13,7 +13,7 @@ app.all('*', function(req, res, next) {
        res.header('Access-Control-Allow-Headers', 'Content-Type');
        next();
 });
-
+/*
 app.get(/api\/(.+)$/i, function (req, res) {
     res.send('api get');
     return true;
@@ -26,17 +26,22 @@ app.post(/api\/(.+)$/i, function (req, res) {
     res.send('api post 1');
     return true;
 });
-
+*/
 app.get(/\/$/i, function (req, res){
     res.render('index.ect');
     return true;
 });
 
 app.get(/(.+)$/i, function (req, res){
-    delete require.cache[__dirname + '/modules/appRouter.js'];
-    var router  = require(__dirname + '/modules/appRouter.js');
-    var R = new router(req, res);  
-    R.load();
+   try {
+           delete require.cache[__dirname + '/modules/appRouter.js'];
+           var router  = require(__dirname + '/modules/appRouter.js');
+           var R = new router(req, res);  
+           R.load();
+    } catch(err) {
+         res.render('page404.ect');
+    }
+
        /*
     var fn = __dirname + '/files' + req.params[0];
     fs.stat(fn, function(err, stat) {
