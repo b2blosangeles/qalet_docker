@@ -1,6 +1,7 @@
 (function () { 
 	
 	var obj =  function (req, res, io) {
+		/*
 		this.envSite = function(env) {
 			var me = this;
 			let v = JSON.parse(JSON.stringify(env));
@@ -53,7 +54,7 @@
 			}
 			return v;
 		}
-		
+		*/
 		this.send404 = function(v) {
 			res.writeHead(404, {'Content-Type': 'text/html'});
 			res.write(v + ' does not exist');
@@ -64,6 +65,7 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		/*
 		this.sendPackage = function(v) {
 			var me = this;
 			var fn = me.envSite(env).site_path + '/files/package/' + v;
@@ -71,7 +73,7 @@
 			var router  = require(__dirname + '/taoPackage.js');
 			var P = new router(pkg, me.envSite(env), req, res);						
 			P.load(fn);								
-		};		
+		};	
 		this.sendFile = function(v) {
 			var me = this, fn = me.envSite(env).site_path + '/files/' + v;
 			pkg.fs.exists(fn, function(exists) {
@@ -171,10 +173,11 @@
 				    });
 			    }	    
 			});
-		};			
+		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-
+			res.send('1234');
+			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
@@ -201,6 +204,7 @@
 					me.sendFile(p);
 				}
 			}
+			*/
 		};	
 	
 	};
