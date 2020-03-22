@@ -176,7 +176,11 @@
 		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-			res.send('1234_' + __dirname + '_' + env.root);
+			res.send('5678_' + __dirname + '_' + env.root);
+
+   			// res.render('index.ect');
+
+
 			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
