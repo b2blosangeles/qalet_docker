@@ -17,12 +17,22 @@ app.get(/(.+)$/i, function (req, res){
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
            var R = new router({root : __dirname}, req, res);  
-           R.load();
+           R.get();
     } catch(err) {
          res.render('page404.ect');
     }
+    return true;
+});
 
-
+app.post(/(.+)$/i, function (req, res){
+   try {
+           delete require.cache[__dirname + '/modules/appRouter.js'];
+           var router  = require(__dirname + '/modules/appRouter.js');
+           var R = new router({root : __dirname}, req, res);  
+           R.post();
+    } catch(err) {
+         res.render('page404.ect');
+    }
     return true;
 });
 
