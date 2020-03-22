@@ -227,34 +227,6 @@
 				      }
 				});
 			}
-			/*
-			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
-			var v = p.match(patt);
-			if ((v) && typeof v == 'object') {
-				switch (v[1]) {
-					case 'api':
-						me.runApi(v[2]);
-						break;
-					case 'checkip':
-						me.sendWhoami();
-						break;	
-					case 'package':
-						me.sendPackage(v[2]);
-						break;
-					case 'cms':
-						this.sendCMSFile(v[2]);
-						break;					
-					default:
-						me.send404(p);
-				}		
-			} else {
-				if (p.match(/\/$/i)) {
-					me.snedIndex(p)
-				} else {
-					me.sendFile(p);
-				}
-			}
-			*/
 		};	
 	
 	};
