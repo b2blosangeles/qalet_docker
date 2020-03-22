@@ -33,9 +33,11 @@ app.get(/\/$/i, function (req, res){
 });
 
 app.get(/(.+)$/i, function (req, res){
-   // delete require.cache[__dirname + '/modules/appRouter.js'];
-   // var router  = require(__dirname + '/modules/appRouter.js');
-   // var R = new router(req, res);          
+    delete require.cache[__dirname + '/modules/appRouter.js'];
+    var router  = require(__dirname + '/modules/appRouter.js');
+    var R = new router(req, res);  
+    R.load();
+       /*
     var fn = __dirname + '/files' + req.params[0];
     fs.stat(fn, function(err, stat) {
       if(err == null) {
@@ -43,7 +45,7 @@ app.get(/(.+)$/i, function (req, res){
       } else if(err.code === 'ENOENT') {
           res.render('page404.ect');
       }
-    });
+    });*/
     return true;
 });
 
