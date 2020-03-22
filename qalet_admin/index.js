@@ -20,6 +20,9 @@ app.get(/api\/(.+)$/i, function (req, res) {
 });
 
 app.post(/api\/(.+)$/i, function (req, res) {
+   // delete require.cache[__dirname + '/modules/Router.js'];
+   // var router  = require(__dirname + '/modules/Router.js');
+   // var R = new router(req, res);     
     res.send('api post');
     return true;
 });
