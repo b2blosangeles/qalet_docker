@@ -1,6 +1,6 @@
 (function () { 
 	
-	var obj =  function (req, res, io) {
+	var obj =  function (env, req, res, io) {
 		/*
 		this.envSite = function(env) {
 			var me = this;
@@ -176,7 +176,7 @@
 		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-			res.send('1234_' + __dirname);
+			res.send('1234_' + __dirname + '_' + env.root);
 			/*
 			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
