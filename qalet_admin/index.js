@@ -2,10 +2,9 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 var ECT = require('ect');
-var ectInty = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
-
+var ETCEntity = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 // app.set('view engine', 'ect');
-app.engine('ect', ectInty.render);
+app.engine('ect', ETCEntity.render);
 
 app.all('*', function(req, res, next) {
        res.header("Access-Control-Allow-Origin", "*");
@@ -27,8 +26,6 @@ app.get(/(.+)$/i, function (req, res){
 
     return true;
 });
-
-
 
 app.listen(80);
 console.log('Listening on port 80');
