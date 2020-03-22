@@ -176,9 +176,9 @@
 		};	*/		
 		this.load = function() {
 			var me = this, p = req.params[0];
-			res.send('5678_' + __dirname + '_' + env.root);
+			// res.send('5678_' + __dirname + '_' + env.root);
 
-   			// res.render('index.ect');
+   			res.render('index.ect');
 
 
 			/*
