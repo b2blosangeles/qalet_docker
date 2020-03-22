@@ -176,33 +176,24 @@
 		};	*/
 		this.post = function() {
 			var me = this, p = req.params[0];
-			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(api|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
 						res.render('index.ect', { module: "API code"});
 						break;
-					case 'checkip':
-						res.render('index.ect', { module: "checkip"});
-					//	me.sendWhoami();
-					//	break;	
 					case 'package':
 						res.render('index.ect', { module: "package"});
-					//	me.sendPackage(v[2]);
-					//	break;					
+						break;
+					case 'cms':
+						res.render('index.ect', { module: "package"});
+						break;
 					default:
 						res.render('index.ect', { module: "Others"});
 				}		
 			} else {
-				var fn = env.root + '/files' + req.params[0];
-				fs.stat(fn, function(err, stat) {
-				      if(err == null) {
-					  res.sendFile(fn);
-				      } else if(err.code === 'ENOENT') {
-					  res.render('page404.ect');
-				      }
-				});
+				res.render('page404.ect');
 			}
 		};
 		this.get = function() {
@@ -216,12 +207,13 @@
 						break;
 					case 'checkip':
 						res.render('index.ect', { module: "checkip"});
-					//	me.sendWhoami();
-					//	break;	
+						break;	
 					case 'package':
 						res.render('index.ect', { module: "package"});
-					//	me.sendPackage(v[2]);
-					//	break;					
+						break;
+					case 'cms':
+						res.render('index.ect', { module: "package"});
+						break;	
 					default:
 						res.render('index.ect', { module: "Others"});
 				}		
