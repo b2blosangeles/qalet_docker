@@ -1,5 +1,4 @@
 var express = require('express');
-var fs = require('fs');
 var app = express();
 var ECT = require('ect');
 var ETCEntity = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
