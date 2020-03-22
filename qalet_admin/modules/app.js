@@ -1,6 +1,6 @@
 (function () { 
 	
-	var obj =  function (pkg, env, req, res, io) {
+	var obj =  function (req, res, io) {
 		this.envSite = function(env) {
 			var me = this;
 			let v = JSON.parse(JSON.stringify(env));
