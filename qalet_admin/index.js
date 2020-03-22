@@ -33,6 +33,9 @@ app.get(/\/$/i, function (req, res){
 });
 
 app.get(/(.+)$/i, function (req, res){
+   // delete require.cache[__dirname + '/modules/appRouter.js'];
+   // var router  = require(__dirname + '/modules/appRouter.js');
+   // var R = new router(req, res);          
     var fn = __dirname + '/files' + req.params[0];
     fs.stat(fn, function(err, stat) {
       if(err == null) {
