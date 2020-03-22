@@ -184,13 +184,15 @@
 						res.render('index.ect', { module: "API code"});
 						break;
 					case 'checkip':
+						res.render('index.ect', { module: "checkip"});
 					//	me.sendWhoami();
 					//	break;	
 					case 'package':
+						res.render('index.ect', { module: "package"});
 					//	me.sendPackage(v[2]);
 					//	break;					
 					default:
-						res.render('index.ect');
+						res.render('index.ect', { module: "Others"});
 				}		
 			} else {
 				var fn = env.root + '/files' + req.params[0];
