@@ -23,7 +23,7 @@ app.post(/api\/(.+)$/i, function (req, res) {
    // delete require.cache[__dirname + '/modules/Router.js'];
    // var router  = require(__dirname + '/modules/Router.js');
    // var R = new router(req, res);     
-    res.send('api post');
+    res.send('api post 1');
     return true;
 });
 
