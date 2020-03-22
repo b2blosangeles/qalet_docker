@@ -24,15 +24,7 @@ app.get(/(.+)$/i, function (req, res){
          res.render('page404.ect');
     }
 
-       /*
-    var fn = __dirname + '/files' + req.params[0];
-    fs.stat(fn, function(err, stat) {
-      if(err == null) {
-          res.sendFile(fn);
-      } else if(err.code === 'ENOENT') {
-          res.render('page404.ect');
-      }
-    });*/
+
     return true;
 });
 
