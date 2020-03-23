@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (env, req, res, io) {
 		var fs = require('fs');
-		var idx = 0;
+		this.idx = 0;
 		/*
 		this.envSite = function(env) {
 			var me = this;
