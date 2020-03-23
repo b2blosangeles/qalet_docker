@@ -1,6 +1,7 @@
 (function () { 
 	var obj =  function (env, req, res, io) {
 		var fs = require('fs');
+		var idx = 0;
 		/*
 		this.envSite = function(env) {
 			var me = this;
@@ -73,7 +74,9 @@
 				if (error) {
 					res.send('AAA');
 				} else {
-					res.send('BBB');
+					me.idx++;
+					let code = new Date().getTime() + '_' + me.idx;
+					res.send(code);
 				}	
 			});
 
