@@ -75,7 +75,6 @@
 				if (error) {
 					res.render('page404.ect');
 				} else {
-					fs = require('fs')
 					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
 						"echo '" +  env.idx + '_' + new Date().getTime()  + "' >>  /tmp/site_cron.data"    
 						, function (err,data) {
@@ -85,7 +84,6 @@
 							    res.send('SUC A');
 							}
 						  });
-					res.send(cmd);
 				}	
 			});
 
