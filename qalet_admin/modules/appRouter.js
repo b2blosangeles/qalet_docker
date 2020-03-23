@@ -69,7 +69,7 @@
 		this.runScript = function() {
 			var me = this;
 			let fn = env.idx + '_' + new Date().getTime() + '.sh';
-			exec("'ls -l' >> /var/qalet/tasks/" + fn, 
+			exec("echo 'ls -l' >> /var/qalet/tasks/" + fn, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
