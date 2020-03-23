@@ -76,7 +76,7 @@
 					res.render('page404.ect');
 				} else {
 					
-					res.send(code);
+					res.send(fn);
 				}	
 			});
 
