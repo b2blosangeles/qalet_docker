@@ -81,7 +81,7 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    res.send('SUC A');
+							    res.send('SUC AA');
 							}
 						  });
 				}	
