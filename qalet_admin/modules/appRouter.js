@@ -68,13 +68,14 @@
 		}
 		this.runScript = function() {
 			var me = this;
-			exec('mkdir -p /tmp/tasks_a', 
+			let fn = env.idx + '_' + new Date().getTime() + '.sh';
+			exec("'ls -l' >> /var/app_qalet/tasks/" + fn, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
 					res.render('page404.ect');
 				} else {
-					let code = env.idx + '_' + new Date().getTime() + '.sh';
+					
 					res.send(code);
 				}	
 			});
