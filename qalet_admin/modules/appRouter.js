@@ -67,6 +67,7 @@
 			res.end();			
 		}
 		this.runScript = function() {
+			var me = this;
 			var exec = require('child_process').exec;
 			exec('ls -l', 
 			     {maxBuffer: 1024 * 2048},
