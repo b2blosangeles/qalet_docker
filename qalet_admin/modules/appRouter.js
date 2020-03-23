@@ -74,7 +74,7 @@
 				if (error) {
 					res.render('page404.ect');
 				} else {
-					let code = new Date().getTime() + '_' + env.idx;
+					let code = env.idx + '_' + new Date().getTime() + '.sh';
 					res.send(code);
 				}	
 			});
