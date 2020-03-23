@@ -13,10 +13,11 @@ app.all('*', function(req, res, next) {
 });
 
 app.get(/(.+)$/i, function (req, res){
+   this._idx = (!this._idx) ? 1 : this._idx + 1;
    try {
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
-           var R = new router({root : __dirname}, req, res);  
+           var R = new router({root : __dirname, idx : this._idx}, req, res);  
            R.get();
     } catch(err) {
          res.render('page404.ect');
