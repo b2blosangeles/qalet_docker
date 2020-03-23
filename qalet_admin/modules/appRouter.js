@@ -65,6 +65,20 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		this.runScript = function() {
+			var exec = require('child_process').exec;
+			exec('ls -l', 
+			     {maxBuffer: 1024 * 2048},
+			     function(error, stdout, stderr) {
+				if (error) {
+					res.send('AAA');
+				} else {
+					res.send('BBB');
+				}	
+			});
+
+		}
+		
 		/*
 		this.sendPackage = function(v) {
 			var me = this;
@@ -203,7 +217,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.render('index.ect', { module: "API code"});
+						me.runScript();
 						break;
 					case 'checkip':
 						res.render('index.ect', { module: "checkip"});
