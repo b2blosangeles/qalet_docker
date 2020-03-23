@@ -68,15 +68,23 @@
 		}
 		this.runScript = function() {
 			var me = this;
-			let fn = env.idx + '_' + new Date().getTime() + '.sh';
-			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win && " +
-			    " echo 'echo " + fn + " >> /tmp/site_cron.data' >> /var/qalet/tasks/www.shusiou.win/out.sh"
+			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
 					res.render('page404.ect');
 				} else {
+					fs = require('fs')
+					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
+						"echo '" +  env.idx + '_' + new Date().getTime()  + "' >>  /tmp/site_cron.data"    
+						, function (err,data) {
+						  	if (err) {
+							    res.send('ERR 1');
+							} else {
+							    res.send('SUC A');
+							}
+						  });
 					res.send(cmd);
 				}	
 			});
