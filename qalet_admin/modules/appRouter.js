@@ -1,6 +1,7 @@
 (function () { 
 	var obj =  function (env, req, res, io) {
 		var fs = require('fs');
+		var exec = require('child_process').exec;
 		/*
 		this.envSite = function(env) {
 			var me = this;
@@ -67,12 +68,11 @@
 		}
 		this.runScript = function() {
 			var me = this;
-			var exec = require('child_process').exec;
-			exec('ls -l', 
+			exec('mkdir -p /tmp/tasks_a', 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
-					res.send('AAA');
+					res.render('page404.ect');
 				} else {
 					let code = new Date().getTime() + '_' + env.idx;
 					res.send(code);
