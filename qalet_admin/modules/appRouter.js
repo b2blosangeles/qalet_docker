@@ -70,7 +70,7 @@
 			var me = this;
 			let fn = env.idx + '_' + new Date().getTime() + '.sh';
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win && " +
-			    " echo 'ls -l' >> /var/qalet/tasks/www.shusiou.win/" + fn
+			    " echo 'echo " + fn + " >> /tmp/site_cron.data' >> /var/qalet/tasks/www.shusiou.win/out.sh"
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
