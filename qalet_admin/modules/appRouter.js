@@ -69,14 +69,15 @@
 		this.runScript = function() {
 			var me = this;
 			let fn = env.idx + '_' + new Date().getTime() + '.sh';
-			exec("echo 'ls -l' >> /var/qalet/tasks/" + fn, 
+			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win && " +
+			    " echo 'ls -l' >> /var/qalet/tasks/www.shusiou.win/" + fn
+			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
 					res.render('page404.ect');
 				} else {
-					
-					res.send(fn);
+					res.send(cmd);
 				}	
 			});
 
