@@ -14,7 +14,7 @@ app.all('*', function(req, res, next) {
 
 app.get(/(.+)$/i, function (req, res){
    this._idx = (typeof this._idx == 'undefined') ? 0 : this._idx;
-   this._idx++;
+   // this._idx++;
    try {
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
