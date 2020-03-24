@@ -3,10 +3,10 @@
         ServerName <%-vhost.serverName%> 
         ServerAlias <%-vhost.serverName%> 
         
-        
         ProxyRequests On 
         ProxyPreserveHost Off
         
+        ProxyPass / http://<%-gatewayIp%>:<%-vhost.gatewayPort%>
     </VirtualHost>
 <% end %>
 <VirtualHost *:<%-@servicePort%>>
