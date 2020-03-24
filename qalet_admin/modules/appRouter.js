@@ -92,7 +92,7 @@
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
 				if (error) {
-					res.render('page404.ect');
+					res.render('html/page404.ect');
 				} else {
 					env.idx++;
 					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
@@ -101,7 +101,7 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('tpls/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
+							    var code = pkg.tpl.render('tpl/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
 							    res.send(code);
 							}
 						  });
@@ -226,19 +226,19 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.render('index.ect', { module: "API code"});
+						res.render('html/index.ect', { module: "API code"});
 						break;
 					case 'package':
-						res.render('index.ect', { module: "package"});
+						res.render('html/index.ect', { module: "package"});
 						break;
 					case 'cms':
-						res.render('index.ect', { module: "package"});
+						res.render('html/index.ect', { module: "package"});
 						break;
 					default:
-						res.render('index.ect', { module: "Others"});
+						res.render('html/index.ect', { module: "Others"});
 				}		
 			} else {
-				res.render('page404.ect');
+				res.render('html/page404.ect');
 			}
 		};
 		this.get = function() {
@@ -251,16 +251,16 @@
 						me.runScript();
 						break;
 					case 'checkip':
-						res.render('index.ect', { module: "checkip"});
+						res.render('html/index.ect', { module: "checkip"});
 						break;	
 					case 'package':
-						res.render('index.ect', { module: "package"});
+						res.render('html/index.ect', { module: "package"});
 						break;
 					case 'cms':
-						res.render('index.ect', { module: "package"});
+						res.render('html/index.ect', { module: "package"});
 						break;	
 					default:
-						res.render('index.ect', { module: "Others"});
+						res.render('html/index.ect', { module: "Others"});
 				}		
 			} else {
 				var fn = env.root + '/files' + req.params[0];
@@ -268,7 +268,7 @@
 				      if(err == null) {
 					  res.sendFile(fn);
 				      } else if(err.code === 'ENOENT') {
-					  res.render('page404.ect');
+					  res.render('html/page404.ect');
 				      }
 				});
 			}
