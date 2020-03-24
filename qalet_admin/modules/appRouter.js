@@ -68,6 +68,8 @@
 		}
 		this.runScript = function() {
 			var me = this;
+			var ECT = require('ect');
+			var TPL = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 			/*
 			var vhosting = {
 				id		: 'www.shusiou.win',
@@ -101,8 +103,8 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							   // var code = ETCEntity.render('index.ect', { module: "Others"});
-							    res.send('code');
+							   var code = TPL.render('index.ect', { module: "Others"});
+							    res.send('Acode');
 							}
 						  });
 				}	
