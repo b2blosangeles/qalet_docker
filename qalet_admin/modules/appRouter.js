@@ -101,7 +101,7 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('qq/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
+							    var code = pkg.tpl.render('tpls/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
 							    res.send(code);
 							}
 						  });
