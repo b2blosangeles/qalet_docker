@@ -1,5 +1,5 @@
-subApp="site_php_apache" &&\
-rm -fr $qaletFolderSites/$subApp &&\
+subApp="<%-@serverName%>" &&\
+rm -fr <%-@serverName%>/$subApp &&\
 mkdir -p $qaletFolderTasks/$subApp &&\
 mkdir -p $qaletFolderSites/$subApp &&\
 cd  $qaletFolderSites/$subApp &&\
