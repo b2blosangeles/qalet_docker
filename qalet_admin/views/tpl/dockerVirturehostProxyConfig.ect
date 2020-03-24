@@ -1,15 +1,15 @@
 <% for vhost in @vhosts : %>
     <VirtualHost *:<%-vhost.innerPort%>>
-    ServerName <%-vhost.serverName%>
-    ServerAlias <%-vhost.serverAlias%>
-    
-    ProxyRequests On
-    ProxyPreserveHost Off
+        ServerName <%-vhost.serverName%>
+        ServerAlias <%-vhost.serverName%>
 
-    ProxyPass / http://<%-vhost.gatewayIp%>:<%-vhost.gatewayPort%>/
-    ProxyPassReverse / http://<%-vhost.gatewayIp%>:<%-vhost.gatewayPort%>/
+        ProxyRequests On
+        ProxyPreserveHost Off
 
-</VirtualHost>
+        ProxyPass / http://<%-gatewayIp%>:<%-vhost.gatewayPort%>/
+        ProxyPassReverse / http://<%-gatewayIp%>:<%-vhost.gatewayPort%>/
+
+    </VirtualHost>
 <% end %>
 <VirtualHost *:<%-@servicePort%>>
     ServerName <%-@serverName%>
