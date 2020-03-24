@@ -2,60 +2,7 @@
 	var obj =  function (env, pkg, req, res, io) {
 		var fs = require('fs');
 		var exec = require('child_process').exec;
-		/*
-		this.envSite = function(env) {
-			var me = this;
-			let v = JSON.parse(JSON.stringify(env));
-			let host = req.headers.host;
-			if (host) {
-				if(host.match(/^node([0-9]+)\_(qa|dev|prod)\.([a-z0-9]+)\.([a-z0-9]+)$/ig)) { 
-					v.site_path = v.sites_path + '/' + 'node';
-					return v;
-				} 
-				if(host.match(/^master([0-9]+)\_(qa|dev|prod)\.([a-z0-9]+)\.([a-z0-9]+)$/ig)) { 
-					v.site_path = v.sites_path + '/' + 'master';
-					return v;
-				}
-				if(host.match(/^comm([0-9]+)\_(qa|dev|prod)\.([a-z0-9]+)\.([a-z0-9]+)$/ig)) { 
-					v.site_path = v.sites_path + '/' + 'comm';
-					return v;
-				} 
-				if(host.match(/^(www\.|dev\.|qa\.|)taobase\.(com|win)$/ig)) { 
-					v.site_path = v.sites_path + '/' + 'root';
-					return v;
-				}
-				
-				if(host.match(/^([a-z0-9]+)\.dev([0-9]+|)\.(taobase|shusiou)\.(com|win)$/i)) { 
-					let RT = host.match(/^([a-z0-9]+|)\.dev([0-9]+)\.(taobase|shusiou)\.(com|win)$/);
-					v.site_path = v.root_path + '/devs/' + RT[1];
-					return v;
-				}
-				if(host.match(/^([a-z0-9]+)\_dev([0-9]+|)\.(taobase|shusiou)\.(com|win)$/i)) { 
-					let RT = host.match(/^([a-z0-9]+)\_dev([0-9]+|)\.(taobase|shusiou)\.(com|win)$/);
-					v.site_path = v.root_path + '/devs/' + RT[1];
-					return v;
-				}
-				if(host.match(/^([a-z0-9]+)\_cell([0-9]+|)\.(taobase|shusiou)\.(com|win)$/i)) { 
-					let RT = host.match(/^([a-z0-9]+)\_cell([0-9]+|)\.(taobase|shusiou)\.(com|win)$/);
-					v.site_path = v.root_path + '/devs/' + RT[1];
-					return v;
-				}
-			}	
-			
-			if ((me.isIp(req.headers.host)) && (req.query['_IProuter'])) {
-			    if (['master', 'node', 'root', 'comm'].indexOf(req.query['_IProuter']) !== -1) {
-				v.site_path = v.sites_path + '/' + req.query['_IProuter'];				
-			    } else if (['master', 'node', 'root', 'comm'].indexOf(req.query['_IProuter']) === -1)  {
-			    	v.site_path = v.root_path + '/devs/' + req.query['_IProuter'];
-			    } else {
-			    	v.site_path = v.root_path + '/devs/admin' ;
-			    }
-			} else {
-				v.site_path = v.root_path + '/devs/admin' ;
-			}
-			return v;
-		}
-		*/
+
 		this.send404 = function(v) {
 			res.writeHead(404, {'Content-Type': 'text/html'});
 			res.write(v + ' does not exist');
@@ -68,7 +15,7 @@
 		}
 		this.runScript = function() {
 			var me = this;
-			/*
+			
 			var vhosting = {
 				id		: 'www.shusiou.win',
 				serverName	: 'www.shusiou.win',
@@ -77,7 +24,7 @@
 				port		: 10008,
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
-			*/
+			
 			/*
 			   subApp="site_php_apache" &&\
 			   rm -fr $qaletFolderSites/$subApp &&\
@@ -102,7 +49,7 @@
 							    res.send('ERR 1');
 							} else {
 							    var code = pkg.tpl.render('tpl/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
-							    res.send(code);
+							    res.send('==00=='+code);
 							}
 						  });
 				}	
