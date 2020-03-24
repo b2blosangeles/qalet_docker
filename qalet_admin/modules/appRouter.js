@@ -18,7 +18,7 @@
 			
 			var vhosting = {
 				vhosts	: [
-					{serverName : 'www.shusiou.win', innerPort : 80, gatewayPort: 10080},
+					{serverName : 'www.shusiou.win', serverAlias: 'shusiou.win', innerPort : 80, gatewayPort: 10080},
 					{serverName : 's1.shusiou.win', innerPort : 80, gatewayPort: 10081},
 					{serverName : 's2.shusiou.win', innerPort : 80, gatewayPort: 10082}
 				],
