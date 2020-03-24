@@ -1,5 +1,5 @@
 (function () { 
-	var obj =  function (env, req, res, io) {
+	var obj =  function (env, pkg, req, res, io) {
 		var fs = require('fs');
 		var exec = require('child_process').exec;
 		/*
@@ -68,8 +68,6 @@
 		}
 		this.runScript = function() {
 			var me = this;
-			var ECT = require('ect');
-			var TPL = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 			/*
 			var vhosting = {
 				id		: 'www.shusiou.win',
@@ -103,7 +101,6 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							   var code = TPL.render('index.ect', { module: "Others"});
 							    res.send('Acode');
 							}
 						  });
