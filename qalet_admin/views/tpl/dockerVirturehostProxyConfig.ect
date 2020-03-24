@@ -8,7 +8,7 @@
         
         ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>
         
-        ProxyPassReverse / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>
+        ProxyPassReverseA  / http://<%-@gatewayIpA%>:<%-vhost.gatewayPort%>
         
     </VirtualHost>
 <% end %>
