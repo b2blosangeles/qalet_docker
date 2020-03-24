@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var ECT = require('ect');
-var engine = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/tpls', ext : '.ect' })
 }
