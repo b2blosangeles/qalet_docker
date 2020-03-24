@@ -42,8 +42,8 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    if (code == 'vhost') {
-							    	var str = pkg.tpl.render('tpl/dockerVirturehost.ect', vhosting); 
+							    if (code === 'vhost') {
+							    	var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
 							    } else {
 								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', vhosting.vhosts[0]); 
 							    }
