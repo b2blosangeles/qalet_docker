@@ -3,8 +3,9 @@
         ServerName <%-vhost.serverName%>
         <% if vhost.serverAlias : %>ServerAlias <%-vhost.serverAlias%><%-"\n"%><% end %>
         
-        ProxyRequests On<%-"\n"%> 
+        ProxyRequests On<%-"\n"%>
         ProxyPreserveHost Off<%-"\n"%>
+        
         ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>/<%-"\n"%>
         ProxyPassReverseC  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>/<%-"\n"%>
         
