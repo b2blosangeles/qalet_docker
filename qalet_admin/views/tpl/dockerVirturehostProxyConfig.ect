@@ -6,7 +6,7 @@
         ProxyRequests On 
         ProxyPreserveHost Off
         
-        ProxyPass / http://<%-gatewayIp%>:<%-vhost.gatewayPort%>
+        ProxyPass / http://:<%-vhost.gatewayPort%>
     </VirtualHost>
 <% end %>
 <VirtualHost *:<%-@servicePort%>>
