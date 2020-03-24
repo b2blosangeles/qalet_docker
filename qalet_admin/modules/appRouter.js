@@ -69,6 +69,7 @@
 		this.runScript = function() {
 			var me = this;
 			var vhosting = {
+				id		: 'www.shusiou.win',
 				serverName	: 'www.shusiou.win',
 				serverAlias	: 'shusiou.win',
 				port	: 10008,
