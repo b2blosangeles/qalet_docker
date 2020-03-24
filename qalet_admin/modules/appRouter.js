@@ -17,6 +17,11 @@
 			var me = this;
 			
 			var vhosting = {
+				vhosts	: [
+					{title : 'A1'},
+					{title : 'A2'},
+					{title : 'A3'}
+				],
 				id		: 'www.shusiou.win',
 				serverName	: 'www.shusiou.win',
 				serverAlias	: 'shusiou.win',
