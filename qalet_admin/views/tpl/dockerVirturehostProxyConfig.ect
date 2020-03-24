@@ -1,8 +1,11 @@
 <% for vhost in @vhosts : %>
     <VirtualHost *:<%-vhost.innerPort%>>
         ServerName <%-vhost.serverName%> 
-        ServerAlias <%-vhost.serverName%> 
-        
+        <% if vhost.serverName : %>
+            ServerAlias <%-vhost.serverAlias%> 
+        <% else : %>
+            ServerAlias FFF
+        <% end %>
         ProxyRequests On 
         ProxyPreserveHost Off
         
