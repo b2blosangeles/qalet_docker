@@ -77,6 +77,15 @@
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
 			
+			/*
+			   subApp="site_php_apache" &&\
+			   rm -fr $qaletFolderSites/$subApp &&\
+			   mkdir -p $qaletFolderTasks/$subApp &&\
+			   mkdir -p $qaletFolderSites/$subApp &&\
+			   cd  $qaletFolderSites/$subApp &&\
+			   git clone https://github.com/b2blosangeles/docker_apache_php . &&\
+			   docker build -f Dockerfile -t "image-$subApp" . \
+			*/
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
@@ -91,7 +100,8 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    res.send('SUC AA');
+							    var code = ETCEntity.render('index.ect', { module: "Others"});
+							    res.send(code);
 							}
 						  });
 				}	
