@@ -6,9 +6,8 @@
         ProxyRequests On 
         ProxyPreserveHost Off
         
-        ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>
-        
-        ProxyPassReverseB  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>
+        ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%><%-"\n"%>
+        ProxyPassReverseC  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>
         
     </VirtualHost>
 <% end %>
