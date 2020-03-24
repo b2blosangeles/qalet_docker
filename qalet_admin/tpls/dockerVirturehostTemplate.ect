@@ -1,0 +1,7 @@
+subApp="site_php_apache" &&\
+rm -fr $qaletFolderSites/$subApp &&\
+mkdir -p $qaletFolderTasks/$subApp &&\
+mkdir -p $qaletFolderSites/$subApp &&\
+cd  $qaletFolderSites/$subApp &&\
+git clone https://github.com/b2blosangeles/docker_apache_php . &&\
+docker build -f Dockerfile -t "image-$subApp" . \
