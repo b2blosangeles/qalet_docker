@@ -101,7 +101,7 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('tpl/niu.ect', { module: "packageD-D"}); 
+							    var code = pkg.tpl.render('niu.ect', { module: "packageD-D"}); 
 							    res.send(code);
 							}
 						  });
