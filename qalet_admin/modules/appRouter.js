@@ -1,6 +1,5 @@
 (function () { 
-var obj =  function (env, req, res, io) {
-	try {
+	var obj =  function (env, req, res, io) {
 		var fs = require('fs');
 		var exec = require('child_process').exec;
 		/*
@@ -102,8 +101,8 @@ var obj =  function (env, req, res, io) {
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = ETCEntity.render('index.ect', { module: "Others"});
-							    res.send(code);
+							   // var code = ETCEntity.render('index.ect', { module: "Others"});
+							    res.send('code');
 							}
 						  });
 				}	
@@ -274,9 +273,7 @@ var obj =  function (env, req, res, io) {
 				});
 			}
 		};	
-	} catch(err) {
-	 	res.render('page404.ect');
-	}};
+	};
 	
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		module.exports = obj;
