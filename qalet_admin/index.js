@@ -23,7 +23,7 @@ app.get(/(.+)$/i, function (req, res){
    try {
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
-           var R = new router({root : __dirname, idx : this._idx}, {tpl : ETCEntity}, req, res);  
+           var R = new router({root : __dirname, idx : this._idx}, pkg, req, res);  
            R.get();
     } catch(err) {
          res.render('page404.ect');
@@ -35,7 +35,7 @@ app.post(/(.+)$/i, function (req, res){
    try {
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
-           var R = new router({root : __dirname}, {tpl : ETCEntity}, req, res);  
+           var R = new router({root : __dirname}, pkg, req, res);  
            R.post();
     } catch(err) {
          res.render('page404.ect');
