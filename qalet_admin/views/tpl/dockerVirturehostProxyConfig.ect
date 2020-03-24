@@ -5,7 +5,7 @@
     ProxyRequests On
     ProxyPreserveHost Off
 
-    ProxyPass / http://<%-gatewayIp%>:<%-@port%>/
-    ProxyPassReverse / http://<%-gatewayIp%>:<%-@ports%>/
+    ProxyPass / http://<%-@gatewayIp%>:<%-@port%>/
+    ProxyPassReverse / http://<%-@gatewayIp%>:<%-@ports%>/
 
 </VirtualHost>
