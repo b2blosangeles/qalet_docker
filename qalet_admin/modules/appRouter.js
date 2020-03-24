@@ -42,8 +42,12 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    let tpl_fn  = (code == 'vhost')? 'dockerVirturehost.ect' : 'dockerVsvrCom.ect';
-							    var str = pkg.tpl.render('tpl/' + tpl_fn, vhosting); 
+							    if (code == 'vhost') {
+							    	var str = pkg.tpl.render('tpl/dockerVirturehost.ect', vhosting); 
+							    } else {
+								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', vhosting.vhosts[0]); 
+							    }
+							    
 							    res.send(str);
 							}
 						  });
