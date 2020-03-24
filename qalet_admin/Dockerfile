@@ -8,6 +8,7 @@ RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
 RUN npm install ect
+RUN npm install ejs
 RUN npm install express
 
 RUN echo "* * * * * root sh /var/qalet/admin/localCron/cronScript.sh >> /var/cronScript.sh.log" >> /etc/crontab
