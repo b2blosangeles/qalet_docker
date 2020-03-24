@@ -25,7 +25,7 @@ app.get(/(.+)$/i, function (req, res){
            var R = new router(env, pkg, req, res);  
            R.get();
     } catch(err) {
-         res.render('page404.ect');
+         res.render('html/page404.ect');
     }
     return true;
 });
@@ -37,7 +37,7 @@ app.post(/(.+)$/i, function (req, res){
            var R = new router(env, pkg, req, res);  
            R.post();
     } catch(err) {
-         res.render('page404.ect');
+         res.render('html/page404.ect');
     }
     return true;
 });
