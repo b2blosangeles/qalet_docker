@@ -1,9 +1,9 @@
 <% for vhost in @vhosts : %>
     <VirtualHost *:<%-vhost.innerPort%>>
-        ServerName <%-vhost.serverName%>
-        ServerAlias <%-vhost.serverName%>
-        ProxyRequests On
-        ProxyPreserveHost Off
+        ServerName <%-vhost.serverName%>\n
+        ServerAlias <%-vhost.serverName%>\n
+        ProxyRequests On\n
+        ProxyPreserveHost Off\n
     </VirtualHost>
 <% end %>
 <VirtualHost *:<%-@servicePort%>>
