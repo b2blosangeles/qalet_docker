@@ -102,8 +102,8 @@ var obj =  function (env, req, res, io) {
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							  //  var code = ETCEntity.render('index.ect', { module: "Others"});
-							    res.send('code');
+							    var code = ETCEntity.render('index.ect', { module: "Others"});
+							    res.send(code);
 							}
 						  });
 				}	
