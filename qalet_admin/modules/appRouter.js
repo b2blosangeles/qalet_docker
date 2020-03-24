@@ -49,7 +49,7 @@
 							    res.send('ERR 1');
 							} else {
 							    var code = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
-							    res.send('==00=='+code);
+							    res.send(code);
 							}
 						  });
 				}	
