@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var ECT = require('ect');
-
+var engine = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/tpls', ext : '.ect' })
 }
@@ -10,7 +10,7 @@ var env = {
        idx    : 0
 }
 // app.set('view engine', 'ect');
-app.engine('ect', ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }).render);
+app.engine('ect', engine.render);
 
 app.all('*', function(req, res, next) {
        res.header("Access-Control-Allow-Origin", "*");
