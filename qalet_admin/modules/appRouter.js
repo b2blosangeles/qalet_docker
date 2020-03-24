@@ -101,7 +101,8 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    res.send('Acode');
+							    var code = pkg.tpl.render('index.ect', { module: "packageDD"}); 
+							    res.send(code);
 							}
 						  });
 				}	
