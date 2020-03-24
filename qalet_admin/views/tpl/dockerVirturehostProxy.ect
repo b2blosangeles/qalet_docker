@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+    ServerName admin.shusiou.win
+    # ServerAlias admin.qalet.win
+    # DocumentRoot /usr/local/apache2/htmlfiles/b
+
+    ProxyRequests On
+    ProxyPreserveHost Off
+
+    ProxyPass / http://173.28.5.254:10001/
+    ProxyPassReverse / http://173.28.5.254:10080/
+
+</VirtualHost>
