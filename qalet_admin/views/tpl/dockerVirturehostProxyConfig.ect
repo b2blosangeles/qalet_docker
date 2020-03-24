@@ -11,14 +11,3 @@
         
     </VirtualHost>
 <% end %>
-<VirtualHost *:<%-@servicePort%>>
-    ServerName <%-@serverName%>
-    ServerAlias <%-@serverAlias%>
-    
-    ProxyRequests On
-    ProxyPreserveHost Off
-
-    ProxyPass / http://<%-@gatewayIp%>:<%-@port%>/
-    ProxyPassReverse / http://<%-@gatewayIp%>:<%-@port%>/
-
-</VirtualHost>
