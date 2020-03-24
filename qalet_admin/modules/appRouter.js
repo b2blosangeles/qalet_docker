@@ -68,6 +68,12 @@
 		}
 		this.runScript = function() {
 			var me = this;
+			var vhosting = {
+				serverName	: 'www.shusiou.win',
+				serverAlias	: 'shusiou.win',
+				port	: 10008,
+				github  : 'https://github.com/b2blosangeles/docker_apache_php.git'
+			} 
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
@@ -75,6 +81,7 @@
 				if (error) {
 					res.render('page404.ect');
 				} else {
+					
 					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
 						"echo '" +  env.idx + '_' + new Date().getTime()  + "' >>  /tmp/site_cron.data"    
 						, function (err,data) {
