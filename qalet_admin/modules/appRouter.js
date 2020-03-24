@@ -94,14 +94,14 @@
 				if (error) {
 					res.render('page404.ect');
 				} else {
-					
+					env.idx++;
 					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
 						"echo '" +  env.idx + '_' + new Date().getTime()  + "' >>  /tmp/site_cron.data"    
 						, function (err,data) {
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('index.ect', { module: "packageDD"}); 
+							    var code = pkg.tpl.render('index.ect', { module: "packageD-D"}); 
 							    res.send(code);
 							}
 						  });
