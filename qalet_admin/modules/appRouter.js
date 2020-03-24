@@ -20,7 +20,7 @@
 				id		: 'www.shusiou.win',
 				serverName	: 'www.shusiou.win',
 				serverAlias	: 'shusiou.win',
-				servicePort:	: 80,
+				servicePort	: 80,
 				port		: 10008,
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
