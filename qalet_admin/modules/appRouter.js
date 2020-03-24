@@ -23,10 +23,6 @@
 					{serverName : 's2.shusiou.win', innerPort : 80, gatewayPort: 10082}
 				],
 				id		: 'www.shusiou.win',
-				serverName	: 'www.shusiou.win',
-				serverAlias	: 'shusiou.win',
-				servicePort	: 80,
-				port		: 10008,
 				gatewayIp	: '173.28.5.254',
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
@@ -196,13 +192,19 @@
 		};
 		this.get = function() {
 			var me = this, p = req.params[0];
-			var patt = new RegExp('/(api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
-					case 'api':
+					case 'vhost':
 						me.runScript();
 						break;
+					case 'startup':
+						me.runScript();
+						break;
+					case 'api':
+						res.render('html/index.ect', { module: "api"});
+						break;	
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
 						break;	
