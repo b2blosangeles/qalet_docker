@@ -1,5 +1,6 @@
 (function () { 
 	var obj =  function (env, req, res, io) {
+	try {
 		var fs = require('fs');
 		var exec = require('child_process').exec;
 		/*
@@ -279,5 +280,7 @@
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		module.exports = obj;
 	} 
-	
+    } catch(err) {
+         res.render('page404.ect');
+    }	
 })();
