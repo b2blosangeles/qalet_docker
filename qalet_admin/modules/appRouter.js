@@ -22,6 +22,7 @@
 				serverAlias	: 'shusiou.win',
 				servicePort	: 80,
 				port		: 10008,
+				gatewayIp	: '173.28.5.254',
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
 			
