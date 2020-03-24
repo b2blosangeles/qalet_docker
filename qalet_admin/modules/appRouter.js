@@ -48,7 +48,7 @@
 								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', vhosting.vhosts[0]); 
 							    }
 							    
-							    res.send(code + "===" + str);
+							    res.send(str);
 							}
 						  });
 				}	
