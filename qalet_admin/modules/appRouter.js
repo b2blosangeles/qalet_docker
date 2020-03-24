@@ -13,7 +13,7 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.runScript = function() {
+		this.runScript = function(code) {
 			var me = this;
 			
 			var vhosting = {
@@ -27,15 +27,6 @@
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
 			
-			/*
-			   subApp="site_php_apache" &&\
-			   rm -fr $qaletFolderSites/$subApp &&\
-			   mkdir -p $qaletFolderTasks/$subApp &&\
-			   mkdir -p $qaletFolderSites/$subApp &&\
-			   cd  $qaletFolderSites/$subApp &&\
-			   git clone https://github.com/b2blosangeles/docker_apache_php . &&\
-			   docker build -f Dockerfile -t "image-$subApp" . \
-			*/
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
@@ -44,14 +35,16 @@
 					res.render('html/page404.ect');
 				} else {
 					env.idx++;
+					
 					fs.writeFile('/var/qalet/tasks/www.shusiou.win/out.sh', 
 						"echo '" +  env.idx + '_' + new Date().getTime()  + "' >>  /tmp/site_cron.data"    
 						, function (err,data) {
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
-							    res.send(code);
+							    let tpl_fn  = (code == 'vhost')? 'dockerVirturehost.ect' : 'dockerVirturehostProxyConfig.ect';
+							    var str = pkg.tpl.render('tpl/' + tpl_fn, vhosting); 
+							    res.send(str);
 							}
 						  });
 				}	
@@ -197,10 +190,10 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'vhost':
-						me.runScript();
+						me.runScript(v[1]);
 						break;
 					case 'startup':
-						me.runScript();
+						me.runScript(v[1]);
 						break;
 					case 'api':
 						res.render('html/index.ect', { module: "api"});
