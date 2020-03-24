@@ -1,3 +1,6 @@
+<% for vhost in @vhosts : %>
+    <li><a href="#"><%= vhost.title %></a></li>
+<% end %>
 <VirtualHost *:<%-@servicePort%>>
     ServerName <%-@serverName%>
     ServerAlias <%-@serverAlias%>
