@@ -1,12 +1,10 @@
 <VirtualHost *:<%-@servicePort%>>
-    ServerName admin.shusiou.win
-    # ServerAlias admin.qalet.win
-    # DocumentRoot /usr/local/apache2/htmlfiles/b
-
+    ServerName <%-@serverName%>
+    ServerAlias <%-@serverAlias%>
     ProxyRequests On
     ProxyPreserveHost Off
 
-    ProxyPass / http://173.28.5.254:10001/
-    ProxyPassReverse / http://173.28.5.254:10080/
+    ProxyPass / http://<%-gatewayIp%>:<%-@port%>/
+    ProxyPassReverse / http://<%-gatewayIp%>:<%-@ports%>/
 
 </VirtualHost>
