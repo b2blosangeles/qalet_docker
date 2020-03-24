@@ -68,6 +68,7 @@
 		}
 		this.runScript = function() {
 			var me = this;
+			/*
 			var vhosting = {
 				id		: 'www.shusiou.win',
 				serverName	: 'www.shusiou.win',
@@ -76,7 +77,7 @@
 				port		: 10008,
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			} 
-			
+			*/
 			/*
 			   subApp="site_php_apache" &&\
 			   rm -fr $qaletFolderSites/$subApp &&\
