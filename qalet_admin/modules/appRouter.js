@@ -48,7 +48,7 @@
 						  	if (err) {
 							    res.send('ERR 1');
 							} else {
-							    var code = pkg.tpl.render('tpl/dockerVirturehostTemplate.ect', { module: "packageD-D"}); 
+							    var code = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
 							    res.send('==00=='+code);
 							}
 						  });
