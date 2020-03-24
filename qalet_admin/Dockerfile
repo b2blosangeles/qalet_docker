@@ -7,6 +7,8 @@ RUN sudo apt -y install nodejs
 RUN apt-get -y install git
 RUN apt-get install -y cron
 RUN apt-get install -y vim
+
+# --- http://ectjs.com/ ---
 RUN npm install ect
 RUN npm install express
 
