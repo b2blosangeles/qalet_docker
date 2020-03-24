@@ -10,7 +10,7 @@ var env = {
        idx    : 0
 }
 // app.set('view engine', 'ect');
-app.engine('ect', engine.render);
+app.engine('ect', ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }).render);
 
 app.all('*', function(req, res, next) {
        res.header("Access-Control-Allow-Origin", "*");
