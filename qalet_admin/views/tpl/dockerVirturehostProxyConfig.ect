@@ -1,16 +1,13 @@
 <% for vhost in @vhosts : %>
     <VirtualHost *:<%-vhost.innerPort%>>
-        ServerName <%-vhost.serverName%> 
-        <% if vhost.serverName : %>
-            ServerAlias <%-vhost.serverAlias%> 
-        <% else : %>
-            ServerAlias FFF
+        ServerName <%-vhost.serverName%><%-"\n"%> 
+        <% if vhost.serverAlias : %>
+        ServerAlias <%-vhost.serverAlias%><%-"\n"%> 
         <% end %>
-        ProxyRequests On 
-        ProxyPreserveHost Off
-        
-        ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%><%-"\n"%>
-        ProxyPassReverseC  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>
+        ProxyRequests On<%-"\n"%> 
+        ProxyPreserveHost Off<%-"\n"%>
+        ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>/<%-"\n"%>
+        ProxyPassReverseC  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>/<%-"\n"%>
         
     </VirtualHost>
 <% end %>
