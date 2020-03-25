@@ -23,8 +23,7 @@
 					{serverName : 's2.shusiou.win', innerPort : 80, gatewayPort: 10082}
 				],
 				id		: 'www.shusiou.win',
-				gatewayIp	: '173.28.5.254',
-				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
+				gatewayIp	: '173.28.5.254'
 			};
 			var dockerCmd = {
 				subApp		: 'www.shusiou.win',
