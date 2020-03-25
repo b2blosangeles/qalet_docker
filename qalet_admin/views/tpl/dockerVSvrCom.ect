@@ -10,3 +10,4 @@ cmd_add_docker+=" -v '<%-@rootFolder%>/sites/<%-vhost.serverName%>/www':/var/www
 cmd_add_docker+=" --name 'container--@vhost.serverName' 'image--vhost.serverName'" &&\
 echo $cmd_add_docker >> <%-@rootFolder%>/bootupVhost.sh 
 <% end %>
+
