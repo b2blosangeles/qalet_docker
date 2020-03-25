@@ -41,7 +41,7 @@
 						gatewayPort: 10082
 					}
 				],
-				
+				rootFolder	: '/var/qalet'
 			};
 			var dockerImageCfg = {
 				vhosts 		: vhostsCFG.vhosts,
@@ -69,7 +69,7 @@
 							    	var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', 
 											 vhostsCFG); 
 							    } else {
-								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', dockerImageCfg); 
+								var str = pkg.tpl.render('tpl/dockerVSvrCom.ect', vhostsCFG); 
 							    }
 							    
 							    res.send(str);
