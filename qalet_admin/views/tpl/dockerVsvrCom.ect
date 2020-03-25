@@ -1,2 +1,2 @@
 rm -fr <%-@sitesFolder%>/<%-@vhost.serverName%> && mkdir -p <%-@sitesFolder%>/<%-@vhost.serverName%> && cd  <%-@sitesFolder%>/<%-@vhost.serverName%> &&\
-git clone <%-@gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . \
+git clone <%-@vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . \
