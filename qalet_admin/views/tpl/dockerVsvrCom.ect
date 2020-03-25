@@ -1,9 +1,8 @@
-rm -fr <%-@rootFolder%>/sites/<%-@vhost.serverName%> && mkdir -p <%-@rootFolder%>/sites/<%-@vhost.serverName%> &&\
-cd  <%-@rootFolder%>/sites/<%-@vhost.serverName%> &&\
-git clone <%-@vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . 
-
-  
 <% for vhost in @vhosts : %>
+rm -fr <%-@rootFolder%>/sites/<%-vhost.serverName%> && mkdir -p <%-@rootFolder%>/sites/<%-vhost.serverName%> &&\
+cd  <%-@rootFolder%>/sites/<%-vhost.serverName%> &&\
+git clone <%-vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-vhost.serverName%>" . 
+
 cmd_add_docker='' &&\
 cmd_add_docker+="docker container kill 'container-<%-vhost.serverName%>' &> /dev/null" &&\
 cmd_add_docker+="docker run -d --network=qalet_docker_network --rm -p 10080:80 " &&\
