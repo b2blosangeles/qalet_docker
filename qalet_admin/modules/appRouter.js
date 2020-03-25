@@ -27,7 +27,8 @@
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			};
 			var dockerCmd = {
-				sitesFolder : '/var/qalet/sites'
+				subApp		: 'www.shusiou.win',
+				sitesFolder	: '/var/qalet/sites'
 			}
 			
 			// sitesFolder
