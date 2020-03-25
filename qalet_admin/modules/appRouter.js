@@ -44,6 +44,7 @@
 				
 			};
 			var dockerImageCfg = {
+				vhosts 		: vhostsCFG.vhosts,
 				vhost		: vhostsCFG.vhosts[0],
 				rootFolder	: '/var/qalet'
 			}
