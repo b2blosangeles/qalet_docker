@@ -43,11 +43,6 @@
 				],
 				rootFolder	: '/var/qalet'
 			};
-			var dockerImageCfg = {
-				vhosts 		: vhostsCFG.vhosts,
-				vhost		: vhostsCFG.vhosts[0],
-				rootFolder	: '/var/qalet'
-			}
 			
 			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
@@ -71,7 +66,6 @@
 							    } else {
 								var str = pkg.tpl.render('tpl/dockerVSvrCom.ect', vhostsCFG); 
 							    }
-							    
 							    res.send(str);
 							}
 						  });
