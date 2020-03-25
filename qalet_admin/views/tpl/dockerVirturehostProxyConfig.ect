@@ -7,7 +7,7 @@
         ProxyPreserveHost Off<%-"\n"%>
         
         ServerAlias / http://<%-@gatewayIp%>:<%-vhost.gatewayPort%>/<%-"\n"%>
-        ProxyPassReverseC  / http://<%= @gatewayIp %>:<%-vhost.gatewayPort%>/<%-"\n"%>
+        ProxyPassReverseC  / http://<%= vhost.gatewayPort %>:<%-vhost.gatewayPort%>/<%-"\n"%>
         
     </VirtualHost>
 <% end %>
