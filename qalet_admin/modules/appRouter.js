@@ -22,29 +22,30 @@
 						serverName	: 'www.shusiou.win', 
 						serverAlias	: 'shusiou.win',
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80, 
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
 						gatewayPort: 10080
 					},
 					{
 						serverName	: 'ss1.shusiou.win', 
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80, 
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
 						gatewayPort: 10081
 					},
 					{
 						serverName	: 'ss1.shusiou.win', 
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80, 
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
 						gatewayPort: 10082
 					}
 				],
-				gatewayIp	: '173.28.5.254'
+				
 			};
 			var dockerImageCfg = {
 				vhost		: vhostsCFG.vhosts[0],
-				sitesFolder	: '/var/qalet/sites',
-				gatewayIp	: vhostsCFG.gatewayIp
-				
+				sitesFolder	: '/var/qalet/sites'
 			}
 			
 			// sitesFolder
