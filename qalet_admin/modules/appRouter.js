@@ -37,12 +37,13 @@
 						innerPort	: 80, 
 						gatewayPort: 10082
 					}
-				]
+				],
+				gatewayIp	: '173.28.5.254'
 			};
 			var dockerImageCfg = {
 				vhost		: vhostsCFG.vhosts[0],
 				sitesFolder	: '/var/qalet/sites',
-				gatewayIp	: '173.28.5.254'
+				gatewayIp	: vhostsCFG.gatewayIp
 				
 			}
 			
