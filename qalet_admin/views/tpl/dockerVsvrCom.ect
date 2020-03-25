@@ -1,2 +1,10 @@
 rm -fr <%-@sitesFolder%>/<%-@vhost.serverName%> && mkdir -p <%-@sitesFolder%>/<%-@vhost.serverName%> && cd  <%-@sitesFolder%>/<%-@vhost.serverName%> &&\
-git clone <%-@vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . \
+git clone <%-@vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . 
+
+cmd_add_docker='' &&\
+cmd_add_docker+="docker rcontainer kill 'container-$subApp' &> /dev/null" &&\
+cmd_add_docker+="docker run -d --network=qalet_docker_network --rm -p 10080:80 " &&\
+cmd_add_docker+=" -v '<%-@sitesFolder%>/<%-@vhost.serverName%>/www':/var/www/ -v '$qaletFolderTasks/$subApp':/var/qalet_tasks" &&\
+cmd_add_docker+=" --name 'container-$subApp' 'image-$subApp'" &&\
+sed -i "s/${cmd_add_docker//\//\\\/}.*$//g" $qaletFolderMaster/bootup.sh &&\
+echo $cmd_add_docker >> $qaletFolderMaster/bootup.sh 
