@@ -25,8 +25,10 @@
 				id		: 'www.shusiou.win',
 				gatewayIp	: '173.28.5.254',
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
-			} 
+			};
 			
+			
+			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
