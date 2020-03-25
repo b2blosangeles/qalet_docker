@@ -2,9 +2,12 @@ rm -fr <%-@rootFolder%>/sites/<%-@vhost.serverName%> && mkdir -p <%-@rootFolder%
 cd  <%-@rootFolder%>/sites/<%-@vhost.serverName%> &&\
 git clone <%-@vhost.gitHub%> . && docker build -f Dockerfile -t "image-<%-@vhost.serverName%>" . 
 
+  
+<% for vhost in @vhosts : %>
 cmd_add_docker='' &&\
-cmd_add_docker+="docker container kill 'container-<%-@vhost.serverName%>' &> /dev/null" &&\
+cmd_add_docker+="docker container kill 'container-<%-vhost.serverName%>' &> /dev/null" &&\
 cmd_add_docker+="docker run -d --network=qalet_docker_network --rm -p 10080:80 " &&\
-cmd_add_docker+=" -v '<%-@rootFolder%>/sites/<%-@vhost.serverName%>/www':/var/www/ -v '<%-@rootFolder%>/sites/<%-@vhost.serverName%>':/var/qalet_tasks" &&\
-cmd_add_docker+=" --name 'container--@vhost.serverName' 'image--@vhost.serverName'" &&\
+cmd_add_docker+=" -v '<%-@rootFolder%>/sites/<%-vhost.serverName%>/www':/var/www/ -v '<%-@rootFolder%>/sites/<%-vhost.serverName%>':/var/qalet_tasks" &&\
+cmd_add_docker+=" --name 'container--@vhost.serverName' 'image--vhost.serverName'" &&\
 echo $cmd_add_docker >> <%-@rootFolder%>/bootupVhost.sh 
+<% end %>
