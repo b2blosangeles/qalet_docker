@@ -28,7 +28,7 @@
 			var dockerCmd = {
 				subApp		: 'www.shusiou.win',
 				sitesFolder	: '/var/qalet/sites',
-				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
+				gitHub  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 				
 			}
 			
