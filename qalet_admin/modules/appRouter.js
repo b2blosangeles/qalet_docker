@@ -26,7 +26,9 @@
 				gatewayIp	: '173.28.5.254',
 				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
 			};
-			
+			var dockerCmd = {
+				sitesFolder : '/var/qalet/sites'
+			}
 			
 			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
@@ -47,7 +49,7 @@
 							    if (code === 'vhost') {
 							    	var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
 							    } else {
-								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', vhosting.vhosts[0]); 
+								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', dockerCmd); 
 							    }
 							    
 							    res.send(str);
