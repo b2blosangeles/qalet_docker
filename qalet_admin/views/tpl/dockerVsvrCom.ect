@@ -1,5 +1,2 @@
-rm -fr <%-@sitesFolder%>/<%-@subApp%> &&\
-mkdir -p <%-@sitesFolder%>/<%-@subApp%> &&\
-cd  <%-@sitesFolder%>/<%-@subApp%> &&\
-git clone <%-@gitHub%> . &&\
-docker build -f Dockerfile -t "image-<%-@subApp%>" . \
+rm -fr <%-@sitesFolder%>/<%-@subApp%> && mkdir -p <%-@sitesFolder%>/<%-@subApp%> && cd  <%-@sitesFolder%>/<%-@subApp%> &&\
+git clone <%-@gitHub%> . && docker build -f Dockerfile -t "image-<%-@subApp%>" . \
