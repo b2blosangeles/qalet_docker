@@ -16,19 +16,34 @@
 		this.runScript = function(code) {
 			var me = this;
 			
-			var vhosting = {
+			var vhostsCFG = {
 				vhosts	: [
-					{serverName : 'www.shusiou.win', serverAlias: 'shusiou.win', innerPort : 80, gatewayPort: 10080},
-					{serverName : 's1.shusiou.win', innerPort : 80, gatewayPort: 10081},
-					{serverName : 's2.shusiou.win', innerPort : 80, gatewayPort: 10082}
+					{
+						serverName	: 'www.shusiou.win', 
+						serverAlias	: 'shusiou.win',
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80, 
+						gatewayPort: 10080
+					},
+					{
+						serverName	: 'ss1.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80, 
+						gatewayPort: 10081
+					},
+					{
+						serverName	: 'ss1.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80, 
+						gatewayPort: 10082
+					}
 				],
-				id		: 'www.shusiou.win',
 				gatewayIp	: '173.28.5.254'
 			};
-			var dockerCmd = {
-				subApp		: 'www.shusiou.win',
+			var dockerImageCfg = {
+				vhost		: vhostsCFG.vhosts[0],
 				sitesFolder	: '/var/qalet/sites',
-				gitHub  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
+				gatewayIp	: '173.28.5.254'
 				
 			}
 			
@@ -49,9 +64,10 @@
 							    res.send('ERR 1');
 							} else {
 							    if (code === 'vhost') {
-							    	var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhosting); 
+							    	var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', 
+											 vhostsCFG); 
 							    } else {
-								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', dockerCmd); 
+								var str = pkg.tpl.render('tpl/dockerVsvrCom.ect', dockerImageCfg); 
 							    }
 							    
 							    res.send(str);
