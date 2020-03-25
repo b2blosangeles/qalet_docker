@@ -1,7 +1,6 @@
 subApp="<%-@serverName%>" &&\
-rm -fr <%-@serverName%>/$subApp &&\
-mkdir -p $qaletFolderTasks/$subApp &&\
-mkdir -p $qaletFolderSites/$subApp &&\
-cd  $qaletFolderSites/$subApp &&\
+rm -fr <%-@sitesFolder%>/$subApp &&\
+mkdir -p <%-@sitesFolder%>/$subApp &&\
+cd  <%-@sitesFolder%>/$subApp &&\
 git clone https://github.com/b2blosangeles/docker_apache_php . &&\
 docker build -f Dockerfile -t "image-$subApp" . \
