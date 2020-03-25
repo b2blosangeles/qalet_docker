@@ -28,7 +28,9 @@
 			};
 			var dockerCmd = {
 				subApp		: 'www.shusiou.win',
-				sitesFolder	: '/var/qalet/sites'
+				sitesFolder	: '/var/qalet/sites',
+				github  	: 'https://github.com/b2blosangeles/docker_apache_php.git'
+				
 			}
 			
 			// sitesFolder
