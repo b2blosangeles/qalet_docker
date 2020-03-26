@@ -20,7 +20,7 @@
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
-				res.send('stdout');
+				res.send(stdout);
 			});
 		  
 		}
