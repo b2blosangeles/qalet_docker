@@ -43,7 +43,7 @@
 				],
 				rootFolder	: '/var/qalet'
 			};
-			//=a==
+			//=b==
 			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
