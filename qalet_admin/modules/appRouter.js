@@ -13,6 +13,17 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		this.checkCodeUpdate = function() {
+			var cmd = "[ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | " +
+			"sed 's/\// /g') | cut -f1) ] && echo up to date || echo not up to date";
+			
+			exec(cmd, 
+			     {maxBuffer: 1024 * 2048},
+			     function(error, stdout, stderr) {
+				res.send('stdout');
+			});
+		  
+		}
 		this.runScript = function(code) {
 			var me = this;
 			
@@ -98,10 +109,13 @@
 		};
 		this.get = function() {
 			var me = this, p = req.params[0];
-			var patt = new RegExp('/(vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
+					case 'checkCodeUpdate':
+						me.checkCodeUpdate();
+						break;
 					case 'vhost':
 						me.runScript(v[1]);
 						break;
