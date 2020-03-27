@@ -14,7 +14,7 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			res.send('data');
+			res.send('dataA');
 			/*
 			var CP = new pkg.CrowdProcess(),
 			var _f = {}; 
