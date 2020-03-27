@@ -1,8 +1,8 @@
 var ECT = require('ect');
-var env = { root : '/var/qalet/admin'}
+var env = { rootPath : '/var/qalet', adminPath: '/var/qalet/admin'}
 var pkg = {
-       tpl           : ECT({ watch: true, root: env.root + '/views', ext : '.ect' }),
-       crowdProcess  : require(env.root + '/vendor/crowdProcess/crowdProcess.js'),
+       tpl           : ECT({ watch: true, root: env.adminPath + '/views', ext : '.ect' }),
+       crowdProcess  : require(env.adminPath + '/vendor/crowdProcess/crowdProcess.js'),
        exec          : require('child_process').exec
 }
 
@@ -15,7 +15,7 @@ console.log('End admin at : ' + new Date());
 
 var CP = new pkg.crowdProcess(),_f = {}; 
     _f['checkUpdate'] = function(cbk) {
-      var cmd = "cd /var/qalet/master/setup && " +
+      var cmd = "cd " + env.rootPath + "/master/setup && " +
       " if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
@@ -25,8 +25,22 @@ var CP = new pkg.crowdProcess(),_f = {};
         cbk(status);
       });
     }
+
+/*
+qaletFolderMaster="/var/qalet/master"
+qaletFolderAdmin="/var/qalet/admin"
+qaletFolderProxy="/var/qalet/proxy"
+qaletFolderSites="/var/qalet/sites"
+qaletFolderSetup="/var/qalet/master/setup"
+qaletFolderTasks="/var/qalet/tasks"
+cd $qaletFolderSetup && git pull
+
+cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
+cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
+*/
+
     _f['gitPull'] = function(cbk) {
-      var cmd = "cd /var/qalet/master/setup && " +
+      var cmd = "cd " + env.rootPath + "/master/setup && " +
       " if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
