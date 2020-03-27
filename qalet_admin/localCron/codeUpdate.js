@@ -1,9 +1,9 @@
 console.log(__dirname);
-console.log('Run admin at : ' + new Data());
+console.log('Run admin at : ' + new Date());
 require('child_process');
 process.exit(-1);
 
-console.log('End admin at : ' + new Data());
+console.log('End admin at : ' + new Date());
 /*
 var CP = new pkg.crowdProcess(),_f = {}; 
     _f['checkUpdate'] = function(cbk) {
