@@ -14,10 +14,12 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			res.send('---1---');
-			/*
+			
+			
 			var CP = new pkg.crowdProcess(),
 			var _f = {}; 
+			res.send('---2---');
+			/*
 			_f['checkUpdate'] = function(cbk) {
 				var cmd = "cd /var/qalet/master/setup && " +
 				" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
