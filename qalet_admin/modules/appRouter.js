@@ -14,14 +14,34 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			var cmd = "cd /var/qalet/master/setup && " +
-			" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
-			exec(cmd, 
-			     {maxBuffer: 1024 * 2048},
-			     function(error, stdout, stderr) {
-				res.send(stdout);
-			});
-		  
+			var CP = new pkg.CrowdProcess(),
+			var _f = {}; 
+			_f['checkUpdate'] = function(cbk) {
+				var cmd = "cd /var/qalet/master/setup && " +
+				" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
+				exec(cmd, 
+				     {maxBuffer: 1024 * 2048},
+				     function(error, stdout, stderr) {
+					cbk(stdout);
+					// res.send(stdout);
+				});
+			}
+			_f['gitPull] = function(cbk) {
+				var cmd = "cd /var/qalet/master/setup && " +
+				" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
+				exec(cmd, 
+				     {maxBuffer: 1024 * 2048},
+				     function(error, stdout, stderr) {
+					cbk(stdout);
+				});
+			}
+			CP.serial(
+				_f,
+				function(data) {
+			   		res.send(data);
+			   	},
+			   	6000
+			);   
 		}
 		this.runScript = function(code) {
 			var me = this;
