@@ -15,8 +15,6 @@
 		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			res.send('---2---');
-			/*
 			_f['checkUpdate'] = function(cbk) {
 				var cmd = "cd /var/qalet/master/setup && " +
 				" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
@@ -43,7 +41,6 @@
 			   	},
 			   	6000
 			);
-			*/
 		}
 		this.runScript = function(code) {
 			var me = this;
