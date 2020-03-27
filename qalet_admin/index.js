@@ -3,7 +3,7 @@ var app = express();
 var ECT = require('ect');
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }),
-       crowdProcess	:require('./vendor/crowdProcess/crowdProcess')
+       crowdProcess : require('./vendor/crowdProcess/crowdProcess')
 }
 var env = {
        root   : __dirname,
