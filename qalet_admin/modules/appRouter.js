@@ -14,10 +14,7 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			
-			
-			var CP = new pkg.crowdProcess(),
-			var _f = {}; 
+			var CP = new pkg.crowdProcess(),_f = {}; 
 			res.send('---2---');
 			/*
 			_f['checkUpdate'] = function(cbk) {
