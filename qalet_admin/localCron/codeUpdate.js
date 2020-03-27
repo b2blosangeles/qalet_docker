@@ -1,3 +1,4 @@
+console.log(__dirname);
 console.log('Run admin at : ' + new Data());
 require('child_process');
 process.exit(-1);
