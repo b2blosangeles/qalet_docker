@@ -53,6 +53,6 @@ cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
       function(data) {
           console.log(data);
         },
-        6000
+        55000
     );
   
