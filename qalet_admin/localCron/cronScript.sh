@@ -11,7 +11,7 @@ mkdir -p $qaletFolderTasks && mkdir -p $qaletFolderAdmin && mkdir -p $qaletFolde
 mkdir -p "$qaletFolderSetup/log"
 cd $qaletFolderSetup && git pull
 
-# cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
-# cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
+cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
+cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
 
 node /var/qalet/admin/localCron/codeUpdate.js >> /var/qalet/log/codeUpdate.js.log
