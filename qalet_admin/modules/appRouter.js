@@ -21,8 +21,9 @@
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
-					cbk(stdout.replace(/\r?\n|\r/g, ''));
-					// res.send(stdout);
+					let status = stdout.replace(/\r?\n|\r/g, '');
+					if (status == 'updated') CP.exit = 1;
+					cbk(status);
 				});
 			}
 			_f['gitPull'] = function(cbk) {
