@@ -14,8 +14,6 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			res.send('dataA');
-			/*
 			var CP = new pkg.CrowdProcess(),
 			var _f = {}; 
 			_f['checkUpdate'] = function(cbk) {
@@ -44,7 +42,6 @@
 			   	},
 			   	6000
 			); 
-			*/
 		}
 		this.runScript = function(code) {
 			var me = this;
