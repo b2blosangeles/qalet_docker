@@ -26,7 +26,7 @@
 					// res.send(stdout);
 				});
 			}
-			_f['gitPull] = function(cbk) {
+			_f['gitPull'] = function(cbk) {
 				var cmd = "cd /var/qalet/master/setup && " +
 				" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
 				exec(cmd, 
