@@ -14,7 +14,7 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			var CP = new pkg.CrowdProcess(),
+			var CP = new pkg.crowdProcess(),
 			var _f = {}; 
 			_f['checkUpdate'] = function(cbk) {
 				var cmd = "cd /var/qalet/master/setup && " +
