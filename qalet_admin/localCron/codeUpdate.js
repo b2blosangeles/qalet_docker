@@ -40,12 +40,14 @@ cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
 */
 
     _f['gitPull'] = function(cbk) {
-      var cmd = "cd " + env.rootPath + "/master/setup && " +
-      " if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
+           var qaletFolderSetup= env.rootPath + "/master/setup";
+           var qaletFolderAdmin= env.rootPath + "/admin";
+           var cmd = "cd " + qaletFolderSetup + " && git pull && " + ""
+                            
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
-        cbk(stdout.replace(/\r?\n|\r/g, ''));
+              cbk(stdout.replace(/\r?\n|\r/g, ''));
       });
     }
     CP.serial(
