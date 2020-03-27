@@ -1,8 +1,9 @@
 var ECT = require('ect');
 var env = { root : '/var/qalet/admin'}
 var pkg = {
-       tpl : ECT({ watch: true, root: env.root + '/views', ext : '.ect' }),
-       crowdProcess : require(env.root + '/vendor/crowdProcess/crowdProcess.js')
+       tpl           : ECT({ watch: true, root: env.root + '/views', ext : '.ect' }),
+       crowdProcess  : require(env.root + '/vendor/crowdProcess/crowdProcess.js'),
+       exec          : require('child_process').exec
 }
 
 console.log(__dirname);
