@@ -7,7 +7,7 @@ var pkg = {
 
 console.log(__dirname);
 console.log('Run admin at : ' + new Date());
-require('child_process');
+// require('child_process');
 process.exit(-1);
 
 console.log('End admin at : ' + new Date());
