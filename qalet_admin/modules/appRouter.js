@@ -14,9 +14,8 @@
 			res.end();			
 		}
 		this.checkCodeUpdate = function() {
-			var cmd = "[ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | " +
-			"sed 's/\// /g') | cut -f1) ] && echo up to date || echo not up to date";
-			
+			var cmd = "cd /var/qalet/master/setup && " +
+			" if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
 			exec(cmd, 
 			     {maxBuffer: 1024 * 2048},
 			     function(error, stdout, stderr) {
