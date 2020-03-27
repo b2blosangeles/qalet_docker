@@ -21,7 +21,7 @@
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
-					cbk(stdout);
+					cbk(stdout.replace(/\r?\n|\r/g, ''));
 					// res.send(stdout);
 				});
 			}
@@ -31,7 +31,7 @@
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
-					cbk(stdout);
+					cbk(stdout.replace(/\r?\n|\r/g, ''));
 				});
 			}
 			CP.serial(
