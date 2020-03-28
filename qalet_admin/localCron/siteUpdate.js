@@ -22,9 +22,8 @@ fs.readdir(env.sitesPath, function (err, files) {
 
 console.log(__dirname);
 console.log('Run admin at : ' + new Date());
-require('child_process');
-process.exit(-1);
 
+/*
 console.log('End admin at : ' + new Date());
 
 var CP = new pkg.crowdProcess(),_f = {}; 
@@ -61,4 +60,4 @@ var CP = new pkg.crowdProcess(),_f = {};
         },
         55000
     );
-  
+  */
