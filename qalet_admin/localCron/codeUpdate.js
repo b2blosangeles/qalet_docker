@@ -36,15 +36,18 @@ qaletFolderTasks="/var/qalet/tasks"
 cd $qaletFolderSetup && git pull
 
 cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
-cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
+cp -rf "$qaletFolderProxy/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
 */
 
     _f['gitPull'] = function(cbk) {
            var qaletFolderSetup= env.rootPath + "/master/setup";
            var qaletFolderAdmin= env.rootPath + "/admin";
+           var qaletFolderProxy= env.rootPath + "/proxy";
            var cmd = "cd " + qaletFolderSetup + " && git pull " + 
-               "cp -rf " + qaletFolderSetup + "/qalet_admin/." + qaletFolderAdmin + "/ && rm -fr "+ qaletFolderAdmin "/Dockerfile"
-              cbk(cmd);
+               "cp -rf " + qaletFolderSetup + "/qalet_admin/." + qaletFolderAdmin + "/ && rm -fr "+ qaletFolderAdmin + "/Dockerfile &&" +
+               "cp -rf " + qaletFolderSetup + "/docker-httpd-reverseproxy/." + qaletFolderProxy +"/ && rm -fr "+ qaletFolderProxy + "/Dockerfile"       
+
+           cbk(cmd);
            return true;
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
