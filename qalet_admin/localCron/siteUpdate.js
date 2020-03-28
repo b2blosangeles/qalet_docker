@@ -1,16 +1,17 @@
 var ECT = require('ect');
-var env = { rootPath : '/var/qalet', adminPath: '/var/qalet/admin', satesPath : '/var/qalet/sites'}
+var env = { rootPath : '/var/qalet', adminPath: '/var/qalet/admin', sitesPath : '/var/qalet/sites'}
 var pkg = {
        tpl           : ECT({ watch: true, root: env.adminPath + '/views', ext : '.ect' }),
        crowdProcess  : require(env.adminPath + '/vendor/crowdProcess/crowdProcess.js'),
        exec          : require('child_process').exec
 }
 const fs = require('fs');
-fs.readdir(env.satesPath, function (err, files) {
+fs.readdir(env.sitesPath, function (err, files) {
     //handling error
     if (err) {
         return console.log('Unable to scan directory: ' + err);
     } 
+       console.log(files);
     //listing all files using forEach
     files.forEach(function (file) {
         // Do whatever you want to do with the file
