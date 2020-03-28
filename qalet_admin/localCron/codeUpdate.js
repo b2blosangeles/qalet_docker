@@ -42,8 +42,10 @@ cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
     _f['gitPull'] = function(cbk) {
            var qaletFolderSetup= env.rootPath + "/master/setup";
            var qaletFolderAdmin= env.rootPath + "/admin";
-           var cmd = "cd " + qaletFolderSetup + " && git pull " + ""
-                            
+           var cmd = "cd " + qaletFolderSetup + " && git pull " + 
+               "cp -rf " + qaletFolderSetup + "/qalet_admin/." + qaletFolderAdmin + "/ && rm -fr "+ qaletFolderAdmin "/Dockerfile"
+              cbk(cmd);
+           return true;
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
