@@ -15,5 +15,5 @@ mkdir -p "$qaletFolderSetup/log"
 # cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
 
 mkdir -p /var/qalet/log/
-node /var/qalet/admin/localCron/codeUpdate.js >> /var/qalet/log/codeUpdate.js.log
+node /var/qalet/admin/localCron/masterUpdate.js >> /var/qalet/log/codeUpdate.js.log
 node /var/qalet/admin/localCron/siteUpdate.js >> /var/qalet/log/codeUpdate.js.log
