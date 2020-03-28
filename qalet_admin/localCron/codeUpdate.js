@@ -21,23 +21,10 @@ var CP = new pkg.crowdProcess(),_f = {};
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
               let status = stdout.replace(/\r?\n|\r/g, '');
-              // if (status == 'updated') CP.exit = 1;
+              if (status == 'updated') CP.exit = 1;
               cbk(status);
       });
     }
-
-/*
-qaletFolderMaster="/var/qalet/master"
-qaletFolderAdmin="/var/qalet/admin"
-qaletFolderProxy="/var/qalet/proxy"
-qaletFolderSites="/var/qalet/sites"
-qaletFolderSetup="/var/qalet/master/setup"
-qaletFolderTasks="/var/qalet/tasks"
-cd $qaletFolderSetup && git pull
-
-cp -rf "$qaletFolderSetup/qalet_admin/." "$qaletFolderAdmin/" && rm -fr "$qaletFolderAdmin/Dockerfile"
-cp -rf "$qaletFolderProxy/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && rm -fr "$qaletFolderProxy/Dockerfile"
-*/
 
     _f['gitPull'] = function(cbk) {
            var qaletFolderSetup= env.rootPath + "/master/setup";
@@ -51,7 +38,6 @@ cp -rf "$qaletFolderProxy/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
            function(error, stdout, stderr) {
              let status = stdout.replace(/\r?\n|\r/g, '');
               cbk(status);
-              // cbk(stdout.replace(/\r?\n|\r/g, ''));
       });
     }
     CP.serial(
