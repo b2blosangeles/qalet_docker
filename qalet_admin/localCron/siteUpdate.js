@@ -1,5 +1,5 @@
 var ECT = require('ect');
-var env = { rootPath : '/var/qalet', adminPath: '/var/qalet/admin'}
+var env = { rootPath : '/var/qalet', adminPath: '/var/qalet/admin', satesPath : '/var/qalet/sites'}
 var pkg = {
        tpl           : ECT({ watch: true, root: env.adminPath + '/views', ext : '.ect' }),
        crowdProcess  : require(env.adminPath + '/vendor/crowdProcess/crowdProcess.js'),
