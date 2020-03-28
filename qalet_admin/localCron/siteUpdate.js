@@ -11,6 +11,7 @@ fs.readdir(env.sitesPath, function (err, files) {
     if (err) {
         return console.log('Unable to scan directory: ' + err);
     } 
+       console.log('files===>');
        console.log(files);
     //listing all files using forEach
     files.forEach(function (file) {
