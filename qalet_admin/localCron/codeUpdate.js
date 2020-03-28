@@ -20,9 +20,9 @@ var CP = new pkg.crowdProcess(),_f = {};
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
-        let status = stdout.replace(/\r?\n|\r/g, '');
-       // if (status == 'updated') CP.exit = 1;
-        cbk(status);
+              let status = stdout.replace(/\r?\n|\r/g, '');
+              // if (status == 'updated') CP.exit = 1;
+              cbk(status);
       });
     }
 
@@ -42,7 +42,7 @@ cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
     _f['gitPull'] = function(cbk) {
            var qaletFolderSetup= env.rootPath + "/master/setup";
            var qaletFolderAdmin= env.rootPath + "/admin";
-           var cmd = "cd " + qaletFolderSetup + " && git pull && " + ""
+           var cmd = "cd " + qaletFolderSetup + " && git pull " + ""
                             
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
