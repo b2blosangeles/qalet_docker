@@ -47,7 +47,8 @@ cp -rf "$qaletFolderSetup/docker-httpd-reverseproxy/." "$qaletFolderProxy/" && r
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
-              cbk(cmd);
+             let status = stdout.replace(/\r?\n|\r/g, '');
+              cbk(status);
               // cbk(stdout.replace(/\r?\n|\r/g, ''));
       });
     }
