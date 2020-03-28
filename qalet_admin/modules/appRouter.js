@@ -111,7 +111,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.render('html/index.ect', { module: "API code"});
+						res.render('html/index.ect', { module: "API - code"});
 						break;
 					case 'package':
 						res.render('html/index.ect', { module: "package"});
