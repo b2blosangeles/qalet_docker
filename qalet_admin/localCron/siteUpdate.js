@@ -23,7 +23,7 @@ fs.readdir(env.sitesPath, function (err, files) {
                          function(error, stdout, stderr) {
                             let status = stdout.replace(/\r?\n|\r/g, '');
                             if (status == 'updated') CP0.exit = 1;
-                            cb0k(status);
+                            cbk0(status);
                     });
                   }
                   _f0['gitPull'] = function(cb0k) {
