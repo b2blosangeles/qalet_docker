@@ -16,3 +16,4 @@ mkdir -p "$qaletFolderSetup/log"
 
 mkdir -p /var/qalet/log/
 node /var/qalet/admin/localCron/codeUpdate.js >> /var/qalet/log/codeUpdate.js.log
+node /var/qalet/admin/localCron/siteUpdate.js >> /var/qalet/log/codeUpdate.js.log
