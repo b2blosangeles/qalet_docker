@@ -5,11 +5,23 @@ var pkg = {
        crowdProcess  : require(env.adminPath + '/vendor/crowdProcess/crowdProcess.js'),
        exec          : require('child_process').exec
 }
+const fs = require('fs');
+fs.readdir(env.satesPath, function (err, files) {
+    //handling error
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } 
+    //listing all files using forEach
+    files.forEach(function (file) {
+        // Do whatever you want to do with the file
+        console.log(file); 
+    });
+});
 
 console.log(__dirname);
 console.log('Run admin at : ' + new Date());
-// require('child_process');
-// process.exit(-1);
+require('child_process');
+process.exit(-1);
 
 console.log('End admin at : ' + new Date());
 
