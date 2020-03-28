@@ -11,13 +11,26 @@ fs.readdir(env.sitesPath, function (err, files) {
     if (err) {
         return console.log('Unable to scan directory: ' + err);
     } 
-       console.log('files===>');
-       console.log(files);
-    //listing all files using forEach
+    var CP = new pkg.crowdProcess(),_f = {}; 
     files.forEach(function (file) {
-        // Do whatever you want to do with the file
-        console.log(file); 
+        _f[file] = function(cbk) {
+              var cmd = "cd " + env.sitesPath + "/" + file +  " && git pull"
+              pkg.exec(cmd, 
+                  {maxBuffer: 1024 * 2048},
+                  function(error, stdout, stderr) {
+                     let status = stdout.replace(/\r?\n|\r/g, '');
+                     if (status == 'updated') CP.exit = 1;
+                     cbk(status);
+             });
+        }
     });
+    CP.serial(
+      _f,
+      function(data) {
+          console.log(data);
+        },
+        55000
+      );
 });
 
 console.log(__dirname);
