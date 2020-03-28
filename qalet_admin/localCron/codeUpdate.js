@@ -39,7 +39,8 @@ var CP = new pkg.crowdProcess(),_f = {};
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
              let status = stdout.replace(/\r?\n|\r/g, '');
-              cbk(status);
+             cbk(cmd);
+             // cbk(status);
       });
     }
     CP.serial(
