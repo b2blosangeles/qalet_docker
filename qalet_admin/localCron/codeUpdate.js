@@ -33,14 +33,11 @@ var CP = new pkg.crowdProcess(),_f = {};
            var cmd = "cd " + qaletFolderSetup + " && git pull && " + 
                "cp -rf " + qaletFolderSetup + "/qalet_admin/. " + qaletFolderAdmin + "/ && rm -fr "+ qaletFolderAdmin + "/Dockerfile && " +
                "cp -rf " + qaletFolderSetup + "/docker-httpd-reverseproxy/. " + qaletFolderProxy +"/ && rm -fr "+ qaletFolderProxy + "/Dockerfile";
-    //  cbk(cmd);
-    //       return true;
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
            function(error, stdout, stderr) {
              let status = stdout.replace(/\r?\n|\r/g, '');
-             cbk(cmd);
-             // cbk(status);
+             cbk(status);
       });
     }
     CP.serial(
