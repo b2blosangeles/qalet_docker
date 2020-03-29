@@ -17,4 +17,6 @@ EXPOSE 80
 
 # The Base command, This command should be used to start the container
 # Remember, A Container is a Process.As long as the base process (started by base cmd) is live the Container will be ALIVE.
-CMD ["httpd", "-D", "FOREGROUND"]
+# CMD ["httpd", "-D", "FOREGROUND"]
+# ENTRYPOINT /etc/init.d/cron stop &&  cron && cd /var/qalet/admin/ && node index.js
+ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
