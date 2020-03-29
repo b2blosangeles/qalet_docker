@@ -73,7 +73,7 @@
 				],
 				rootFolder	: '/var/qalet'
 			};
-			//=LL==
+	
 			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
 			exec(cmd, 
@@ -161,9 +161,9 @@
 				fs.stat(fn, function(err, stat) {
 				      if(err == null) {
 					  if (stat.isDirectory()) {
-					  	res.sendFile(fn + 'index.html');
+					  	res.render('html/' + fn + 'index.html');
 					  } else {
-					  	res.sendFile(fn);
+					  	res.render('html/' + fn);
 					  }
 				      } else if(err.code === 'ENOENT') {
 					  res.render('html/page404.ect');
