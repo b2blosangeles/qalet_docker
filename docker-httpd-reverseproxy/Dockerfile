@@ -11,7 +11,7 @@ COPY httpd.conf /usr/local/apache2/conf/httpd.conf
 # This is the Additional Directory where we are going to keep our Virtualhost configuraiton files
 # You can use the image to create N number of different virtual hosts
 RUN mkdir -p /usr/local/apache2/conf/sites/
-COPY virtualHostsConfig/mainHosts.conf /usr/local/apache2/conf/sites/mainHosts.conf
+# COPY virtualHostsConfig/mainHosts.conf /usr/local/apache2/conf/sites/mainHosts.conf
 # To tell docker to expose this port
 EXPOSE 80
 
