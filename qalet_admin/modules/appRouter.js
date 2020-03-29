@@ -160,7 +160,11 @@
 				var fn = env.root + '/files' + req.params[0];
 				fs.stat(fn, function(err, stat) {
 				      if(err == null) {
-					  res.send('fn--->' + fn);
+					  if (stat.isDirectory()) {
+					  	res.sendFile(fn + 'index.html');
+					  } else {
+					  	res.sendFile(fn);
+					  }
 				      } else if(err.code === 'ENOENT') {
 					  res.render('html/page404.ect');
 				      }
