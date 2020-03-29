@@ -161,9 +161,9 @@
 				fs.stat(fn, function(err, stat) {
 				      if(err == null) {
 					  if (stat.isDirectory()) {
-					  	res.render('html/' + fn + 'index.html');
+					  	res.sendFile(fn + 'index.html');
 					  } else {
-					  	res.render('html/' + fn);
+					  	res.sendFile(fn);
 					  }
 				      } else if(err.code === 'ENOENT') {
 					  res.render('html/page404.ect');
