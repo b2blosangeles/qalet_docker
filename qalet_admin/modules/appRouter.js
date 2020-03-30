@@ -128,6 +128,11 @@
 		};
 		this.get = function() {
 			var me = this, p = req.params[0];
+			
+			var TPA = {
+				"/" : "html/index.ect"
+			}
+			
 			var patt = new RegExp('/(checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
@@ -157,20 +162,23 @@
 						res.render('html/index.ect', { module: "Others"});
 				}		
 			} else {
-				var fn = env.root + '/files' + req.params[0];
-				fs.stat(fn, function(err, stat) {
-				      if(err == null) {
-					  res.send(req.params[0]);
-					      return true;
-					  if (stat.isDirectory()) {
-					  	res.sendFile(fn + 'index.html');
-					  } else {
-					  	res.sendFile(fn);
-					  }
-				      } else if(err.code === 'ENOENT') {
-					  res.render('html/page404.ect');
-				      }
-				});
+				if (TPA[req.params[0]]) {
+					res.render(TPA[req.params[0]]);
+					return true;
+				} else {
+					var fn = env.root + '/files' + req.params[0];
+					fs.stat(fn, function(err, stat) {
+					      if(err == null) {
+						  if (stat.isDirectory()) {
+							res.sendFile(fn + 'index.html');
+						  } else {
+							res.sendFile(fn);
+						  }
+					      } else if(err.code === 'ENOENT') {
+						  res.render('html/page404.ect');
+					      }
+					});
+				}
 			}
 		};	
 	};
