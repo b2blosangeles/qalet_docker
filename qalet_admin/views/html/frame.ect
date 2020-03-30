@@ -6,12 +6,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-    
+                    <% switch @module : %>
+                   
+                        <% when 'home' : %>
                         <h1>QALET Admin <%-@module%></h1>
                         <div class="error-details">
                           -=-  It is from the Admin site!
                         </div>
+                        <% end %>
 
+                    <% end %>
                 </div>
             </div>
         </div>
