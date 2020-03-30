@@ -174,7 +174,7 @@
 				if (TPA[req.params[0]]) {
 					var Vdata =  (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {disabledStr : ''};
 					Vdata.disabledStr = (p=='/' && Vdata.module == 'Home') ?  'disabled' :
-					(p == '/' + Vdata.module.toLowerCase()) 'disabled' : '';
+					(p == '/' + Vdata.module.toLowerCase()) ? 'disabled' : '';
 					
 					res.render(TPA[req.params[0]].tpl, Vdata);
 					return true;
