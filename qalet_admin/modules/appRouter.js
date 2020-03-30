@@ -130,7 +130,8 @@
 			var me = this, p = req.params[0];
 			
 			var TPA = {
-				"/" : "html/index.ect"
+				"/"	: "html/index.ect",
+				"/about": "html/about.ect"
 			}
 			
 			var patt = new RegExp('/(checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
