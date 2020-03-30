@@ -172,7 +172,8 @@
 				}		
 			} else {
 				if (TPA[req.params[0]]) {
-					res.render(TPA[req.params[0]].tpl, TPA[req.params[0]].data);
+					var Vdata = (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {};
+					res.render(TPA[req.params[0]].tpl, Vdata);
 					return true;
 				} else {
 					var fn = env.root + '/files' + req.params[0];
