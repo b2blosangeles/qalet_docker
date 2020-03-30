@@ -17,3 +17,4 @@ footer {
 }
 
 .bg-bar-opacity { background-color: #222; opacity: 0.6; }
+.bg-bar-opacity a { color: #000 }
