@@ -132,11 +132,11 @@
 			var TPA = {
 				"/"	: {
 						tpl : "html/index.ect",
-						data : {module_code: 'home', module : "Home"}
+						data : {module : "Home"}
 				},
 				"/about": {
 						tpl : "html/about.ect",
-						data : {module_code: 'about', module : "About"}
+						data : {module : "About"}
 					}
 			}
 			
