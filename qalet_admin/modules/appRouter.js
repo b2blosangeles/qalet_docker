@@ -130,8 +130,14 @@
 			var me = this, p = req.params[0];
 			
 			var TPA = {
-				"/"	: "html/index.ect",
-				"/about": "html/about.ect"
+				"/"	: {
+						tpl : "html/index.ect",
+						data : {module : "Index"}
+				},
+				"/about": {
+						tpl : "html/about.ect",
+						data : {module : "About"}
+					}
 			}
 			
 			var patt = new RegExp('/(checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
@@ -164,7 +170,7 @@
 				}		
 			} else {
 				if (TPA[req.params[0]]) {
-					res.render(TPA[req.params[0]]);
+					res.render(TPA[req.params[0]].tpl, TPA[req.params[0]].data);
 					return true;
 				} else {
 					var fn = env.root + '/files' + req.params[0];
