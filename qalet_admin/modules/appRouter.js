@@ -172,10 +172,7 @@
 				}		
 			} else {
 				if (TPA[req.params[0]]) {
-					var Vdata =  (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {disabledStr : ''};
-					Vdata.disabledStr = ((p=='/' && Vdata.module == 'Home')  || (p == '/' + Vdata.module.toLowerCase()) ? 'disabled' : '';
-					
-					res.render(TPA[req.params[0]].tpl, Vdata);
+					res.render(TPA[req.params[0]].tpl, TPA[req.params[0]].data);
 					return true;
 				} else {
 					var fn = env.root + '/files' + req.params[0];
