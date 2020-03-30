@@ -173,7 +173,8 @@
 			} else {
 				
 				if (TPA[p]) {
-					res.render(TPA[req.params[0]].tpl, TPA[req.params[0]].data);
+					// TPA[req.params[0]].tpl
+					res.render('html/frame.ect', TPA[p].data);
 					return true;
 				} else {
 					var fn = env.root + '/files' + req.params[0];
