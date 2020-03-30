@@ -172,7 +172,8 @@
 				}		
 			} else {
 				if (TPA[req.params[0]]) {
-					var Vdata = (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {module_code : ''};
+					var Vdata = {module_code : ''};
+					//    (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {module_code : ''};
 					res.render(TPA[req.params[0]].tpl, Vdata);
 					return true;
 				} else {
