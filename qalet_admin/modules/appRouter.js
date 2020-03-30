@@ -172,7 +172,7 @@
 				}		
 			} else {
 				if (TPA[req.params[0]]) {
-					var Vdata = {moduleCode : 'ss'};
+					var Vdata = {disabledStr : 'disabled'};
 					//    (TPA[req.params[0]].data) ? TPA[req.params[0]].data : {module_code : ''};
 					res.render(TPA[req.params[0]].tpl, Vdata);
 					return true;
