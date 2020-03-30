@@ -2,7 +2,7 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="/">Home -<%- if @moduleCode 'A' else : 'B' end %></a>
+      <a class="nav-link" href="/">Home -<%- if @moduleCode? 'A' : 'B' %></a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/about">About</a>
