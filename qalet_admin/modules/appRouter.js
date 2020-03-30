@@ -171,7 +171,8 @@
 						res.render('html/index.ect', { module: "Others"});
 				}		
 			} else {
-				if (TPA[req.params[0]]) {
+				
+				if (TPA[p]) {
 					res.render(TPA[req.params[0]].tpl, TPA[req.params[0]].data);
 					return true;
 				} else {
