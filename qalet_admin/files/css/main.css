@@ -4,7 +4,7 @@ body { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAA
 .error-actions .btn { margin-right:10px; }
 .error-color { color: red}
 
-.footer {
+.page-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
