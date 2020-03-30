@@ -160,6 +160,8 @@
 				var fn = env.root + '/files' + req.params[0];
 				fs.stat(fn, function(err, stat) {
 				      if(err == null) {
+					  res.send(req.params[0]);
+					      return true;
 					  if (stat.isDirectory()) {
 					  	res.sendFile(fn + 'index.html');
 					  } else {
