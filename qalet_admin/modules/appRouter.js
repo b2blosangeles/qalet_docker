@@ -129,14 +129,16 @@
 		this.get = function() {
 			var me = this, p = req.params[0];
 			
+			var module_code = (p=='/') ? 'Home' : p;
+			
 			var TPA = {
 				"/"	: {
 						tpl : "html/index.ect",
-						data : {module : "Home"}
+						data : {module_code: module_code, module : "Home"}
 				},
 				"/about": {
 						tpl : "html/about.ect",
-						data : {module : "About"}
+						data : {module_code: module_code, module : "About"}
 					}
 			}
 			
