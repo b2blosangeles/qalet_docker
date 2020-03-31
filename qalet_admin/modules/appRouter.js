@@ -140,9 +140,9 @@
 						tpl : "html/about.ect",
 						data : {module : "About"}
 					},
-				"/vhost": {
-						tpl : "html/vhost.ect",
-						data : {module : "Vhost"}
+				"/virtualHosts": {
+						tpl : "html/virtualHosts.ect",
+						data : {module : "virtualHosts"}
 					}
 			}
 			
