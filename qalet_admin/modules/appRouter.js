@@ -143,6 +143,10 @@
 				"/virtualHosts": {
 						tpl : "html/virtualHosts.ect",
 						data : {module : "virtualHosts"}
+					},
+				"/phpMyAdmin": {
+						tpl : "html/phpMyAdmin.ect",
+						data : {module : "phpMyAdmin"}
 					}
 			}
 			
