@@ -41,17 +41,29 @@
 				],
 				rootFolder	: '/var/qalet'
 			};			
-			var vSetting = {
-				qaletP 		: "rap.shusipu.win",
-				subApp 		: "site_php_apache",
-				internalPort 	: 80,
-				proxyPort 	: 20001,
-				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
-			} 
-			var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhostsCFG);
-			fs.writeFile('/var/qalet/vhost_setting/vhost.conf', str, function(err){
-				res.send(str);
-			});
+			var CP = new pkg.crowdProcess(),_f = {}; 
+			_f['prepareFolder'] = function(cbk) {
+				var cmd = "mkdir -p /var/qalet/vhost_setting "
+				exec(cmd, 
+				     {maxBuffer: 1024 * 2048},
+				     function(error, stdout, stderr) {
+					let status = stdout.replace(/\r?\n|\r/g, '');
+					cbk(status);
+				});
+			}
+			_f['createConfigFile'] = function(cbk) {
+				var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhostsCFG);
+				fs.writeFile('/var/qalet/vhost_setting/vhost.conf', str, function(err){
+					cbk(true);
+				});
+			}
+			CP.serial(
+				_f,
+				function(data) {
+			   		res.send(data);
+			   	},
+			   	6000
+			);
 		}
 		this.addTask = function() {
 			var vhostsCFG = {
