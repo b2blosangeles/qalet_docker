@@ -14,6 +14,33 @@
 			res.end();			
 		}
 		this.addTask = function() {
+			var vhostsCFG = {
+				vhosts	: [
+					{
+						serverName	: 'www.shusiou.win', 
+						serverAlias	: 'shusiou.win',
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 10080
+					},
+					{
+						serverName	: 'ss1.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 10081
+					},
+					{
+						serverName	: 'ss1.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 10082
+					}
+				],
+				rootFolder	: '/var/qalet'
+			};			
 			var vSetting = {
 				qaletP 		: "rap.shusipu.win",
 				subApp 		: "site_php_apache",
