@@ -4,8 +4,8 @@ folder=/tmp/tasks
 for f in "$folder"/*; do
   if [ -f "$f" ]; then
     echo "Processing $f task..."
-    fn=SH$(($(date +%s%N)/1000000)).sh
-    cp -fr $f fn
+    fn=/tmp/SH$(($(date +%s%N)/1000000)).sh
+    cp -fr $f $fn
     sh $f
     rm -f $f
   fi
