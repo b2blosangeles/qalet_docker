@@ -1,6 +1,5 @@
 qaletP="<%-@rootFolder%>"
-
-
+$cmd_add_dockers=""
 <% for vhost in @vhosts : %>
 if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] && [ -d "$qaletP/admin" ]; then
    
@@ -23,8 +22,10 @@ if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] 
    sed "/echo _SITES_$subApp/d" $qaletP/master/bootup.sh  > /tmp/_SITES_$subApp_bootup.sh &&\
    mv /tmp/_SITES_$subApp_bootup.sh $qaletP/master/bootup.sh &&\
    echo $cmd_add_docker >> $qaletP/master/bootup.sh
-   eval $cmd_add_docker
+   
+   $cmd_add_dockers=$cmd_add_dockers; $cmd_add_docker
 else
    echo "NO folders ready"
 fi
 <% end %>
+echo $cmd_add_dockers
