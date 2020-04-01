@@ -48,10 +48,8 @@
 				proxyPort 	: 20001,
 				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
 			} 
-			// var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
-			var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
+			var str = pkg.tpl.render('tpl/dockerVirturehostProxyConfig.ect', vhostsCFG);
 			fs.writeFile('/var/qalet/vhost_setting/vhost.conf', str, function(err){
-				// var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
 				res.send(str);
 			});
 		}
