@@ -21,10 +21,11 @@
 				proxyPort 	: 20001,
 				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
 			} 
-			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
+			// var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
+			var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
 			fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
-				var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
-				res.send(str0);
+				// var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
+				res.send(str);
 			});
 		}
 		this.checkCodeUpdate = function() {
