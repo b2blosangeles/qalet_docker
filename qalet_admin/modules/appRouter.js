@@ -13,6 +13,11 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		this.addTask = function() {
+			var CP = new pkg.crowdProcess(),_f = {}; 
+			res.send('addTask');
+		
+		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			_f['checkUpdate'] = function(cbk) {
@@ -150,13 +155,16 @@
 					}
 			}
 			
-			var patt = new RegExp('/(checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(addTask|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'checkCodeUpdate':
 						me.checkCodeUpdate();
 						break;
+					case 'addTask':
+						me.addTask();
+						break;						
 					case 'vhost':
 						me.runScript(v[1]);
 						break;
