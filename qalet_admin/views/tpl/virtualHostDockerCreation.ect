@@ -1,3 +1,7 @@
+qaletP=<%-qaletP%>
+subApp=<%-subApp%>
+internalPort=<%-internalPort%>
+proxyPort=<%-proxyPort%>
 if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] && [ -d "$qaletP/admin" ]; then
    subApp="site_php_apache" &&\
    rm -fr $qaletP/sites/$subApp && mkdir -p $qaletP/sites/$subApp &&\
