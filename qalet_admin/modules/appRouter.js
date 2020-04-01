@@ -16,7 +16,7 @@
 		this.addTask = function() {
 			// var CP = new pkg.crowdProcess(),_f = {}; 
 			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
-			fs.writeFile('/tmp/qalet_task.sh', str, function(err){
+			fs.writeFile('/tmp/qalet_tasks/niu.sh', str, function(err){
 			    res.send(str);
 			});
 		}
