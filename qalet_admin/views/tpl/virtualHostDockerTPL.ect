@@ -1,18 +1,18 @@
 #!/bin/bash
 qaletP="<%-@rootFolder%>"
-mkdir -p $qaletP/proxy && mkdir -p $qaletP/sites && mkdir -p $qaletP/admin && mkdir -p $qaletP/master && mkdir -p $qaletP/gitHub
+mkdir -p ${qaletP}/proxy && mkdir -p ${qaletP}/sites && mkdir -p ${qaletP}/admin && mkdir -p ${qaletP}/master && mkdir -p ${qaletP}/gitHub
 
 cmd_add_dockers=""
 <% for vhost in @vhosts : %>
-if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] && [ -d "$qaletP/admin" ]; then
+if [ -d "${qaletP}/gitHub" ] && [ -d "${qaletP}/proxy" ] && [ -d "${qaletP}/master" ] && [ -d "${qaletP}/admin" ]; then
    
    subApp="<%-vhost.serverName%>"
    internalPort="<%-vhost.innerPort%>"
    proxyPort="<%-vhost.gatewayPort%>"
    gitHub="<%-vhost.gitHub%>"
 
-   rm -fr $qaletP/sites/$subApp && mkdir -p $qaletP/sites/${subApp} &&\
-   cd  $qaletP/sites/$subApp &&\
+   rm -fr ${qaletP}/sites/${subApp} && mkdir -p ${qaletP}/sites/${subApp} &&\
+   cd  ${qaletP}/sites/${subApp} &&\
    git clone ${gitHub} . &&\
    docker build -f Dockerfile -t "image-${subApp}" . \
 
