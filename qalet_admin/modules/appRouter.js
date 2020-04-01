@@ -96,21 +96,21 @@
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
 						innerPort	: 80,
 						gatewayIp	: '173.28.5.254',
-						gatewayPort: 10080
+						gatewayPort: 20001
 					},
 					{
 						serverName	: 'ss1.shusiou.win', 
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
 						innerPort	: 80,
 						gatewayIp	: '173.28.5.254',
-						gatewayPort: 10081
+						gatewayPort: 20010
 					},
 					{
 						serverName	: 'ss2.shusiou.win', 
 						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
 						innerPort	: 80,
 						gatewayIp	: '173.28.5.254',
-						gatewayPort: 10082
+						gatewayPort: 20020
 					}
 				],
 				rootFolder	: '/var/qalet'
