@@ -1,10 +1,14 @@
-qaletP="<%-@qaletP%>"
-subApp="<%-@subApp%>"
-internalPort="<%-@internalPort%>"
-proxyPort="<%-@proxyPort%>"
-gitHub="<%-@gitHub%>"
+qaletP="<%-@rootFolder%>"
 
+
+<% for vhost in @vhosts : %>
 if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] && [ -d "$qaletP/admin" ]; then
+   
+   subApp="<%-vhost.serverName%>"
+   internalPort="<%-vhost.innerPort%>"
+   proxyPort="<%-vhost.gatewayPort%>"
+   gitHub="<%-vhost.gitHub%>"
+
    subApp="site_php_apache" &&\
    rm -fr $qaletP/sites/$subApp && mkdir -p $qaletP/sites/$subApp &&\
    cd  $qaletP/sites/$subApp &&\
@@ -24,3 +28,4 @@ if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] 
 else
    echo "NO folders ready"
 fi
+<% end %>
