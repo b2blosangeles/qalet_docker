@@ -39,7 +39,7 @@
 						gatewayPort: 10082
 					}
 				],
-				rootFolder	: '/var/qalet'
+				rootFolder	: '/var/app_qalet'
 			};			
 			var vSetting = {
 				qaletP 		: "rap.shusipu.win",
