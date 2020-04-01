@@ -14,10 +14,15 @@
 			res.end();			
 		}
 		this.addTask = function() {
-			// var CP = new pkg.crowdProcess(),_f = {}; 
+			var vSetting = {
+				qaletP : "rap.shusipu.win",
+				subApp : "site_php_apache",
+				internalPort :80,
+				proxyPort : 20001
+			} 
 			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
 			fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
-				var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', {});
+				var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
 				res.send(str0);
 			});
 		}
