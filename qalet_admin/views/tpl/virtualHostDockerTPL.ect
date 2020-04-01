@@ -1,4 +1,6 @@
 qaletP="<%-@rootFolder%>"
+mkdir -p $qaletP/proxy && mkdir -p $qaletP/sites && mkdir -p $qaletP/admin && mkdir -p $qaletP/master && mkdir -p $qaletP/gitHub
+
 cmd_add_dockers=""
 <% for vhost in @vhosts : %>
 if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] && [ -d "$qaletP/admin" ]; then
