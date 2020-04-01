@@ -9,7 +9,6 @@ if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] 
    proxyPort="<%-vhost.gatewayPort%>"
    gitHub="<%-vhost.gitHub%>"
 
-   subApp="site_php_apache" &&\
    rm -fr $qaletP/sites/$subApp && mkdir -p $qaletP/sites/$subApp &&\
    cd  $qaletP/sites/$subApp &&\
    git clone <%-vhost.gitHub%> . &&\
