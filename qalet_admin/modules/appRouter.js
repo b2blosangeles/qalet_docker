@@ -13,10 +13,12 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.addTask = function(code) {
-			var CP = new pkg.crowdProcess(),_f = {}; 
-			res.send('addTask-' + code);
-		
+		this.addTask = function() {
+			// var CP = new pkg.crowdProcess(),_f = {}; 
+			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
+			fs.writeFile('/tmp/qalet_task.sh', str, function(err){
+			    cbk(str);
+			});
 		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
