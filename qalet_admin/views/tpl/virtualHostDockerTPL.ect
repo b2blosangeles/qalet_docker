@@ -26,6 +26,6 @@ if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] 
    cmd_add_dockers+="${cmd_add_docker} && "
 else
    echo "NO folders ready"
-fi &&\
+fi 
 <% end %>
 eval $cmd_add_dockers
