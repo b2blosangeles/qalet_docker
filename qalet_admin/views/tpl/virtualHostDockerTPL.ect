@@ -17,9 +17,9 @@ if [ -d "$qaletP/gitHub" ] && [ -d "$qaletP/proxy" ] && [ -d "$qaletP/master" ] 
 
    cmd_add_docker="echo _SITES_$subApp &> /dev/null; " &&\
    cmd_add_docker="${cmd_add_docker}docker container kill container-$subApp &> /dev/null ; " &&\
-   cmd_add_docker+="docker run -d --network=qalet_docker_network --rm -p <%-vhost.gatewayPort%>:<%-vhost.innerPort%> " &&\
-   cmd_add_docker+=" -v '$qaletP/sites/$subApp/www':/var/www/  " &&\
-   cmd_add_docker+=" --name container-$subApp image-$subApp " 
+   cmd_add_docker="${cmd_add_docker}docker run -d --network=qalet_docker_network --rm -p <%-vhost.gatewayPort%>:<%-vhost.innerPort%> " &&\
+   cmd_add_docker="${cmd_add_docker} -v '$qaletP/sites/$subApp/www':/var/www/  " &&\
+   cmd_add_docker="${cmd_add_docker} --name container-$subApp image-$subApp " 
    
    sed "/echo _SITES_$subApp/d" $qaletP/master/bootup.sh  > /tmp/_SITES_$subApp_bootup.sh &&\
    mv /tmp/_SITES_$subApp_bootup.sh $qaletP/master/bootup.sh &&\
