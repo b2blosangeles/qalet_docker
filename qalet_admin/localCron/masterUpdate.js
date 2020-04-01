@@ -15,7 +15,7 @@ console.log('End admin at : ' + new Date());
 
 var CP = new pkg.crowdProcess(),_f = {}; 
     _f['checkUpdate'] = function(cbk) {
-      var cmd = "cd " + env.rootPath + "/master/setup && " +
+      var cmd = "cd " + env.rootPath + "/gitHub && " +
       " if [ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref) | head -n1 | cut -f1) ]; then echo 'updated' ; else echo 'changed' ; fi"
       pkg.exec(cmd, 
            {maxBuffer: 1024 * 2048},
@@ -27,7 +27,7 @@ var CP = new pkg.crowdProcess(),_f = {};
     }
 
     _f['gitPull'] = function(cbk) {
-           var qaletFolderSetup= env.rootPath + "/master/setup";
+           var qaletFolderSetup= env.rootPath + "/gitHub";
            var qaletFolderAdmin= env.rootPath + "/admin";
            var qaletFolderProxy= env.rootPath + "/proxy";
            var cmd = "cd " + qaletFolderSetup + " && git pull && " + 
