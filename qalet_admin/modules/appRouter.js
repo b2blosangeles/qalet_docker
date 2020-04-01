@@ -17,7 +17,7 @@
 			// var CP = new pkg.crowdProcess(),_f = {}; 
 			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
 			fs.writeFile('/tmp/qalet_task.sh', str, function(err){
-			    cbk(str);
+			    res.send(str);
 			});
 		}
 		this.checkCodeUpdate = function() {
