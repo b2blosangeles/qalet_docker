@@ -17,7 +17,7 @@
 			// var CP = new pkg.crowdProcess(),_f = {}; 
 			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
 			fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
-				var str0 = pkg.tpl.render('tpl/virtualHostDockerCreation.ect', {});
+				var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', {});
 				res.send(str0);
 			});
 		}
