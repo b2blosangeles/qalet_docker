@@ -12,7 +12,6 @@ RUN apt-get install -y vim
 RUN npm install ect
 RUN npm install express
 
-RUN mkdir -p /var/qalet_tasks
 RUN echo "* * * * * root sh /var/qalet/admin/localCron/cronScript.sh >> /var/cronScript.sh.log" >> /etc/crontab
 ENTRYPOINT /etc/init.d/cron stop &&  cron && cd /var/qalet/admin/ && node index.js
 
