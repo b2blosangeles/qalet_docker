@@ -1,4 +1,5 @@
 #!/bin/bash
+
 mkdir -p /tmp/tasks
 folder=/tmp/tasks
 for f in "$folder"/*; do
