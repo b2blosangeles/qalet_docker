@@ -13,9 +13,9 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.addTask = function() {
+		this.addTask = function(code) {
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			res.send('addTask');
+			res.send('addTask-' + code);
 		
 		}
 		this.checkCodeUpdate = function() {
@@ -163,7 +163,7 @@
 						me.checkCodeUpdate();
 						break;
 					case 'addTask':
-						me.addTask();
+						me.addTask(v[1]);
 						break;						
 					case 'vhost':
 						me.runScript(v[1]);
