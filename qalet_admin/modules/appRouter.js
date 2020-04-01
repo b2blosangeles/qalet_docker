@@ -50,7 +50,7 @@
 			} 
 			// var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
 			var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
-			fs.writeFile('/var/vhost_setting/vhost.conf', str, function(err){
+			fs.writeFile('/var/qalet/vhost_setting/vhost.conf', str, function(err){
 				// var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
 				res.send(str);
 			});
@@ -243,7 +243,7 @@
 						break;
 						
 					case 'addHost':
-						me.addTask(v[1]);
+						me.addHost(v[1]);
 						break;
 					case 'addTask':
 						me.addTask(v[1]);
