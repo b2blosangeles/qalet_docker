@@ -15,10 +15,11 @@
 		}
 		this.addTask = function() {
 			var vSetting = {
-				qaletP : "rap.shusipu.win",
-				subApp : "site_php_apache",
-				internalPort :80,
-				proxyPort : 20001
+				qaletP 		: "rap.shusipu.win",
+				subApp 		: "site_php_apache",
+				internalPort 	: 80,
+				proxyPort 	: 20001,
+				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
 			} 
 			var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
 			fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
