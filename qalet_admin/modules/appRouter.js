@@ -13,6 +13,48 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		this.addHost = function() {
+			var vhostsCFG = {
+				vhosts	: [
+					{
+						serverName	: 'www.shusiou.win', 
+						serverAlias	: 'shusiou.win',
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 20001
+					},
+					{
+						serverName	: 'ss1.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 20010
+					},
+					{
+						serverName	: 'ss2.shusiou.win', 
+						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						innerPort	: 80,
+						gatewayIp	: '173.28.5.254',
+						gatewayPort: 20020
+					}
+				],
+				rootFolder	: '/var/qalet'
+			};			
+			var vSetting = {
+				qaletP 		: "rap.shusipu.win",
+				subApp 		: "site_php_apache",
+				internalPort 	: 80,
+				proxyPort 	: 20001,
+				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
+			} 
+			// var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
+			var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
+			fs.writeFile('/var/vhost_setting/vhost.conf', str, function(err){
+				// var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
+				res.send(str);
+			});
+		}
 		this.addTask = function() {
 			var vhostsCFG = {
 				vhosts	: [
@@ -198,6 +240,10 @@
 				switch (v[1]) {
 					case 'checkCodeUpdate':
 						me.checkCodeUpdate();
+						break;
+						
+					case 'addHost':
+						me.addTask(v[1]);
 						break;
 					case 'addTask':
 						me.addTask(v[1]);
