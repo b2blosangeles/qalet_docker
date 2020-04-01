@@ -31,6 +31,7 @@ var CP = new pkg.crowdProcess(),_f = {};
            var qaletFolderAdmin= env.rootPath + "/admin";
            var qaletFolderProxy= env.rootPath + "/proxy";
            var cmd = "cd " + qaletFolderSetup + " && git pull && " + 
+               "cp -rf " + qaletFolderSetup + "/tasksCron.sh " + env.rootPath + "/ && " +
                "cp -rf " + qaletFolderSetup + "/qalet_admin/. " + qaletFolderAdmin + "/ && rm -fr "+ qaletFolderAdmin + "/Dockerfile && " +
                "cp -rf " + qaletFolderSetup + "/docker-httpd-reverseproxy/. " + qaletFolderProxy +"/ && rm -fr "+ qaletFolderProxy + "/Dockerfile";
       pkg.exec(cmd, 
