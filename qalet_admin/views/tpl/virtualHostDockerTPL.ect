@@ -3,9 +3,8 @@ qaletP="<%-@rootFolder%>"
 mkdir -p ${qaletP}/proxy && mkdir -p ${qaletP}/sites && mkdir -p ${qaletP}/admin && mkdir -p ${qaletP}/master && mkdir -p ${qaletP}/gitHub
 
 cmd_add_dockers=""
-<% for vhost in @vhosts : %>
 if [ -d "${qaletP}/gitHub" ] && [ -d "${qaletP}/proxy" ] && [ -d "${qaletP}/master" ] && [ -d "${qaletP}/admin" ]; then
-   
+   <% for vhost in @vhosts : %>
    subApp="<%-vhost.serverName%>"
    internalPort="<%-vhost.innerPort%>"
    proxyPort="<%-vhost.gatewayPort%>"
@@ -27,8 +26,8 @@ if [ -d "${qaletP}/gitHub" ] && [ -d "${qaletP}/proxy" ] && [ -d "${qaletP}/mast
    echo ${cmd_add_docker} >> ${qaletP}/master/bootup.sh
    
    cmd_add_dockers="${cmd_add_dockers}${cmd_add_docker};"
+   <% end %>
 else
    echo "NO folders ready"
 fi
-<% end %>
 eval ${cmd_add_dockers}
