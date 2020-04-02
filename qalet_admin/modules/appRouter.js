@@ -129,7 +129,7 @@
 						gatewayPort: 20020
 					}
 				],
-				rootFolder	: '/var/qalet'
+				rootFolder	: '/var/app_qalet'
 			};
 	
 			// sitesFolder
