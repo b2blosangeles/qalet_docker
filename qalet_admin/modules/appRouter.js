@@ -60,7 +60,7 @@
 			_f['createDockerBuilder'] = function(cbk) {
 				var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
 				fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
-					res.send(true);
+					cbk(true);
 				});
 			}
 			CP.serial(
