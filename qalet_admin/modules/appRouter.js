@@ -26,7 +26,7 @@
 					},
 					{
 						serverName	: 'wwwe.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
+						gitHub		: 'https://github.com/b2blosangeles/test2.git',
 						innerPort	: 80,
 						gatewayIp	: '173.28.5.254',
 						gatewayPort: 20005
