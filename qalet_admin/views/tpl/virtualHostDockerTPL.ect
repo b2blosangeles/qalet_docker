@@ -27,7 +27,23 @@ if [ -d "${qaletP}/gitHub" ] && [ -d "${qaletP}/proxy" ] && [ -d "${qaletP}/mast
    
    cmd_add_dockers="${cmd_add_dockers}${cmd_add_docker};"
    <% end %>
+   
+   cmd_add_docker='echo _QLT_PROXY  &> /dev/null;' &&\
+   cmd_add_docker+='docker container kill container-httpd_reverseproxy; ' &&\
+   cmd_add_docker+='docker run -d --network=qalet_docker_network --rm -p 80:80 ' &&\
+   cmd_add_docker+=" -v '${qaletP}/proxy/virtualHostsConfig':/var/virtualHostsConfig " &&\
+   cmd_add_docker+=" -v '${qaletP}/vhost_setting':/var/vhost_setting " &&\
+   cmd_add_docker+=" -v '${qaletP}/proxy/defaultDocs':/var/proxyDefaultDocs " &&\
+   cmd_add_docker+=' --name container-httpd_reverseproxy image-httpd_reverseproxy ' &&\
+   sed '/echo _QLT_PROXY/d'  ${qaletP}/master/bootup.sh  > /tmp/master_bootup.sh &&\
+   mv /tmp/master_bootup.sh ${qaletP}/master/bootup.sh &&\
+   echo $cmd_add_docker >> ${qaletP}/master/bootup.sh 
+   cmd_add_dockers="${cmd_add_dockers}${cmd_add_docker};"  
+   
 else
    echo "NO folders ready"
 fi
 eval ${cmd_add_dockers}
+
+
+   
