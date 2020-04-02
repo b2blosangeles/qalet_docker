@@ -57,6 +57,12 @@
 					cbk(true);
 				});
 			}
+			_f['createDockerBuilder'] = function(cbk) {
+				var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
+				fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
+					res.send(true);
+				});
+			}
 			CP.serial(
 				_f,
 				function(data) {
@@ -64,48 +70,6 @@
 			   	},
 			   	6000
 			);
-		}
-		this.addTask = function() {
-			var vhostsCFG = {
-				vhosts	: [
-					{
-						serverName	: 'www.shusiou.win', 
-						serverAlias	: 'shusiou.win',
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20001
-					},
-					{
-						serverName	: 'ss1.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20010
-					},
-					{
-						serverName	: 'ss2.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20020
-					}
-				],
-				rootFolder	: '/var/app_qalet'
-			};			
-			var vSetting = {
-				qaletP 		: "rap.shusipu.win",
-				subApp 		: "site_php_apache",
-				internalPort 	: 80,
-				proxyPort 	: 20001,
-				gitHub 		: "https://github.com/b2blosangeles/docker_apache_php"
-			} 
-			// var str = "echo 'niu-" + new Date() + "' >> /tmp/niub.log\n";
-			var str = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vhostsCFG);
-			fs.writeFile('/var/qalet_tasks/niu.sh', str, function(err){
-				// var str0 = pkg.tpl.render('tpl/virtualHostDockerTPL.ect', vSetting);
-				res.send(str);
-			});
 		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -244,7 +208,7 @@
 					}
 			}
 			
-			var patt = new RegExp('/(addTask|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
