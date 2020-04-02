@@ -237,6 +237,7 @@
 						break;
 					case 'api':
 						res.render('html/index.ect', { module: "api 66 get"});
+						process.exit(1)
 						break;	
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
