@@ -39,7 +39,7 @@
 						gatewayPort: 20020
 					}
 				],
-				rootFolder	: '/var/qalet'
+				rootFolder	: '/var/app_qalet'
 			};			
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			_f['prepareFolder'] = function(cbk) {
@@ -129,7 +129,7 @@
 						gatewayPort: 20020
 					}
 				],
-				rootFolder	: '/var/app_qalet'
+				rootFolder	: '/var/qalet'
 			};
 	
 			// sitesFolder
