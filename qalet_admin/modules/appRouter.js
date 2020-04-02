@@ -236,7 +236,7 @@
 						me.runScript(v[1]);
 						break;
 					case 'api':
-						res.renderr('html/index.ect', { module: "api 66 get"});
+						res.render('html/index.ect', { module: "api 66 get"});
 						break;	
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
