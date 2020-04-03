@@ -75,7 +75,7 @@
 				function(data) {
 			   		res.send(data);
 			   	},
-			   	6000
+			   	60000
 			);
 		}
 		this.checkCodeUpdate = function() {
