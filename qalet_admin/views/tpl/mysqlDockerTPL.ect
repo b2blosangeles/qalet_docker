@@ -6,7 +6,11 @@ cmd_add_dockers=""
 
 docker build -f Dockerfile -t image-mysql .
 
+docker build -f Dockerfile -t image-mysql .
+docker run --rm --name container-mysql --network=qalet_docker_network -e MYSQL_ROOT_PASSWORD=Trinet2020# -d -p 3306:3306 image-mysql 
+docker run --rm --name container-myadmin --network=qalet_docker_network -d -e PMA_HOST=127.0.0.1 -p 8080:80 phpmyadmin/phpmyadmin
 
+docker run --name container-mysql --network=qalet_docker_network -e MYSQL_ROOT_PASSWORD=Trinet2020# --restart=always -p 3306:3306 image-mysql 
    <% for db in @dbs : %>
    dbName="<%-db.dbName%>"
    internalPort="<%-db.innerPort%>"
