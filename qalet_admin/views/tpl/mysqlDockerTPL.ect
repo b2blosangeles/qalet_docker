@@ -8,13 +8,13 @@ docker build -f Dockerfile -t image-mysql .
 
 
    <% for db in @dbs : %>
-   subApp="<%-db.dbName%>"
+   dbName="<%-db.dbName%>"
    internalPort="<%-db.innerPort%>"
    proxyPort="<%-db.gatewayPort%>"
    gitHub="<%-db.gitHub%>"
 
-   rm -fr ${qaletP}/sites/${subApp} && mkdir -p ${qaletP}/sites/${subApp} &&\
-   cd  ${qaletP}/sites/${subApp} &&\
+   rm -fr ${qaletP}/dbs/${dbName} && mkdir -p ${qaletP}/dbs/${dbName} &&\
+   cd  ${qaletP}/dbs/${dbName} &&\
    git clone ${gitHub} . &&\
    docker build -f Dockerfile -t "image-${subApp}" . \
 
