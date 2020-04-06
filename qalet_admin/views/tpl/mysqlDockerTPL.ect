@@ -16,11 +16,11 @@ docker build -f Dockerfile -t image-mysql .
    rm -fr ${qaletP}/dbs/${dbName} && mkdir -p ${qaletP}/dbs/${dbName} &&\
    cd  ${qaletP}/dbs/${dbName} &&\
    git clone ${gitHub} . &&\
-   docker build -f Dockerfile -t "image-${subApp}" . \
+   docker build -f ${qaletP}/dbs/${dbName}/Dockerfile -t "image-mysql-${dbName}" . \
 
-   cmd_add_docker="echo _SITES_${subApp} &> /dev/null; " &&\
-   cmd_add_docker="${cmd_add_docker}docker container kill container-${subApp}; " &&\
-   cmd_add_docker="${cmd_add_docker}docker container rm container-${subApp}; " &&\
+   cmd_add_docker="echo _SITES_${dbName} &> /dev/null; " &&\
+   cmd_add_docker="${cmd_add_docker}docker container kill container-db-${dbName}; " &&\
+   cmd_add_docker="${cmd_add_docker}docker container rm container-db-${dbName}; " &&\
    cmd_add_docker="${cmd_add_docker}docker run -d --network=qalet_docker_network --restart=always -p ${proxyPort}:${internalPort} " &&\
    cmd_add_docker="${cmd_add_docker} -v '${qaletP}/sites/${subApp}/www':/var/www/html  " &&\
    cmd_add_docker="${cmd_add_docker} --name container-${subApp} image-${subApp} " 
