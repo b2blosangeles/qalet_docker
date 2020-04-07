@@ -3,9 +3,10 @@
      <table class="table table-striped">
     <thead>
       <tr>
-        <th>Dervier Name</th>
+        <th>Server Name</th>
         <th>Github</th>
         <th>Port</th>
+        <th>Gateway Port</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
             <td><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></td>
             <td><%= vhost.gitHub%></td>
             <td><%= vhost.innerPort%></td>
+            <td><%= vhost.gatewayPort%></td>
             <td></td>
         </tr>
         <% end %>
