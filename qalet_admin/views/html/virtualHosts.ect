@@ -1,5 +1,19 @@
 <div class="body-template">
     <h3>QALET Admin <%-@module%></h3>
+     <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for vhost in @vhosts : %>
+        <tr><td><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></td></tr>
+        <% end %>
+    </tbody>
+  </table>
     <% for vhost in @vhosts : %>
         <li><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></li>
     <% end %>
