@@ -13,9 +13,7 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.addHost = function() {
-			var vhostsCFG = {
-				vhosts	: [
+		this.vhosts = [
 					{
 						serverName	: 'www.shusiou.win', 
 						serverAlias	: 'shusiou.win',
@@ -45,7 +43,11 @@
 						gatewayIp	: '173.28.5.254',
 						gatewayPort: 20020
 					}
-				],
+				];
+		this.addHost = function() {
+			var me = this;
+			var vhostsCFG = {
+				vhosts	: me.vhosts,
 				rootFolder	: '/var/app_qalet'
 			};			
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -207,7 +209,7 @@
 					},
 				"/virtualHosts": {
 						tpl : "html/virtualHosts.ect",
-						data : {module : "virtualHosts"}
+						data : {module : "virtualHosts", vhosts	: me.vhosts}
 					},
 				"/addVirtualHosting": {
 						tpl : "html/addVirtualHosting.ect",
