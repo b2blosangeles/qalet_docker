@@ -1,4 +1,6 @@
 <div class="body-template">
-    <h1>QALET Admin <%-@module%></h1>
-
+    <h3>QALET Admin <%-@module%></h3>
+    <% for vhost in @vhosts : %>
+        <li><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></li>
+    <% end %>
 </div>
