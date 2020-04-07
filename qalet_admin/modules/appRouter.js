@@ -14,35 +14,35 @@
 			res.end();			
 		}
 		this.vhosts = [
-					{
-						serverName	: 'www.shusiou.win', 
-						serverAlias	: 'shusiou.win',
-						gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20001
-					},
-					{
-						serverName	: 'wwwe.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20005
-					},
-					{
-						serverName	: 'ss1.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20010
-					},
-					{
-						serverName	: 'ss2.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20020
-					}
+			{
+				serverName	: 'www.shusiou.win', 
+				serverAlias	: 'shusiou.win',
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+				innerPort	: 80,
+				gatewayIp	: '173.28.5.254',
+				gatewayPort: 20001
+			},
+			{
+				serverName	: 'wwwe.shusiou.win', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+				innerPort	: 80,
+				gatewayIp	: '173.28.5.254',
+				gatewayPort: 20005
+			},
+			{
+				serverName	: 'ss1.shusiou.win', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+				innerPort	: 80,
+				gatewayIp	: '173.28.5.254',
+				gatewayPort: 20010
+			},
+			{
+				serverName	: 'ss2.shusiou.win', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+				innerPort	: 80,
+				gatewayIp	: '173.28.5.254',
+				gatewayPort: 20020
+			}
 				];
 		this.addHost = function() {
 			var me = this;
