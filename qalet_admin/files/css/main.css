@@ -4,6 +4,10 @@ body { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAA
 .error-actions .btn { margin-right:10px; }
 .error-color { color: red}
 
+.body-template {padding: 40px 15px;text-align: left;}
+.body-actions {margin-top:15px;margin-bottom:2em;}
+.body-actions .btn { margin-right:10px; }
+
 footer {
   position: absolute;
   margin: 0;
