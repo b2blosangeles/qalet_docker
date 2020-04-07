@@ -6,7 +6,7 @@
         <th>Server Name</th>
         <th>Github</th>
         <th>Port</th>
-        <th>Gateway Port</th>
+        <th>Gateway:Port</th>
         <th></th>
       </tr>
     </thead>
@@ -16,7 +16,7 @@
             <td><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></td>
             <td><%= vhost.gitHub%></td>
             <td><%= vhost.innerPort%></td>
-            <td><%= vhost.gatewayPort%></td>
+            <td><%= vhost.gatewayIp%>:<%= vhost.gatewayPort%></td>
             <td></td>
         </tr>
         <% end %>
