@@ -209,6 +209,10 @@
 						tpl : "html/virtualHosts.ect",
 						data : {module : "virtualHosts"}
 					},
+				"/addVirtualHosting": {
+						tpl : "html/addVirtualHosting.ect",
+						data : {module : "addVirtualHosting"}
+					},
 				"/phpMyAdmin": {
 						tpl : "html/phpMyAdmin.ect",
 						data : {module : "phpMyAdmin"}
