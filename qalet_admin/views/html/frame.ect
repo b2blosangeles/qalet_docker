@@ -20,6 +20,10 @@
                             <% include 'html/virtualHosts.ect' %>
                         <% end %>
                         
+                        <% when 'addVirtualHosting' : %>
+                            <% include 'html/addVirtualHosting.ect' %>
+                        <% end %>
+                        
                         <% when 'phpMyAdmin' : %>
                             <% include 'html/phpMyAdmin.ect' %>
                         <% end %>
