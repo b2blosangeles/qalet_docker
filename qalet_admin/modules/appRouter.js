@@ -256,6 +256,8 @@
 						me.runScript(v[1]);
 						break;
 					case 'api':
+						delete require.cache[__dirname + '/apiModule.js'];
+						var api  = require(__dirname + '/apiModule.js');
 						res.render('html/index.ect', { module: "api 66 get"});
 						break;	
 					case 'checkip':
