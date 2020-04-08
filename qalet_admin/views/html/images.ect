@@ -3,20 +3,16 @@
      <table class="table">
     <thead>
       <tr>
-        <th>Server Name</th>
+        <th>Image</th>
         <th>Github</th>
-        <th>Port</th>
-        <th>Gateway:Port</th>
         <th><a href="/addVirtualHosting"><button type="button" class="btn btn-warning"><i class="icon-plus-sign-alt"></i> Add</button></a></th>
       </tr>
     </thead>
     <tbody>
-        <% for vhost in @vhosts : %>
+        <% for image in @images : %>
         <tr>
-            <td><a href="<%- vhost.serverName %>"><%= vhost.serverName %></a></td>
-            <td><%= vhost.gitHub%></td>
-            <td><%= vhost.innerPort%></td>
-            <td><%= vhost.gatewayIp%>:<%= vhost.gatewayPort%></td>
+            <td><a href="<%- image.serverName %>"><%= image.code %></a></td>
+            <td><%= image.gitHub%></td>
             <td><a href="/addVirtualHosting"><button type="button" class="btn btn-warning"><i class="icon-edit"></i>  Edit</button></a</td>
         </tr>
         <% end %>
