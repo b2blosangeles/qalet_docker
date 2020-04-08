@@ -13,14 +13,10 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.images = [
+		this.dbs = [
 			{
-				code	: 'docker_apachePHP1', 
-				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git'
-			},
-			{
-				code	: 'docker_apachePHP2', 
-				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git'
+				code	: 'mysql', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_mysql.git'
 			}
 		];
 		this.vhosts = [
