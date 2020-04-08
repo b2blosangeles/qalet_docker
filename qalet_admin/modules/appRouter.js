@@ -211,6 +211,10 @@
 						tpl : "html/virtualHosts.ect",
 						data : {module : "virtualHosts", vhosts	: me.vhosts}
 					},
+				"/images": {
+						tpl : "html/images.ect",
+						data : {module : "images", vhosts	: me.vhosts}
+					},
 				"/addVirtualHosting": {
 						tpl : "html/addVirtualHosting.ect",
 						data : {module : "addVirtualHosting"}
