@@ -122,34 +122,6 @@
 		}
 		this.runScript = function(code) {
 			var me = this;
-			
-			var vhostsCFG = {
-				vhosts	: [
-					{
-						serverName	: 'www.shusiou.win', 
-						serverAlias	: 'shusiou.win',
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20001
-					},
-					{
-						serverName	: 'ss1.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20010
-					},
-					{
-						serverName	: 'ss2.shusiou.win', 
-						gitHub		: 'https://github.com/b2blosangeles/docker_apache_php.git',
-						innerPort	: 80,
-						gatewayIp	: '173.28.5.254',
-						gatewayPort: 20020
-					}
-				],
-				rootFolder	: '/var/qalet'
-			};
 	
 			// sitesFolder
 			let cmd = "mkdir -p /var/qalet/tasks/www.shusiou.win";
@@ -225,9 +197,9 @@
 						tpl : "html/images.ect",
 						data : {module : "images", images: me.images}
 					},
-				"/addVirtualHosting": {
-						tpl : "html/addVirtualHosting.ect",
-						data : {module : "addVirtualHosting"}
+				"/editVirtualHosting": {
+						tpl : "html/editVirtualHosting.ect",
+						data : {module : "editVirtualHosting"}
 					},
 				"/phpMyAdmin": {
 						tpl : "html/phpMyAdmin.ect",
