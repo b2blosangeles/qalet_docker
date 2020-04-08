@@ -16,7 +16,7 @@
 		this.dbs = [
 			{
 				code	: 'mysql', 
-				gitHub		: 'https://github.com/b2blosangeles/docker_mysql.git'
+				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git'
 			}
 		];
 		this.vhosts = [
