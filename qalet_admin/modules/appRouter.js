@@ -18,6 +18,11 @@
 				code	: 'mysql_prod', 
 				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git',
 				branch	: 'master'
+			},
+			{
+				code	: 'mysql_dev', 
+				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git',
+				branch	: 'dev'
 			}
 		];
 		this.vhosts = [
