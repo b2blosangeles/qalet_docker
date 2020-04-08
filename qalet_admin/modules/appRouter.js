@@ -13,6 +13,16 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
+		this.images = [
+			{
+				code	: 'docker_apachePHP1', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git'
+			},
+			{
+				code	: 'docker_apachePHP2', 
+				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git'
+			}
+		];
 		this.vhosts = [
 			{
 				serverName	: 'www.shusiou.win', 
@@ -213,7 +223,7 @@
 					},
 				"/images": {
 						tpl : "html/images.ect",
-						data : {module : "images", vhosts	: me.vhosts}
+						data : {module : "images", images: me.images}
 					},
 				"/addVirtualHosting": {
 						tpl : "html/addVirtualHosting.ect",
