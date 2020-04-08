@@ -8,32 +8,9 @@
 			var me = this;
 			switch(cmd) {
 				case 'getHostList':
-					me.getHostList();
+					// me.getHostList();
+					me.send404(req.params[0]);
 					break;					
-				case 'getDefaultLogs':
-					if (logger) {
-						logger.log('info', 'niu Hello distributed log files!');
-					}
-					me.getDefaultLogs();
-					break;	
-				case 'getLogs':
-					if (logger) {
-						logger.log('info', 'getLogs Hello distributed log files!');
-					}				
-					me.getLogs();
-					break;						
-				case 'viewLog':
-					me.viewLog(req.query.file);
-					break;
-
-				case 'viewVLog':
-					me.viewVLog(req.query.file);
-					break;
-					
-				case 'cleanLog':
-					me.cleanLog(req.query.file);
-					break;
-					
 				default:
 					me.send404(req.params[0]);
 			}			
@@ -164,19 +141,7 @@
 				},
 				1000
 			);
-		}
-		
-		this.cleanLog = function(v) {
-			if (typeof v == 'undefined') {
-				var v = 'tao_node.log';
-			}
-			pkg.exec('> /var/log/'+ v, function(error, stdout, stderr) {
-				pkg.exec('> ' + env.root_path+'/_log/'+ v, function(error, stdout, stderr) {
-					res.send({status:'success', message:'cleaned' + v});
-				});	
-			});			
-			
-		};		
+		}	
 		
 	};
 
