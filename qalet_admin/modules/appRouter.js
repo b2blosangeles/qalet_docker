@@ -17,12 +17,8 @@
 			{
 				code	: 'mysql_prod', 
 				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git',
-				branch	: 'master'
-			},
-			{
-				code	: 'mysql_dev', 
-				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git',
-				branch	: 'dev'
+				branch	: 'master',
+				rootpass: 'Trinet2020#'	
 			}
 		];
 		this.vhosts = [
