@@ -202,7 +202,7 @@
 					}
 			}
 			
-			var patt = new RegExp('/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)(\/.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
