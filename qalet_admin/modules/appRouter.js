@@ -223,7 +223,8 @@
 						me.runScript(v[1]);
 						break;
 					case 'api':
-						me.addDB();
+						res.render('html/frame.ect', {});
+						// me.addDB();
 						/*
 						delete require.cache[__dirname + '/apiModule.js'];
 						var api  = require(__dirname + '/apiModule.js');
