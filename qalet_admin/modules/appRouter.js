@@ -223,7 +223,7 @@
 						me.runScript(v[1]);
 						break;
 					case 'dbs':
-						res.render('html/frame.ect', {});
+						res.render('html/frame.ect', {module:'dbs'});
 						break;	
 					case 'api':
 						res.render('html/frame.ect', {});
