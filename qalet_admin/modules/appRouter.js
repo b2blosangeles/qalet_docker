@@ -157,7 +157,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.send(req.body);
+						// res.send(req.body);
 						res.writeHead(301,
 						  {Location: 'http://admin.shusiou.win/dbs'}
 						);
