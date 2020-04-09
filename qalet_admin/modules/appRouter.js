@@ -223,9 +223,12 @@
 						me.runScript(v[1]);
 						break;
 					case 'api':
+						me.addDB();
+						/*
 						delete require.cache[__dirname + '/apiModule.js'];
 						var api  = require(__dirname + '/apiModule.js');
 						res.render('html/frame.ect', { module: "api 66 get"});
+						*/
 						break;	
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
