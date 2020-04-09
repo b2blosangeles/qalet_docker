@@ -158,6 +158,10 @@
 				switch (v[1]) {
 					case 'api':
 						res.send(req.body);
+						res.writeHead(301,
+						  {Location: 'http://admin.shusiou.win/dbs'}
+						);
+						res.end();
 						break;
 					default:
 						res.send(req.body);
