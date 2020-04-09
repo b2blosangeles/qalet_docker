@@ -71,6 +71,21 @@
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
+			
+						res.send(req.body);
+			/*
+						var dt = {
+							dbName 	: req.body.dbName,
+							password: req.body.password
+						}
+						var fn = env.root + '/files' + req.params[0];
+						
+						res.writeHead(301,
+						  {Location: 'http://admin.shusiou.win/dbs'}
+						);
+						res.end();			
+			*/
+			
 			_f['checkUpdate'] = function(cbk) {
 				cbk(true);
 			}
@@ -157,11 +172,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						// res.send(req.body);
-						res.writeHead(301,
-						  {Location: 'http://admin.shusiou.win/dbs'}
-						);
-						res.end();
+						me.addDB();
 						break;
 					default:
 						res.send(req.body);
