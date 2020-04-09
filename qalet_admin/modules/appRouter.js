@@ -68,6 +68,25 @@
 			   	60000
 			);
 		}
+		this.showDbs = function() {
+			var me = this;
+			var CP = new pkg.crowdProcess(),_f = {}; 
+			_f['checkUpdate'] = function(cbk) {
+				cbk(true);
+			}
+			_f['build'] = function(cbk) {
+				cbk(true);
+			}
+			CP.serial(
+				_f,
+				function(data) {
+					res.render('html/frame.ect', {module:'dbs', 
+						dbs : me.dbs,		      
+						data : JSON.stringify(data)});
+			   	},
+			   	6000
+			);
+		}
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -235,7 +254,7 @@
 						me.runScript(v[1]);
 						break;
 					case 'dbs':
-						me.addDB();
+						me.showDbs();
 						break;	
 					case 'api':
 						res.render('html/frame.ect', {});
