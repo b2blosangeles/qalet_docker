@@ -15,8 +15,8 @@
         <tr>
             <td><a href="<%- db.serverName %>"><%= db.serverName %></a></td>
             <td><%= db.gitHub%></td>
-            <td><%= db.innerPort%></td>
-            <td><%= db.gatewayIp%>:<%= db.gatewayPort%></td>
+            <td><%= db.port%></td>
+            <td><%= db.gatewayIp%>:<%= db.port%></td>
             <td><a href="/addVirtualHosting"><button type="button" class="btn btn-warning"><i class="icon-edit"></i>  Edit</button></a</td>
         </tr>
         <% end %>
