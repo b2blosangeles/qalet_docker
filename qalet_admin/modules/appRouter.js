@@ -157,16 +157,11 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.render('html/index.ect', { module: "API"});
-						break;
-					case 'package':
-						res.render('html/index.ect', { module: "package"});
-						break;
-					case 'cms':
-						res.render('html/index.ect', { module: "package"});
+						res.send(req.body);
 						break;
 					default:
-						res.render('html/index.ect', { module: "Others"});
+						res.send(req.body);
+					//	res.render('html/index.ect', { module: "Others"});
 				}		
 			} else {
 				res.render('html/page404.ect');
