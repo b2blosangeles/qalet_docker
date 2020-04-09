@@ -11,6 +11,7 @@ RUN apt-get install -y vim
 # --- http://ectjs.com/ ---
 RUN npm install ect
 RUN npm install express
+RUN npm install body-parser
 
 RUN echo "* * * * * root sh /var/qalet/admin/localCron/cronScript.sh >> /var/cronScript.sh.log" >> /etc/crontab
 ENTRYPOINT /etc/init.d/cron stop &&  cron && cd /var/qalet/admin/ && node index.js
