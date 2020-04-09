@@ -202,7 +202,7 @@
 					}
 			}
 			
-			var patt = new RegExp('/(addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)/(.+|)', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
@@ -222,6 +222,9 @@
 					case 'startup':
 						me.runScript(v[1]);
 						break;
+					case 'dbs':
+						res.render('html/frame.ect', {});
+						break;	
 					case 'api':
 						res.render('html/frame.ect', {});
 						// me.addDB();
