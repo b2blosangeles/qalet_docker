@@ -152,7 +152,7 @@
 		
 		this.post = function() {
 			var me = this, p = req.params[0];
-			var patt = new RegExp('/(api|package|cms)/(.+|)', 'i');
+			var patt = new RegExp('/(api|package|cms)(\/.+|\/|)$', 'i');
 			var v = p.match(patt);
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
