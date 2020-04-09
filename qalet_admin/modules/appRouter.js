@@ -68,6 +68,23 @@
 			   	60000
 			);
 		}
+		this.addDB = function() {
+			var me = this;
+			var CP = new pkg.crowdProcess(),_f = {}; 
+			_f['checkUpdate'] = function(cbk) {
+				cbk(true);
+			}
+			_f['build'] = function(cbk) {
+				cbk(true);
+			}
+			CP.serial(
+				_f,
+				function(data) {
+			   		res.send(data);
+			   	},
+			   	6000
+			);
+		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			_f['checkUpdate'] = function(cbk) {
