@@ -80,7 +80,9 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.render('html/frame.ect', {module:'dbs', data : JSON.stringify(data)});
+					res.render('html/frame.ect', {module:'dbs', 
+						dbs : me.dbs,		      
+						data : JSON.stringify(data)});
 			   	},
 			   	6000
 			);
