@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var ECT = require('ect');
+var bodyParser = require('body-parser');
+
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }),
        crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
@@ -11,6 +13,11 @@ var env = {
 }
 // app.set('view engine', 'ect');
 app.engine('ect', pkg.tpl.render);
+
+app.use(bodyParser.json() );       // to support JSON-encoded bodies
+	app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+	  extended: true
+	})); 
 
 app.all('*', function(req, res, next) {
        res.header("Access-Control-Allow-Origin", "*");
