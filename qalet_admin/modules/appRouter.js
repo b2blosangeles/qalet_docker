@@ -190,9 +190,9 @@
 						tpl : "html/virtualHosts.ect",
 						data : {module : "virtualHosts", vhosts	: me.vhosts}
 					},
-				"/images": {
-						tpl : "html/images.ect",
-						data : {module : "images", images: me.images}
+				"/addMySQLDB": {
+						tpl : "html/addMySQLDB.ect",
+						data : {module : "addMySQLDB"}
 					},
 				"/editVirtualHosting": {
 						tpl : "html/editVirtualHosting.ect",
