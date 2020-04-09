@@ -80,7 +80,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-			   		res.send(data);
+					res.render('html/frame.ect', {module:'dbs', data : JSON.stringify(data)});
 			   	},
 			   	6000
 			);
@@ -223,11 +223,11 @@
 						me.runScript(v[1]);
 						break;
 					case 'dbs':
-						res.render('html/frame.ect', {module:'dbs'});
+						me.addDB();
 						break;	
 					case 'api':
 						res.render('html/frame.ect', {});
-						// me.addDB();
+						me.addDB();
 						/*
 						delete require.cache[__dirname + '/apiModule.js'];
 						var api  = require(__dirname + '/apiModule.js');
