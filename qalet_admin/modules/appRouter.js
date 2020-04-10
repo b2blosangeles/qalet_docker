@@ -94,7 +94,7 @@
 			return true;
 			
 			_f['prepare_folder'] = function(cbk) {
-				var cmd = 'mkdir -p ' + env.root + '/db_setting';
+				var cmd = 'mkdir -p ' + env.baseDir + '/db_setting';
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
@@ -103,7 +103,7 @@
 			}
 			
 			_f['savefile'] = function(cbk) {
-				fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(req.body), (err) => {
+				fs.writeFile(env.baseDir + '/db_setting/dbs.json', JSON.stringify(req.body), (err) => {
 				  cbk(true);
 				});
 			}
