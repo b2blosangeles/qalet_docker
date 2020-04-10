@@ -109,7 +109,8 @@
 				function(data) {
 					res.render('html/frame.ect', {module:'dbs', 
 						dbs : me.dbs,		      
-						data : JSON.stringify(data)});
+						data : JSON.stringify(data)
+					});
 			   	},
 			   	6000
 			);
