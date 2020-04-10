@@ -92,7 +92,7 @@
 			var CP = new pkg.crowdProcess(),_f = {}; 
 
 			_f['prepare_folder'] = function(cbk) {
-				var cmd = 'mkdir -p ' + env.baseDir + '/db_setting';
+				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
