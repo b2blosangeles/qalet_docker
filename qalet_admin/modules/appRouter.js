@@ -110,6 +110,7 @@
 				  cbk(true);
 				});
 			}
+			/*
 			CP.serial(
 				_f,
 				function(data) {
@@ -120,6 +121,7 @@
 			   	},
 			   	6000
 			);
+			*/
 		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
