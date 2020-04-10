@@ -71,18 +71,21 @@
 		this.showDbs = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			_f['checkUpdate'] = function(cbk) {
-				cbk(true);
-			}
-			_f['build'] = function(cbk) {
-				cbk(true);
+			_f['checkDbs'] = function(cbk) {
+				var fn = env.adminFolder + '/files' + req.params[0];
+				var dbs=[];
+				try {
+					dbs = require(env.root + '/db_setting/dbs.json');
+				} catch(e) {
+					
+				} 
+				cbk(dbs);
 			}
 			CP.serial(
 				_f,
 				function(data) {
 					res.render('html/frame.ect', {module:'dbs', 
-						dbs : me.dbs,		      
-						data : JSON.stringify(data)});
+						dbs : CP.data.checkDbs});
 			   	},
 			   	6000
 			);
