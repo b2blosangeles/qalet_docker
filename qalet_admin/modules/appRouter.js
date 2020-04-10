@@ -90,9 +90,7 @@
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			
-			res.send(env.baseDir);
-			return true;
+
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.baseDir + '/db_setting';
 				exec(cmd, 
