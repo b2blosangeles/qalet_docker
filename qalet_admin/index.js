@@ -9,7 +9,7 @@ var pkg = {
        crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
 }
 var env = {
-       baseDir       : path.join(__dirname, '../..'),
+       baseDir       : path.join(__dirname, '..'),
        root          : __dirname,
        idx           : 0
 }
