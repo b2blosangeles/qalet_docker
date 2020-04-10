@@ -95,7 +95,7 @@
 						dbs : me.dbs,		      
 						data : JSON.stringify(data)
 					});
-			
+			/*
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
@@ -105,7 +105,7 @@
 				});
 				
 			}
-			/*
+			
 			_f['savefile'] = function(cbk) {
 				fs.writeFile(env.root + '/db_setting/dbs.json", JSON.stringify(req.body), (err) => {
 				  cbk(true);
