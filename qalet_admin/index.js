@@ -2,13 +2,14 @@ var express = require('express');
 var app = express();
 var ECT = require('ect');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }),
        crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
 }
 var env = {
-       root   : __dirname,
+       root   : path.join(__dirname, '../..'),
        idx    : 0
 }
 // app.set('view engine', 'ect');
