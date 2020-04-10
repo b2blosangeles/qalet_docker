@@ -91,11 +91,11 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-					res.render('html/frame.ect', {module:'dbs', 
-						dbs : me.dbs,		      
-						data : JSON.stringify(data)
-					});
-			/*
+			res.render('html/frame.ect', {module:'dbs', 
+				dbs : me.dbs,		      
+				data : JSON.stringify(data)
+			});
+			
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
@@ -103,9 +103,8 @@
 				     function(error, stdout, stderr) {
 					cbk(true);
 				});
-				
 			}
-			
+			/*
 			_f['savefile'] = function(cbk) {
 				fs.writeFile(env.root + '/db_setting/dbs.json", JSON.stringify(req.body), (err) => {
 				  cbk(true);
