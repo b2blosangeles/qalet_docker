@@ -105,12 +105,13 @@
 				});
 				
 			}
+			/*
 			_f['savefile'] = function(cbk) {
 				fs.writeFile(env.root + '/db_setting/dbs.json", JSON.stringify(req.body), (err) => {
 				  cbk(true);
 				});
 			}
-			/*
+			
 			CP.serial(
 				_f,
 				function(data) {
