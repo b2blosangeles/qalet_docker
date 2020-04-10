@@ -9,8 +9,8 @@ var pkg = {
        crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
 }
 var env = {
-       baseDir       : path.join(__dirname, '..'),
-       root          : __dirname,
+       root       : path.join(__dirname, '..'),
+       adminFolder         : __dirname,
        idx           : 0
 }
 // app.set('view engine', 'ect');
