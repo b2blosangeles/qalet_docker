@@ -91,13 +91,13 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-						res.render('html/frame.ect', {module:'dbs', 
+					res.render('html/frame.ect', {module:'dbs', 
 						dbs : me.dbs,		      
 						data : JSON.stringify(data)
 					});
-			/*
+			
 			_f['prepare_folder'] = function(cbk) {
-				var cmd = 'mkdir -p ' + env.root + '/db_setting'
+				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
@@ -119,7 +119,7 @@
 					});
 			   	},
 			   	6000
-			);*/
+			);
 		}
 		this.checkCodeUpdate = function() {
 			var CP = new pkg.crowdProcess(),_f = {}; 
