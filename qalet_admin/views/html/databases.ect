@@ -13,7 +13,7 @@
     <tbody>
         <% for db in @dbs : %>
         <tr>
-            <td><a href="<%- db.serverName %>"><%= db.serverName %></a></td>
+            <td><a href="<%- db.dbName %>"><%= db.dbName %></a></td>
             <td><%= db.gitHub%></td>
             <td><%= db.port%></td>
             <td><%= db.gatewayIp%>:<%= db.port%></td>
