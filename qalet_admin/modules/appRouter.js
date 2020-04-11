@@ -114,10 +114,15 @@
 			CP.serial(
 				_f,
 				function(data) {
+					res.writeHead(301,
+					  {Location: 'http://admin.shusiou.win/dbs'}
+					);
+					res.end();
+										/*
 					res.render('html/frame.ect', {module:'dbs', 
 						dbs : me.dbs,		      
 						data : JSON.stringify(data)
-					});
+					});*/
 			   	},
 			   	6000
 			);
