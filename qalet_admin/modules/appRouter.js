@@ -104,9 +104,18 @@
 			}
 			
 			_f['savefile'] = function(cbk) {
-				var data = req.body;
-				data.gitHub = 'https://github.com/b2blosangeles/docker_mysql.git';
-				fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify([data]), (err) => {
+				var dt = req.body;
+				dt.gitHub = 'https://github.com/b2blosangeles/docker_mysql.git';
+				var data = [];
+				try {
+					delete require.cache[env.root + '/db_setting/dbs.json'];
+					data = require(env.root + '/db_setting/dbs.json');
+				} catch(e) {
+					
+				} 				
+				data.push(dt);
+				
+				fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
 				  cbk(true);
 				});
 			}
