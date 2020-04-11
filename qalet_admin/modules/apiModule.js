@@ -9,7 +9,7 @@
 			
 			res.send('Test');
 			return true;
-			/*
+			
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
@@ -35,7 +35,7 @@
 				  cbk(true);
 				});
 			}
-			
+			/*
 			CP.serial(
 				_f,
 				function(data) {
