@@ -7,7 +7,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-			res.send('Test');
+			res.send('Test 2');
 			return true;
 			
 			_f['prepare_folder'] = function(cbk) {
