@@ -1,7 +1,5 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		var fs = require('fs');
-		var exec = require('child_process').exec;
 		
 		this.do = function(cmd, spacename) {
 			res.send(env);
@@ -12,7 +10,7 @@
 		
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
-				exec(cmd, 
+				pkg.exec(cmd, 
 				     {maxBuffer: 1024 * 2048},
 				     function(error, stdout, stderr) {
 					cbk(true);
@@ -31,7 +29,7 @@
 				} 				
 				data.push(dt);
 				
-				fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
+				pkg.fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
 				  cbk(true);
 				});
 			}
