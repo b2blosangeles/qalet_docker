@@ -160,7 +160,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.send(__dirname + '/apiModule.js');
+						res.send(__dirname + '/==apiModule.js');
 						break;
 						delete require.cache[__dirname + '/apiModule.js'];
 						var API  = require(__dirname + '/apiModule.js');
