@@ -6,7 +6,9 @@ var path = require('path');
 
 var pkg = {
        tpl : ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }),
-       crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
+       crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
+       exec : require('child_process').exec,
+       fs   : require('fs')
 }
 var env = {
        root       : path.join(__dirname, '..'),
