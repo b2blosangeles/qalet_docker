@@ -7,7 +7,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-			res.send('Test 2');
+			res.send('Test 3');
 			return true;
 			
 			_f['prepare_folder'] = function(cbk) {
@@ -35,7 +35,7 @@
 				  cbk(true);
 				});
 			}
-			/*
+			
 			CP.serial(
 				_f,
 				function(data) {
@@ -46,7 +46,7 @@
 			   	},
 			   	6000
 			);
-			*/
+			
 		}
 	};
 
