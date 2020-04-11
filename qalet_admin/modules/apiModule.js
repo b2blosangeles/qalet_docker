@@ -1,9 +1,6 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		
-		this.do = function(cmd, spacename) {
-			res.send(env);
-		}
 		this.removeDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
