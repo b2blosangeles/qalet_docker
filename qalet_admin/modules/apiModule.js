@@ -1,15 +1,15 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
+		var fs = require('fs');
+		var exec = require('child_process').exec;
+		
 		this.do = function(cmd, spacename) {
 			res.send(env);
 		}
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			
-			res.send('Test 3');
-			return true;
-			
+		
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
