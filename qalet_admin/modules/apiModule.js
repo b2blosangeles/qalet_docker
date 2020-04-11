@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		
-		this.removeDB = function() {
+		this.removeDB = function(code) {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 		
@@ -15,17 +15,17 @@
 			}
 			
 			_f['savefile'] = function(cbk) {
-				var dt = req.body;
-				dt.gitHub = 'https://github.com/b2blosangeles/docker_mysql.git';
-				var data = [];
+				var data = [], dt = [];
 				try {
 					delete require.cache[env.root + '/db_setting/dbs.json'];
-					data = require(env.root + '/db_setting/dbs.json');
-				} catch(e) {
-					
-				} 				
-				data.push(dt);
+					dt = require(env.root + '/db_setting/dbs.json');
+				} catch(e) {} 	
 				
+				for (var i = 0; i < dt.length; i++) {
+					if (dt[i].code != code) {
+						data.push(dt[i]);
+					}
+				}
 				pkg.fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
 				  cbk(true);
 				});
