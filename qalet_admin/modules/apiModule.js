@@ -1,5 +1,5 @@
 (function () { 
-	var obj =  function (pkg, env, req, res) {
+	var obj =  function (env, pkg, req, res) {
 		this.do = function(cmd, spacename) {
 			res.send(env);
 		}
