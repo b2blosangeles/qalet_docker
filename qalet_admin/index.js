@@ -41,8 +41,6 @@ app.get(/(.+)$/i, function (req, res){
 });
 
 app.post(/(.+)$/i, function (req, res){
-       res.send('--POST--');
-       return true;
    try {
            delete require.cache[__dirname + '/modules/appRouter.js'];
            var router  = require(__dirname + '/modules/appRouter.js');
