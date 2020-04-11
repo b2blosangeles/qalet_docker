@@ -231,6 +231,8 @@
 						me.showDbs();
 						break;	
 					case 'api':
+						res.send(__dirname + '-/apiModule.js');
+						break;
 						res.render('html/frame.ect', {});
 						me.addDB();
 						/*
