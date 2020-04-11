@@ -72,7 +72,6 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			_f['checkDbs'] = function(cbk) {
-				var fn = env.adminFolder + '/files' + req.params[0];
 				var dbs=[];
 				try {
 					dbs = require(env.root + '/db_setting/dbs.json');
