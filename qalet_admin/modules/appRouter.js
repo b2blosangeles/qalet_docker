@@ -74,6 +74,7 @@
 			_f['checkDbs'] = function(cbk) {
 				var dbs=[];
 				try {
+					delete require.cache[env.root + '/db_setting/dbs.json'];
 					dbs = require(env.root + '/db_setting/dbs.json');
 				} catch(e) {
 					
@@ -83,9 +84,8 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send(data);
-					// res.render('html/frame.ect', {module:'dbs', 
-					//	dbs : CP.data.checkDbs});
+					res.render('html/frame.ect', {module:'dbs', 
+						dbs : CP.data.checkDbs});
 			   	},
 			   	6000
 			);
