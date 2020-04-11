@@ -207,7 +207,7 @@
 			if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'api':
-						res.senc(__dirname + '/modules/apiRouter.js');
+						res.send(__dirname + '/modules/apiRouter.js');
 						break;
 						delete require.cache[__dirname + '/modules/apiRouter.js'];
 						var API  = require(__dirname + '/modules/apiRouter.js');
