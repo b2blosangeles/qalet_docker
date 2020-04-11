@@ -83,7 +83,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send('CP.data.checkDbs--');
+					res.send(data);
 					// res.render('html/frame.ect', {module:'dbs', 
 					//	dbs : CP.data.checkDbs});
 			   	},
