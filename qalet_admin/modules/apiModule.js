@@ -6,7 +6,8 @@
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-
+			res.send('---.addDB--');	
+			/*
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				exec(cmd, 
@@ -40,15 +41,10 @@
 					  {Location: 'http://admin.shusiou.win/dbs'}
 					);
 					res.end();
-										/*
-					res.render('html/frame.ect', {module:'dbs', 
-						dbs : me.dbs,		      
-						data : JSON.stringify(data)
-					});*/
 			   	},
 			   	6000
 			);
-			
+			*/
 		}
 	};
 
