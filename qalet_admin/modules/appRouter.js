@@ -165,7 +165,11 @@
 						var api = new API(env, pkg, req, res);
 						res.send(v);
 						break;
-						api.addDB();
+						if (v.cmd === 'add') {
+							api.addDB();
+						} else {
+							api.removeDB();
+						}
 						break;
 					default:
 						res.send(req.body);
