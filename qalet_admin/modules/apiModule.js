@@ -46,8 +46,7 @@
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			res.send({})
-			return true;
+			
 			_f['prepare_folder'] = function(cbk) {
 				var cmd = 'mkdir -p ' + env.root + '/db_setting';
 				pkg.exec(cmd, 
@@ -77,10 +76,13 @@
 			CP.serial(
 				_f,
 				function(data) {
+					res.send(data);
+					/*
 					res.writeHead(301,
 					  {Location: 'http://admin.shusiou.win/dbs'}
 					);
 					res.end();
+					*/
 			   	},
 			   	6000
 			);
