@@ -16,11 +16,14 @@
                             <% include 'html/about.ect' %>
                         <% end %>
  
+                         <script src="/js/dbs.js"></script>
                          <% when 'dbs' : %>
-                            <script src="/js/dbs.js"></script>
                             <!--iframe src="http://localhost:8080/"></iframe-->
                             <%-@data%>
                             <% include 'html/databases.ect' %>
+                        <% end %>
+                        <% when 'addMySQLDB' : %>
+                            <% include 'html/addMySQLDB.ect' %>
                         <% end %>
                         
                         <% when 'virtualHosts' : %>
@@ -35,9 +38,7 @@
                             <% include 'html/phpMyAdmin.ect' %>
                         <% end %>
                         
-                        <% when 'addMySQLDB' : %>
-                            <% include 'html/addMySQLDB.ect' %>
-                        <% end %>
+
                         
                     <% end %>
                 </div>
