@@ -38,3 +38,22 @@ $(document).ready(function(){
     }
     
 });
+
+$(document).ready(function(){
+    _qalet.removeDB = function(code) {
+        $.ajax({
+          type: "POST",
+          url: '/api/addMySQLDB',
+          data: {code : code},
+          success: function(data) {
+              window.location.href = '/dbs'
+          },
+          error: function(errMsg) {
+            alert('failure');
+          },
+          dataType: 'json'
+        });
+       
+    }
+    
+});
