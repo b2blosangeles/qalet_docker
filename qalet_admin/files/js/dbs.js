@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    console.log('welcome dbs.js');
+    alert('welcome dbs.js');
 });
