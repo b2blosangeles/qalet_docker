@@ -30,7 +30,7 @@ $(document).ready(function(){
               console.log('--A--');
              alert(JSON.stringify(data));
           },
-          failure: function(errMsg) {
+          error: function(errMsg) {
               console.log('--B--');
             alert('failure');
           },
