@@ -1,6 +1,5 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		/*
 		this.removeDB = function(code) {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -42,7 +41,7 @@
 			   	6000
 			);
 			
-		}	*/	
+		}		
 		this.addDB = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -76,6 +75,7 @@
 			CP.serial(
 				_f,
 				function(data) {
+					data.status = 'failure';
 					res.send(data);
 					/*
 					res.writeHead(301,
