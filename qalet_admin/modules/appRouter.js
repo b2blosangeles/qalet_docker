@@ -205,7 +205,7 @@
 					}
 			}
 			
-			var patt = new RegExp('/^\/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)(\/.+|)', 'i');
+			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)(\/.+|)', 'i');
 			var v = p.match(patt);
 			res.send(v);
 			return true;
