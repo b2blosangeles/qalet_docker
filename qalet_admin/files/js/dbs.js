@@ -24,7 +24,7 @@ $(document).ready(function(){
         console.log(formData);
         $.ajax({
           type: "POST",
-          url: '/api/addMySQLDB',
+          url: 'http://asd.asd/api/addMySQLDB',
           data: formData,
           success: function(data) {
               console.log('--A--');
