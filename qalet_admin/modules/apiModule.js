@@ -45,9 +45,6 @@
 		}	*/	
 		this.addDB = function() {
 			var me = this;
-			res.send({});
-			return true;
-			
 			var CP = new pkg.crowdProcess(),_f = {}; 
 		
 			_f['prepare_folder'] = function(cbk) {
