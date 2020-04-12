@@ -1,5 +1,6 @@
+if (!_qalet) var _qalet = {};
 $(document).ready(function(){
-    function submitAddDB() {
+    _qalet.submitAddDB = function() {
         alert('welcome dbs.js');
     }
     
