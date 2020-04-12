@@ -13,11 +13,11 @@
     <tbody>
         <% for db in @dbs : %>
         <tr>
-            <td><a href="<%- db.dbName %>"><%= db.dbName %></a></td>
+            <td><a href="<%- db.code %>"><%= db.code %></a></td>
             <td><%= db.gitHub%></td>
             <td><%= db.port%></td>
             <td><%= db.gatewayIp%>:<%= db.port%></td>
-            <td><a href="/addVirtualHosting"><button type="button" class="btn btn-warning"><i class="icon-edit"></i>  Edit</button></a</td>
+            <td><a href="/addVirtualHosting"><button type="button" class="btn btn-warning" onClick="_qalet.removeDB('<%- db.code %>')"><i class="icon-edit"></i>  Delete</button></a</td>
         </tr>
         <% end %>
     </tbody>
