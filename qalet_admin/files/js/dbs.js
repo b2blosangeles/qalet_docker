@@ -27,9 +27,11 @@ $(document).ready(function(){
           url: '/api/addMySQLDB',
           data: formData,
           success: function(data) {
+              console.log('--A--');
              alert(JSON.stringify(data));
           },
           failure: function(errMsg) {
+              console.log('--B--');
             alert('failure');
           },
           dataType: 'json'
