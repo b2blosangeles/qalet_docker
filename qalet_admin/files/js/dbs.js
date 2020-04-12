@@ -2,7 +2,6 @@ if (!_qalet) var _qalet = {};
 
 (function ($) {
     $.fn.serializeFormJSON = function () {
-
         var o = {};
         var a = this.serializeArray();
         $.each(a, function () {
@@ -22,8 +21,19 @@ if (!_qalet) var _qalet = {};
 $(document).ready(function(){
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();
-        console.log(formData);
-        alert('welcome dbs.js');
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: formData,
+          success: function(data) {
+             alert(JSON.stringify(data));
+          },
+          failure: function(errMsg) {
+            alert('failure');
+          },
+          dataType: 'json'
+        });
+       
     }
     
 });
