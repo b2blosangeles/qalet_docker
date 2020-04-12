@@ -22,6 +22,8 @@ $(document).ready(function(){
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();
         formData.cmd = 'add';
+        console.log(formData);
+        console.log('-===formData===>');
         $.ajax({
           type: "POST",
           url: '/api/addMySQLDB',
