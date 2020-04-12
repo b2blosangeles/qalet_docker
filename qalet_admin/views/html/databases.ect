@@ -17,7 +17,11 @@
             <td><%= db.gitHub%></td>
             <td><%= db.port%></td>
             <td><%= db.gatewayIp%>:<%= db.port%></td>
-            <td><a href="/addVirtualHosting"><button type="button" class="btn btn-warning" onClick="_qalet.removeDB('<%- db.code %>')"><i class="icon-edit"></i>  Delete</button></a</td>
+            <td>
+                <button type="button" class="btn btn-warning" onClick="_qalet.removeDB('<%- db.code %>')">
+                    <i class="icon-edit"></i>  Delete
+                </button>
+            </td>
         </tr>
         <% end %>
     </tbody>
