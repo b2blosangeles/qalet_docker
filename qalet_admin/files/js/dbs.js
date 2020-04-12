@@ -37,9 +37,6 @@ $(document).ready(function(){
        
     }
     
-});
-
-$(document).ready(function(){
     _qalet.removeDB = function(code) {
         $.ajax({
           type: "POST",
