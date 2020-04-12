@@ -1,3 +1,6 @@
 $(document).ready(function(){
-    alert('welcome dbs.js');
+    function submitAddDB() {
+        alert('welcome dbs.js');
+    }
+    
 });
