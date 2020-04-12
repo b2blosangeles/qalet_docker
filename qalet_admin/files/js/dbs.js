@@ -27,11 +27,13 @@ $(document).ready(function(){
           url: 'http://asd.asd/api/addMySQLDB',
           data: formData,
           success: function(data) {
-              console.log('--A--');
+              console.log('--A-->');
+              console.log(data);
              alert(JSON.stringify(data));
           },
           error: function(errMsg) {
               console.log('--B--');
+              console.log(errMsg);
             alert('failure');
           },
           dataType: 'json'
