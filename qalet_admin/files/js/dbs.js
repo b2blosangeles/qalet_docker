@@ -23,7 +23,7 @@ $(document).ready(function(){
         let formData = $('#addMySQLDBFrom').serializeFormJSON();
         $.ajax({
           type: "POST",
-          url: url,
+          url: '/api/addMySQLDB',
           data: formData,
           success: function(data) {
              alert(JSON.stringify(data));
