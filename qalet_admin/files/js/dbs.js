@@ -27,13 +27,9 @@ $(document).ready(function(){
           url: '/api/addMySQLDB',
           data: formData,
           success: function(data) {
-              console.log('--A-->');
-              console.log(data);
-             alert(JSON.stringify(data));
+              window.location.href = '/dbs'
           },
           error: function(errMsg) {
-              console.log('--B--');
-              console.log(errMsg);
             alert('failure');
           },
           dataType: 'json'
