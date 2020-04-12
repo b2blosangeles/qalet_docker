@@ -21,7 +21,7 @@ if (!_qalet) var _qalet = {};
 $(document).ready(function(){
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();
-        console.log(formData);
+        formData.cmd = "add";
         $.ajax({
           type: "POST",
           url: '/api/addMySQLDB',
@@ -41,7 +41,7 @@ $(document).ready(function(){
         $.ajax({
           type: "POST",
           url: '/api/addMySQLDB',
-          data: {code : code},
+          data: {cmd: 'remove', code : code},
           success: function(data) {
           //    window.location.href = '/dbs'
           },
