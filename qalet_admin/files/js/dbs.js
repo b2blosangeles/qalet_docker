@@ -27,7 +27,7 @@ $(document).ready(function(){
           url: '/api/addMySQLDB',
           data: formData,
           success: function(data) {
-              window.location.href = '/dbs'
+          //    window.location.href = '/dbs'
           },
           error: function(errMsg) {
             alert('failure');
@@ -43,7 +43,7 @@ $(document).ready(function(){
           url: '/api/addMySQLDB',
           data: {code : code},
           success: function(data) {
-              window.location.href = '/dbs'
+          //    window.location.href = '/dbs'
           },
           error: function(errMsg) {
             alert('failure');
