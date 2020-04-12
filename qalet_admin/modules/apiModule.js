@@ -1,6 +1,6 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		
+		/*
 		this.removeDB = function(code) {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
@@ -42,9 +42,12 @@
 			   	6000
 			);
 			
-		}		
+		}	*/	
 		this.addDB = function() {
 			var me = this;
+			res.send({});
+			return true;
+			
 			var CP = new pkg.crowdProcess(),_f = {}; 
 		
 			_f['prepare_folder'] = function(cbk) {
