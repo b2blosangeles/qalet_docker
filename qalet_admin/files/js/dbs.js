@@ -22,14 +22,12 @@ $(document).ready(function(){
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();
         formData.cmd = 'add';
-        console.log(formData);
-        console.log('-===formData===>');
         $.ajax({
           type: "POST",
           url: '/api/addMySQLDB',
           data: formData,
           success: function(data) {
-          //    window.location.href = '/dbs'
+              window.location.href = '/dbs'
           },
           error: function(errMsg) {
             alert('failure');
@@ -42,10 +40,10 @@ $(document).ready(function(){
     _qalet.removeDB = function(code) {
         $.ajax({
           type: "POST",
-          url: '/api/addMySQLDB',
+          url: '/api/removeMySQLDB',
           data: {cmd: 'remove', code : code},
           success: function(data) {
-          //    window.location.href = '/dbs'
+              window.location.href = '/dbs'
           },
           error: function(errMsg) {
             alert('failure');
