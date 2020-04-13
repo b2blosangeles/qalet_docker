@@ -38,6 +38,7 @@ $(document).ready(function(){
     }
     
     _qalet.removeDB = function(code) {
+        alert(code);
         $.ajax({
           type: "POST",
           url: '/api/removeMySQLDB',
