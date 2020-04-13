@@ -163,7 +163,7 @@
 						delete require.cache[__dirname + '/apiModule.js'];
 						var API  = require(__dirname + '/apiModule.js');
 						var api = new API(env, pkg, req, res);
-						if (v.cmd === '/addMySQLDB') {
+						if (v[2] === '/addMySQLDB') {
 							api.addDB();
 						} else {
 							api.removeDB();
