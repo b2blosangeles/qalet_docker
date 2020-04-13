@@ -20,8 +20,7 @@ if (!_qalet) var _qalet = {};
 
 $(document).ready(function(){
     _qalet.submitAddDB = function() {
-        let formData = $('#addMySQLDBFrom').serializeFormJSON();
-        formData.cmd = 'add';
+        let formData = $('#addMySQLDBFrom').serializeFormJSON();;
         $.ajax({
           type: "POST",
           url: '/api/addMySQLDB',
@@ -30,7 +29,7 @@ $(document).ready(function(){
               window.location.href = '/dbs'
           },
           error: function(errMsg) {
-            alert('failure');
+            alert('failure to add ' + JSON.stringify(formData));
           },
           dataType: 'json'
         });
@@ -38,7 +37,6 @@ $(document).ready(function(){
     }
     
     _qalet.removeDB = function(code) {
-        alert(code);
         $.ajax({
           type: "POST",
           url: '/api/removeMySQLDB',
@@ -47,7 +45,7 @@ $(document).ready(function(){
               window.location.href = '/dbs'
           },
           error: function(errMsg) {
-            alert('failure');
+            console.log('failure to remove ' + code);
           },
           dataType: 'json'
         });
