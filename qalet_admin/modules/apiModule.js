@@ -26,14 +26,14 @@
 					}
 				}
 				pkg.fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
-				  cbk(true);
+				  cbk('kk');
 				});
 			}
 			
 			CP.serial(
 				_f,
 				function(data) {
-					data.status = 'failure';
+					data.status = 'failure3';
 					res.send(data);
 			   	},
 			   	6000
