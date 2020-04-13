@@ -1,7 +1,8 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		this.removeDB = function(code) {
+		this.removeDB = function() {
 			var me = this;
+			var code = res.body.code;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 		
 			_f['prepare_folder'] = function(cbk) {
