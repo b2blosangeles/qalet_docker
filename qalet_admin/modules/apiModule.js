@@ -33,10 +33,8 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.writeHead(301,
-					  {Location: 'http://admin.shusiou.win/dbs'}
-					);
-					res.end();
+					data.status = 'failure';
+					res.send(data);
 			   	},
 			   	6000
 			);
