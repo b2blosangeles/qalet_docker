@@ -43,7 +43,8 @@ $(document).ready(function(){
           url: '/api/removeMySQLDB',
           data: {code : code},
           success: function(data) {
-              window.location.href = '/dbs'
+              console.log(data);
+          //    window.location.href = '/dbs'
           },
           error: function(errMsg) {
             alert('failure');
