@@ -22,6 +22,7 @@
 				
 				for (var i = 0; i < dt.length; i++) {
 					if (dt[i].code != code) {
+						dt[i].pt = code;
 						data.push(dt[i]);
 					}
 				}
