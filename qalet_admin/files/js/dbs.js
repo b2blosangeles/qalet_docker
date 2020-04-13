@@ -41,7 +41,7 @@ $(document).ready(function(){
         $.ajax({
           type: "POST",
           url: '/api/removeMySQLDB',
-          data: {cmd: 'remove', code : code},
+          data: {code : code},
           success: function(data) {
               window.location.href = '/dbs'
           },
