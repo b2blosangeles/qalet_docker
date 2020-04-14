@@ -13,15 +13,6 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.dbs = [
-			{
-				code	: 'mysql_prod', 
-				gitHub	: 'https://github.com/b2blosangeles/docker_mysql.git',
-				branch	: 'master',
-				rootpass: 'Trinet2020#',
-				port	: '3306'
-			}
-		];
 		this.vhosts = [
 			{
 				serverName	: 'www.shusiou.win', 
@@ -232,18 +223,7 @@
 						break;
 					case 'dbs':
 						me.showDbs();
-						break;	
-					case 'api':
-						res.send(__dirname + '-/apiModule.js');
 						break;
-						res.render('html/frame.ect', {});
-						me.addDB();
-						/*
-						delete require.cache[__dirname + '/apiModule.js'];
-						var api  = require(__dirname + '/apiModule.js');
-						res.render('html/frame.ect', { module: "api 66 get"});
-						*/
-						break;	
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
 						break;	
