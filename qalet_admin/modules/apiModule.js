@@ -1,5 +1,8 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
+		this.call = function() {
+		
+		}
 		this.removeDB = function() {
 			var me = this;
 			var code = req.body.code;
