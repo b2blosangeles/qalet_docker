@@ -19,6 +19,18 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 $(document).ready(function(){
+    _qalet = new Vue({
+      el: '#app',
+      data: {
+        seen    : true,
+        message : null
+      },
+      methods: {
+        setMessage : function(code) {
+            this.message = code;
+        }
+      }
+    });
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
         $.ajax({
@@ -35,20 +47,9 @@ $(document).ready(function(){
         });
        
     }
-     _qalet.app = new Vue({
-          el: '#app',
-          data: {
-            seen    : true,
-            message : null
-          },
-          methods: {
-            setMessage : function(code) {
-                this.message = code;
-            }
-          }
-        });
+
      _qalet.loadECT=function(msg) {
-        _qalet.app.setMessage(msg + ' : ' + new Date());
+        this.setMessage(msg + ' ->: ' + new Date());
      }
 
     _qalet.removeDB = function(code) {
