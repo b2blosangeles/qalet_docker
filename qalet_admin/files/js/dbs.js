@@ -42,6 +42,13 @@ $(document).ready(function(){
          
         var html = renderer.render('test.ect', data);
          console.log(html);*/
+         var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+         /*
          var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
              "{{kids.length}} kids:</p>" +
              "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
@@ -51,6 +58,7 @@ $(document).ready(function(){
                          "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
             var result = template(data);
           console.log( result);
+          */
      }
     _qalet.removeDB = function(code) {
         $.ajax({
