@@ -36,10 +36,15 @@ $(document).ready(function(){
        
     }
      _qalet.loadECT=function(code) {
+         /*
         var renderer = ECT({ root : '/ectClientView' });
         var data = { title : 'Hello, World!' };
+         
         var html = renderer.render('test.ect', data);
-         console.log(html);
+         console.log(html);*/
+          var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+          // execute the compiled template and print the output to the console
+          console.log(template({ doesWhat: "rocks!" }));
      }
     _qalet.removeDB = function(code) {
         $.ajax({
