@@ -39,6 +39,7 @@ $(document).ready(function(){
          var app = new Vue({
           el: '#app',
           data: {
+            seen : true,
             message: 'Hello Vue!'
           }
         });
