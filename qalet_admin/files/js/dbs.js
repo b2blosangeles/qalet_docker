@@ -44,7 +44,7 @@ $(document).ready(function(){
           }
         });
      }
-    _qalet.loadECT();
+    // _qalet.loadECT();
     
     _qalet.removeDB = function(code) {
         $.ajax({
