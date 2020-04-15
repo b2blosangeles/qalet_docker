@@ -27,7 +27,7 @@ $(document).ready(function(){
       },
       methods: {
         setMessage : function(code) {
-            this.message = code;
+            this.message = code + ' =><=' + new Date();
         }
       }
     });
@@ -47,10 +47,6 @@ $(document).ready(function(){
         });
        
     }
-
-     _qalet.loadECT=function(msg) {
-        this.setMessage(msg + ' ->: ' + new Date());
-     }
 
     _qalet.removeDB = function(code) {
         $.ajax({
