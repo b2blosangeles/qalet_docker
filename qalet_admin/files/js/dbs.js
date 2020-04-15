@@ -35,15 +35,17 @@ $(document).ready(function(){
         });
        
     }
-     _qalet.loadECT=function(code) {
+     _qalet.loadECT=function(msg) {
          var app = new Vue({
           el: '#app',
           data: {
-            seen : false,
-            message: 'Hello Vue!'
+            seen    : false,
+            message : msg
           }
         });
      }
+    _qalet.loadECT();
+    
     _qalet.removeDB = function(code) {
         $.ajax({
           type: "POST",
