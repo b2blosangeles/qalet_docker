@@ -42,7 +42,7 @@ $(document).ready(function(){
             message : msg
           },
           methods: {
-            setMessage function(code) {
+            setMessage : function(code) {
                 this.message = code;
             }
           }
