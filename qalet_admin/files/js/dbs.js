@@ -39,7 +39,7 @@ $(document).ready(function(){
           el: '#app',
           data: {
             seen    : true,
-            message : msg
+            message : 'msg;
           },
           methods: {
             setMessage : function(code) {
