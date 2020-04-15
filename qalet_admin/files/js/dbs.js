@@ -48,7 +48,7 @@ $(document).ready(function(){
           }
         });
      _qalet.loadECT=function(msg) {
-        app.setMessage(msg);
+        _qalet.app.setMessage(msg);
      }
     // _qalet.loadECT();
     
