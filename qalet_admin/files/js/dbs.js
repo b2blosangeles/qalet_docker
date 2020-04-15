@@ -48,10 +48,9 @@ $(document).ready(function(){
           }
         });
      _qalet.loadECT=function(msg) {
-        _qalet.app.setMessage(msg);
+        _qalet.app.setMessage(msg + ' : ' + new Date());
      }
-    // _qalet.loadECT();
-    
+
     _qalet.removeDB = function(code) {
         $.ajax({
           type: "POST",
