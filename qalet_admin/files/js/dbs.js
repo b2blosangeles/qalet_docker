@@ -35,7 +35,12 @@ $(document).ready(function(){
         });
        
     }
-    
+     _qalet.loadECT=function(code) {
+        var renderer = ECT({ root : '/ectClientView' });
+        var data = { title : 'Hello, World!' };
+        var html = renderer.render('test.ect', data);
+         console.log(html);
+     }
     _qalet.removeDB = function(code) {
         $.ajax({
           type: "POST",
