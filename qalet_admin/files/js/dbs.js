@@ -35,14 +35,20 @@ $(document).ready(function(){
         });
        
     }
-     _qalet.loadECT=function(msg) {
-         var app = new Vue({
+     _qalet.app = new Vue({
           el: '#app',
           data: {
             seen    : true,
             message : msg
+          },
+          methods: {
+            setMessage function(code) {
+                this.message = code;
+            }
           }
         });
+     _qalet.loadECT=function(msg) {
+        app.setMessage(msg);
      }
     // _qalet.loadECT();
     
