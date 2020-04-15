@@ -42,9 +42,15 @@ $(document).ready(function(){
          
         var html = renderer.render('test.ect', data);
          console.log(html);*/
-          var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-          // execute the compiled template and print the output to the console
-          console.log(template({ doesWhat: "rocks!" }));
+         var source = "<p>Hello, my name is {{name}}. I am from {{hometown}}. I have " +
+             "{{kids.length}} kids:</p>" +
+             "<ul>{{#kids}}<li>{{name}} is {{age}}</li>{{/kids}}</ul>";
+            var template = Handlebars.compile(source);
+
+            var data = { "name": "Alan", "hometown": "Somewhere, TX",
+                         "kids": [{"name": "Jimmy", "age": "12"}, {"name": "Sally", "age": "4"}]};
+            var result = template(data);
+          console.log( result);
      }
     _qalet.removeDB = function(code) {
         $.ajax({
