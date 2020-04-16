@@ -30,6 +30,16 @@ $(document).ready(function(){
             this.message = code + ' =><=' + new Date();
         },
         ttt : function() {
+            switch (code) {
+                case 'a' : 
+                    return true;
+                    break;
+                 case 'b' : 
+                    return true;
+                    break;
+                default:
+                    return false;
+            }
             return true;
         }
       }
