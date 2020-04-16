@@ -32,7 +32,7 @@ $(document).ready(function(){
       }
     });
     _qalet.switch = function(code) {
-        return ture;
+        return true;
         /*
         switch (code) {
             case 'a' : 
