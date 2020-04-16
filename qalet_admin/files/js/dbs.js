@@ -33,10 +33,10 @@ $(document).ready(function(){
     });
     _qalet.switch = function(code) {
         switch code {
-            'a' : 
+            case 'a' : 
                 reture true;
                 break;
-             'b' : 
+             case 'b' : 
                 reture true;
                 break;
             default:
