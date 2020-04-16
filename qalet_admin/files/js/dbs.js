@@ -20,7 +20,7 @@ if (!_qalet) var _qalet = {};
 
 $(document).ready(function(){
     _qalet = new Vue({
-      el: '#app',
+     // el: '#app',
       data: {
         seen    : true,
         message : null
@@ -89,5 +89,5 @@ $(document).ready(function(){
         });
        
     }
-    
+    _qalet.el = '#app';
 });
