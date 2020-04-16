@@ -34,10 +34,10 @@ $(document).ready(function(){
     _qalet.switch = function(code) {
         switch code {
             case 'a' : 
-                reture true;
+                return true;
                 break;
              case 'b' : 
-                reture true;
+                return true;
                 break;
             default:
                 return false;
