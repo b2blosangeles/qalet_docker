@@ -80,7 +80,7 @@ $(document).ready(function(){
         });
        
     }
-    setTimout(
+    setTimeout(
         function() {
                 _qalet.$forceUpdate();
         }, 2000
