@@ -29,18 +29,8 @@ $(document).ready(function(){
         setMessage : function(code) {
             this.message = code + ' =><=' + new Date();
         },
-        ttt : function(code) {
-            switch (code) {
-                case 'a' : 
-                    return true;
-                    break;
-                 case 'b' : 
-                    return true;
-                    break;
-                default:
-                    return false;
-            }
-            return true;
+        switch : function(code) {
+            return (!this.ttt1) ? false: this.ttt1(code);
         }
       }
     });
