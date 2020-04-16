@@ -79,7 +79,12 @@ $(document).ready(function(){
         });
        
     }
-    _qalet.$forceUpdate();
+    setTimout(
+        function() {
+                _qalet.$forceUpdate();
+        }, 2000
+        );
+   
    // _qalet.el = '#app';
     // _qalet.$set('el', '#app');
 });
