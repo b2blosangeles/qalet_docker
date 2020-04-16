@@ -1,13 +1,6 @@
 if (!_qalet) var _qalet = {};
 
-Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+
 
 
 (function ($) {
@@ -29,6 +22,15 @@ Vue.component('button-counter', {
 })(jQuery);
 
 $(document).ready(function(){
+  
+  Vue.component('button-counter', {
+    data: function () {
+      return {
+        count: 0
+      }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  }); 
     _qalet = new Vue({
       el: '#app',
       data: {
