@@ -44,6 +44,9 @@ $(document).ready(function(){
         seen    : true,
         message : null
       },
+      components: {
+          'my-component': httpVueLoader('my-component.vue')
+      },
       methods: {
         setMessage : function(code) {
             this.message = code + ' =><=' + new Date();
