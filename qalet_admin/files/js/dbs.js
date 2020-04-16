@@ -31,7 +31,7 @@ $(document).ready(function(){
         },
         showModule : function(code) {
             console.log('RRR-' + new Date());
-            return (typeof this.ttt === 'function') ? this.ttt(code) : false;
+            return (!ttt) ? false : this.ttt(code);
         }
       }
     });
