@@ -42,7 +42,7 @@ $(document).ready(function(){
             default:
                 return false;
         }
-        return false;
+        return true;
     }
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
