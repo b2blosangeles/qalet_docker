@@ -32,6 +32,8 @@ $(document).ready(function(){
       }
     });
     _qalet.switch = function(code) {
+        return true;
+        /*
         switch (code) {
             case 'a' : 
                 return true;
@@ -43,6 +45,7 @@ $(document).ready(function(){
                 return false;
         }
         return true;
+        */
     }
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
