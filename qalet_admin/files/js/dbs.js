@@ -75,12 +75,7 @@ $(document).ready(function(){
         });
        
     }
-    setTimeout(
-        function() {
-            _qalet.$forceUpdate();
-            console.log('== _qalet.$forceUpdate(); ===');
-        }, 6000
-        );
+
    
    // _qalet.el = '#app';
     // _qalet.$set('el', '#app');
