@@ -2,7 +2,7 @@
     <div id="app">
       <span>{{ message }}</span>
       <div v-if="1==1">1==1</div>
-      <span v-if="ttt1 !== 'undefined'">
+      <span v-if="typeof ttt1 !== 'undefined'">
           <div v-if="ttt('a')">== A ==</div>
           <div v-if="ttt('b')">== B ==</div>
           <div v-if="ttt('c')">== C ==</div>
