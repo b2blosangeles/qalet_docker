@@ -28,6 +28,9 @@ $(document).ready(function(){
       methods: {
         setMessage : function(code) {
             this.message = code + ' =><=' + new Date();
+        },
+        ttt : function() {
+            return true;
         }
       }
     });
