@@ -35,6 +35,7 @@ $(document).ready(function(){
       }
     });
     _qalet.ttt1 = function(code) {
+        console.log('===ttt1===');
         switch (code) {
             case 'a' : 
                 return true;
