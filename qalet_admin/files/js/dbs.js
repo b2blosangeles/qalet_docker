@@ -27,10 +27,6 @@ if (!_qalet) var _qalet = {};
         count: 0
       }
     },
-    components: {
-     'helloworld': () => import(/* webpackChunkName: "helloworld" */ './helloworld/template.vue')
-    },
-      
     template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
   }); 
 
@@ -43,9 +39,6 @@ $(document).ready(function(){
       data: {
         seen    : true,
         message : null
-      },
-      components: {
-          'my-component': httpVueLoader('my-component.vue')
       },
       methods: {
         setMessage : function(code) {
