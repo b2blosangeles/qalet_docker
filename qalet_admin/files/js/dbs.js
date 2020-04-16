@@ -44,7 +44,7 @@ $(document).ready(function(){
         }
       }
     });
-    _qalet.ttt1 = function(code) {
+    _qalet.methods.ttt1 = function(code) {
         switch (code) {
             case 'a' : 
                 return true;
