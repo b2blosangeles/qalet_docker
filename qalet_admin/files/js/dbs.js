@@ -30,12 +30,11 @@ $(document).ready(function(){
             this.message = code + ' =><=' + new Date();
         },
         showModule : function(code) {
-            console.log('RRR-' + new Date());
-            return (!this.ttt) ? false : this.ttt(code);
+            return (!this.switchModule) ? false : this.switchModule(code);
         }
       }
     });
-    _qalet.ttt = function(code) {
+    _qalet.switchModule = function(code) {
             switch (code) {
                 case 'a' : 
                     return true;
