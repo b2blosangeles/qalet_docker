@@ -29,7 +29,7 @@ $(document).ready(function(){
         setMessage : function(code) {
             this.message = code + ' =><=' + new Date();
         },
-        sswitch : function(code) {
+        switch : function(code) {
             switch (code) {
                 case 'a' : 
                     return true;
