@@ -2,9 +2,9 @@
     <div id="app">
       <span>{{ message }}</span>
       <div v-if="1==1">1==1</div>
-      <div v-if="switch('a')">== A ==</div>
-      <div v-if="switch('b')">== B ==</div>
-      <div v-if="switch('c')">== CC ==</div>
+      <div v-if="showModule('a')">== A ==</div>
+      <div v-if="showModule('b')">== B ==</div>
+      <div v-if="showModule('c')">== CC ==</div>
     </div>
     <h3>QALET <%-@module%></h3>
     <a href="JavaScript:void(0);" onClick="_qalet.setMessage('test');">a test</a>
