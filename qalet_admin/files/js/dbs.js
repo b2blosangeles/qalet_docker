@@ -31,6 +31,19 @@ $(document).ready(function(){
         }
       }
     });
+    _qalet.switch = function(code) {
+        switch code {
+            'a' : 
+                reture true;
+                break;
+             'b' : 
+                reture true;
+                break;
+            default:
+                return false;
+        }
+        return false;
+    }
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
         $.ajax({
