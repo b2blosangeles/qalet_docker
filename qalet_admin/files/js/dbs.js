@@ -31,25 +31,21 @@ $(document).ready(function(){
         },
         showModule : function(code) {
             console.log('RRR-' + new Date());
-            if (typeof this.ttt === 'function') {
-                switch (code) {
-                    case 'a' : 
-                        return true;
-                        break;
-                     case 'b' : 
-                        return true;
-                        break;
-                    default:
-                        return false;
-                }
-            } else {
-                return true;
-            }
+            return (typeof this.ttt === 'function') ? this.ttt(code) : false;
         }
       }
     });
-    _qalet.ttt = function() {
- 
+    _qalet.ttt = function(code) {
+            switch (code) {
+                case 'a' : 
+                    return true;
+                    break;
+                 case 'b' : 
+                    return true;
+                    break;
+                default:
+                    return false;
+            }
     }
     
     _qalet.submitAddDB = function() {
