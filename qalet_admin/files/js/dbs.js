@@ -30,19 +30,27 @@ $(document).ready(function(){
             this.message = code + ' =><=' + new Date();
         },
         showModule : function(code) {
-            switch (code) {
-                case 'a' : 
-                    return true;
-                    break;
-                 case 'b' : 
-                    return true;
-                    break;
-                default:
-                    return false;
+            if (typeof this.ttt === 'function') {
+                switch (code) {
+                    case 'a' : 
+                        return true;
+                        break;
+                     case 'b' : 
+                        return true;
+                        break;
+                    default:
+                        return false;
+                }
+            } else {
+                return true;
             }
         }
       }
     });
+    _qalet.ttt = function() {
+ 
+    }
+    
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
         $.ajax({
