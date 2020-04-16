@@ -30,24 +30,19 @@ $(document).ready(function(){
             this.message = code + ' =><=' + new Date();
         },
         switch : function(code) {
-            return (!this.ttt1) ? false: this.ttt1(code);
+            switch (code) {
+                case 'a' : 
+                    return true;
+                    break;
+                 case 'b' : 
+                    return true;
+                    break;
+                default:
+                    return false;
+            }
         }
       }
     });
-    _qalet.ttt1 = function(code) {
-        console.log('===ttt1===');
-        switch (code) {
-            case 'a' : 
-                return true;
-                break;
-             case 'b' : 
-                return true;
-                break;
-            default:
-                return false;
-        }
-        return true;
-    }
     _qalet.submitAddDB = function() {
         let formData = $('#addMySQLDBFrom').serializeFormJSON();;
         $.ajax({
