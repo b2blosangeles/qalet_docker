@@ -27,6 +27,10 @@ if (!_qalet) var _qalet = {};
         count: 0
       }
     },
+    components: {
+     'helloworld': () => import(/* webpackChunkName: "helloworld" */ './helloworld/template.vue')
+    },
+      
     template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
   }); 
 
