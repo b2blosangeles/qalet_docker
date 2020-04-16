@@ -20,7 +20,7 @@ if (!_qalet) var _qalet = {};
 
 $(document).ready(function(){
     _qalet = new Vue({
-     // el: '#app',
+      el: '#app',
       data: {
         seen    : true,
         message : null
@@ -82,9 +82,9 @@ $(document).ready(function(){
     }
     setTimeout(
         function() {
-            _qalet.$set('el', '#app');
-            //    _qalet.$forceUpdate();
-        }, 2000
+            _qalet.$forceUpdate();
+            console.log('== _qalet.$forceUpdate(); ===');
+        }, 6000
         );
    
    // _qalet.el = '#app';
