@@ -85,7 +85,7 @@ $(document).ready(function(){
        
     }
 
-   _qalet.$forceUpdate();
+   // _qalet.$forceUpdate();
    // _qalet.el = '#app';
     // _qalet.$set('el', '#app');
 });
