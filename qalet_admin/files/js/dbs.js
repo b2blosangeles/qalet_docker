@@ -31,7 +31,7 @@ $(document).ready(function(){
         }
       }
     });
-    _qalet.switch = function(code) {
+    _qalet.sswitch = function(code) {
         return true;
         /*
         switch (code) {
