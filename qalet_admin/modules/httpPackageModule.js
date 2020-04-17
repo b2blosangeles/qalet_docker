@@ -48,8 +48,9 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						str += 'vueCommon.' + fileName + ' = ';
 						str += 'codeVeuSFCLoader(decodeURIComponent("' + 
-							encodeURIComponent(CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) + 
+							encodeURIComponent(CP.data['_' + i]) + 
 							'")); ' + "\n";
+						// .replace(/(\r\n|\n|\r)/gm,' ')
 						str += "console.log(" + 'vueCommon.' + fileName + "); \n";
 					}
 					res.send(str);
