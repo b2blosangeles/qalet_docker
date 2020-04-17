@@ -1,14 +1,16 @@
-<div class="body-template" id="app">
+<div class="body-template">
+<span  id="app">
     <div id="app1">
       <span>{{ message }}</span>
       <div v-if="1==1">1==1</div>
-      <div v-if="showModule('a')">== AA ==</div>
+      <div v-if="showModule('a')">== AsA ==</div>
       <button-counter></button-counter>
       <div v-if="showModule('b')">== BBB ==</div>
       <div v-if="showModule('c')">== CC ==</div>
       ==>
       <my-component></my-component>
     </div>
+  </span>  
     <h3>QALET <%-@module%></h3>
     <a href="JavaScript:void(0);" onClick="_qalet.setMessage('test');">a test</a>
      <table class="table">
