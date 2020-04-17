@@ -28,7 +28,7 @@ if (!_qalet) var _qalet = {};
       }
     },
       components: {
-          'my-component': httpVueLoader('my-component.vue')
+          'my-component': httpVueLoader('/vue/my-component.vue')
         }
     
   }); 
