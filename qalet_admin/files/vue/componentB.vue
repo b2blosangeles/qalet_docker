@@ -14,6 +14,6 @@ module.exports = {
 </script>
 <style>
 .hello {
-    background-color: #ffe;
+    background-color: lightgreen;
 }
 </style>
