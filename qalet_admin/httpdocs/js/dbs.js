@@ -30,7 +30,7 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'my-component': vueCommon.B,
+          'my-component': vueCommon.componentB,
           'button-counter' : Vue.component('button-counter', {
                 data: function () {
                   return {
@@ -38,7 +38,7 @@ $(document).ready(function(){
                   }
                 },
               components: {
-                  'my-component': vueCommon.A
+                  'my-component': vueCommon.componentA
                 },
                 template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
                   '<my-component post-title="niu"/></span>'
