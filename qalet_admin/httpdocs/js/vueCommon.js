@@ -5,4 +5,3 @@ var vueCommon = {
     B : codeVueLoader(code),
     C : codeVueLoader('/commLib/vue/componentC.vue')
 }
-//     C : httpVueLoader('/commLib/vue/componentC.vue')
