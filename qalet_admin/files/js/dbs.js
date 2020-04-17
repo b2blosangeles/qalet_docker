@@ -46,19 +46,7 @@ $(document).ready(function(){
       }
     });
     
-  Vue.component('button-counter', {
-    data: function () {
-      return {
-        count: 0
-      }
-    },
-      /*
-      components: {
-          'my-component': httpVueLoader('/vue/my-component.vue')
-        },*/
-    template: '<span><button v-on:click="count++">==You clicked me {{ count }} times.</button>' +
-      '<my-component></my-component></span>'
-  }); 
+
     
     _qalet.switchModule = function(code) {
             switch (code) {
@@ -105,8 +93,26 @@ $(document).ready(function(){
         });
        
     }
-
-    _qalet.$forceUpdate();
+    setTimeout(
+        function() {
+              Vue.component('button-counter', {
+                data: function () {
+                  return {
+                    count: 0
+                  }
+                },
+                  /*
+                  components: {
+                      'my-component': httpVueLoader('/vue/my-component.vue')
+                    },*/
+                template: '<span><button v-on:click="count++">==You clicked me {{ count }} times.</button>' +
+                  '<my-component></my-component></span>'
+              }); 
+             _qalet.$forceUpdate();
+        }, 3000
+    
+    )
+   
    // _qalet.el = '#app';
     // _qalet.$set('el', '#app');
 });
