@@ -23,6 +23,9 @@ if (!_qalet) var _qalet = {};
 //template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
 $(document).ready(function(){
   
+
+    setTimeout(
+        function() {
     _qalet = new Vue({
       el: '.body-template',
       data: {
@@ -101,8 +104,6 @@ $(document).ready(function(){
         });
        
     }
-    setTimeout(
-        function() {
             _qalet.$forceUpdate();
             console.log('Loaded _qalet.$forceUpdate(); ');
         }, 3000
