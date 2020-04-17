@@ -42,7 +42,7 @@ $(document).ready(function(){
                   }
                 },
                 components: {
-                    'my-component' : my-component
+                    'my-component' : this['my-component']
                 },
                   /*
                   components: {
