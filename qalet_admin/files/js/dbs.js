@@ -23,7 +23,7 @@ if (!_qalet) var _qalet = {};
 //template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
 $(document).ready(function(){
   
-    var commonLib = {
+    var vueCommon = {
         A : httpVueLoader('/commLib/vue/componentA.vue'),
         B : httpVueLoader('/commLib/vue/componentB.vue'),
         C : httpVueLoader('/commLib/vue/componentC.vue')
@@ -35,7 +35,7 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'my-component': commonLib.B,
+          'my-component': vueCommon.B,
           'button-counter' : Vue.component('button-counter', {
                 data: function () {
                   return {
@@ -43,7 +43,7 @@ $(document).ready(function(){
                   }
                 },
               components: {
-                  'my-component': commonLib.A
+                  'my-component': vueCommon.A
                 },
                 template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
                   '<my-component post-title="niu"/></span>'
