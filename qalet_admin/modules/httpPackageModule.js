@@ -13,50 +13,8 @@
 				  res.render('html/page404.ect');
 			      }
 			});
-		}
-		this.removeDB = function() {
-			var me = this;
-			var code = req.body.code;
-			var CP = new pkg.crowdProcess(),_f = {}; 
-		
-			_f['prepare_folder'] = function(cbk) {
-				var cmd = 'mkdir -p ' + env.root + '/db_setting';
-				pkg.exec(cmd, 
-				     {maxBuffer: 1024 * 2048},
-				     function(error, stdout, stderr) {
-					cbk(true);
-				});
-			}
-			
-			_f['savefile'] = function(cbk) {
-				var data = [], dt = [];
-				try {
-					delete require.cache[env.root + '/db_setting/dbs.json'];
-					dt = require(env.root + '/db_setting/dbs.json');
-				} catch(e) {} 	
-				
-				for (var i = 0; i < dt.length; i++) {
-					if (dt[i].code != code) {
-						dt[i].pt = code+'=';
-						data.push(dt[i]);
-					}
-				}
-				pkg.fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
-				  cbk('kk');
-				});
-			}
-			
-			CP.serial(
-				_f,
-				function(data) {
-					data.status = 'failure3';
-					res.send(data);
-			   	},
-			   	6000
-			);
-			
 		}		
-		this.addDB = function() {
+		this.packageCodeFiles = function() {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
