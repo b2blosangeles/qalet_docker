@@ -24,9 +24,9 @@ if (!_qalet) var _qalet = {};
 $(document).ready(function(){
   
     var commonLib = {
-        A : httpVueLoader('/vue/componentA.vue'),
-        B : httpVueLoader('/vue/componentB.vue'),
-        C : httpVueLoader('/vue/componentC.vue')
+        A : httpVueLoader('/commLib/vue/componentA.vue'),
+        B : httpVueLoader('/commLib/vue/componentB.vue'),
+        C : httpVueLoader('/commLib/vue/componentC.vue')
     }
     _qalet = new Vue({
       el: '.body-template',
