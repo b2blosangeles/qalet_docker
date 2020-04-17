@@ -30,8 +30,8 @@
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
 						let fn = dirn + list[i].replace(/^\//, '');
-						pkg.fs.readFile('Demo.txt', 'utf8', function(err, data){ 
-						    cbk(data.replace(/(\r\n|\n|\r)/gm,' ')); 
+						pkg.fs.readFile(fn, 'utf8', function(err, data){ 
+							cbk(data.replace(/(\r\n|\n|\r)/gm,' ')); 
 						}); 
 						return true;
 					}
