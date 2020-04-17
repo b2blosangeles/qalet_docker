@@ -438,7 +438,7 @@
 	};
 
 	codeVueLoader.httpRequest = function(url) {
-        if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/))) {
+        if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
             return new Promise(function(resolve, reject) {
                 resolve(code);
             });
