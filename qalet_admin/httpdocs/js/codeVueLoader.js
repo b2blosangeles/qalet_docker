@@ -457,5 +457,5 @@
 		return codeVueLoader.load(comp.url, name);
 	}
 
-	return httpVueLoader;
+	return codeVueLoader;
 });
