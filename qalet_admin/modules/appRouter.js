@@ -202,80 +202,52 @@
 			
 			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
+			
+			switch (v[1]) {
+				case 'checkCodeUpdate':
+					me.checkCodeUpdate();
+					break;
 
-			// if ((v) && typeof v == 'object') {
-				switch (v[1]) {
-					case 'checkCodeUpdate':
-						me.checkCodeUpdate();
-						break;
-						
-					case 'addHost':
-						me.addHost(v[1]);
-						break;
-					case 'addTask':
-						me.addTask(v[1]);
-						break;						
-					case 'vhost':
-						me.runScript(v[1]);
-						break;
-					case 'startup':
-						me.runScript(v[1]);
-						break;
-					case 'dbs':
-						me.showDbs();
-						break;
-					case 'checkip':
-						res.render('html/index.ect', { module: "checkip"});
-						break;	
-					case 'httpPackage':
-						res.send('httpPackage');
-						break;
-					case 'cms':
-						res.render('html/index.ect', { module: "package"});
-						break;	
-					default:
-						if (TPA[p]) {
-							// TPA[req.params[0]].tpl
-							res.render('html/frame.ect', TPA[p].data);
-							return true;
-						} else {
-							var fn = env.adminFolder + '/httpdocs' + req.params[0];
-							fs.stat(fn, function(err, stat) {
-							      if(err == null) {
-								  if (stat.isDirectory()) {
-									res.sendFile(fn + 'index.html');
-								  } else {
-									res.sendFile(fn);
-								  }
-							      } else if(err.code === 'ENOENT') {
-								  res.render('html/page404.ect');
-							      }
-							});
-						}
-				}
-			/*	
-			} else {
-				
-				if (TPA[p]) {
-					// TPA[req.params[0]].tpl
-					res.render('html/frame.ect', TPA[p].data);
-					return true;
-				} else {
-					var fn = env.adminFolder + '/httpdocs' + req.params[0];
-					fs.stat(fn, function(err, stat) {
-					      if(err == null) {
-						  if (stat.isDirectory()) {
-							res.sendFile(fn + 'index.html');
-						  } else {
-							res.sendFile(fn);
-						  }
-					      } else if(err.code === 'ENOENT') {
-						  res.render('html/page404.ect');
-					      }
-					});
-				}
+				case 'addHost':
+					me.addHost(v[1]);
+					break;
+				case 'addTask':
+					me.addTask(v[1]);
+					break;						
+				case 'vhost':
+					me.runScript(v[1]);
+					break;
+				case 'startup':
+					me.runScript(v[1]);
+					break;
+				case 'dbs':
+					me.showDbs();
+					break;
+				case 'checkip':
+					res.render('html/index.ect', { module: "checkip"});
+					break;	
+				case 'httpPackage':
+					res.send('httpPackage');
+					break;	
+				default:
+					if (TPA[p]) {
+						res.render('html/frame.ect', TPA[p].data);
+						return true;
+					} else {
+						var fn = env.adminFolder + '/httpdocs' + req.params[0];
+						fs.stat(fn, function(err, stat) {
+						      if(err == null) {
+							  if (stat.isDirectory()) {
+								res.sendFile(fn + 'index.html');
+							  } else {
+								res.sendFile(fn);
+							  }
+						      } else if(err.code === 'ENOENT') {
+							  res.render('html/page404.ect');
+						      }
+						});
+					}
 			}
-			*/
 		};	
 	};
 	
