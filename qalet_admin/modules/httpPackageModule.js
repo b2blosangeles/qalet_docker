@@ -30,7 +30,7 @@
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
 						let fn = dirn + list[i].replace(/^\//, '');
-						let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
+						// let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
 						pkg.fs.readFile(fn, 'utf8', function(err, data){
 							cbk(data);
 							//cbk(data.replace(/(\r\n|\n|\r)/gm,' ')); 
@@ -46,8 +46,8 @@
 					var str = '';
 					for (var i = 0; i < list.length; i++) {
 						let fn = dirn + list[i].replace(/^\//, '');
-						let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
-						str += fileName + "\n";
+						//let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
+						str += fn + "\n";
 						str += CP.data['_' + i];
 					}
 					res.send(str);
