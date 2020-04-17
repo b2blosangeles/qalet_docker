@@ -2,6 +2,8 @@
 	var obj =  function (env, pkg, req, res) {
 		this.call = function(p) {
 			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '');
+			res.send(fn);
+			return true;
 			pkg.fs.stat(fn, function(err, stat) {
 			      if(err == null) {
 				  if (stat.isDirectory()) {
