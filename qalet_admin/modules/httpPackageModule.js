@@ -29,7 +29,10 @@
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						cbk(dirn + list[i]);
+						let fn = dirn + list[i].replace(/^\//, '');
+						pkg.fs.readFile('Demo.txt', 'utf8', function(err, data){ 
+						    cbk(data); 
+						}); 
 						return true;
 					}
 				})(i)
