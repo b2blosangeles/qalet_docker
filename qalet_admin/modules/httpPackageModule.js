@@ -1,6 +1,7 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		this.call = function(p) {
+			var me = this;
 			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '');
 			pkg.fs.stat(fn, function(err, stat) {
 			      if(err == null) {
@@ -12,58 +13,33 @@
 						delete require.cache[fn];
 						d = require(fn);
 					}  catch (err) {}
-					res.send(d);
+					me.veuFiles(d);
 				  }
 			      } else if(err.code === 'ENOENT') {
 				  res.render('html/page404.ect');
 			      }
 			});
 		}		
-		this.packageCodeFiles = function() {
+		this.veuFiles = function(list) {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-			_f['prepare_folder'] = function(cbk) {
-				var cmd = 'mkdir -p ' + env.root + '/db_setting';
-				pkg.exec(cmd, 
-				     {maxBuffer: 1024 * 2048},
-				     function(error, stdout, stderr) {
-					cbk(true);
-				});
-			}
-			
-			_f['savefile'] = function(cbk) {
-				var dt = req.body;
-				dt.gitHub = 'https://github.com/b2blosangeles/docker_mysql.git';
-				var data = [];
-				try {
-					delete require.cache[env.root + '/db_setting/dbs.json'];
-					data = require(env.root + '/db_setting/dbs.json');
-				} catch(e) {
-					
-				} 				
-				data.push(dt);
-				
-				pkg.fs.writeFile(env.root + '/db_setting/dbs.json', JSON.stringify(data), (err) => {
-				  cbk(true);
-				});
+			for (var i = 0; i < list.length; i++) {
+				_f['_' + i] = (function(i) {
+					return function(cbk) {
+						return list[i];
+					}
+				})(i)
 			}
 			
 			CP.serial(
 				_f,
 				function(data) {
-					data.status = 'failure';
-					res.send(data);
-					/*
-					res.writeHead(301,
-					  {Location: 'http://admin.shusiou.win/dbs'}
-					);
-					res.end();
-					*/
+					data.status = 'success';
+					res.send(CP.data);
 			   	},
 			   	6000
 			);
-			
 		}
 	};
 
