@@ -202,7 +202,8 @@
 			
 			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
-			
+			res.send(v);
+			return true;
 			switch (v[1]) {
 				case 'checkCodeUpdate':
 					me.checkCodeUpdate();
