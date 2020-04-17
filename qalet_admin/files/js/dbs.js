@@ -26,7 +26,8 @@ if (!_qalet) var _qalet = {};
 //template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
 $(document).ready(function(){
   
-
+    httpVueLoader('/vue/my-component.vue');
+    
     _qalet = new Vue({
       el: '.body-template',
       data: {
@@ -40,9 +41,6 @@ $(document).ready(function(){
                   return {
                     count: 0
                   }
-                },
-                components: {
-                    'my-component' : this['my-component']
                 },
                   /*
                   components: {
