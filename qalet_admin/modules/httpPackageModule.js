@@ -42,7 +42,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-					let str = '';
+					var str = '';
 					for (var i = 0; i < list.length; i++) {
 						str += CP.data['_' + i]
 					}
