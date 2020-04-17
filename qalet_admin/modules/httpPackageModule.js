@@ -1,13 +1,11 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		this.call = function(p) {
-			
 			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '');
-			
 			pkg.fs.stat(fn, function(err, stat) {
 			      if(err == null) {
 				  if (stat.isDirectory()) {
-					res.sendFile(fn + 'index.html');
+					res.render('html/page404.ect');
 				  } else {
 					res.sendFile(fn);
 				  }
