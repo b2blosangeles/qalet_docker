@@ -11,7 +11,6 @@ module.exports = {
     }
 }
 </script>
- 
 <style>
 .hello {
     background-color: #ffe;
