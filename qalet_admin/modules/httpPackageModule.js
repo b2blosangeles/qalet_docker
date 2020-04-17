@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		this.call = function() {
-			res.send('httpPackageModule.js');
+		this.call = function(p) {
+			res.send('httpPackageModule.js - ' + p);
 		}
 		this.removeDB = function() {
 			var me = this;
