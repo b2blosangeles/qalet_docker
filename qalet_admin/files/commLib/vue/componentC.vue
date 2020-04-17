@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">Hello C {{postTitle}}</div>
+    <div class="helloc">Hello C {{postTitle}}</div>
 </template>
  
 <script>
@@ -13,7 +13,7 @@ module.exports = {
 }
 </script>
 <style>
-.hello {
-    background-color: #ffe;
+.helloc {
+    background-color: lightblue;
 }
 </style>
