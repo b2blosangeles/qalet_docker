@@ -101,11 +101,11 @@ $(document).ready(function(){
                     count: 0
                   }
                 },
-                  
+                  /*
                   components: {
                       'my-component': httpVueLoader('/vue/my-component.vue')
-                    },
-                template: '<span><button v-on:click="count++">=KK=You clicked me {{ count }} times.</button>' +
+                    },*/
+                template: '<span><button v-on:click="count++">=LL=You clicked me {{ count }} times.</button>' +
                   '<my-component></my-component></span>'
               }); 
              _qalet.$forceUpdate();
