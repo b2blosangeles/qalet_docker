@@ -230,7 +230,7 @@
 					res.send('httpPackage');
 					break;	
 				default:
-					res.send(p);
+					res.send(p + '===');
 					return true;
 					if (TPA[p]) {
 						res.render('html/frame.ect', TPA[p].data);
