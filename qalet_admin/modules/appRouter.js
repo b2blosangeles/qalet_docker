@@ -243,7 +243,7 @@
 					res.render('html/frame.ect', TPA[p].data);
 					return true;
 				} else {
-					var fn = env.adminFolder + '/files' + req.params[0];
+					var fn = env.adminFolder + '/httpdocs' + req.params[0];
 					fs.stat(fn, function(err, stat) {
 					      if(err == null) {
 						  if (stat.isDirectory()) {
