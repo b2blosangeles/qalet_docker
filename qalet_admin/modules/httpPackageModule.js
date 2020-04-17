@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		this.call = function() {
-		
+			res.send('httpPackageModule.js');
 		}
 		this.removeDB = function() {
 			var me = this;
@@ -96,10 +96,9 @@
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		module.exports = obj;
 	} else {
-		window.apiModule = function() {
+		window.httpPackageModule = function() {
 			return obj; 
 		}
 	}
 	
 })();
-© 2020 GitHub, Inc.
