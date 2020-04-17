@@ -41,6 +41,9 @@ $(document).ready(function(){
                     count: 0
                   }
                 },
+                components: {
+                    'my-component' : my-component
+                },
                   /*
                   components: {
                       'my-component': httpVueLoader('/vue/my-component.vue')
