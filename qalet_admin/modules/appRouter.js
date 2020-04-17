@@ -245,7 +245,10 @@
 						res.render('html/index.ect', { module: "checkip"});
 						break;	
 					case 'httpPackage':
-						res.send('httpPackage');
+						delete require.cache[__dirname + '/packageModule.js'];
+						var HTTPPackage  = require(__dirname + '/packageModule.js');
+						var httpPackage = new HTTPPackage(env, pkg, req, res);
+						httpPackage.run();
 						break;	
 					default:
 						res.render('html/page404.ect');
