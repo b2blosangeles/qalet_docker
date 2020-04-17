@@ -50,6 +50,9 @@
 						str += 'codeVeuSFCLoader(decodeURIComponent("' + 
 							encodeURIComponent(CP.data['_' + i]) + 
 							'")); ' + "\n";
+						str += 'console.log(decodeURIComponent("' + 
+							encodeURIComponent(CP.data['_' + i]) + 
+							'")); ' + "\n";
 						// .replace(/(\r\n|\n|\r)/gm,' ')
 						str += "console.log(" + 'vueCommon.' + fileName + "); \n";
 					}
