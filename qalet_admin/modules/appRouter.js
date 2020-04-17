@@ -202,8 +202,7 @@
 			
 			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
-			res.send(v);
-			return true;
+
 			switch (v[1]) {
 				case 'checkCodeUpdate':
 					me.checkCodeUpdate();
@@ -231,6 +230,8 @@
 					res.send('httpPackage');
 					break;	
 				default:
+					res.send(p);
+					return true;
 					if (TPA[p]) {
 						res.render('html/frame.ect', TPA[p].data);
 						return true;
