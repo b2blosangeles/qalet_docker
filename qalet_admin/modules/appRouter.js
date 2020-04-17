@@ -200,7 +200,7 @@
 					}
 			}
 			
-			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|package|cms)(\/.+|)', 'i');
+			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
 
 			if ((v) && typeof v == 'object') {
@@ -227,8 +227,8 @@
 					case 'checkip':
 						res.render('html/index.ect', { module: "checkip"});
 						break;	
-					case 'package':
-						res.render('html/index.ect', { module: "package"});
+					case 'httpPackage':
+						res.send('httpPackage');
 						break;
 					case 'cms':
 						res.render('html/index.ect', { module: "package"});
