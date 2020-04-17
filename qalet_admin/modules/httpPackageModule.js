@@ -42,8 +42,11 @@
 			CP.serial(
 				_f,
 				function(data) {
-					data.status = 'success';
-					res.send(CP.data);
+					let str = '';
+					for (var i = 0; i < list.length; i++) {
+						str += CP.data['_' + i]
+					}
+					res.send(str);
 			   	},
 			   	6000
 			);
