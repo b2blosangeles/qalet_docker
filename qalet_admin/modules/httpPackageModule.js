@@ -7,7 +7,7 @@
 				  if (stat.isDirectory()) {
 					res.render('html/page404.ect');
 				  } else {
-					pkg.fs.readFile('Demo.txt', 'utf8', function(err, data){ 
+					pkg.fs.readFile(fn, 'utf8', function(err, data){ 
       						if (err) {
 							res.send(err.message);
 						} else {
