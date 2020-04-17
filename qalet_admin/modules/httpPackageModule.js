@@ -27,7 +27,8 @@
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						return list[i];
+						cbk(list[i])
+						return true;
 					}
 				})(i)
 			}
