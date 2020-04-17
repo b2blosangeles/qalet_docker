@@ -27,10 +27,13 @@ if (!_qalet) var _qalet = {};
         count: 0
       }
     },
-    template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
+      components: {
+          'my-component': httpVueLoader('my-component.vue')
+        }
+    
   }); 
 
-
+//template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
 $(document).ready(function(){
   
 
