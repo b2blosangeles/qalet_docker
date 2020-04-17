@@ -46,7 +46,7 @@ $(document).ready(function(){
                   'my-component': mm
                 },
                 template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
-                  '<my-component postTitle="niu"/></span>'
+                  '<my-component post-title="niu"/></span>'
               })
         },
       methods: {
