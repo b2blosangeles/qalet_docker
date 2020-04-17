@@ -42,13 +42,14 @@
 			CP.serial(
 				_f,
 				function(data) {
-					var str = 'var vueCommon = {';
+					var str = 'var vueCommon = {}; ';
 					for (var i = 0; i < list.length; i++) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
-						str += fileName + ' = ';
-						str += 'codeVeuSFCLoader("' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + 
-							'"); ';
+						str += 'vueCommon.' fileName + ' = ';
+						str += 'codeVeuSFCLoader(decodeURIComponent("' + 
+							encodeURIComponent((CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) + 
+							'")); ';
 					}
 					res.send(str);
 			   	},
