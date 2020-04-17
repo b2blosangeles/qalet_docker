@@ -35,7 +35,7 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'my-component': httpVueLoader('/vue/my-component.vue'),
+          'my-component': commonLib.B,
           'button-counter' : Vue.component('button-counter', {
                 data: function () {
                   return {
