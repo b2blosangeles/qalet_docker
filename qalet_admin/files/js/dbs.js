@@ -28,7 +28,7 @@ $(document).ready(function(){
   
 
     _qalet = new Vue({
-      el: '#app',
+      el: 'window',
       data: {
         seen    : true,
         message : null
