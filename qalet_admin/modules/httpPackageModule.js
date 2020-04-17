@@ -29,9 +29,8 @@
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						let fn = dirn + list[i].replace(/^\//, '');
-						// let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
-						pkg.fs.readFile(fn, 'utf8', function(err, data){
+						let lfn = dirn + list[i].replace(/^\//, '');
+						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							cbk(data);
 							//cbk(data.replace(/(\r\n|\n|\r)/gm,' ')); 
 						}); 
@@ -45,8 +44,8 @@
 				function(data) {
 					var str = '';
 					for (var i = 0; i < list.length; i++) {
-						let fn = dirn + list[i].replace(/^\//, '');
-						//let fileName = fn.substring(fn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
+						let lfn = dirn + list[i].replace(/^\//, '');
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
 						str += fn + "\n";
 						str += CP.data['_' + i];
 					}
