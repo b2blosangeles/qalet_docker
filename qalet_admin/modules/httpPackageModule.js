@@ -7,14 +7,13 @@
 				  if (stat.isDirectory()) {
 					res.render('html/page404.ect');
 				  } else {
-					pkg.fs.readFile(fn, 'utf8', function(err, data){ 
-      						if (err) {
-							res.send(err.message);
-						} else {
-							let d = JSON.parse(data);
-							res.send(d);
-						}
-					});
+					let d = {};
+					try {
+					}  catch (err) {
+						delete require.cache[fn];
+						d = require(fn);
+					}
+					res.send(d);
 				  }
 			      } else if(err.code === 'ENOENT') {
 				  res.render('html/page404.ect');
