@@ -13,7 +13,7 @@
 						delete require.cache[fn];
 						d = require(fn);
 					}  catch (err) {}
-					me.veuFiles(d);
+					me.veuFiles(d.vue);
 				  }
 			      } else if(err.code === 'ENOENT') {
 				  res.render('html/page404.ect');
