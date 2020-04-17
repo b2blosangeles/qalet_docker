@@ -4,7 +4,7 @@
 	else if(typeof define==='function' && define.amd)
 		define([],factory)
 	else
-		root.codeSFCLoader=factory()
+		root.codeVeuSFCLoader=factory()
 })(this,function factory() {
 	'use strict';
 
@@ -149,16 +149,16 @@
 
 			var childModuleRequire = function(childURL) {
 
-				return codeSFCLoader.require(resolveURL(this.component.baseURI, childURL));
+				return codeVeuSFCLoader.require(resolveURL(this.component.baseURI, childURL));
 			}.bind(this);
 
 			var childLoader = function(childURL, childName) {
 
-				return codeSFCLoader(resolveURL(this.component.baseURI, childURL), childName);
+				return codeVeuSFCLoader(resolveURL(this.component.baseURI, childURL), childName);
 			}.bind(this);
 
 			try {
-				Function('exports', 'require', 'codeSFCLoader', 'module', this.getContent()).call(this.module.exports, this.module.exports, childModuleRequire, childLoader, this.module);
+				Function('exports', 'require', 'codeVeuSFCLoader', 'module', this.getContent()).call(this.module.exports, this.module.exports, childModuleRequire, childLoader, this.module);
 			} catch(ex) {
 
 				if ( !('lineNumber' in ex) ) {
@@ -171,7 +171,7 @@
 			}
 
 			return Promise.resolve(this.module.exports)
-			.then(codeSFCLoader.scriptExportsHandler.bind(this))
+			.then(codeVeuSFCLoader.scriptExportsHandler.bind(this))
 			.then(function(exports) {
 
 				this.module.exports = exports;
@@ -246,7 +246,7 @@
 
 		load: function(componentURL) {
 
-			return codeSFCLoader.httpRequest(componentURL)
+			return codeVeuSFCLoader.httpRequest(componentURL)
 			.then(function(responseText) {
 
 				this.baseURI = componentURL.substr(0, componentURL.lastIndexOf('/')+1);
@@ -283,7 +283,7 @@
 				p = Promise.resolve(null);
 			} else {
 
-				p = codeSFCLoader.httpRequest(eltCx.elt.getAttribute('src'))
+				p = codeVeuSFCLoader.httpRequest(eltCx.elt.getAttribute('src'))
 				.then(function(content) {
 
 					eltCx.elt.removeAttribute('src');
@@ -298,7 +298,7 @@
 
 					var lang = eltCx.elt.getAttribute('lang');
 					eltCx.elt.removeAttribute('lang');
-					return codeSFCLoader.langProcessor[lang.toLowerCase()].call(this, content === null ? eltCx.getContent() : content);
+					return codeVeuSFCLoader.langProcessor[lang.toLowerCase()].call(this, content === null ? eltCx.getContent() : content);
 				}
 				return content;
 			}.bind(this))
@@ -368,7 +368,7 @@
 	}
 
 
-	codeSFCLoader.load = function(url, name) {
+	codeVeuSFCLoader.load = function(url, name) {
 
 		return function() {
 
@@ -400,13 +400,13 @@
 	};
 
 
-	codeSFCLoader.register = function(Vue, url) {
+	codeVeuSFCLoader.register = function(Vue, url) {
 
 		var comp = parseComponentURL(url);
-		Vue.component(comp.name, codeSFCLoader.load(comp.url));
+		Vue.component(comp.name, codeVeuSFCLoader.load(comp.url));
 	};
 
-	codeSFCLoader.install = function(Vue) {
+	codeVeuSFCLoader.install = function(Vue) {
 
 		Vue.mixin({
 
@@ -423,21 +423,21 @@
 						var componentURL = ('_baseURI' in this.$options) ? resolveURL(this.$options._baseURI, comp.url) : comp.url;
 
 						if ( isNaN(componentName) )
-							components[componentName] = codeSFCLoader.load(componentURL, componentName);
+							components[componentName] = codeVeuSFCLoader.load(componentURL, componentName);
 						else
-							components[componentName] = Vue.component(comp.name, codeSFCLoader.load(componentURL, comp.name));
+							components[componentName] = Vue.component(comp.name, codeVeuSFCLoader.load(componentURL, comp.name));
 					}
 				}
 			}
 		});
 	};
 
-	codeSFCLoader.require = function(moduleName) {
+	codeVeuSFCLoader.require = function(moduleName) {
 
 		return window[moduleName];
 	};
 
-	codeSFCLoader.httpRequest = function(url) {
+	codeVeuSFCLoader.httpRequest = function(url) {
         if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
             return new Promise(function(resolve, reject) {
                 resolve(code);
@@ -466,19 +466,19 @@
 
 	};
 
-	codeSFCLoader.langProcessor = {
+	codeVeuSFCLoader.langProcessor = {
 		html: identity,
 		js: identity,
 		css: identity
 	};
 
-	codeSFCLoader.scriptExportsHandler = identity;
+	codeVeuSFCLoader.scriptExportsHandler = identity;
 
-	function codeSFCLoader(url, name) {
+	function codeVeuSFCLoader(url, name) {
 
 		var comp = parseComponentURL(url);
-		return codeSFCLoader.load(comp.url, name);
+		return codeVeuSFCLoader.load(comp.url, name);
 	}
 
-	return codeSFCLoader;
+	return codeVeuSFCLoader;
 });
