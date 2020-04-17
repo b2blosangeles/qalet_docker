@@ -1,7 +1,18 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
 		this.call = function(p) {
-			res.send('httpPackageModule.js - ' + p);
+			var fn = env.adminFolder + '/httpPackage/' + p;
+			fs.stat(fn, function(err, stat) {
+			      if(err == null) {
+				  if (stat.isDirectory()) {
+					res.sendFile(fn + 'index.html');
+				  } else {
+					res.sendFile(fn);
+				  }
+			      } else if(err.code === 'ENOENT') {
+				  res.render('html/page404.ect');
+			      }
+			});
 		}
 		this.removeDB = function() {
 			var me = this;
