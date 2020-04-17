@@ -11,7 +11,8 @@
       						if (err) {
 							res.send(err.message);
 						} else {
-							res.send(data);
+							let d = JSON.parse(data);
+							res.send(d);
 						}
 					});
 				  }
