@@ -34,7 +34,20 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'my-component': httpVueLoader('/vue/my-component.vue')
+          'my-component': httpVueLoader('/vue/my-component.vue'),
+          'button-counter' : Vue.component('button-counter', {
+                data: function () {
+                  return {
+                    count: 0
+                  }
+                },
+                  /*
+                  components: {
+                      'my-component': httpVueLoader('/vue/my-component.vue')
+                    },*/
+                template: '<span><button v-on:click="count++">=LL=You clicked me {{ count }} times.</button>' +
+                  '<my-component></my-component></span>'
+              })
         },
       methods: {
         setMessage : function(code) {
