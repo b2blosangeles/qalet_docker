@@ -149,16 +149,16 @@
 
 			var childModuleRequire = function(childURL) {
 
-				return httpVueLoader.require(resolveURL(this.component.baseURI, childURL));
+				return codeVueLoader.require(resolveURL(this.component.baseURI, childURL));
 			}.bind(this);
 
 			var childLoader = function(childURL, childName) {
 
-				return httpVueLoader(resolveURL(this.component.baseURI, childURL), childName);
+				return codeVueLoader(resolveURL(this.component.baseURI, childURL), childName);
 			}.bind(this);
 
 			try {
-				Function('exports', 'require', 'httpVueLoader', 'module', this.getContent()).call(this.module.exports, this.module.exports, childModuleRequire, childLoader, this.module);
+				Function('exports', 'require', 'codeVueLoader', 'module', this.getContent()).call(this.module.exports, this.module.exports, childModuleRequire, childLoader, this.module);
 			} catch(ex) {
 
 				if ( !('lineNumber' in ex) ) {
@@ -171,7 +171,7 @@
 			}
 
 			return Promise.resolve(this.module.exports)
-			.then(httpVueLoader.scriptExportsHandler.bind(this))
+			.then(codeVueLoader.scriptExportsHandler.bind(this))
 			.then(function(exports) {
 
 				this.module.exports = exports;
@@ -433,15 +433,38 @@
 	};
 
 	codeVueLoader.require = function(moduleName) {
+
 		return window[moduleName];
 	};
 
-    codeVueLoader.httpRequest = function(code) {
-        return new Promise(function(resolve, reject) {
-            resolve(code);
-        });
-    };
+	codeVueLoader.httpRequest = function(url) {
+        if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/))) {
+            return new Promise(function(resolve, reject) {
+                resolve(code);
+            });
+        } else {
+            return new Promise(function(resolve, reject) {
 
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url);
+                        xhr.responseType = 'text';
+
+                xhr.onreadystatechange = function() {
+
+                    if ( xhr.readyState === 4 ) {
+
+                        if ( xhr.status >= 200 && xhr.status < 300 )
+                            resolve(xhr.responseText);
+                        else
+                            reject(xhr.status);
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+	};
 
 	codeVueLoader.langProcessor = {
 		html: identity,
