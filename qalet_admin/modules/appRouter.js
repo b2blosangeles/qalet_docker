@@ -203,7 +203,7 @@
 			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|checkip|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
 
-			if ((v) && typeof v == 'object') {
+			// if ((v) && typeof v == 'object') {
 				switch (v[1]) {
 					case 'checkCodeUpdate':
 						me.checkCodeUpdate();
@@ -234,8 +234,26 @@
 						res.render('html/index.ect', { module: "package"});
 						break;	
 					default:
-						res.render('html/index.ect', { module: "Others"});
-				}		
+						if (TPA[p]) {
+							// TPA[req.params[0]].tpl
+							res.render('html/frame.ect', TPA[p].data);
+							return true;
+						} else {
+							var fn = env.adminFolder + '/httpdocs' + req.params[0];
+							fs.stat(fn, function(err, stat) {
+							      if(err == null) {
+								  if (stat.isDirectory()) {
+									res.sendFile(fn + 'index.html');
+								  } else {
+									res.sendFile(fn);
+								  }
+							      } else if(err.code === 'ENOENT') {
+								  res.render('html/page404.ect');
+							      }
+							});
+						}
+				}
+			/*	
 			} else {
 				
 				if (TPA[p]) {
@@ -257,6 +275,7 @@
 					});
 				}
 			}
+			*/
 		};	
 	};
 	
