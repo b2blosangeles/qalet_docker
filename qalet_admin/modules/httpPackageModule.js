@@ -9,10 +9,9 @@
 				  } else {
 					let d = {};
 					try {
-					}  catch (err) {
 						delete require.cache[fn];
 						d = require(fn);
-					}
+					}  catch (err) {}
 					res.send(d);
 				  }
 			      } else if(err.code === 'ENOENT') {
