@@ -26,8 +26,11 @@ if (!_qalet) var _qalet = {};
 //template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
 $(document).ready(function(){
   
-    var mm = httpVueLoader('/vue/my-component.vue');
-    
+    var commonLib = {
+        A : httpVueLoader('/vue/componentA.vue'),
+        B : httpVueLoader('/vue/componentB.vue'),
+        C : httpVueLoader('/vue/componentC.vue')
+    }
     _qalet = new Vue({
       el: '.body-template',
       data: {
@@ -43,7 +46,7 @@ $(document).ready(function(){
                   }
                 },
               components: {
-                  'my-component': mm
+                  'my-component': commonLib.A
                 },
                 template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
                   '<my-component post-title="niu"/></span>'
@@ -108,25 +111,8 @@ $(document).ready(function(){
     }
     setTimeout(
         function() {
-            /*
-              Vue.component('button-counter', {
-                data: function () {
-                  return {
-                    count: 0
-                  }
-                },
-                  
-                  components: {
-                      'my-component': httpVueLoader('/vue/my-component.vue')
-                    },
-                template: '<span><button v-on:click="count++">=LL=You clicked me {{ count }} times.</button>' +
-                  '<my-component></my-component></span>'
-              }); */
              _qalet.$forceUpdate();
         }, 3000
     
     )
-   
-   // _qalet.el = '#app';
-    // _qalet.$set('el', '#app');
 });
