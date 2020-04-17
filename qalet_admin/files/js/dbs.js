@@ -47,7 +47,7 @@ $(document).ready(function(){
                       'my-component': mm
                     },
                 template: '<span><button v-on:click="count++">=LL=You clicked me {{ count }} times.</button>' +
-                  '<my-component></my-component></span>'
+                  '<mm></mm></span>'
               })
         },
       methods: {
