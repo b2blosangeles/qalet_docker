@@ -24,10 +24,12 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
+			var dirn = env.adminFolder + '/httpdocs/';
+			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						cbk(list[i])
+						cbk(dirn + list[i]);
 						return true;
 					}
 				})(i)
