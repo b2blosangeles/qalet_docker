@@ -1,5 +1,5 @@
 var vueCommon = {
-    A : httpVueLoader('/commLib/vue/componentA.vue'),
+    A : 'kkk',
     B : httpVueLoader('/commLib/vue/componentB.vue'),
     C : httpVueLoader('/commLib/vue/componentC.vue')
 }
