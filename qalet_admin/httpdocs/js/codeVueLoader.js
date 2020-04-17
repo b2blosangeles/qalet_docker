@@ -4,7 +4,7 @@
 	else if(typeof define==='function' && define.amd)
 		define([],factory)
 	else
-		root.httpVueLoader=factory()
+		root.codeVueLoader=factory()
 })(this,function factory() {
 	'use strict';
 
