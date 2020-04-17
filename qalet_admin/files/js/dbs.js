@@ -1,8 +1,5 @@
 if (!_qalet) var _qalet = {};
 
-
-
-
 (function ($) {
     $.fn.serializeFormJSON = function () {
         var o = {};
@@ -109,10 +106,5 @@ $(document).ready(function(){
         });
        
     }
-    setTimeout(
-        function() {
-             _qalet.$forceUpdate();
-        }, 3000
-    
-    )
+    _qalet.$forceUpdate();
 });
