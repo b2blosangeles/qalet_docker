@@ -42,12 +42,11 @@ $(document).ready(function(){
                     count: 0
                   }
                 },
-                  
-                  components: {
-                      'my-component': mm
-                    },
-                template: '<span><button v-on:click="count++">=LL=You clicked me {{ count }} times.</button>' +
-                  '<mm></mm></span>'
+              components: {
+                  'my-component': mm
+                },
+                template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
+                  '<my-component/></span>'
               })
         },
       methods: {
