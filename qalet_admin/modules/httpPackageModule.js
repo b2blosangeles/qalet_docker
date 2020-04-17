@@ -46,8 +46,8 @@
 					for (var i = 0; i < list.length; i++) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/((\?|#).*)?$/,'');
-						str += fileName + "\n";
-						str += CP.data['_' + i];
+						str += fileName + ' = ';
+						str += 'codeVeuSFCLoader(' + CP.data['_' + i] + ');';
 					}
 					res.send(str);
 			   	},
