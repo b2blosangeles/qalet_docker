@@ -29,8 +29,9 @@ if (!_qalet) var _qalet = {};
     },
       components: {
           'my-component': httpVueLoader('/vue/my-component.vue')
-        }
-    
+        },
+    template: '<span><button v-on:click="count++">==You clicked me {{ count }} times.</button>' +
+      '<my-component></my-component></span>'
   }); 
 
 //template: '<button v-on:click="count++">==You clicked me {{ count }} times.</button>'
