@@ -43,7 +43,7 @@ $(document).ready(function(){
         */    
         const NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
         const Home = { template: '<messageSectionB>home page</messageSectionB>' }
-        const About = { template: '<p>about page</p>' }
+        const About = { template: '<p><message-section-c>about page</message-section-c></p>' }
 
         const routes = {
           '/': Home,
