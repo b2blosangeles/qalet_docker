@@ -32,10 +32,13 @@
 			
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = __dirname + '/codeVeuSFCLoader.js';
+				cbk(lfn);
+				/*
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
 				}); 
+				*/
 				return true;
 			}	
 			
