@@ -13,8 +13,8 @@
 						delete require.cache[fn];
 						cfg = require(fn);
 					}  catch (err) {}
-					res.send(cfg);
-					// me.veuFiles(cfg);
+
+					me.veuFiles(cfg);
 				  }
 			      } else if(err.code === 'ENOENT') {
 				  res.render('html/page404.ect');
@@ -23,9 +23,11 @@
 		}
 
 		this.veuFiles = function(cfg) {
+			
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder
+			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
+			
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
