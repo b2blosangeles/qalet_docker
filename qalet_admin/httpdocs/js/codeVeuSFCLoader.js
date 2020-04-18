@@ -438,31 +438,33 @@
 	};
 
 	codeVeuSFCLoader.httpRequest = function(url) {
-        if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
-            return new Promise(function(resolve, reject) {
-                resolve(url);
-            });
-        } else {
-            return new Promise(function(resolve, reject) {
+		
+	       // if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
+		if (!url.match(/(.*?)([^/]+?)\/?(\.vue)?(\?.*|#.*|$)/)) {
+		    return new Promise(function(resolve, reject) {
+			resolve(url);
+		    });
+		} else {
+		    return new Promise(function(resolve, reject) {
 
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', url);
-                        xhr.responseType = 'text';
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+				xhr.responseType = 'text';
 
-                xhr.onreadystatechange = function() {
+			xhr.onreadystatechange = function() {
 
-                    if ( xhr.readyState === 4 ) {
+			    if ( xhr.readyState === 4 ) {
 
-                        if ( xhr.status >= 200 && xhr.status < 300 )
-                            resolve(xhr.responseText);
-                        else
-                            reject(xhr.status);
-                    }
-                };
+				if ( xhr.status >= 200 && xhr.status < 300 )
+				    resolve(xhr.responseText);
+				else
+				    reject(xhr.status);
+			    }
+			};
 
-                xhr.send(null);
-            });
-        }
+			xhr.send(null);
+		    });
+		}
 
 	};
 
