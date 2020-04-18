@@ -26,6 +26,14 @@
 			
 			var dirn = env.adminFolder + '/httpdocs/';
 			
+			_f['codeVeuSFCLoader'] = function(cbk) {
+				let lfn = dirn + 'js/codeVeuSFCLoader.js';
+				pkg.fs.readFile(lfn, 'utf8', function(err, data){
+					cbk(data);
+				}); 
+				return true;
+			}	
+			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
@@ -42,7 +50,9 @@
 			CP.serial(
 				_f,
 				function(data) {
-					var str = "var vueCommon = {}; \n";
+					var str = CP.data['codeVeuSFCLoader'] + "\n";
+					str += "var vueCommon = {}; \n";
+					
 					for (var i = 0; i < list.length; i++) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
