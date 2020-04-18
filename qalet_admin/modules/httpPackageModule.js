@@ -65,7 +65,6 @@
 					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
 					
-					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
 					str += "/*--- " + nameSpace + " code ---*/\n"
