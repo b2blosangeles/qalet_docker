@@ -47,7 +47,7 @@ $(document).ready(function(){
 
         var routes = {
           '/': Home,
-          '/about': About
+          '/about': QALETCOMM.componentC
         }
 
         new Vue({
