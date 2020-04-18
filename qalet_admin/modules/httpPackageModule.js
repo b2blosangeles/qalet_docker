@@ -53,7 +53,7 @@
 						str += "codeVeuSFCLoader(decodeURIComponent(`" +  cd +  "`)); \n";
 						str += "console.log(decodeURIComponent(`" +  cd +  "`)); \n";
 						// .replace(/(\r\n|\n|\r)/gm,' ')
-						str += "console.log(" + 'vueCommon.' + fileName + "); \n";
+						str += "console.log(" + 'vueCommon' + "); \n";
 					}
 					res.send(str);
 			   	},
