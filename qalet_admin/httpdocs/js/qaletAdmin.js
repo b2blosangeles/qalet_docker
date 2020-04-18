@@ -42,6 +42,7 @@ $(document).ready(function(){
             });
         */ 
         var globalComponents = {
+                  dbList         : QALETCOMM.dbList,
                   messageSectionA: QALETCOMM.componentA,
                   messageSectionB: QALETCOMM.componentB,
                   messageSectionC: QALETCOMM.componentC
@@ -60,7 +61,7 @@ $(document).ready(function(){
             components : globalComponents 
          },
          Databases = { 
-            template: '<message-section-a postTitle="Databases"></message-section-a>',
+            template: '<db-list postTitle="Databases"></db-list>',
             components : globalComponents 
          };
     
