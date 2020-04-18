@@ -42,7 +42,7 @@ $(document).ready(function(){
             });
         */    
         const NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
-        const Home = { template: '<p>home page</p>' }
+        const Home = { template: '<messageSectionB>home page</messageSectionB>' }
         const About = { template: '<p>about page</p>' }
 
         const routes = {
