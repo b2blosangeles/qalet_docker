@@ -41,11 +41,11 @@ $(document).ready(function(){
               }
             });
         */    
-        const NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
-        const Home = { template: '<messageSectionB>home page</messageSectionB>' }
-        const About = { template: '<p><message-section-c>about page</message-section-c></p>' }
+        var NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
+       var Home = { template: '<messageSectionB>home page -</messageSectionB>' }
+        var About = { template: '<p><message-section-c>about page</message-section-c></p>' }
 
-        const routes = {
+        var routes = {
           '/': Home,
           '/about': About
         }
