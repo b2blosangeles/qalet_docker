@@ -65,8 +65,8 @@
 							CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') +  
 						"`)); \n";
 						str += 'console.log(vueCommon.' + fileName + '); ' + "\n";
-					        str += 'vueCommon.' + fileName + ' = ';
-						str += codeVeuSFCLoader()(decodeURIComponent('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`'));
+					       // str += 'vueCommon.' + fileName + ' = ';
+						// str += codeVeuSFCLoader()(decodeURIComponent('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`'));
 					}
 		
 				//	str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
