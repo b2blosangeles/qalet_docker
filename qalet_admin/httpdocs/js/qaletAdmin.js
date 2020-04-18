@@ -46,7 +46,7 @@ $(document).ready(function(){
         var About = { template: '<p><message-section-c>about page</message-section-c></p>' }
 
         var routes = {
-          '/': Home,
+          '/': { template: '<messageSectionB>home page -</messageSectionB>' },
           '/about': QALETCOMM.componentC
         }
 
