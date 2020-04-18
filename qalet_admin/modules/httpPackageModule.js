@@ -27,7 +27,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-			res.send(list);
+			res.send(_folder);
 			return true;
 			
 			_f['codeVeuSFCLoader'] = function(cbk) {
