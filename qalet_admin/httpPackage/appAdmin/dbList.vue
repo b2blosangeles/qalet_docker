@@ -13,6 +13,6 @@ module.exports = {
 </script>
 <style>
 .db_list_class {
-    background-color: green;
+  //  background-color: green;
 }
 </style>
