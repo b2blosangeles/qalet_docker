@@ -27,7 +27,16 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-
+			
+			_f['vue.min.js'] = function(cbk) {
+				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
+				pkg.fs.readFile(lfn, 'utf8', function(err, data){
+					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
+					cbk(data);
+				}); 
+				return true;
+			}
+			
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -53,7 +62,10 @@
 			CP.serial(
 				_f,
 				function(data) {
-					var str = CP.data['codeVeuSFCLoader'] + "\n";
+					
+					var str = CP.data['vue.min.js'] + "\n";
+					str += CP.data['codeVeuSFCLoader'] + "\n";
+					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					str += "var " + nameSpace + " = {}; \n";
 					
