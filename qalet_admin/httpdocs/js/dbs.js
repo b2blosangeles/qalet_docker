@@ -33,7 +33,7 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'my-component': vueCommon.componentB,
+          'my-component': vueCommon.componentA,
           'button-counter' : Vue.component('button-counter', {
                 data: function () {
                   return {
