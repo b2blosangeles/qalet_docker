@@ -34,7 +34,7 @@
 				let lfn = dirn + 'js/codeVeuSFCLoader.js';
 				//  \/\*[\s\S]*?\*\/|([^:]|^)\/\/.*$
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
-					cbk(data.replace(/(\/\/[^\n\r]*[\n\r]+)/, ''));
+					cbk(data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, ''));
 				}); 
 				return true;
 			}	
