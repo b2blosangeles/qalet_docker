@@ -32,7 +32,7 @@
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = dirn + 'js/codeVeuSFCLoader.js';
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
-					cbk(data);
+					cbk(data.replace(/(\r\n|\n|\r)/gm,' '));
 				}); 
 				return true;
 			}	
