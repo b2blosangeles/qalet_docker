@@ -29,7 +29,7 @@
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 			res.send(list);
 			return true;
-			
+			/*
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -70,6 +70,7 @@
 			   	},
 			   	6000
 			);
+			*/
 		}
 	};
 
