@@ -41,7 +41,7 @@ $(document).ready(function(){
                   }
                 },
               components: {
-                  'my-component': vueCommon.componentA
+                  'my-component': vueCommon.componentB
                 },
                 template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
                   '<my-component post-title="niu"/></span>'
