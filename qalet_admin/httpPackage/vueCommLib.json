@@ -1,7 +1,8 @@
 {
-  "vue" : [
-        "/commLib/vue/componentA.vue",
-        "/commLib/vue/componentB.vue",
-        "/commLib/vue/componentC.vue"
+  "folder" : "/httpPackage/app",
+  "files" : [
+        "componentA.vue",
+        "componentB.vue",
+        "componentC.vue"
   ]
 }
