@@ -41,18 +41,33 @@ $(document).ready(function(){
               }
             });
         */    
-        var NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
-       var Home = { template: '<messageSectionB>home page -</messageSectionB>' }
-        var About = { template: '<p><message-section-c>about page</message-section-c></p>' }
-
+        var NotFound = { 
+            template: '<message-section-a>Page not found</message-section-a>',
+            components: {
+              messageSectionA: QALETCOMM.componentA,
+              messageSectionB: QALETCOMM.componentB,
+              messageSectionC: QALETCOMM.componentC
+            }
+         },
+         Home = { 
+            template: '<message-section-a>Home</message-section-a>',
+            components: {
+              messageSectionA: QALETCOMM.componentA,
+              messageSectionB: QALETCOMM.componentB,
+              messageSectionC: QALETCOMM.componentC
+            }
+         },
+         About = { 
+            template: '<message-section-a>About </message-section-a>',
+            components: {
+              messageSectionA: QALETCOMM.componentA,
+              messageSectionB: QALETCOMM.componentB,
+              messageSectionC: QALETCOMM.componentC
+            }
+         }
         var routes = {
-          '/': { 
-                template: '<messageSectionB>home page -B-</messageSectionB>',
-                components: {
-                    messageSectionB: QALETCOMM.componentB
-                }
-            },
-          '/about': QALETCOMM.componentC
+          '/': Home,
+          '/about': About
         }
 
         new Vue({
@@ -60,11 +75,6 @@ $(document).ready(function(){
           data: {
             currentRoute: window.location.pathname
           },
-         components: {
-              messageSectionA: QALETCOMM.componentA,
-              messageSectionB: QALETCOMM.componentB,
-              messageSectionC: QALETCOMM.componentC
-            },
           computed: {
             ViewComponent () {
               return routes[this.currentRoute] || NotFound
