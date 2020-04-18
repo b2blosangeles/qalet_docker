@@ -1,5 +1,5 @@
 <template>
-    <div class="db_list_class">DB list 2</div>
+    <div class="db_list_class">DB list 21</div>
     <message-section-a  postTitle="good news">component-a</message-section-a>
     <div class="db_list_class">DB list 3</div>
 </template>
