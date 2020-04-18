@@ -27,11 +27,11 @@
 			
 			var dirn = env.adminFolder + '/httpdocs/';
 			
-			delete require.cache[dirn + 'js/codeVeuSFCLoader.js'];
-			var codeVeuSFCLoader = require(dirn + 'js/codeVeuSFCLoader.js');
+			//delete require.cache[dirn + 'js/codeVeuSFCLoader.js'];
+			//var codeVeuSFCLoader = require(dirn + 'js/codeVeuSFCLoader.js');
 			
 			_f['codeVeuSFCLoader'] = function(cbk) {
-				let lfn = dirn + 'js/codeVeuSFCLoader.js';
+				let lfn = __dirname + '/codeVeuSFCLoader.js';
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
