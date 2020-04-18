@@ -41,18 +41,23 @@ $(document).ready(function(){
               }
             });
         */ 
-        var messageSectionA = QALETCOMM.componentA,
-            messageSectionB = QALETCOMM.componentB,
-            messageSectionC = QALETCOMM.componentC;
+        var globalComponents = {
+                  messageSectionA: QALETCOMM.componentA,
+                  messageSectionB: QALETCOMM.componentB,
+                  messageSectionC: QALETCOMM.componentC
+                }
     
         var NotFound = { 
-            template: '<message-section-a postTitle="Page not found"></message-section-a>'
+            template: '<message-section-a postTitle="Page not found"></message-section-a>',
+            components : globalComponents 
          },
          Home = { 
-            template: '<message-section-b postTitle="Home"></message-section-b>'
+            template: '<message-section-b postTitle="Home"></message-section-b>',
+            components : globalComponents 
          },
          About = { 
-            template: '<message-section-c postTitle="About"> </message-section-c>'
+            template: '<message-section-c postTitle="About"> </message-section-c>',
+            components : globalComponents 
          }
         var routes = {
           '/': Home,
