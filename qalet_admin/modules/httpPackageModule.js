@@ -64,7 +64,7 @@
 							CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') +  
 						"`)); \n";
 					}
-					str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
+				//	str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
 					res.send(str);
 			   	},
 			   	6000
