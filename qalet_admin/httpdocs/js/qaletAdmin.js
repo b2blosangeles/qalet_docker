@@ -19,7 +19,7 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 $(document).ready(function(){
-
+/*
     new Vue({
       el: '#app',
       data: {
@@ -40,5 +40,28 @@ $(document).ready(function(){
         }
       }
     });
+*/    
+const NotFound = { template: '<p>Page not found</p>' }
+const Home = { template: '<p>home page</p>' }
+const About = { template: '<p>about page</p>' }
+
+const routes = {
+  '/': Home,
+  '/about': About
+}
+
+new Vue({
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render (h) { return h(this.ViewComponent) }
+}) 
+    
     
 });
