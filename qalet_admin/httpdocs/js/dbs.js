@@ -106,7 +106,7 @@ $(document).ready(function(){
     }
             _qalet.$forceUpdate();
             console.log('Loaded _qalet.$forceUpdate(); ');
-        }, 3000
+        }, 100
     );
     
 });
