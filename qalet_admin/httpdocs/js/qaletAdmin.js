@@ -59,10 +59,11 @@ $(document).ready(function(){
             template: '<message-section-c postTitle="About"> </message-section-c>',
             components : globalComponents 
          },
-         var Databases = { 
+         Databases = { 
             template: '<message-section-a postTitle="Databases"></message-section-a>',
             components : globalComponents 
-         },
+         };
+    
         var routes = {
           '/': Home,
           '/about': About,
