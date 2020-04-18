@@ -1,5 +1,8 @@
 if (!_qalet) var _qalet = {};
 
+var code = `<template><section><h1>SFC string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
+
+
 (function ($) {
     $.fn.serializeFormJSON = function () {
         var o = {};
