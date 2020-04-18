@@ -51,7 +51,7 @@ $(document).ready(function(){
         },
       methods: {
         setMessage : function(code) {
-            this.message = code + ' =><=' + new Date();
+            this.message = _code + ' =><=' + new Date();
         },
         showModule : function(code) {
             return (!this.switchModule) ? false : this.switchModule(code);
