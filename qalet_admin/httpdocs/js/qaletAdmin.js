@@ -40,30 +40,19 @@ $(document).ready(function(){
                 }
               }
             });
-        */    
+        */ 
+        var messageSectionA = QALETCOMM.componentA,
+            messageSectionB = QALETCOMM.componentB,
+            messageSectionC = QALETCOMM.componentC
+        }
         var NotFound = { 
-            template: '<message-section-a>Page not found</message-section-a>',
-            components: {
-              messageSectionA: QALETCOMM.componentA,
-              messageSectionB: QALETCOMM.componentB,
-              messageSectionC: QALETCOMM.componentC
-            }
+            template: '<message-section-a postTitle="Page not found"></message-section-a>'
          },
          Home = { 
-            template: '<message-section-a>Home</message-section-a>',
-            components: {
-              messageSectionA: QALETCOMM.componentA,
-              messageSectionB: QALETCOMM.componentB,
-              messageSectionC: QALETCOMM.componentC
-            }
+            template: '<message-section-b postTitle="Home"></message-section-b>'
          },
          About = { 
-            template: '<message-section-a>About </message-section-a>',
-            components: {
-              messageSectionA: QALETCOMM.componentA,
-              messageSectionB: QALETCOMM.componentB,
-              messageSectionC: QALETCOMM.componentC
-            }
+            template: '<message-section-c postTitle="About"> </message-section-c>'
          }
         var routes = {
           '/': Home,
