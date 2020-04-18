@@ -21,7 +21,7 @@ if (!_qalet) var _qalet = {};
 $(document).ready(function(){
 
     _qalet = new Vue({
-      el: '.body-template',
+      el: '#app',
       data: {
         seen    : true,
         message : null
