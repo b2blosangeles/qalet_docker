@@ -51,6 +51,7 @@
 						var cd = encodeURIComponent(CP.data['_' + i]);
 						// str += "codeVeuSFCLoader(code); \n";
 						str += "codeVeuSFCLoader(decodeURIComponent(`" +  cd +  "`)); \n";
+						str += "console.log(decodeURIComponent(`" +  cd +  "`)); \n";
 						// .replace(/(\r\n|\n|\r)/gm,' ')
 						str += "console.log(" + 'vueCommon.' + fileName + "); \n";
 					}
