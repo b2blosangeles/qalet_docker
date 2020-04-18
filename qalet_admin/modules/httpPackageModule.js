@@ -26,6 +26,9 @@
 			
 			var dirn = env.adminFolder + '/httpdocs/';
 			
+			delete require.cache[dirn + 'js/codeVeuSFCLoader.js'];
+			var codeVeuSFCLoader = require(dirn + 'js/codeVeuSFCLoader.js');
+			
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = dirn + 'js/codeVeuSFCLoader.js';
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -61,6 +64,7 @@
 							CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') +  
 						"`)); \n";
 					}
+					str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
 					res.send(str);
 			   	},
 			   	6000
