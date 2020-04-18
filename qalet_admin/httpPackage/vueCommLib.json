@@ -1,5 +1,5 @@
 {
-  "folder"  : "/app",
+  "folder"  : "/appAdmin",
   "files"   : [
         "componentA.vue",
         "componentB.vue",
