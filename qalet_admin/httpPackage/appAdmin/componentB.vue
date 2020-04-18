@@ -1,5 +1,5 @@
 <template>
-    <div class="hellob">Hello B {{postTitle}}</div>
+    <div class="hellob">Hello {{postTitle}}</div>
 </template>
  
 <script>
