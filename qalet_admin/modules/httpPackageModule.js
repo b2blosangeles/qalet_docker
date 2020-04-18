@@ -69,9 +69,9 @@
 						// str += codeVeuSFCLoader()(decodeURIComponent('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`'));
 					}
 		
-				//	str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
-					// var _code = `<template><section><h1>SFC niu string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
-					// str += codeVeuSFCLoader(_code);
+					// str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
+				       var _code = `<template><section><h1>SFC niu string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
+				      str += codeVeuSFCLoader(_code, 'niu');
 					res.send(str);
 			   	},
 			   	6000
