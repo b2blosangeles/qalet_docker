@@ -1,7 +1,5 @@
 if (!_qalet) var _qalet = {};
 
-var _code = `<template><section><h1>SFC niu c b string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
-
 (function ($) {
     $.fn.serializeFormJSON = function () {
         var o = {};
@@ -51,7 +49,7 @@ $(document).ready(function(){
         },
       methods: {
         setMessage : function(code) {
-            this.message = _code + ' =><=' + new Date();
+            this.message = code + ' =><=' + new Date();
         },
         showModule : function(code) {
             return (!this.switchModule) ? false : this.switchModule(code);
