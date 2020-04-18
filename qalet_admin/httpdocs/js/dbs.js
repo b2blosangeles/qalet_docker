@@ -1,6 +1,6 @@
 if (!_qalet) var _qalet = {};
 
-var _code = `<template><section><h1>SFC niub string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
+var _code = `<template><section><h1>SFC niu c b string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
 
 (function ($) {
     $.fn.serializeFormJSON = function () {
