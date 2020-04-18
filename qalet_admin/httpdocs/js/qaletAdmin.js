@@ -19,49 +19,54 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 $(document).ready(function(){
-/*
-    new Vue({
-      el: '#app',
-      data: {
-        seen    : true,
-        message : null
-      },
-      components: {
-          messageSectionA: QALETCOMM.componentA,
-          messageSectionB: QALETCOMM.componentB,
-          messageSectionC: QALETCOMM.componentC
-        },
-      methods: {
-        setMessage : function(code) {
-            this.message = code + ' =><=' + new Date();
-        },
-        showModule : function(code) {
-            return (!this.switchModule) ? false : this.switchModule(code);
+        /*
+            new Vue({
+              el: '#app',
+              data: {
+                seen    : true,
+                message : null
+              },
+              components: {
+                  messageSectionA: QALETCOMM.componentA,
+                  messageSectionB: QALETCOMM.componentB,
+                  messageSectionC: QALETCOMM.componentC
+                },
+              methods: {
+                setMessage : function(code) {
+                    this.message = code + ' =><=' + new Date();
+                },
+                showModule : function(code) {
+                    return (!this.switchModule) ? false : this.switchModule(code);
+                }
+              }
+            });
+        */    
+        const NotFound = { template: '<message-section-a>Page not found</message-section-a>' }
+        const Home = { template: '<p>home page</p>' }
+        const About = { template: '<p>about page</p>' }
+
+        const routes = {
+          '/': Home,
+          '/about': About
         }
-      }
-    });
-*/    
-const NotFound = { template: '<p>Page not found</p>' }
-const Home = { template: '<p>home page</p>' }
-const About = { template: '<p>about page</p>' }
 
-const routes = {
-  '/': Home,
-  '/about': About
-}
-
-new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
-}) 
+        new Vue({
+          el: '#app',
+          data: {
+            currentRoute: window.location.pathname
+          },
+         components: {
+              messageSectionA: QALETCOMM.componentA,
+              messageSectionB: QALETCOMM.componentB,
+              messageSectionC: QALETCOMM.componentC
+            },
+          computed: {
+            ViewComponent () {
+              return routes[this.currentRoute] || NotFound
+            }
+          },
+          render (h) { return h(this.ViewComponent) }
+        }) 
     
     
 });
