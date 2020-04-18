@@ -62,10 +62,11 @@
 						
 						str += 'vueCommon.' + fileName + ' = ';
 						str += "codeVeuSFCLoader(decodeURIComponent(`" +  
-							encodeURIComponent(CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) +  
+							encodeURIComponent(CP.data['_' + i]) +  
 						"`)); \n";
 						str += 'console.log(vueCommon.' + fileName + '.toString()); ' + "\n";
 					       // str += 'vueCommon.' + fileName + ' = ';
+						// .replace(/(\r\n|\n|\r)/gm,' ')
 						// str += codeVeuSFCLoader()(decodeURIComponent('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`'));
 					}
 		
