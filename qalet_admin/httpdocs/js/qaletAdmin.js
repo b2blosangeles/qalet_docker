@@ -58,10 +58,15 @@ $(document).ready(function(){
          About = { 
             template: '<message-section-c postTitle="About"> </message-section-c>',
             components : globalComponents 
-         }
+         },
+         var Databases = { 
+            template: '<message-section-a postTitle="Databases"></message-section-a>',
+            components : globalComponents 
+         },
         var routes = {
           '/': Home,
-          '/about': About
+          '/about': About,
+          '/dbs': Databases
         }
 
         new Vue({
