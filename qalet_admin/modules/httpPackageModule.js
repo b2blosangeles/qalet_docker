@@ -52,13 +52,14 @@
 				_f,
 				function(data) {
 					var str = CP.data['codeVeuSFCLoader'] + "\n";
-					str += "var vueCommon = {}; \n";
+					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
+					str += "var " + nameSpace + " = {}; \n";
 					
 					for (var i = 0; i < list.length; i++) {
 						let lfn = env.adminFolder + '/httpdocs/' + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
-						str += 'vueCommon.' + fileName + ' = ';
+						str += nameSpace + '.' + fileName + ' = ';
 						str += "codeVeuSFCLoader(decodeURIComponent(`" + CP.data['_' + i] + "`)); \n";
 					}
 					res.send(str);
