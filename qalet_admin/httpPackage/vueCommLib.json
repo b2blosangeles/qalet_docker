@@ -1,5 +1,5 @@
 {
-  "folder" : "/httpPackage/app",
+  "folder" : "/app",
   "files" : [
         "componentA.vue",
         "componentB.vue",
