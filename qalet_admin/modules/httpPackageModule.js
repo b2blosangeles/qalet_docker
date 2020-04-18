@@ -55,7 +55,7 @@
 					str += "var vueCommon = {}; \n";
 					
 					for (var i = 0; i < list.length; i++) {
-						let lfn = dirn + list[i].replace(/^\//, '');
+						let lfn = env.adminFolder + '/httpdocs/' + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += 'vueCommon.' + fileName + ' = ';
