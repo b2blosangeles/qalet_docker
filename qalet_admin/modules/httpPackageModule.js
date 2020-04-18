@@ -33,8 +33,7 @@
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = dirn + 'js/codeVeuSFCLoader.js';
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
-					// data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '').replace(/(\r\n|\n|\r)/gm,' ');
-					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '').replace(/\;(\r\n|\n|\r)/gm,' ');
+					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
 				}); 
 				return true;
@@ -45,6 +44,7 @@
 					return function(cbk) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
+							data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
 						}); 
 						return true;
