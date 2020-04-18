@@ -66,7 +66,8 @@
 						"`)); \n";
 						str += 'console.log(vueCommon.' + fileName + '); ' + "\n";
 					        str += 'vueCommon.' + fileName + ' = ';
-						str += codeVeuSFCLoader()('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`').toString() + "\n";
+						str += codeVeuSFCLoader();
+						// ('`' + CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') + '`').toString() + "\n";
 					}
 				//	str += codeVeuSFCLoader(decodeURIComponent(CP.data['_0'].replace(/(\r\n|\n|\r)/gm,' '));
 					// var _code = `<template><section><h1>SFC niu string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}<\/script>`;
