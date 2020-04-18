@@ -62,10 +62,14 @@
 				_f,
 				function(data) {
 					
-					var str = CP.data['vue.min.js'] + "\n";
-					str += CP.data['codeVeuSFCLoader'] + "\n";
+					var str = "--- vue.min.js ---\n" + CP.data['vue.min.js'] + "\n";
+					str += "--- codeVeuSFCLoader.js ---\n" +  CP.data['codeVeuSFCLoader'] + "\n";
+					
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
+					
+					str += "--- " + nameSpace + " code ---\n"
+					
 					str += "var " + nameSpace + " = {}; \n";
 					
 					for (var i = 0; i < list.length; i++) {
