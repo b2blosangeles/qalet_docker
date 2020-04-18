@@ -27,7 +27,9 @@ $(document).ready(function(){
         message : null
       },
       components: {
-          'messageSection': QALETCOMM.componentA
+          messageSectionA: QALETCOMM.componentA,
+          messageSectionB: QALETCOMM.componentB,
+          messageSectionC: QALETCOMM.componentC
         },
       methods: {
         setMessage : function(code) {
