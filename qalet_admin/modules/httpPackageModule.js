@@ -24,7 +24,7 @@
 		this.veuFiles = function(cfg) {
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
-			var list = cfg.files, folder = env.adminFolder + '/httpPackage' + cfg.folder
+			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 
@@ -38,7 +38,7 @@
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						let lfn =  folder + '/' + list[i].replace(/^\//, '');
+						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
@@ -56,7 +56,7 @@
 					str += "var " + nameSpace + " = {}; \n";
 					
 					for (var i = 0; i < list.length; i++) {
-						let lfn =  folder + '/' + list[i].replace(/^\//, '');
+						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += nameSpace + '.' + fileName + ' = ';
