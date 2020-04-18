@@ -1,5 +1,5 @@
 <template>
-    <div class="helloA">Hello {{postTitle}}</div>
+    <div class="db_list_class">DB list</div>
 </template>
  
 <script>
@@ -7,13 +7,12 @@ module.exports = {
     props: ["postTitle"],
     data: function() {
         return {
-            who: 'world'
         }
     }
 }
 </script>
 <style>
-.helloA {
-    background-color: pink;
+.db_list_class {
+    background-color: green;
 }
 </style>
