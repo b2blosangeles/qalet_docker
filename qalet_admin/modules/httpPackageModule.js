@@ -42,8 +42,7 @@
 					return function(cbk) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							cbk(data);
-							//cbk(data.replace(/(\r\n|\n|\r)/gm,' ')); 
+							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
 						}); 
 						return true;
 					}
@@ -61,9 +60,7 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += 'vueCommon.' + fileName + ' = ';
-						str += "codeVeuSFCLoader(decodeURIComponent(`" +  
-							encodeURIComponent(CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) +  
-						"`)); \n";
+						str += "codeVeuSFCLoader(decodeURIComponent(`" + CP.data['_' + i] + "`)); \n";
 					}
 					res.send(str);
 			   	},
