@@ -27,9 +27,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-			res.send(_folder);
-			return true;
-			
+
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -44,7 +42,7 @@
 					return function(cbk) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
+							data = (err) ? '' : data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
 						}); 
 						return true;
