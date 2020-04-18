@@ -43,8 +43,8 @@ $(document).ready(function(){
         */ 
         var messageSectionA = QALETCOMM.componentA,
             messageSectionB = QALETCOMM.componentB,
-            messageSectionC = QALETCOMM.componentC
-        }
+            messageSectionC = QALETCOMM.componentC;
+    
         var NotFound = { 
             template: '<message-section-a postTitle="Page not found"></message-section-a>'
          },
