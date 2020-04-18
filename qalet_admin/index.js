@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var pkg = {
-       tpl : ECT({ watch: true, root: __dirname + '/views', ext : '.ect' }),
+       tpl : ECT({ watch: true, cache: false, root: __dirname + '/views', ext : '.ect' }),
        crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
        exec : require('child_process').exec,
        fs   : require('fs')
