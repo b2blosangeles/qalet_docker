@@ -1,10 +1,9 @@
 <template>
-    <div class="db_list_class">DB list 22
+    <span>
+        <div class="db_list_class">DB list 22</div>
         <message-section-a  postTitle="good news">component-a</message-section-a>
-         <div class="db_list_class">DB list 3</div>
-    </div>
-    
-   
+        <div class="db_list_class">DB list 3</div>
+     </span>
 </template>
  
 <script>
