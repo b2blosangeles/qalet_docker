@@ -31,7 +31,6 @@
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
-					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
 				}); 
 				return true;
