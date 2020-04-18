@@ -13,7 +13,8 @@
 						delete require.cache[fn];
 						cfg = require(fn);
 					}  catch (err) {}
-					me.veuFiles(cfg);
+					res.send(cfg);
+					// me.veuFiles(cfg);
 				  }
 			      } else if(err.code === 'ENOENT') {
 				  res.render('html/page404.ect');
