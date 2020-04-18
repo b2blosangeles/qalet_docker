@@ -1,6 +1,6 @@
 <template>
     <div class="db_list_class">DB list</div>
-    <component-a  postTitle="good news">component-a</component-a>
+    <message-section-a  postTitle="good news">component-a</message-section-a>
 </template>
  
 <script>
@@ -11,7 +11,7 @@ module.exports = {
         }
     },
     components : {
-        componentA : globalComponents.componentA
+        messageSectionA : globalComponents.componentA
     }
 }
 </script>
