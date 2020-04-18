@@ -1,16 +1,14 @@
 #!/bin/bash
+declare -A InTarget
 
-[ -z "$1" -o -z "$2" ] && {  ## validate input
-    printf "error: insufficient input. Usage: %s tmpfiles storage\n" ${0//*\//}
-    exit 1
-}
+while read path
+do
+    name=${path##*/}
+    InTarget[$name]=$path
+done < <(find $1 -type f)
 
-for i in "$1"/*; do
-    fn=${i##*/}  ## strip path, leaving filename only
-
-    ## if file in backup matches filename, skip rest of loop
-    ls ${2}* | grep -q $fn &>/dev/null && continue
-
-    printf "removing %s\n" "$i"
-    # rm "$i" ## remove file
-done
+while read path
+do
+    name=${path##*/}
+    [[ -z ${InTarget[$name]} ]] && rm -f $path
+done < <(find $2 -type f)
