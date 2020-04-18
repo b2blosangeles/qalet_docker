@@ -1,7 +1,5 @@
 {
   "vue" : [
-        "/commLib/vue/componentA.vue",
-        "/commLib/vue/componentB.vue",
-        "/commLib/vue/componentC.vue"
+        "/commLib/vue/componentA.vue"
   ]
 }
