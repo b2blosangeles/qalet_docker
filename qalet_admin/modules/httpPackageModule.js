@@ -47,12 +47,12 @@
 						let lfn = dirn + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						str += 'vueCommon.' + fileName + ' = ';
-						str += 'codeVeuSFCLoader(decodeURIComponent("' + 
+						str += 'codeVeuSFCLoader(decodeURIComponent(`' + 
 							encodeURIComponent(CP.data['_' + i]) + 
-							'")); ' + "\n";
-						str += 'console.log(decodeURIComponent("' + 
+							'`)); ' + "\n";
+						str += 'console.log(decodeURIComponent(`' + 
 							encodeURIComponent(CP.data['_' + i]) + 
-							'")); ' + "\n";
+							'`)); ' + "\n";
 						// .replace(/(\r\n|\n|\r)/gm,' ')
 						str += "console.log(" + 'vueCommon.' + fileName + "); \n";
 					}
