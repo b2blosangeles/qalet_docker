@@ -1,6 +1,6 @@
 <template>
     <span>
-        <message-section-a  postTitle="good news">component-a</message-section-a>
+        <h3>QALET DB</h3>
         <div class="db_list_class">DB list 22</div>
      </span>
 </template>
