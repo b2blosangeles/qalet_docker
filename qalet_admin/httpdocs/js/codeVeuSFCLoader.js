@@ -440,7 +440,7 @@
 	codeVeuSFCLoader.httpRequest = function(url) {
         if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
             return new Promise(function(resolve, reject) {
-                resolve(code);
+                resolve(url);
             });
         } else {
             return new Promise(function(resolve, reject) {
