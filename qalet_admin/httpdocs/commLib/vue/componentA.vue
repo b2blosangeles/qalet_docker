@@ -1,5 +1,5 @@
 <template>
-    <div class="hellob">Hello A {{postTitle}}</div>
+    <div class="helloA">Hello A {{postTitle}}</div>
 </template>
  
 <script>
@@ -13,7 +13,7 @@ module.exports = {
 }
 </script>
 <style>
-.hellob {
+.helloA {
     background-color: pink;
 }
 </style>
