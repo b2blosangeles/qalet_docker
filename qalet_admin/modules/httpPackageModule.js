@@ -27,7 +27,6 @@
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
-
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
