@@ -1,1 +1,19 @@
-<template><section><h1>SFC 5 string.</h1></template><script>module.exports = {computed: {random() {return Math.random()}}}</script>
+<template>
+    <div class="hellob">Hello A {{postTitle}}</div>
+</template>
+ 
+<script>
+module.exports = {
+    props: ["postTitle"],
+    data: function() {
+        return {
+            who: "world"
+        }
+    }
+}
+</script>
+<style>
+.hellob {
+    background-color: pink;
+}
+</style>
