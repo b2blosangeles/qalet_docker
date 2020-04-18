@@ -4,10 +4,10 @@
  
 <script>
 module.exports = {
-    props: ['postTitle'],
+    props: ["postTitle"],
     data: function() {
         return {
-            who: 'world'
+            who: "world"
         }
     }
 }
