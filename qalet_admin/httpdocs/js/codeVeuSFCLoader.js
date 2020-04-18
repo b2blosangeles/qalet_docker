@@ -439,7 +439,7 @@
 
 	codeVeuSFCLoader.httpRequest = function(url) {
 		
-	        if (!url.match(/^(\/|http\:\/\/|https\:\/\/|\/\/)/)) {
+	        if (!url.match(/^(\.\.\/|\.\/|\/|http\:\/\/|https\:\/\/|\/\/)/)) {
 		// if (!url.match(/^(.*?)([^/]+?)\/?(\.vue)?(\?.*|#.*|$)/)) {
 		    return new Promise(function(resolve, reject) {
 			resolve(url);
