@@ -20,26 +20,14 @@ if (!_qalet) var _qalet = {};
 
 $(document).ready(function(){
 
-    _qalet = new Vue({
+    new Vue({
       el: '#app',
       data: {
         seen    : true,
         message : null
       },
       components: {
-          'my-component': QALETCOMM.componentA,
-          'button-counter' : Vue.component('button-counter', {
-                data: function () {
-                  return {
-                    count: 0
-                  }
-                },
-              components: {
-                  'my-component': QALETCOMM.componentC
-                },
-                template: '<span><button v-on:click="count++">You clicked me {{ count }} times.</button>' +
-                  '<my-component post-title="niu"/></span>'
-              })
+          'messageSection': QALETCOMM.componentA
         },
       methods: {
         setMessage : function(code) {
@@ -50,54 +38,5 @@ $(document).ready(function(){
         }
       }
     });
-    
-
-    
-    _qalet.switchModule = function(code) {
-            switch (code) {
-                case 'a' : 
-                    return true;
-                    break;
-                 case 'b' : 
-                    return true;
-                    break;
-                default:
-                    return false;
-            }
-    }
-    
-    _qalet.submitAddDB = function() {
-        let formData = $('#addMySQLDBFrom').serializeFormJSON();;
-        $.ajax({
-          type: "POST",
-          url: '/api/addMySQLDB',
-          data: formData,
-          success: function(data) {
-              window.location.href = '/dbs'
-          },
-          error: function(errMsg) {
-            alert('failure to add ' + JSON.stringify(formData));
-          },
-          dataType: 'json'
-        });
-       
-    }
-
-    _qalet.removeDB = function(code) {
-        $.ajax({
-          type: "POST",
-          url: '/api/removeMySQLDB',
-          data: {code : code},
-          success: function(data) {
-              window.location.href = '/dbs'
-          },
-          error: function(errMsg) {
-            console.log('failure to remove ' + code);
-          },
-          dataType: 'json'
-        });
-       
-    }
-    _qalet.$forceUpdate();
     
 });
