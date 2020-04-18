@@ -25,27 +25,20 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			
-			var dirn = env.adminFolder + '/httpdocs/';
-			
-			//delete require.cache[dirn + 'js/codeVeuSFCLoader.js'];
-			//var codeVeuSFCLoader = require(dirn + 'js/codeVeuSFCLoader.js');
-			
 			_f['codeVeuSFCLoader'] = function(cbk) {
-				let lfn = __dirname + '/codeVeuSFCLoader.js';
-				cbk(lfn);
-				/*
+				let lfn = env.adminFolder  + '/httpPackage/codeVeuSFCLoader.js'; 
+
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 					cbk(data);
 				}); 
-				*/
 				return true;
 			}	
 			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						let lfn = dirn + list[i].replace(/^\//, '');
+						let lfn = env.adminFolder + '/httpdocs/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = data.replace(/(\/\/[^\n\r]*[\n\r]+)/g, '');
 							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
