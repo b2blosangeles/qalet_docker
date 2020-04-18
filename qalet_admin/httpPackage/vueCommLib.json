@@ -1,6 +1,6 @@
 {
-  "folder" : "/app",
-  "files" : [
+  "folder"  : "/app",
+  "files"   : [
         "componentA.vue",
         "componentB.vue",
         "componentC.vue"
