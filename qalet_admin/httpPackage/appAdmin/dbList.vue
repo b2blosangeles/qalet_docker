@@ -11,7 +11,7 @@ module.exports = {
         }
     },
     components : {
-        messageSectionA : globalComponents.componentA
+        messageSectionA : QALETCOMM.componentA
     }
 }
 </script>
