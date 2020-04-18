@@ -1,6 +1,6 @@
 <template>
     <div class="db_list_class">DB list</div>
-    <!--message-section-a  postTitle="good news">component-a</message-section-a-->
+    <message-section-a  postTitle="good news">component-a</message-section-a>
 </template>
  
 <script>
