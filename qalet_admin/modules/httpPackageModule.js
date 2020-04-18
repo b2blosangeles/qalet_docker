@@ -64,7 +64,6 @@
 						str += "codeVeuSFCLoader(decodeURIComponent(`" +  
 							encodeURIComponent(CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) +  
 						"`)); \n";
-						str += 'console.log(vueCommon.' + fileName + '.toString()); ' + "\n";
 					}
 					res.send(str);
 			   	},
