@@ -59,10 +59,10 @@
 					for (var i = 0; i < list.length; i++) {
 						let lfn = dirn + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
-						str += 'vueCommon.' + fileName + ' = ';
-						str += "codeVeuSFCLoader(decodeURIComponent(`" +  
-							CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') +  
-						"`)); \n";
+						//str += 'vueCommon.' + fileName + ' = ';
+					//	str += "codeVeuSFCLoader(decodeURIComponent(`" +  
+					//		CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ') +  
+					//	"`)); \n";
 						str += 'vueCommon.' + fileName + ' = ';
 						str += codeVeuSFCLoader(CP.data['_' + i].replace(/(\r\n|\n|\r)/gm,' ')) + "\n";
 					}
