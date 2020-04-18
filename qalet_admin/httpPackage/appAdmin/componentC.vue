@@ -1,5 +1,5 @@
 <template>
-    <div class="helloc">Hello C {{postTitle}}</div>
+    <div class="helloc">Hello {{postTitle}}</div>
 </template>
  
 <script>
