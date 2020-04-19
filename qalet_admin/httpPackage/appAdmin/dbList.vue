@@ -55,11 +55,9 @@ module.exports = {
     },
     created()  {
         console.log('==created ==');
-        this.$http.get('/someUrl').then(response => {
-
-            // get body data
-            this.someData = response.body;
-
+        this.$http.get('/api').then(response => {
+            this.items = response.body;
+            console.log(response.body);
         }, response => {
             console.log('==error result ==');
             // error callback
