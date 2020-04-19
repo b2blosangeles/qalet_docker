@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="#">test</a></td>
+                    <td>test</td>
                     <td>test</td>
                     <td>test</td>
                     <td>test</td>
