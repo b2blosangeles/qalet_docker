@@ -42,7 +42,7 @@ module.exports = {
     },
     methods : {
         loadItems() {
-            this.$http.get('/api/getDbs').then(response => {
+            this.$http.get('/api/vhosts').then(response => {
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
