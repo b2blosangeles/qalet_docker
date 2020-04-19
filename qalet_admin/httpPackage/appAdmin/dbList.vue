@@ -37,8 +37,12 @@ module.exports = {
     },
     created()  {
         this.loadItems();
+        console.log("==created==");
     },
-    mounted : {
+    mounted ()  {
+        console.log("==mounted==");
+    },
+    methods : {
         loadItems() {
             this.$http.get('/api').then(response => {
                this.items = response.body;
