@@ -51,9 +51,10 @@ module.exports = {
         }
     },
     components : {
-        messageSectionA : QALETCOMM.componentA
+        messageSectionA : QALETCOMM.componentA // 55667
     }
 }
+// 77889
 /*
                 {
                     serverName	: 'www.shusiou.win', 
