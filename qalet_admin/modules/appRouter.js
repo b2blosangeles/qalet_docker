@@ -241,8 +241,8 @@
 					case 'dbs':
 						me.showDbs();
 						break;
-					case 'checkip':
-						res.render('html/index.ect', { module: "checkip"});
+					case 'git':
+						res.send(me.vhosts);
 						break;	
 					case 'httpPackage':
 						delete require.cache[__dirname + '/httpPackageModule.js'];
