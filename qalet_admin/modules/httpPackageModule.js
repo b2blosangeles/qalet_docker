@@ -32,7 +32,7 @@
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-					cbk(data);
+					cbk(data.replace(/(\r\n|\n|\r)/gm,' '));
 				}); 
 				return true;
 			}
@@ -41,7 +41,7 @@
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-					cbk(data);
+					cbk(data.replace(/(\r\n|\n|\r)/gm,' '));
 				}); 
 				return true;
 			}	
