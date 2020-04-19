@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in items">
-                    <td>test</td>
+                    <td>{{item}}</td>
                     <td>test</td>
                     <td>test</td>
                     <td>test</td>
