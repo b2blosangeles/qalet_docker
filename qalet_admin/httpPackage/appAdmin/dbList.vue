@@ -45,7 +45,7 @@ module.exports = {
     methods : {
         loadItems() {
             this.$http.get('/api/getDbs').then(response => {
-               this.items = response.body;
+               this.items = response.body.results;
                 console.log(response.body);
             }, response => {
                 console.log('--error---');
