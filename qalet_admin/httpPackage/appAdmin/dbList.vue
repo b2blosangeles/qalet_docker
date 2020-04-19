@@ -53,27 +53,17 @@ module.exports = {
     },
     components : {
         messageSectionA : QALETCOMM.componentA 
+    },
+    mounted() {
+        axios({ method: "GET", "url": "https://httpbin.org/ip" }).then(result => {
+            this.ip = result.data.origin;
+        }, error => {
+            console.error(error);
+        });
     }
 }
 
-/*. 445566
-                {
-                    serverName	: 'www.shusiou.win', 
-                    serverAlias	: 'shusiou.win',
-                    gitHub		: "https://github.com/b2blosangeles/docker_apachePHP.git",
-                    innerPort	: 80,
-                    gatewayIp	: '173.28.5.254',
-                    gatewayPort: 20001
-                },
-                {
-                    serverName	: 'www.shusiou.win', 
-                    serverAlias	: 'shusiou.win',
-                    gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-                    innerPort	: 80,
-                    gatewayIp	: '173.28.5.254',
-                    gatewayPort: 20001
-                }
-*/
+
 </script>
 <style>
 .db_list_class {
