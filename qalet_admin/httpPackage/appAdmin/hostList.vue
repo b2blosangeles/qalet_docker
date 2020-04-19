@@ -1,14 +1,14 @@
 <template>
     <span>
         <h3>QALET Virtual Hosts</h3>
-         <table class="table" v-if="currentModule=='list'">
+         <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
                 <th>DB Name</th>
                 <th>ip address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
-                <th><button type="button" class="btn btn-warning"  v-on:click="setModule('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
+                <th><button type="button" class="btn btn-warning"  v-on:click="currentAction('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
               </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
             </tbody>
           </table>
           <div v-if="currentModule!='list'">
-            <button type="button" class="btn btn-warning"  v-on:click="setModule('list')"><i class="icon-plus-sign-alt"></i> Cancel</button>
+            <button type="button" class="btn btn-warning"  v-on:click="currentAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
           </div>
      </span>
 </template>
@@ -32,7 +32,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            currentModule : 'list',
+            currentAction : '',
             items : []
         }
     },
@@ -45,8 +45,8 @@ module.exports = {
         console.log("==mounted==");
     },
     methods : {
-        setModule(v) {
-            this.currentModule = v;
+        setAction(v) {
+            this.currentAction = v;
         },
         loadItems() {
             this.$http.get('/api/vhosts').then(response => {
