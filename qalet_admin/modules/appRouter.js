@@ -180,7 +180,7 @@
 					},
 				"/virtualHosts": {
 						tpl : "html/virtualHosts.ect",
-						data : {module : "virtualHosts", vhosts	: me.vhosts}
+						data : {module : "virtualHosts", vhosts	: []}
 					},
 				"/addMySQLDB": {
 						tpl : "html/addMySQLDB.ect",
