@@ -44,7 +44,7 @@ module.exports = {
     methods : {
         setModule(v) {
             this.currentModule = v;
-        }
+        },
         loadItems() {
             this.$http.get('/api/vhosts').then(response => {
                this.items = response.body.results;
