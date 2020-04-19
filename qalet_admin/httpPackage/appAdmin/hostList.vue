@@ -1,7 +1,7 @@
 <template>
     <span>
         <h3>QALET Virtual Hosts</h3>
-         <table class="table">
+         <table class="table" v-if="currentModule=='list'">
             <thead>
               <tr>
                 <th>DB Name</th>
@@ -21,6 +21,9 @@
                 </tr>
             </tbody>
           </table>
+          <div v-if="currentModule!='list'">
+            <button type="button" class="btn btn-warning"  v-on:click="setModule('list')"><i class="icon-plus-sign-alt"></i> Cancel</button>
+          </div>
      </span>
 </template>
  
@@ -29,7 +32,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            currentModule : '',
+            currentModule : 'list',
             items : []
         }
     },
