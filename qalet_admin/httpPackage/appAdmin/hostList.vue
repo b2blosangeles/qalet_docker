@@ -29,7 +29,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            currentModule : null,
+            currentModule : '',
             items : []
         }
     },
