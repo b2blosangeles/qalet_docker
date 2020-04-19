@@ -5,7 +5,7 @@
             <thead>
               <tr>
                 <th>DB Name</th>
-                <th>ip - address</th>
+                <th>ip address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
                 <th><a href="/addMySQLDB"><button type="button" class="btn btn-warning"><i class="icon-plus-sign-alt"></i> Add</button></a></th>
