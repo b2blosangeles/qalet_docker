@@ -15,7 +15,7 @@
             <tbody>
                 <tr v-for="item in items">
                     <td>{{item.serverName}}</td>
-                    <td>{{decodeURIComponent(item.gitHub}})</td>
+                    <td>{{item.gitHub}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -34,7 +34,7 @@ module.exports = {
                 {
                     serverName	: 'www.shusiou.win', 
                     serverAlias	: 'shusiou.win',
-                    gitHub : encodeURIComponent('http:\/\/github.com/b2blosangeles/docker_apachePHP.gitC'),
+                    gitHub : 'http://github.com/b2blosangeles/docker_apachePHP.gitC',
                     innerPort	: '80',
                     gatewayIp	: '173.28.5.254',
                     gatewayPort: '20001'
@@ -42,7 +42,7 @@ module.exports = {
                 {
                     serverName	: 'www.shusiou.win', 
                     serverAlias	: 'shusiou.win',
-                    gitHub : encodeURIComponent('http:\/\/github.com/b2blosangeles/docker_apachePHP.gitC'),
+                    gitHub : 'http://github.com/b2blosangeles/docker_apachePHP.gitC',
                     innerPort	: '80',
                     gatewayIp	: '173.28.5.254',
                     gatewayPort: '20001'
