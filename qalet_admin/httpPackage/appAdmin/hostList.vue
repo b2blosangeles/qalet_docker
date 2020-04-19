@@ -8,7 +8,7 @@
                 <th>ip address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
-                <th><a href="/addMySQLDB"><button type="button" class="btn btn-warning"><i class="icon-plus-sign-alt"></i> Add</button></a></th>
+                <th><button type="button" class="btn btn-warning"  v-on:click="setModule('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +29,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
+            currentModule : null,
             items : []
         }
     },
@@ -41,6 +42,9 @@ module.exports = {
         console.log("==mounted==");
     },
     methods : {
+        setModule(v) {
+            this.currentModule = v;
+        }
         loadItems() {
             this.$http.get('/api/vhosts').then(response => {
                this.items = response.body.results;
