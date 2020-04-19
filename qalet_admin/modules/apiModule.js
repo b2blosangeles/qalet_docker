@@ -19,7 +19,12 @@
 			}
 		];
 		this.get = function(cmd) {
-			res.send(cmd);
+			res.send({
+				status	: 'success',
+				cmd 	: cmd,
+				results	: this.vhosts
+				
+			});
 		}
 	};
 
