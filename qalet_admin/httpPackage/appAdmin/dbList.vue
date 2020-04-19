@@ -38,7 +38,7 @@ module.exports = {
     created()  {
         this.loadItems();
     },
-    mounted {
+    mounted : {
         loadItems() {
             this.$http.get('/api').then(response => {
                // this.items = response.body;
