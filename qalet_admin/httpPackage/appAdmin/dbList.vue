@@ -15,10 +15,10 @@
             <tbody>
                 <tr v-for="item in items">
                     <td>{{item.serverName}}</td>
-                    <td>{{item.innerPort}}</td>
-                    <td>{{item.gitHub}}</td>
-                    <td>{{item.gatewayIp}}</td>
-                    <td>{{item.gatewayPort}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
           </table>
@@ -31,6 +31,20 @@ module.exports = {
     data: function() {
         return {
             items : [
+                {
+                    serverName	: 'www.shusiou.win'
+                },
+                {
+                    serverName	: 'www.shusiou.win'
+                }
+            ]
+        }
+    },
+    components : {
+        messageSectionA : QALETCOMM.componentA
+    }
+}
+/*
                 {
                     serverName	: 'www.shusiou.win', 
                     serverAlias	: 'shusiou.win',
@@ -47,13 +61,7 @@ module.exports = {
                     gatewayIp	: '173.28.5.254',
                     gatewayPort: 20001
                 }
-            ]
-        }
-    },
-    components : {
-        messageSectionA : QALETCOMM.componentA
-    }
-}
+*/
 </script>
 <style>
 .db_list_class {
