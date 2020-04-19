@@ -1,12 +1,11 @@
 <template>
     <span>
         <h3>QALET Databases</h3>
-        <!--div class="db_list_class">DB list 22</div-->
          <table class="table">
             <thead>
               <tr>
                 <th>DB Name</th>
-                <th>ip address</th>
+                <th>ip - address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
                 <th><a href="/addMySQLDB"><button type="button" class="btn btn-warning"><i class="icon-plus-sign-alt"></i> Add</button></a></th>
@@ -30,47 +29,22 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            items : [
-                {
-                    serverName	: 'www.shusiou.win', 
-                    serverAlias	: 'shusiou.win',
-                    gitHub : 'http://github.com/b2blosangeles/docker_apachePHP.gitC',
-                    innerPort	: '80',
-                    gatewayIp	: '173.28.5.254',
-                    gatewayPort: '20001'
-                },
-                {
-                    serverName	: 'www.shusiou.win', 
-                    serverAlias	: 'shusiou.win',
-                    gitHub : 'http://github.com/b2blosangeles/docker_apachePHP.gitC',
-                    innerPort	: '80',
-                    gatewayIp	: '173.28.5.254',
-                    gatewayPort: '20001'
-                }
-            ]
+            items : []
         }
     },
     components : {
         messageSectionA : QALETCOMM.componentA 
     },
     created()  {
-        console.log('==created ==');
-        this.$http.get('/api').then(response => {
-            this.items = response.body;
-            console.log(response.body);
-        }, response => {
-            console.log('==error result ==');
-            // error callback
-        });
+        this.loadItems();
     },
-    mounted() {
-    /*
-        axios({ method: "GET", "url": "https://httpbin.org/ip" }).then(result => {
-            this.ip = result.data.origin;
-        }, error => {
-            console.error(error);
-        });
-        */
+    mounted {
+        loadItems() {
+            this.$http.get('/api').then(response => {
+                this.items = response.body;
+                console.log(response.body);
+            }, response => {});
+        }
     }
 }
 
