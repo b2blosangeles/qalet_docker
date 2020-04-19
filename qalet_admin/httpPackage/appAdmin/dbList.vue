@@ -13,7 +13,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr v-for="item in items">
                     <td>test</td>
                     <td>test</td>
                     <td>test</td>
@@ -30,6 +30,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {
         return {
+            items : [1, 2, 3, 4]
         }
     },
     components : {
