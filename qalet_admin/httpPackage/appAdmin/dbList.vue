@@ -13,17 +13,17 @@
               </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><a href="#"><%= db.code %></a></td>
-                <td><%= db.gitHub%></td>
-                <td><%= db.port%></td>
-                <td><%= db.gatewayIp%>:<%= db.port%></td>
-                <td>
-                    <button type="button" class="btn btn-warning" onClick="_qalet.removeDB('<%- db.code %>')">
-                        <i class="fa-trash"></i>  Delete
-                    </button>
-                </td>
-            </tr>
+                <tr>
+                    <td><a href="#">test</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button type="button" class="btn btn-warning" onClick="_qalet.removeDB('')">
+                            <i class="fa-trash"></i>  Delete
+                        </button>
+                    </td>
+                </tr>
             </tbody>
           </table>
      </span>
