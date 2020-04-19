@@ -29,6 +29,7 @@
 module.exports = {
     props: ["postTitle"],
     data: function() {
+    // 778899
         return {
             items : [
                 {
@@ -54,7 +55,7 @@ module.exports = {
         messageSectionA : QALETCOMM.componentA 
     }
 }
-// 77889
+
 /*
                 {
                     serverName	: 'www.shusiou.win', 
