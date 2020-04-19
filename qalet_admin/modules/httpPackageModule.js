@@ -74,7 +74,7 @@
 					
 					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
-					str = "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
+					str += "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
 					
 					str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
 					
