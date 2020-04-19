@@ -21,7 +21,7 @@
                 </tr>
             </tbody>
           </table>
-          <div v-if="currentModule!='list'">
+          <div v-if="currentAction!='list'">
             <button type="button" class="btn btn-warning"  v-on:click="currentAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
           </div>
      </span>
