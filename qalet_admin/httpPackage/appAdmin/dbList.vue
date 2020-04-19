@@ -14,11 +14,11 @@
             </thead>
             <tbody>
                 <tr v-for="item in items">
-                    <td>{{item}}</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
+                    <td>{{item.serverName}}</td>
+                    <td>{{item.innerPort}}</td>
+                    <td>{{item.gitHub}}</td>
+                    <td>{{item.gatewayIp}}</td>
+                    <td>{{item.gatewayPort}}</td>
                 </tr>
             </tbody>
           </table>
@@ -30,7 +30,24 @@ module.exports = {
     props: ["postTitle"],
     data: function() {
         return {
-            items : [1, 2, 3, 4]
+            items : [
+                {
+                    serverName	: 'www.shusiou.win', 
+                    serverAlias	: 'shusiou.win',
+                    gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+                    innerPort	: 80,
+                    gatewayIp	: '173.28.5.254',
+                    gatewayPort: 20001
+                },
+                {
+                    serverName	: 'www.shusiou.win', 
+                    serverAlias	: 'shusiou.win',
+                    gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
+                    innerPort	: 80,
+                    gatewayIp	: '173.28.5.254',
+                    gatewayPort: 20001
+                }
+            ]
         }
     },
     components : {
