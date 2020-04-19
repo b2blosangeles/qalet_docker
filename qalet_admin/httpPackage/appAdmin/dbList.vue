@@ -8,7 +8,7 @@
                 <th>ip address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
-                <th><button type="button" class="btn btn-warning"  v-on:click="currentAction('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
+                <th><button type="button" class="btn btn-warning"  v-on:click="setAction('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
               </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
             </tbody>
           </table>
           <div v-if="currentAction!='list'">
-            <button type="button" class="btn btn-warning"  v-on:click="currentAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
+            <button type="button" class="btn btn-warning"  v-on:click="setAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
           </div>
      </span>
 </template>
