@@ -32,9 +32,7 @@ module.exports = {
             items : []
         }
     },
-    components : {
-        messageSectionA : QALETCOMM.componentA 
-    },
+    components : {},
     created()  {
         this.loadItems();
         console.log("==created==");
