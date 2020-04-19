@@ -13,24 +13,6 @@
 			res.write('Error! ' + err.message);
 			res.end();			
 		}
-		this.vhosts = [
-			{
-				serverName	: 'www.shusiou.winA', 
-				serverAlias	: 'shusiou.win',
-				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-				innerPort	: 80,
-				gatewayIp	: '173.28.5.254',
-				gatewayPort: 20001
-			},
-			{
-				serverName	: 'www.shusiou.winB', 
-				serverAlias	: 'shusiou.win',
-				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
-				innerPort	: 80,
-				gatewayIp	: '173.28.5.254',
-				gatewayPort: 20001
-			}
-		];
 		this.addHost = function() {
 			var me = this;
 			var vhostsCFG = {
@@ -162,11 +144,17 @@
 						delete require.cache[__dirname + '/apiModule.js'];
 						var API  = require(__dirname + '/apiModule.js');
 						var api = new API(env, pkg, req, res);
+						api.post(v[2]);
+						break;	
+						/*
+						delete require.cache[__dirname + '/apiModule.js'];
+						var API  = require(__dirname + '/apiModule.js');
+						var api = new API(env, pkg, req, res);
 						if (v[2] === '/addMySQLDB') {
 							api.addDB();
 						} else {
 							api.removeDB();
-						}
+						}*/
 						break;
 					default:
 						res.send(req.body);
