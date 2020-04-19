@@ -1,6 +1,6 @@
 <template>
     <span>
-        <h3>QALET Databases</h3>
+        <h3>QALET Virtual Hosts</h3>
          <table class="table">
             <thead>
               <tr>
