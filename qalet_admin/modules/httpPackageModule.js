@@ -50,8 +50,7 @@
 					return function(cbk) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/, '');
-							data = data.replace(/^[\s\S]*?\/\/.(\r\n|\n|\r)$/, '');
+							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							cbk(encodeURIComponent(data.replace(/(\r\n|\n|\r)/gm,' '))); 
 						}); 
 						return true;
