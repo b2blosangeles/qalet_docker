@@ -38,7 +38,7 @@
 		];
 		this.get = function(code) {
 			switch(code) {
-				case 'dbs'	:
+				case '/dbs'	:
 					res.send({
 						status	: 'success',
 						cmd 	: code,
@@ -46,7 +46,7 @@
 
 					});
 					break;
-				case 'vhosts'	:
+				case '/vhosts'	:
 					res.send({
 						status	: 'success',
 						cmd 	: code,
