@@ -1,14 +1,14 @@
 <template>
     <span>
         <h3>QALET Databases</h3>
-         <table class="table">
+         <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
                 <th>DB Name</th>
                 <th>ip address</th>
                 <th>Port</th>
                 <th>Gateway:Port</th>
-                <th><a href="/addMySQLDB"><button type="button" class="btn btn-warning"><i class="icon-plus-sign-alt"></i> Add</button></a></th>
+                <th><button type="button" class="btn btn-warning"  v-on:click="currentAction('new')"><i class="icon-plus-sign-alt"></i> Add</button></th>
               </tr>
             </thead>
             <tbody>
@@ -21,6 +21,9 @@
                 </tr>
             </tbody>
           </table>
+          <div v-if="currentModule!='list'">
+            <button type="button" class="btn btn-warning"  v-on:click="currentAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
+          </div>
      </span>
 </template>
  
@@ -29,6 +32,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
+            currentAction : '',
             items : []
         }
     },
@@ -43,6 +47,9 @@ module.exports = {
         console.log("==mounted==");
     },
     methods : {
+        setAction(v) {
+            this.currentAction = v;
+        },
         loadItems() {
             this.$http.get('/api/dbs').then(response => {
                this.items = response.body.results;
