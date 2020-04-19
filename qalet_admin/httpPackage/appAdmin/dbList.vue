@@ -51,7 +51,7 @@ module.exports = {
         }
     },
     components : {
-        messageSectionA : QALETCOMM.componentA // 55667
+        messageSectionA : QALETCOMM.componentA 
     }
 }
 // 77889
