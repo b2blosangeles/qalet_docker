@@ -28,8 +28,7 @@
 <script>
 module.exports = {
     props: ["postTitle"],
-    data: function() {
- // 778899  
+    data: function() {  
         return {
             items : [
                 {
@@ -54,7 +53,7 @@ module.exports = {
     components : {
         messageSectionA : QALETCOMM.componentA 
     },
-    created() : {
+    created()  {
         console.log('==created ==');
     },
     mounted() {
