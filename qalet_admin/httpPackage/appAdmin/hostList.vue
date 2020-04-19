@@ -21,7 +21,7 @@
                 </tr>
             </tbody>
           </table>
-          <div v-if="currentAction!='list'">
+          <div v-if="currentAction!=''">
             <button type="button" class="btn btn-warning"  v-on:click="setAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
           </div>
      </span>
