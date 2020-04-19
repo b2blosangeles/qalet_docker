@@ -29,7 +29,8 @@
 module.exports = {
     props: ["postTitle"],
     data: function() {
-/* 778899  */
+/* 
+778899  */
         return {
             items : [
                 {
