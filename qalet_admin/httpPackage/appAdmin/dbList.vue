@@ -55,6 +55,15 @@ module.exports = {
     },
     created()  {
         console.log('==created ==');
+        this.$http.get('/someUrl').then(response => {
+
+            // get body data
+            this.someData = response.body;
+
+        }, response => {
+            console.log('==error result ==');
+            // error callback
+        });
     },
     mounted() {
     /*
