@@ -37,6 +37,15 @@
 				return true;
 			}
 			
+			_f['vue-resource.1.5.1.min.js'] = function(cbk) {
+				let lfn = env.adminFolder  + '/httpPackage/lib/vue-resource.1.5.1.min.js'; 
+				pkg.fs.readFile(lfn, 'utf8', function(err, data){
+					data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+					cbk(data);
+				}); 
+				return true;
+			}
+			
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -64,6 +73,9 @@
 				function(data) {
 					
 					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
+					
+					str = "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
+					
 					str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
