@@ -241,7 +241,7 @@
 					case 'dbs':
 						me.showDbs();
 						break;
-					case 'git':
+					case 'api':
 						res.send(me.vhosts);
 						break;	
 					case 'httpPackage':
