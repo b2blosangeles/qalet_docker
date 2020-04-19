@@ -2,6 +2,7 @@
   "folder"  : "/appAdmin",
   "files"   : [
         "dbList.vue",
+        "hostList.vue",
         "componentA.vue",
         "componentB.vue",
         "componentC.vue"
