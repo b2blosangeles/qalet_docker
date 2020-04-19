@@ -39,7 +39,7 @@
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
-				//	data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/, '');
+					data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/, '');
 					cbk(data);
 				}); 
 				return true;
