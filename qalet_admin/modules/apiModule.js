@@ -1,7 +1,7 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
-		this.call = function() {
-		
+		this.get = function(cmd) {
+			res.send(cmd);
 		}
 	};
 
