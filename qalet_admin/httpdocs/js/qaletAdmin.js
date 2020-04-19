@@ -43,6 +43,7 @@ $(document).ready(function(){
         */ 
         var globalComponents = {
                   dbList         : QALETCOMM.dbList,
+                  hostList       : QALETCOMM.hostList,
                   messageSectionA: QALETCOMM.componentA,
                   messageSectionB: QALETCOMM.componentB,
                   messageSectionC: QALETCOMM.componentC
@@ -63,12 +64,17 @@ $(document).ready(function(){
          Databases = { 
             template: '<db-list postTitle="Databases"></db-list>',
             components : globalComponents 
+         },
+         virtualHosts = { 
+            template: '<host-list postTitle="Databases"></host-list>',
+            components : globalComponents 
          };
     
         var routes = {
-          '/': Home,
-          '/about': About,
-          '/dbs': Databases
+          '/'               : Home,
+          '/about'          : About,
+          '/dbs'            : Databases,
+          '/virtualHosts'   : virtualHosts
         }
 
         new Vue({
