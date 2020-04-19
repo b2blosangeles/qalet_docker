@@ -15,14 +15,10 @@
             <tbody>
                 <tr>
                     <td><a href="#">test</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-warning" onClick="_qalet.removeDB('')">
-                            <i class="fa-trash"></i>  Delete
-                        </button>
-                    </td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
                 </tr>
             </tbody>
           </table>
