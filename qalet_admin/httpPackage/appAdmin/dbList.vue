@@ -54,12 +54,17 @@ module.exports = {
     components : {
         messageSectionA : QALETCOMM.componentA 
     },
+    created() : {
+        console.log('==created ==');
+    },
     mounted() {
+    /*
         axios({ method: "GET", "url": "https://httpbin.org/ip" }).then(result => {
             this.ip = result.data.origin;
         }, error => {
             console.error(error);
         });
+        */
     }
 }
 
