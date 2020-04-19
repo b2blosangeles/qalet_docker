@@ -34,7 +34,7 @@ module.exports = {
                 {
                     serverName	: 'www.shusiou.win', 
                     serverAlias	: 'shusiou.win',
-                    "gitHub" : "github.com/b2blosangeles\/docker_apachePHP.git",
+                    "gitHub" : "http://github.com/b2blosangeles/docker_apachePHP.git",
                     innerPort	: '80',
                     gatewayIp	: '173.28.5.254',
                     gatewayPort: '20001'
