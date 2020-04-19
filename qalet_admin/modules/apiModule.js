@@ -46,7 +46,7 @@
 
 					});
 					break;
-				case 'hosts'	:
+				case 'vhosts'	:
 					res.send({
 						status	: 'success',
 						cmd 	: code,
