@@ -9,8 +9,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'ScrollbarExample'
+
+  module.exports = {
+      props: ["postTitle"],
+      data: function() {
+          return {
+              who: 'world'
+          }
+      }
   }
 </script>
 
