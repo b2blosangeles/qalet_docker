@@ -12,51 +12,33 @@
     <div id="app">
 <template>
   <div>
-    <md-autocomplete v-model="selectedCountry" :md-options="countries">
-      <label>Country</label>
-    </md-autocomplete>
-
-    <md-autocomplete v-model="selectedEmployee" :md-options="employees" md-dense>
-      <label>Employees</label>
-    </md-autocomplete>
+    <span class="md-display-4">Display 4</span>
+    <span class="md-display-3">Display 3</span>
+    <span class="md-display-2">Display 2</span>
+    <span class="md-display-1">Display 1</span>
+    <span class="md-headline">Headline</span>
+    <span class="md-title">Title</span>
+    <span class="md-subheading">Subheading</span>
+    <span class="md-body-2">Body 2</span>
+    <span class="md-body-1">Body 1</span>
+    <span class="md-caption">Caption</span>
+    <router-link to="/ui-elements/typography">Links</router-link>
+    <md-button>Buttons</md-button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'AutocompleteStatic',
-    data: () => ({
-      selectedCountry: null,
-      selectedEmployee: null,
-      countries: [
-        'Algeria',
-        'Argentina',
-        'Brazil',
-        'Canada',
-        'Italy',
-        'Japan',
-        'United Kingdom',
-        'United States'
-      ],
-      employees: [
-        'Jim Halpert',
-        'Dwight Schrute',
-        'Michael Scott',
-        'Pam Beesly',
-        'Angela Martin',
-        'Kelly Kapoor',
-        'Ryan Howard',
-        'Kevin Malone',
-        'Creed Bratton',
-        'Oscar Nunez',
-        'Toby Flenderson',
-        'Stanley Hudson',
-        'Meredith Palmer',
-        'Phyllis Lapin-Vance'
-      ]
-    })
+    name: 'TypographyExample'
   }
 </script>
+
+<style lang="scss" scoped>
+  div > * {
+    margin: .5em 0;
+    display: block;
+  }
+</style>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
