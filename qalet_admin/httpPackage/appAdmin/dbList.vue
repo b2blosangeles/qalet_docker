@@ -1,7 +1,7 @@
 <template>
     <span>
-        <h3>QALET Databases componentB</h3>
-        <message-section-b>message-section-b</message-section-b>
+        <h3>QALET Databases componentB1</h3>
+        <message-section-b postTitle="niu">message-section-b</message-section-b>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
