@@ -1,7 +1,7 @@
 <template>
     <span>
-        <h3>QALET Databases componentA</h3>
-        <message-section-a>message-section-a</message-section-a>
+        <h3>QALET Databases componentB</h3>
+        <message-section-b>message-section-b</message-section-b>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -38,7 +38,7 @@ module.exports = {
         }
     },
     components : {
-        messageSectionA : QALETCOMM.componentA 
+        messageSectionB : QALETCOMM.componentB 
     },
     created()  {
         this.loadItems();
