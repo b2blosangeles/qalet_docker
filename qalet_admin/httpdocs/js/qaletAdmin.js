@@ -19,28 +19,6 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 $(document).ready(function(){
-        /*
-            new Vue({
-              el: '#app',
-              data: {
-                seen    : true,
-                message : null
-              },
-              components: {
-                  messageSectionA: QALETCOMM.componentA,
-                  messageSectionB: QALETCOMM.componentB,
-                  messageSectionC: QALETCOMM.componentC
-                },
-              methods: {
-                setMessage : function(code) {
-                    this.message = code + ' =><=' + new Date();
-                },
-                showModule : function(code) {
-                    return (!this.switchModule) ? false : this.switchModule(code);
-                }
-              }
-            });
-        */ 
         var globalComponents = {
                   dbList         : QALETCOMM.dbList,
                   hostList       : QALETCOMM.hostList,
