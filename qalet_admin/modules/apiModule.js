@@ -62,7 +62,35 @@
 					});		
 			}
 
+		};
+		this.post = function(code) {
+			switch(code) {
+				case '/dbs'	:
+					res.send({
+						status	: 'success',
+						cmd 	: code,
+						results	: this.dbs
+
+					});
+					break;
+				case '/vhosts'	:
+					res.send({
+						status	: 'success',
+						cmd 	: code,
+						results	: this.vhosts
+
+					});
+					break;
+				default : 	
+					res.send({
+						status	: 'failure',
+						cmd 	: code,
+						message	: 'Missiing or wrong code'
+					});		
+			}
+
 		}
+		
 	};
 
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
