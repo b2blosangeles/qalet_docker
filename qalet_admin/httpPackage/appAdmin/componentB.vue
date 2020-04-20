@@ -20,10 +20,9 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style>
   .md-content {
     max-width: 400px;
     max-height: 200px;
-    overflow: auto;
   }
 </style>
