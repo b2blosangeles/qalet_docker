@@ -1,42 +1,23 @@
 <template>
   <div>
-    <h2>Select any text to see the selection background</h2>
-    <p>This text will follow the default color of the documentation, which is a nice red color.</p>
-
-    <md-content md-theme="selection-black">
-      <p>This one will get a slick black background when selected, because the parent theme have another color.</p>
-    </md-content>
-
-    <md-content md-theme="selection-orange">
-      <p>Also works when the theme is dark.</p>
+    <md-content class="md-scrollbar">
+      <p>Autem enim asperiores consequuntur neque sequi ea similique ex maxime, repudiandae doloremque aliquam exercitationem omnis assumenda. Rem suscipit pariatur vero facere?</p>
+      <p>Necessitatibus aut cumque sit ad. Tempora perferendis nostrum, in assumenda accusantium vitae vero pariatur sapiente nam quisquam, ducimus distinctio quae nisi.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed perspiciatis sit quaerat molestiae iusto adipisci possimus cum modi quam qui esse vero provident, ad, deserunt laborum quas eligendi beatae quibusdam.</p>
     </md-content>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'SelectionExample'
+    name: 'ScrollbarExample'
   }
 </script>
 
-<style lang="scss">
-  @import "~vue-material/theme/engine";
-
-  @include md-register-theme("selection-black", (
-    accent: md-get-palette-color(black, 500)
-  ));
-
-  @include md-register-theme("selection-orange", (
-    accent: md-get-palette-color(orange, 500),
-    theme: dark
-  ));
-
-  @import "~vue-material/base/theme";
-  @import "~vue-material/components/MdContent/theme";
-</style>
-
 <style lang="scss" scoped>
   .md-content {
-    padding: 1px 16px;
+    max-width: 400px;
+    max-height: 200px;
+    overflow: auto;
   }
 </style>
