@@ -76,8 +76,6 @@ $(document).ready(function(){
           '/dbs'            : Databases,
           '/virtualHosts'   : virtualHosts
         }
-
-        Vue.use(VueMaterial.default)
     
         new Vue({
           el: '#app',
