@@ -1,5 +1,6 @@
 <template>
     <span>
+        <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases</h3>
          <table class="table" v-if="currentAction==''">
             <thead>
@@ -37,7 +38,7 @@ module.exports = {
         }
     },
     components : {
-        messageSectionB : QALETCOMM.componentB 
+        messageSectionA : QALETCOMM.componentA 
     },
     created()  {
         this.loadItems();
