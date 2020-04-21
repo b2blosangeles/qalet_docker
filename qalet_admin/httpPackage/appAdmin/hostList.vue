@@ -49,7 +49,7 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.$http.get('/api/vhosts').then(response => {
+            this.$http.post('/api/vhosts', {code: 'vhosts'})).then(response => {
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
