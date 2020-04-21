@@ -41,10 +41,10 @@ module.exports = {
     },
     created()  {
         this.loadItems();
-        console.log("==created==");
+        console.log("==created==a");
     },
     mounted ()  {
-        console.log("==mounted==");
+        console.log("==mounted==a");
     },
     methods : {
         setAction(v) {
