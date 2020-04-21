@@ -1,5 +1,7 @@
 <template>
-    <div class="helloA">Hello {{postTitle}}</div>
+    <div class="helloA spinner">Hello {{postTitle}}
+        <div class="spinner"></div>
+    </div>
 </template>
  
 <script>
