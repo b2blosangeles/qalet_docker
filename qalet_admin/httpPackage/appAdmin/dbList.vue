@@ -51,7 +51,7 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.$http.get('/api/dbs').then(response => {
+            this.$http.post('/api', {code: 'dbs'}).then(response => {
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
