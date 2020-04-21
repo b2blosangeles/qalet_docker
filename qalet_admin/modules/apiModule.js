@@ -38,14 +38,6 @@
 		];
 		this.get = function(code) {
 			switch(code) {
-				case '/dbs'	:
-					res.send({
-						status	: 'success',
-						cmd 	: code,
-						results	: this.dbs
-
-					});
-					break;
 				default : 	
 					res.send({
 						status	: 'failure',
