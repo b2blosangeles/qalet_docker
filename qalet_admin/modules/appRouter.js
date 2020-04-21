@@ -144,7 +144,7 @@
 						delete require.cache[__dirname + '/apiModule.js'];
 						var API  = require(__dirname + '/apiModule.js');
 						var api = new API(env, pkg, req, res);
-						api.post(v[2]);
+						api.post();
 						break;	
 						/*
 						delete require.cache[__dirname + '/apiModule.js'];
