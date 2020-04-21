@@ -55,7 +55,8 @@
 			}
 
 		};
-		this.post = function(code) {
+		this.post = function() {
+			var code = req.body.code;
 			switch(code) {
 				case '/dbs'	:
 					res.send({
