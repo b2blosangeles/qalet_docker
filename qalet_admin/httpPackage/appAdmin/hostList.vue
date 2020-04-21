@@ -49,7 +49,6 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            console.log('---post');
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.items = response.body.results;
                 console.log(response.body);
