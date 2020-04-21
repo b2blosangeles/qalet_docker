@@ -20,7 +20,7 @@
 		];
 		this.vhosts = [
 			{
-				serverName	: 'www.shusiou.winA', 
+				serverName	: 'www.shusiou.winAPOST', 
 				serverAlias	: 'shusiou.win',
 				gitHub		: 'https://github.com/b2blosangeles/docker_apachePHP.git',
 				innerPort	: 80,
@@ -43,14 +43,6 @@
 						status	: 'success',
 						cmd 	: code,
 						results	: this.dbs
-
-					});
-					break;
-				case '/vhosts'	:
-					res.send({
-						status	: 'success',
-						cmd 	: code,
-						results	: this.vhosts
 
 					});
 					break;
