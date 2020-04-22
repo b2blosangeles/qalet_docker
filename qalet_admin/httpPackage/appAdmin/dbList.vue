@@ -53,13 +53,13 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.spinnertrigger = 'on';
+            this.spinnertrigger = true;
             this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnertrigger = 'off';
+               this.spinnertrigger = false';
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnertrigger = 'off';
+                this.spinnertrigger = false;
                 console.log('--error---');
             });
         }
