@@ -1,6 +1,6 @@
 <template>
     <span>
-        test----{{params.niu}}---test-dataEngine
+        test----{{params}}---test-dataEngine
     </span>
 </template>
  
