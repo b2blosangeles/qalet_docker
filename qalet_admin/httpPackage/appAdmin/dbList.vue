@@ -53,7 +53,7 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.spinnerTrigger = false;
+            this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'dbs'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
