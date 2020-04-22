@@ -1,6 +1,6 @@
 <template>
     <span>
-        test-->>--{{para}}<---testDE
+        test-->>--{{para}}---testDE
     </span>
 </template>
  
