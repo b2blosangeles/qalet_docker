@@ -1,16 +1,16 @@
 <template>
     <span>
-        test--+--{{dataEngineConfig.url}}---test-dataEngine
+        test--+--{{config.url}}---test-dataEngine
     </span>
 </template>
  
 <script>
 module.exports = {
-    props: ["dataEngineConfig"],
+    props: ["config"],
     data: {
     },
     mounted ()  {
-        console.log(dataEngineConfig.url);
+        console.log(config.url);
      //   this.params.niu.rr = "==mounted==";
     }
 }
