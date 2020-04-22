@@ -6,9 +6,9 @@
  
 <script>
 module.exports = {
-    props: ["config", "url"],
+    props: ["config", "id"],
     watch: { 
-      	url: function(newVal, oldVal) { 
+      	id: function(newVal, oldVal) { 
           console.log('==chnaged===>');
           console.log(newVal);
           console.log(oldVal);
@@ -19,7 +19,7 @@ module.exports = {
     },
     created ()  {
         console.log(this.showConfig());
-        this.config.url = "==mounted==";
+        this.config.id = 0;
     },
     methods : {
         showConfig () {
