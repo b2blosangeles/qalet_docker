@@ -2,7 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases</h3>
-        <div class="section-spinner" v-if="spinner">loading ...</div>
+        <div class="section-spinner" v-if="spinner"></div>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
