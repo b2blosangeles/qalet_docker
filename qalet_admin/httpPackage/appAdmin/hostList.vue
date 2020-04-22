@@ -1,7 +1,7 @@
 <template>
     <span>
         <h3>QALET Virtual Hosts</h3>
-        <data-engine  v-bind:['params']="'yyy'"></data-engine>
+        <data-engine  params="'sssyyy'"></data-engine>
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
