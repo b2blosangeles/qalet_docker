@@ -1,13 +1,13 @@
 <template>
     <span>
-    ={{typeof spinnerTrigger}}={{ spinnerTrigger}}
-    <div class="overlay_spin_cover" v-if="spinnerTrigger"><div class="section-spinner"></div></div></div>
+    ={{typeof trigger}}={{ trigger}}
+    <div class="overlay_spin_cover" v-if="trigger"><div class="section-spinner"></div></div></div>
     </span>
 </template>
  
 <script>
 module.exports = {
-    props: ["spinnerTrigger"]
+    props: ["trigger"]
 }
 </script>
 <style>
