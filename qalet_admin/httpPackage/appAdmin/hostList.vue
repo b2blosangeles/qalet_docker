@@ -1,7 +1,7 @@
 <template>
     <span>
         <h3>QALET Virtual Hosts</h3>
-        <de  v-bind:['para']="'xxxx'"></de>
+        <data-engine  v-bind:['para']="'yyy'"></data-engine>
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
@@ -40,7 +40,7 @@ module.exports = {
     },
     components : {
         spinner : QALETCOMM.spinner,
-        de : QALETCOMM.de
+        dataEngine : QALETCOMM.dataEngine
     },
     created()  {
         this.loadItems();
