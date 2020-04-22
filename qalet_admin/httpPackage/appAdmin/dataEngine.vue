@@ -19,7 +19,7 @@ module.exports = {
     },
     created ()  {
         console.log(this.showConfig());
-     //   this.params.niu.rr = "==mounted==";
+        this.config.url = "==mounted==";
     },
     methods : {
         showConfig () {
