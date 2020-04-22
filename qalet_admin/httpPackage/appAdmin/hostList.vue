@@ -1,6 +1,7 @@
 <template>
     <span>
         <h3>QALET Virtual Hosts</h3>
+        <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -49,10 +50,13 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
+            this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
+               this.spinnerTrigger = false;
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
+                this.spinnerTrigger = false;    
                 console.log('--error---');
             });
         }
