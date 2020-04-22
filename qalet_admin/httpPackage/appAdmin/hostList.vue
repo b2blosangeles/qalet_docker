@@ -3,6 +3,7 @@
         <h3>QALET Virtual Hosts</h3>
 
         <data-engine  v-bind:params="paramv"></data-engine>
+        =={{paramv}}==
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
