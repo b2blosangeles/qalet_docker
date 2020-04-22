@@ -6,6 +6,10 @@
  
 <script>
 module.exports = {
-    props: ["params"]
+    props: ["params"],
+    data: {
+
+    
+    },
 }
 </script>
