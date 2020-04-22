@@ -1,7 +1,7 @@
 <template>
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
-        <h3>QALET Databases</h3>
+        <h3>QALET Databases 2</h3>
          <spinner trigger="true"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
