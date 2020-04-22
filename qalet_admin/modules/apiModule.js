@@ -49,18 +49,19 @@
 		};
 		this.post = function() {
 			var me = this;
+			setTimeout(function() { me.runPost(); }, 2000);
+		};	
+		this.runPost = function() {
+			
 			var code = req.body.code;
 			switch(code) {
 				case 'dbs'	:
-					setTimeout(
-						function() {
-							res.send({
-								status	: 'success',
-								cmd 	: code,
-								results	: me.dbs
+					res.send({
+						status	: 'success',
+						cmd 	: code,
+						results	: me.dbs
 
-							});
-						}, 2000);
+					});
 					break;
 				case 'vhosts'	:
 					res.send({
