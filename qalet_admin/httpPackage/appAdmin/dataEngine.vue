@@ -15,7 +15,7 @@ module.exports = {
     },
     methods : {
         showConfig () {
-            return (!config) ?  '-- created --' : config.url;
+            return (!this.config) ?  '-- created --' : this.config.url;
         }
     }
 }
