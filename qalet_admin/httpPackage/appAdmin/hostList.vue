@@ -2,7 +2,7 @@
     <span>
         <h3>QALET Virtual Hosts</h3>
 
-        <data-engine  v-bind:config="dataEngineConfig"></data-engine>
+        <data-engine  v-bind:config="dataEngineConfig"  v-bind:url="dataEngineConfig.url"></data-engine>
         <hr/>
         --{{dataEngineConfig}}--
         <hr/>
