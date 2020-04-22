@@ -4,6 +4,7 @@
 
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id"></data-engine>
         <hr/>
+        <button type="button" class="btn btn-warning"  v-on:click="dataEngineConfig.id = new Date().getTime()">Call Engine</button>
         --{{dataEngineConfig}}--
         <hr/>
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
@@ -41,7 +42,7 @@ module.exports = {
             currentAction : '',
             items : [],
             dataEngineConfig : {
-                id  : 1,
+                id  : 0,
                 url : '/api'
             }
         }
