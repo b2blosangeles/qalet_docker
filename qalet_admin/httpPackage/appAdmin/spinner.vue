@@ -7,7 +7,7 @@
  
 <script>
 module.exports = {
-    props: ["trigger"]
+    props: ["trigger", "spinnerTrigger"]
 }
 </script>
 <style>
