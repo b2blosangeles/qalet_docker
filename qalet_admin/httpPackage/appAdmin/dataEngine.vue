@@ -8,7 +8,7 @@
 module.exports = {
     props: ["config"],
     watch: { 
-      	config: function(newVal, oldVal) { // watch it
+      	config: function(newVal, oldVal) { 
           console.log('==chnaged===');
           console.log(newVal);
           console.log(oldVal);
