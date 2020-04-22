@@ -2,8 +2,8 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases</h3>
-        <overlay_spin_page v-if="spinner">Loading ...</overlay_spin_page>
-         <overlay_spin_cover><div class="section-spinner"></div></overlay_spin_cover>
+        <div class="overlay_spin_page" v-if="spinner">Loading ...</div>
+         <div class="overlay_spin_cover"><div class="section-spinner"></div></div>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
