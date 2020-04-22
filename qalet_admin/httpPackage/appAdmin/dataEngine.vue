@@ -8,8 +8,6 @@
 module.exports = {
     props: ["params"],
     data: {
-
-    
     },
     mounted ()  {
      //   this.params.niu.rr = "==mounted==";
