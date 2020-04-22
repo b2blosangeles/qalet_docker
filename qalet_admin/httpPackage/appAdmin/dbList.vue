@@ -39,7 +39,7 @@ module.exports = {
         }
     },
     components : {
-        messageSectionA : QALETCOMM.componentA 
+        spinner : QALETCOMM.spinner
     },
     created()  {
         this.loadItems();
