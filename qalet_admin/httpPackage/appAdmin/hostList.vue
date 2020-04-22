@@ -2,7 +2,7 @@
     <span>
         <h3>QALET Virtual Hosts</h3>
 
-        <data-engine  v-bind:params="{niu: 'sssyyy'}"></data-engine>
+        <data-engine  v-bind:params="{niu: {rr:'sssyyy'}}"></data-engine>
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
