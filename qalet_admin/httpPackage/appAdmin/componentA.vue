@@ -1,6 +1,6 @@
 <template>
     <div class="helloA spinner">Hello {{postTitle}}
-        <div class="spinner"></div>
+        <div class="section-spinner"></div>
     </div>
 </template>
  
