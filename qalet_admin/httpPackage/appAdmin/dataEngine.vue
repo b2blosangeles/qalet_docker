@@ -9,10 +9,10 @@ module.exports = {
     props: ["config", "url"],
     watch: { 
       	url: function(newVal, oldVal) { 
-          console.log('==chnaged===');
+          console.log('==chnaged===>');
           console.log(newVal);
           console.log(oldVal);
-          console.log('---------');
+          console.log('<---------');
         }
     },
     data: {
