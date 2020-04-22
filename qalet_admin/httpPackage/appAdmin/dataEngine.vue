@@ -15,8 +15,7 @@ module.exports = {
     },
     methods : {
         showConfig () {
-           if (typeof config == 'undefined') return '-- created --';  
-           else config.url;
+           return (typeof config == 'undefined') ? '-- created --' : config.url;
         }
     }
 }
