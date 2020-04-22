@@ -2,7 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases 2</h3>
-         <spinner v-bind:spinnerTrigger="spinnerTrigger"></spinner>
+         <spinner v-bind:spinnertrigger="spinnertrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -54,13 +54,13 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.spinnerTrigger = 'on';
+            this.spinnertrigger = 'on';
             this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnerTrigger = 'off';
+               this.spinnertrigger = 'off';
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnerTrigger = 'off';
+                this.spinnertrigger = 'off';
                 console.log('--error---');
             });
         }
