@@ -6,6 +6,7 @@
         "componentA.vue",
         "componentB.vue",
         "componentC.vue",
-        "spinner.vue"
+        "spinner.vue",
+        "dataEngine.vue"
   ]
 }
