@@ -6,7 +6,7 @@
  
 <script>
 module.exports = {
-    props: ["params"]
+    props: ["para"]
 }
 </script>
 <style>
