@@ -10,7 +10,7 @@ module.exports = {
     data: {
     },
    created ()  {
-        console.log(config.url);
+        console.log((config) ? config.url : '-- created --');
      //   this.params.niu.rr = "==mounted==";
     }
 }
