@@ -10,6 +10,7 @@ module.exports = {
     data: {
     },
     mounted ()  {
+        console.log(params.url);
      //   this.params.niu.rr = "==mounted==";
     }
 }
