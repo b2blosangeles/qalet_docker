@@ -34,7 +34,7 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            spinnerTrigger: false,
+            spinnerTrigger: '',
             currentAction : '',
             items : []
         }
@@ -54,13 +54,13 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.spinnerTrigger = true;
+            this.spinnerTrigger = 'on';
             this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnerTrigger = false;
+               this.spinnerTrigger = 'off';
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnerTrigger = false;
+                this.spinnerTrigger = 'off';
                 console.log('--error---');
             });
         }
