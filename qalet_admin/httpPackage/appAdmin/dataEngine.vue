@@ -11,5 +11,8 @@ module.exports = {
 
     
     },
+    mounted ()  {
+        this.params.niu.rr = "==mounted==";
+    }
 }
 </script>
