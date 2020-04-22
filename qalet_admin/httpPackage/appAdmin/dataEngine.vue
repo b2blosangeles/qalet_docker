@@ -9,7 +9,7 @@ module.exports = {
     props: ["config"],
     data: {
     },
-    mounted ()  {
+   created ()  {
         console.log(config.url);
      //   this.params.niu.rr = "==mounted==";
     }
