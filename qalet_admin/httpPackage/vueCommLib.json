@@ -1,12 +1,13 @@
 {
   "folder"  : "/appAdmin",
   "files"   : [
-        "dbList.vue",
-        "hostList.vue",
+
         "componentA.vue",
         "componentB.vue",
         "componentC.vue",
         "spinner.vue",
-        "dataEngine.vue"
+        "dataEngine.vue",
+        "dbList.vue",
+        "hostList.vue"
   ]
 }
