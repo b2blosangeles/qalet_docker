@@ -52,7 +52,7 @@
 			setTimeout(function() { me.runPost(); }, 2000);
 		};	
 		this.runPost = function() {
-			
+			var me = this;
 			var code = req.body.code;
 			switch(code) {
 				case 'dbs'	:
@@ -60,7 +60,6 @@
 						status	: 'success',
 						cmd 	: code,
 						results	: me.dbs
-
 					});
 					break;
 				case 'vhosts'	:
