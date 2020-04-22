@@ -1,7 +1,7 @@
 <template>
     <span>
     ={{typeof spinnerTrigger}}={{ spinnerTrigger}}
-    <div class="overlay_spin_cover" v-if="spinnerTrigger"><div class="section-spinner"></div></div></div>
+    <div class="overlay_spin_cover" v-if="spinnerTrigger=='on'"><div class="section-spinner"></div></div></div>
     </span>
 </template>
  
