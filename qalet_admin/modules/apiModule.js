@@ -48,6 +48,7 @@
 
 		};
 		this.post = function() {
+			var me = this;
 			var code = req.body.code;
 			switch(code) {
 				case 'dbs'	:
@@ -65,7 +66,7 @@
 					res.send({
 						status	: 'success',
 						cmd 	: code,
-						results	: this.vhosts
+						results	: me.vhosts
 
 					});
 					break;
