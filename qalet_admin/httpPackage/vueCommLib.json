@@ -5,6 +5,7 @@
         "hostList.vue",
         "componentA.vue",
         "componentB.vue",
-        "componentC.vue"
+        "componentC.vue",
+        "spinner.vue"
   ]
 }
