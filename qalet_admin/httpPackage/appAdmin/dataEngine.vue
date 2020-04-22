@@ -1,6 +1,6 @@
 <template>
     <span>
-        test-->--{{(!config) ? '-- showConfig --'} : config.url }---test-dataEngine
+        test-->--{{(!config) ? '-- showConfig --' : config.url }}---test-dataEngine
     </span>
 </template>
  
