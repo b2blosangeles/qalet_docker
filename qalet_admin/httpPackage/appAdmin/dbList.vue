@@ -55,7 +55,7 @@ module.exports = {
         loadItems() {
             this.spinnertrigger = true;
             this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnertrigger = false';
+               this.spinnertrigger = false;
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
