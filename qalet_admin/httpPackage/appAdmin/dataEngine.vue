@@ -1,12 +1,12 @@
 <template>
     <span>
-        test
+        test--{{params}}
     </span>
 </template>
  
 <script>
 module.exports = {
-    props: ["trigger"]
+    props: ["params"]
 }
 </script>
 <style>
