@@ -34,7 +34,6 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            spinnerTrigger: '',
             currentAction : '',
             items : []
         }
