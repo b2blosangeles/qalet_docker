@@ -2,7 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases 2</h3>
-         <spinner trigger="true"></spinner>
+         <spinner trigger="spanStatus=='on'"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -34,7 +34,6 @@ module.exports = {
     props: ["postTitle"],
     data: function() {  
         return {
-            spinnerTrigger : true,
             currentAction : '',
             items : []
         }
@@ -54,13 +53,13 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
-            this.spinnerTrigger = true;
+            this.spanStatus = 'on';
             this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnerTrigger = false;
+               this.spanStatus = 'off';
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnerTrigger = false;
+                this.spanStatus = 'off';
                 console.log('--error---');
             });
         }
