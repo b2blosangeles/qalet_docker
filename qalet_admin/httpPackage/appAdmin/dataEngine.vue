@@ -7,6 +7,14 @@
 <script>
 module.exports = {
     props: ["config"],
+    watch: { 
+      	config: function(newVal, oldVal) { // watch it
+          console.log('==chnaged===');
+          console.log(newVal);
+          console.log(oldVal);
+          console.log('---------');
+        }
+    },
     data: {
     },
     created ()  {
