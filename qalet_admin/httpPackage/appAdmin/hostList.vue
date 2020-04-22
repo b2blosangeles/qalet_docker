@@ -40,7 +40,7 @@ module.exports = {
     },
     components : {
         spinner : QALETCOMM.spinner,
-        spinner : QALETCOMM.dataEngine
+        de : QALETCOMM.de
     },
     created()  {
         this.loadItems();
