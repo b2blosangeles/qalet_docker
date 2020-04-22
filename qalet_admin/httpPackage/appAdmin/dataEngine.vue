@@ -1,6 +1,6 @@
 <template>
     <span>
-        test-->>--{{params}}
+        test-->>--{{para}}
     </span>
 </template>
  
