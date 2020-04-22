@@ -1,6 +1,6 @@
 <template>
     <span>
-        test--+--{{config.url}}---test-dataEngine
+        test--+--{{showConfig ()}}---test-dataEngine
     </span>
 </template>
  
@@ -9,7 +9,10 @@ module.exports = {
     props: ["config"],
     data: {
     },
-   created ()  {
+    showConfig () {
+        return (config) ? config.url : '-- showConfig --';
+    },
+    created ()  {
         console.log((config) ? config.url : '-- created --');
      //   this.params.niu.rr = "==mounted==";
     }
