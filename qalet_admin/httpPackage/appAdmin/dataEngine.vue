@@ -1,11 +1,11 @@
 <template>
     <span>
-        test----{{para}}---testDE
+        test----{{params}}---testDE
     </span>
 </template>
  
 <script>
 module.exports = {
-    props: ["para"]
+    props: ["params"]
 }
 </script>
