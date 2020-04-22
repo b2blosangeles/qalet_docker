@@ -6,7 +6,7 @@
         "componentB.vue",
         "componentC.vue",
         "spinner.vue",
-        "dataEngine.vue",
+        "dE.vue",
         "dbList.vue",
         "hostList.vue"
   ]
