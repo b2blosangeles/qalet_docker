@@ -2,6 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases</h3>
+        <div class="section-spinner" v-if="spinner"></div>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -52,6 +53,7 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
+            this.spinner = true;
             this.$http.post('/api', {code: 'dbs'}).then(response => {
                this.items = response.body.results;
                 console.log(response.body);
