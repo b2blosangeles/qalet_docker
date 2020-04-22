@@ -1,5 +1,5 @@
 <template>
-    <div class="helloA spinner">Hello {{postTitle}}
+    <div class="helloA">Hello {{postTitle}}
         <div class="section-spinner"></div>
     </div>
 </template>
