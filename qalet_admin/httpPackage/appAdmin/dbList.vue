@@ -2,7 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases 2</h3>
-         <spinner v-bind:spinnertrigger="spinnertrigger"></spinner>
+         <spinner v-bind:spinnerTrigger="spinnertrigger"></spinner>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
