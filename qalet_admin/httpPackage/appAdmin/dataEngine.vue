@@ -1,6 +1,6 @@
 <template>
     <span>
-        test--+--{{showConfig ()}}---test-dataEngine
+        test--+--{{(config) ? config.url : '-- showConfig --'}}---test-dataEngine
     </span>
 </template>
  
@@ -8,9 +8,6 @@
 module.exports = {
     props: ["config"],
     data: {
-    },
-    showConfig () {
-        return (config) ? config.url : '-- showConfig --';
     },
     created ()  {
         console.log((config) ? config.url : '-- created --');
