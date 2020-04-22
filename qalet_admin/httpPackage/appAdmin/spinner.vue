@@ -1,22 +1,12 @@
 <template>
-    <div class="helloA">Hello {{postTitle}}
-        
-    </div>
+    <div class="overlay_spin_cover" v-if="spinner"><div class="section-spinner"></div></div></div>
 </template>
  
 <script>
 module.exports = {
-    props: ["postTitle"],
-    data: function() {
-        return {
-            who: 'world'
-        }
-    }
+    props: ["spinner"]
 }
 </script>
 <style>
-.helloA {
-    background-color: pink;
-}
+
 </style>
-© 2020 GitHub, Inc.
