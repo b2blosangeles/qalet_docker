@@ -6,9 +6,9 @@
  
 <script>
 module.exports = {
-    props: ["config"],
+    props: ["config", "url"],
     watch: { 
-      	config: function(newVal, oldVal) { 
+      	url: function(newVal, oldVal) { 
           console.log('==chnaged===');
           console.log(newVal);
           console.log(oldVal);
