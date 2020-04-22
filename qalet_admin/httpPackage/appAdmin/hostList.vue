@@ -2,9 +2,9 @@
     <span>
         <h3>QALET Virtual Hosts</h3>
 
-        <data-engine  v-bind:params="paramv"></data-engine>
+        <data-engine  v-bind:dataEngineConfig="dataEngineConfig"></data-engine>
         <hr/>
-        --{{paramv}}--
+        --{{dataEngineConfig}}--
         <hr/>
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
          <table class="table" v-if="currentAction==''">
@@ -40,10 +40,8 @@ module.exports = {
         return {
             currentAction : '',
             items : [],
-            paramv : {
-                niu : {
-                    rr  : '7788'
-                }
+            dataEngineConfig : {
+                url : '/api'
             }
         }
     },
