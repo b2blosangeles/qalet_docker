@@ -37,7 +37,9 @@ module.exports = {
             items : []
         }
     },
-    components : {},
+    components : {
+        spinner : QALETCOMM.spinner
+    },
     created()  {
         this.loadItems();
         console.log("==created==");
