@@ -57,7 +57,7 @@
 							res.send({
 								status	: 'success',
 								cmd 	: code,
-								results	: this.dbs
+								results	: me.dbs
 
 							});
 						}, 2000);
