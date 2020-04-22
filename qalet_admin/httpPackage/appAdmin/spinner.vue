@@ -1,6 +1,6 @@
 <template>
     <span>
-    ={{typeof trigger}}=
+    ={{typeof trigger}}={{ trigger}}
     <div class="overlay_spin_cover" v-if="trigger=='on'"><div class="section-spinner"></div></div></div>
     </span>
 </template>
