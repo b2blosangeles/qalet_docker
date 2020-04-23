@@ -49,7 +49,7 @@ module.exports = {
         }
     },
     components : {
-        spinner : QALETCOMM.spinner,
+      //  spinner : QALETCOMM.spinner,
         dataEngine : QALETCOMM.dataEngine
     },
     created()  {
