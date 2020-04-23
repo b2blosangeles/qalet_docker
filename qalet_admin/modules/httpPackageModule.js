@@ -61,7 +61,8 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							cbk(encodeURI(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
+							
+							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
 						}); 
 						return true;
 					}
@@ -89,7 +90,7 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += nameSpace + '.' + fileName + ' = ';
-						str += 'codeVeuSFCLoader(decodeURI("' + CP.data['_' + i] + '")); ' + "\n";
+						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
 					}
 					res.send(str);
 			   	},
