@@ -1,7 +1,7 @@
 <template>
     <span v-if="trigger">
         <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup">
+        <div class="overlay_popup">uuu
             <div class="popupWindow">opop
                 <!--div class="media">
                   <a class="pull-left" href="#">
@@ -46,7 +46,7 @@ module.exports = {
     height:100%;
 }
 .popupWindow {
-    background-color: #fff;
+    background-color: #ff0000;
     width : 640px;
 }
 </style>
