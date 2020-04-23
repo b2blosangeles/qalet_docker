@@ -15,7 +15,7 @@ module.exports = {
                 this.result.respId = newVal;
                 
                  this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
-                this.loadItems();
+                this.loadItems(this);
             }
           }
     },
@@ -36,7 +36,7 @@ module.exports = {
            if (typeof config == 'undefined') return '-- created --';  
            else config.url;
         },
-        loadItems() {
+        loadItems(o) {
            this.spinnerTrigger = true;
            var me = this;
            me.result.respId = '676767';
@@ -45,6 +45,7 @@ module.exports = {
                 (function(me) {
                     return response => {
                    me.spinnerTrigger = false;
+                   o.result.respId = '8888888';
                    me.result.respId = '12345';
                    console.log(me.result);
                   // for (var i=0; i < response.body.results.length; i++) {
