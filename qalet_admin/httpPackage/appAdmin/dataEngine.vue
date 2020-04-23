@@ -11,10 +11,10 @@ module.exports = {
     watch: { 
       	id: function(newVal, oldVal) { 
             if (newVal) {
-                this.config.id = 0;
-                this.result.respId = newVal;
+               // this.config.id = 0;
+              //  this.result.respId = newVal;
                 
-                 this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
+              //   this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
                 this.loadItems(this);
             }
           }
@@ -39,6 +39,7 @@ module.exports = {
         loadItems(o) {
            this.spinnerTrigger = true;
            var me = this;
+           me.config.id = 0;
            me.result.respId = '676767';
            
             this.$http.post('/api', {code: 'vhosts'}). then(function (response) {
