@@ -1,5 +1,5 @@
 <template>
-    <span>mmm=={{trigger}}--fff
+    <span>
     <div class="overlay_spin_cover" v-if="trigger"><div class="section-spinner"></div></div></div>
     </span>
 </template>
