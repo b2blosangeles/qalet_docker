@@ -30,7 +30,8 @@ module.exports = {
         loadItems(id) {
            this.spinnerTrigger = true;
            var me = this;
-            this.$http.post('/api', {code: 'vhosts'}). then(function (response) {
+           var ajax =  (!config.postData) ?  this.$http.post(config.uri, config.postData) : this.$http.get(config.uri);
+           ajax.then(function (response) {
                 this.result.items = response.body.results;
                 this.spinnerTrigger = false;
                 me.config.id = 0;
