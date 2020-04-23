@@ -1,7 +1,7 @@
 <template>
     <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
     <span>
-        test-->--{{config.url}}--==-test-dataEngine
+        test--==>--{{config.url}}--==-test-dataEngine
     </span>
 </template>
  
