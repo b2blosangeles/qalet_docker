@@ -42,9 +42,10 @@ module.exports = {
 
            
             this.$http.post('/api', {code: 'vhosts'}). then(function (response) {
+                
+                this.result.items = response.body.results;
                 me.result.respId = '8888888';
                 me.config.id = 0;
-                
                 console.log(this.result);
                 this.spinnerTrigger = false;
             }).catch((err) => {
