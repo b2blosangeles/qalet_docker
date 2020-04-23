@@ -46,7 +46,6 @@ module.exports = {
               // }
             //   this.result.items = [1, 2];
                 console.log('--this.result--->');
-                console.log(obj);
                // console.log(response.body.results);
             }, response => {
                 this.spinnerTrigger = false;    
