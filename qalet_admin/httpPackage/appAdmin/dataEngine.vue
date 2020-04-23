@@ -43,7 +43,7 @@ module.exports = {
             
                 (function(me) {
                     return response => {
-                   this.spinnerTrigger = false;
+                   me.spinnerTrigger = false;
                    me.result.respId = '12345';
                    console.log(me.result);
                   // for (var i=0; i < response.body.results.length; i++) {
