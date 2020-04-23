@@ -18,7 +18,7 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                this.loadItems();
+                this.loadItems(this);
             }
         }
     },
@@ -30,7 +30,7 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
-        this.spinnerTrigger = true;
+        this.spinnerTrigger = false;
         console.log(this.showConfig());
         this.config.id = 0;
     },
@@ -39,7 +39,7 @@ module.exports = {
            if (typeof config == 'undefined') return '-- created --';  
            else config.url;
         },
-        loadItems() {
+        loadItems(obj) {
             this.spinnerTrigger = true;
              alert(this.spinnerTrigger);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
