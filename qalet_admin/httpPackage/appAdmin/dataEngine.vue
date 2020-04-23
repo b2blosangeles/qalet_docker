@@ -18,7 +18,7 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                alert(this.niu);
+                alert('niu:' + this.niu);
                 this.loadItems();
             }
           }
@@ -33,7 +33,7 @@ module.exports = {
     },
     created ()  {
         this.niu = new Date().getTime();
-        alert(this.niu);
+        alert('niu:' + this.niu);
         this.spinnerTrigger = false;
         console.log(this.showConfig());
         this.config.id = 0;
@@ -45,7 +45,7 @@ module.exports = {
         },
         loadItems() {
            this.spinnerTrigger = true;
-           alert(alert(this.niu));
+           alert('niu:' + this.niu);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
