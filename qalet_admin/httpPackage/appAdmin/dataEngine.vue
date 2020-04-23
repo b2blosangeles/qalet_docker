@@ -40,6 +40,11 @@ module.exports = {
            this.spinnerTrigger = true;
            var me = this;
            me.result.respId = '676767';
+           
+            this.$http.post('/api', {code: 'vhosts'}, function (data, status, request) {
+                o.result.respId = '8888888';
+            });
+           /*
            me.$http.post('/api', {code: 'vhosts'}).then(
             
                 (function(me) {
@@ -63,6 +68,7 @@ module.exports = {
                 this.spinnerTrigger = false;    
                 console.log('--error---');
             });
+            */
         }
     }
 }
