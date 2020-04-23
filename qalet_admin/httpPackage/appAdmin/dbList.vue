@@ -1,7 +1,7 @@
 <template>
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
-        <pop-up trigger="1"></pop-up>
+        <pop-up trigger="1">test</pop-up>
         <h3>QALET Databases 2</h3>
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
          <table class="table" v-if="currentAction==''">
