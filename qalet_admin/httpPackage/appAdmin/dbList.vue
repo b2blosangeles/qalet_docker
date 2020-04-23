@@ -39,7 +39,9 @@ module.exports = {
             dataEngineConfig : {
                 id  : 0,
                 uri : '/api',
-                postData : {code: 'dbs'}
+                postData : {code: 'dbs'},
+                localSpinner : true,
+                spinner : true
             },
             resultData : {}
         }
