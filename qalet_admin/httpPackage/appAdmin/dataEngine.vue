@@ -28,23 +28,7 @@ module.exports = {
     methods : {
         loadItems(id) {
            this.spinnerTrigger = true;
-           var me = this;
-
-           // if (!this.config) {
-            //    return true;
-          //  }
-            console.log(!this.config.postData);
-         //   console.log(typeof this.config.postData)
-         
-          //  if (typeof this.config.postData == 'object') {
-                this.$http.post(this.config.uri, this.config.postData).then(function (response) {
-                    this.result.items = response.body.results;
-                    this.spinnerTrigger = false;
-                    me.config.id = 0;
-                }).catch((err) => {
-                  console.log(err)
-                });
-          /*  } else {
+           if (!this.config.postData) {
                 this.$http.get(this.config.uri).then(function (response) {
                     this.result.items = response.body.results;
                     this.spinnerTrigger = false;
@@ -52,8 +36,15 @@ module.exports = {
                 }).catch((err) => {
                   console.log(err)
                 });
-            }
-            */
+             } else {    
+                this.$http.post(this.config.uri, this.config.postData).then(function (response) {
+                    this.result.items = response.body.results;
+                    this.spinnerTrigger = false;
+                    me.config.id = 0;
+                }).catch((err) => {
+                  console.log(err)
+                });
+            } 
         }
     }
 }
