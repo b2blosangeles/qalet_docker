@@ -17,7 +17,7 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                this.loadItems();
+               // this.loadItems();
             }
         }
     },
