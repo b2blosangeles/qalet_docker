@@ -1,5 +1,5 @@
 <template>
-    <span v-if="trigger">
+    <span v-if="trigger && config.spinner">
         <div class="overlay_spin_cover" v-if="!config.localSpinner"><div class="section-spinner"></div></div>
         <div class="section_spin_cover" v-if="config.localSpinner"><div class="section-spinner"></div></div>
         <!--div class="spinner" v-if="trigger"></div-->
