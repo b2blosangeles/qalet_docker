@@ -49,7 +49,7 @@
 		};
 		this.post = function() {
 			var me = this;
-			setTimeout(function() { me.runPost(); }, 2000);
+			setTimeout(function() { me.runPost(); }, 1000);
 		};	
 		this.runPost = function() {
 			var me = this;
