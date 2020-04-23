@@ -5,7 +5,7 @@
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
         <hr/>
         <button type="button" class="btn btn-warning"  v-on:click="dataEngineConfig.id = new Date().getTime()">Call Engine</button>
-        --{{dataEngineConfig}}--==={{resultData}}=>00>=={{resultData.respId}}
+        --{{dataEngineConfig}}--==={{resultData}}=>00>=={{resultData.items}}
         <hr/>
         <!--spinner v-bind:['trigger']="spinnerTrigger"></spinner-->
          <table class="table" v-if="currentAction==''">
@@ -20,8 +20,8 @@
             </thead>
             <tbody>
                 <tr v-for="item in resultData.items">
-                    <td>{{item.serverName}}</td>
-                    <td>{{item.gitHub}}</td>
+                    <td>--item.serverName--</td>
+                    <td>--item.gitHub--</td>
                     <td></td>
                     <td></td>
                     <td></td>
