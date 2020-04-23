@@ -18,7 +18,7 @@ module.exports = {
 .spinner {
    position: absolute;
    left: 50%;
-   top: 20%;
+   top: 15%;
    height:60px;
    width:60px;
    margin:0px auto;
