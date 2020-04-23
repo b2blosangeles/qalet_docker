@@ -1,6 +1,6 @@
 <template>
-    <div>ttt a
-        <div class="overlay_popup_cover"></div>
+    <div>
+        <div class="overlay_popup">ggg</div>
     </div>    
 </template>
 
