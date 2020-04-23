@@ -1,7 +1,9 @@
 <template>
     <span>
         <!--div class="overlay_spin_cover" v-if="trigger"><div class="section-spinner"></div></div-->
-        <div class="spinner" v-if="trigger"></div>
+        <!--div class="section_spin_cover" v-if="trigger"><div class="section-spinner"></div></div>
+        <!--div class="spinner" v-if="trigger"></div-->
+        
     </span>
 </template>
  
