@@ -12,7 +12,7 @@ module.exports = {
       	id: function(newVal, oldVal) { 
             if (newVal) {
                 this.config.id = 0;
-                this.result.respId = newVal;
+               // this.result.respId = newVal;
                 this.loadItems();
             }
           }
