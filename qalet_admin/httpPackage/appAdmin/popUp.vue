@@ -2,8 +2,6 @@
     <span>
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">uuu
-            <div class="popupWindow">opop
-            </div>
         </div>
     </span>
 </template>
