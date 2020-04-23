@@ -40,8 +40,9 @@ module.exports = {
                 id  : 0,
                 uri : '/api',
                 postData : {code: 'dbs'},
-                localSpinner : true,
-                spinner : true
+                spinner : {
+                    local : true
+                }
             },
             resultData : {}
         }
