@@ -25,7 +25,7 @@ module.exports = {
           }
     },
     data: {
-    //    spinnerTrigger : true
+        spinnerTrigger : {}
     },
     components : {
         spinner : QALETCOMM.spinner
@@ -33,9 +33,7 @@ module.exports = {
        // dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
-        this.niu = new Date().getTime();
-        alert('niu:' + this.niu);
-        this.spinnerTrigger = false;
+        this.spinnerTrigger = {status : true};
         console.log(this.showConfig());
         this.config.id = 0;
     },
@@ -45,9 +43,7 @@ module.exports = {
            else config.url;
         },
         loadItems() {
-           this.spinnerTrigger = true;
-           alert('niu:' + this.niu);
-           this.spinnerTrigger = true;
+           this.spinnerTrigger = {status : true};
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
