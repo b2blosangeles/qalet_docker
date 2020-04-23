@@ -1,10 +1,7 @@
 {
   "folder"  : "/appAdmin",
   "files"   : [
-
-        "componentA.vue",
-        "componentB.vue",
-        "componentC.vue",
+        "popUp.vue",
         "spinner.vue",
         "dataEngine.vue",
         "dbList.vue",
