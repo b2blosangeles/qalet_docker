@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>uuu</div>
-        <div> a ggg</div>
+        <div class="ttyr"> a ggg 8</div>
     </div>    
 </template>
 
