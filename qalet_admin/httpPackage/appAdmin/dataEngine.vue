@@ -14,16 +14,13 @@ module.exports = {
                 this.loadItems(newVal);
             }
           }
-    },
-    //                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
-    //            spinner         : (this.config.spinner) ? this.config.spinner : false 
-                
+    },          
     data: function() {  
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : true,
-                spinner         : true 
+                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
+                spinner         : (this.config.spinner) ? this.config.spinner : false  
             }
         }
     },
