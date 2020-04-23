@@ -38,7 +38,8 @@ module.exports = {
             items : [],
             dataEngineConfig : {
                 id  : 0,
-                url : '/api'
+                uri : '/api',
+                postData : {code: 'vhosts'}
             },
             resultData : {}
         }
