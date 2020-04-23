@@ -40,7 +40,7 @@ module.exports = {
            this.spinnerTrigger = true;
            var me = this;
            me.result.respId = '676767';
-           this.$http.post('/api', {code: 'vhosts'}).then(
+           me.$http.post('/api', {code: 'vhosts'}).then(
             
                 (function(me) {
                     return response => {
