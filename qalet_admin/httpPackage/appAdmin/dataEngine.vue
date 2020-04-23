@@ -1,6 +1,6 @@
 <template>
     <span>
-        <spinner v-bind:trigger="spinnerTrigger" v-bind:cfg="spinnerConfig"></spinner>
+        <spinner v-bind:trigger="spinnerTrigger" v-bind:config="spinnerConfig"></spinner>
     </span>
 </template>
  
