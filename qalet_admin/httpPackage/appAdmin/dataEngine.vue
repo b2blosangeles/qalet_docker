@@ -32,7 +32,7 @@ module.exports = {
           // var config = this.config;
             var ajax =  (!this.config.postData) ? this.$http.get(this.config.uri) : this.$http.post(this.config.uri, this.config.postData);
             console.log(this.config);
-            ajax.then(function (response) {
+            this.$http.post(this.config.uri, this.config.postData).then(function (response) {
                 this.result.items = response.body.results;
                 this.spinnerTrigger = false;
                 me.config.id = 0;
