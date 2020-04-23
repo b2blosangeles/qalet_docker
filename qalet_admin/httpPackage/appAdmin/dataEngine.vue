@@ -22,7 +22,7 @@ module.exports = {
             localSpinner = false;
             spinner = false;   
         } else {
-            localSpinner = this.config.local;
+            localSpinner = this.config.spinner.local;
             spinner = true;      
         }
         return {
