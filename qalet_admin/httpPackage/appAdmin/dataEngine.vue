@@ -19,7 +19,7 @@ module.exports = {
     //    var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
    //     spinner = (!this.config || !this.config.spinner) ? false :  this.config.spinner;
         
-        var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner;
+        var localSpinner = ((typeof this.config == 'undefined') || !this.config.localSpinner) ? false : this.config.localSpinner;
         var spinner = true;
         
         return {
