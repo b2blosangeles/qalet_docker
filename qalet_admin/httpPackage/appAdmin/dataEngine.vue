@@ -6,7 +6,7 @@
  
 <script>
 module.exports = {
-    props: ["config", "id"],
+    props: ["config", "id", "parent"],
     watch: { 
       	id: function(newVal, oldVal) { 
             if (newVal) {
@@ -15,6 +15,7 @@ module.exports = {
                 console.log(oldVal);
                 console.log('<---------');
                 this.config.id = 0;
+                parent.data.respId = newVal;
             }
         }
     },
