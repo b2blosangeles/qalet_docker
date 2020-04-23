@@ -52,7 +52,7 @@ module.exports = {
     },
     components : {
          dataEngine : QALETCOMM.dataEngine,
-         pppUp      : QALETCOMM.pppUp
+         popUp      : QALETCOMM.popUp
     },
     created()  {
     },
