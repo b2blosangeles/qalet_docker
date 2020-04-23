@@ -40,7 +40,7 @@ module.exports = {
            else config.url;
         },
         loadItems(obj) {
-            this.spinnerTrigger = true;
+           obj.spinnerTrigger = true;
              alert(this.spinnerTrigger);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
