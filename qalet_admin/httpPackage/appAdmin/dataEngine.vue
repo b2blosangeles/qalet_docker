@@ -38,8 +38,8 @@ module.exports = {
            this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
-               this.items = response.body.results;
-                console.log(response.body);
+               this.result = response.body.results;
+                console.log(this.result);
             }, response => {
                 this.spinnerTrigger = false;    
                 console.log('--error---');
