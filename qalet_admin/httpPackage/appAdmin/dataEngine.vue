@@ -30,7 +30,7 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
-        this.spinnerTrigger = false;
+        this.spinnerTrigger = true;
         console.log(this.showConfig());
         this.config.id = 0;
     },
@@ -40,7 +40,6 @@ module.exports = {
            else config.url;
         },
         loadItems() {
-            alert(this.obj.spinnerTrigger);
             this.spinnerTrigger = true;
              alert(this.spinnerTrigger);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
