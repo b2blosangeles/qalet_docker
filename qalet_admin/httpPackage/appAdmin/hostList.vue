@@ -48,15 +48,19 @@ module.exports = {
     },
     created()  {
         console.log("==created==");
-        
+        this.loadData();
+        console.log('loadData(===');
     },
     mounted ()  {
         console.log("==mounted==");
-      //  this.dataEngineConfig.id = new Date().getTime();
+        
     },
     methods : {
         setAction(v) {
             this.currentAction = v;
+        },
+        loadData() {
+            this.dataEngineConfig.id = new Date().getTime();
         }
     }
 }
