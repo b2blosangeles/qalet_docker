@@ -3,16 +3,6 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">uuu
             <div class="popupWindow">opop
-                <!--div class="media">
-                  <a class="pull-left" href="#">
-                    <img class="media-object" data-src="holder.js/64x64">
-                  </a>
-                  <div class="media-body">
-                    <h4 class="media-heading">Media heading</h4>
-                    <div class="media">
-                    </div>
-                  </div>
-                </div-->
             </div>
         </div>
     </span>
@@ -20,7 +10,7 @@
  
 <script>
 module.exports = {
-    props: ["trigger", "config"]
+    props: ["trigger"]
 }
 </script>
 <style>
