@@ -13,7 +13,7 @@ module.exports = {
             if (newVal) {
                 this.config.id = 0;
                 this.result.respId = newVal;
-                 this.result.items = [3, 4];
+                 this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
                 this.loadItems();
             }
           }
