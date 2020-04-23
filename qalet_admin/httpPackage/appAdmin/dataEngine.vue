@@ -41,10 +41,12 @@ module.exports = {
            var me = this;
            me.result.respId = '676767';
            
-            this.$http.post('/api', {code: 'vhosts'}, function (data, status, request) {
+            this.$http.post('/api', {code: 'vhosts'}) then(function (response) {
                 this.result.respId = '8888888';
                 console.log(this.result);
                 this.spinnerTrigger = false;
+            }).catch((err) => {
+              console.log(err)
             });
            /*
            me.$http.post('/api', {code: 'vhosts'}).then(
