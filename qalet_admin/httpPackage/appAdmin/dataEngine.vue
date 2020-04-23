@@ -15,17 +15,17 @@ module.exports = {
             }
           }
     },          
-    data: function() {  
+    data: function() {
+        var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
+        spinner = (this.config.spinner) ? this.config.spinner : false;
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
-                spinner         : true
+                localSpinner    : localSpinner,
+                spinner         : spinner
             }
         }
     },
-           //         localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
-            //    spinner         : (this.config.spinner) ? this.config.spinner : false  
     components : {
         spinner : QALETCOMM.spinner
     },
