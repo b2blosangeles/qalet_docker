@@ -34,7 +34,9 @@ module.exports = {
          //   var ajax =  (typeof this.config.postData == 'undefined') ? this.$http.get(this.config.uri) : this.$http.post(this.config.uri, this.config.postData);
         //    console.log(this.config);
          //   console.log(typeof this.config.postData)
-            /*
+            if (!this.config) {
+                return true;
+            }
             if (typeof this.config.postData == 'object') {
                 this.$http.post(this.config.uri, this.config.postData).then(function (response) {
                     this.result.items = response.body.results;
@@ -43,7 +45,7 @@ module.exports = {
                 }).catch((err) => {
                   console.log(err)
                 });
-            } else {*/
+            } else {
                 this.$http.get(this.config.uri).then(function (response) {
                     this.result.items = response.body.results;
                     this.spinnerTrigger = false;
