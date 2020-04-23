@@ -24,7 +24,7 @@
             </tbody>
           </table>
           
-          <pop-up>test</pop-up>
+          <pop-up></pop-up>
                  
           <div v-if="currentAction!=''">
             <button type="button" class="btn btn-warning"  v-on:click="setAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
