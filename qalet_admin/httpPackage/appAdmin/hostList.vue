@@ -52,6 +52,7 @@ module.exports = {
     },
     created()  {
         console.log("==created==");
+        dataEngineConfig.id = new Date().getTime()
     },
     mounted ()  {
         console.log("==mounted==");
