@@ -2,8 +2,8 @@
     <span v-if="trigger">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popupWindow">
-                <div class="media">
+            <div class="popupWindow">opop
+                <!--div class="media">
                   <a class="pull-left" href="#">
                     <img class="media-object" data-src="holder.js/64x64">
                   </a>
@@ -16,7 +16,7 @@
                       ...
                     </div>
                   </div>
-                </div>
+                </div-->
             </div>
         </div>
     </span>
