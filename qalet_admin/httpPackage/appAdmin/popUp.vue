@@ -1,19 +1,17 @@
 <template>
-    <span>
+    <span>ttt
         <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup">uuu
-        </div>
+        <div class="overlay_popup">uuu</div>
     </span>
 </template>
  
 <script>
 module.exports = {
-    props: ["trigger"]
+    props: []
 }
 </script>
 <style>
 /*---- overlay and spinner ---*/
-
 .overlay_popup {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
