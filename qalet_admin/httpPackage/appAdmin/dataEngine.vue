@@ -40,7 +40,7 @@ module.exports = {
            var me = this;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
-               me.respId = '12345';
+               me.result.respId = '12345';
               // for (var i=0; i < response.body.results.length; i++) {
               //         this.result.items.push(response.body.results[i]);
               // }
