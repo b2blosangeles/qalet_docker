@@ -20,7 +20,7 @@ module.exports = {
             spinnerTrigger  : false,
             spinnerConfig   : {
                 localSpinner    : (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
-                spinner         : true  
+                spinner         : (!this.config || !this.config.spinner) ? false : this.config.spinner
             }
         }
     },
