@@ -22,7 +22,7 @@ module.exports = {
         }
     },
     data: {
-        spinnerTrigge : false
+        spinnerTrigger : false
     },
     components : {
         spinner : QALETCOMM.spinner,
