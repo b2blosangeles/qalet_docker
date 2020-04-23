@@ -19,11 +19,13 @@ module.exports = {
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
-                spinner         : (this.config.spinner) ? this.config.spinner : false  
+                localSpinner    : true,
+                spinner         : true  
             }
         }
     },
+           //         localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
+            //    spinner         : (this.config.spinner) ? this.config.spinner : false  
     components : {
         spinner : QALETCOMM.spinner
     },
