@@ -24,7 +24,7 @@
             </tbody>
           </table>
           
-          <pop-up>test</pop-up>
+          <ppp-up>test</ppp-up>
                  
           <div v-if="currentAction!=''">
             <button type="button" class="btn btn-warning"  v-on:click="setAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
@@ -52,7 +52,7 @@ module.exports = {
     },
     components : {
          dataEngine : QALETCOMM.dataEngine,
-         popUp      : QALETCOMM.popUp
+         pppUp      : QALETCOMM.pppUp
     },
     created()  {
     },
