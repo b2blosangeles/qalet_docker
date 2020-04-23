@@ -19,11 +19,11 @@ module.exports = {
         var localSpinner, spinner;
         
         if (typeof this.config == 'undefined') {
-            localSpinner = true;
-            spinner = true;   
+            localSpinner = false;
+            spinner = false;   
         } else {
-            localSpinner = this.config.localSpinner;
-            spinner = this.config.spinner;      
+            localSpinner = this.config.local;
+            spinner = true;      
         }
         return {
             spinnerTrigger  : false,
