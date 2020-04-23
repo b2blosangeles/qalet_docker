@@ -37,11 +37,13 @@ module.exports = {
         },
         loadItems() {
            this.spinnerTrigger = true;
+            me.result.respId = '55665566';
            var me = this;
            me.result.respId = '77887788';
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                me.result.respId = '12345';
+               console.log(me.result);
               // for (var i=0; i < response.body.results.length; i++) {
               //         this.result.items.push(response.body.results[i]);
               // }
