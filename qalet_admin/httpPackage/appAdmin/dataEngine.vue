@@ -23,8 +23,10 @@ module.exports = {
             }
           }
     },
-    data: {
-        spinnerTrigger : {status : false}
+    data: function() {  
+        return {
+            spinnerTrigger : {status : false}
+        }
     },
     components : {
         spinner : QALETCOMM.spinner
@@ -32,7 +34,7 @@ module.exports = {
        // dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
-        this.spinnerTrigger = {status : false};
+       // this.spinnerTrigger = {status : false};
         console.log(this.showConfig());
         this.config.id = 0;
     },
