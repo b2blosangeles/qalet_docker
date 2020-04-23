@@ -51,7 +51,6 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created()  {
-        this.loadItems();
         console.log("==created==");
     },
     mounted ()  {
