@@ -9,11 +9,13 @@ module.exports = {
     props: ["config", "id"],
     watch: { 
       	id: function(newVal, oldVal) { 
-          console.log('==chnaged===>');
-          console.log(newVal);
-          console.log(oldVal);
-          console.log('<---------');
-          this.config.id = 0;
+            if (newVal) {
+                console.log('==chnaged===>');
+                console.log(newVal);
+                console.log(oldVal);
+                console.log('<---------');
+                this.config.id = 0;
+            }
         }
     },
     data: {
