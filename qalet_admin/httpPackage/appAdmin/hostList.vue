@@ -47,8 +47,12 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created()  {
+    var me = this;
         console.log("==created==");
-        this.loadData();
+        setTimeout(function() {
+            me.loadData();
+        }, 3000);
+        
         console.log('loadData(===');
     },
     mounted ()  {
