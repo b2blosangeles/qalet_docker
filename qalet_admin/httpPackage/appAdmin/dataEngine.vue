@@ -7,6 +7,7 @@
  
 <script>
 module.exports = {
+    obj  : this,
     props: ["config", "id", "result"],
     watch: { 
       	id: function(newVal, oldVal) { 
