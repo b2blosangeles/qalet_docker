@@ -19,6 +19,7 @@ module.exports = {
                 this.config.id = 0;
                 this.result.respId = newVal;
                 alert('niu:' + this.niu);
+                this.spinnerTrigger = true;
                 this.loadItems();
             }
           }
@@ -34,7 +35,7 @@ module.exports = {
     created ()  {
         this.niu = new Date().getTime();
         alert('niu:' + this.niu);
-        this.spinnerTrigger = true;
+        this.spinnerTrigger = false;
         console.log(this.showConfig());
         this.config.id = 0;
     },
