@@ -14,7 +14,7 @@ module.exports = {
                 this.config.id = 0;
                 this.result.respId = newVal;
                  this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
-                this.loadItems();
+                this.loadItems(this.result);
             }
           }
     },
@@ -35,11 +35,11 @@ module.exports = {
            if (typeof config == 'undefined') return '-- created --';  
            else config.url;
         },
-        loadItems() {
+        loadItems(obj) {
            this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
-               this.result.respId = '12345';
+               obj.respId = '12345';
               // for (var i=0; i < response.body.results.length; i++) {
               //         this.result.items.push(response.body.results[i]);
               // }
