@@ -2,7 +2,7 @@
     <span v-if="trigger">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popupWindow"></div>
+            <div class="popupWindow">test</div>
         </div>
     </span>
 </template>
