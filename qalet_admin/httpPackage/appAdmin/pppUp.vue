@@ -10,6 +10,7 @@ module.exports = {
     props: []
 }
 </script>
+
 <style>
 /*
 .overlay_popup {
