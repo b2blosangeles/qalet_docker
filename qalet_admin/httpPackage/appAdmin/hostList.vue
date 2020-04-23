@@ -48,10 +48,11 @@ module.exports = {
     },
     created()  {
         console.log("==created==");
-        this.dataEngineConfig.id = new Date().getTime()
+        
     },
     mounted ()  {
         console.log("==mounted==");
+        this.dataEngineConfig.id = new Date().getTime();
     },
     methods : {
         setAction(v) {
