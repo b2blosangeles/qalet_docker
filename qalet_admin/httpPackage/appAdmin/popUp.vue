@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="overlay_popup_cover">uuu</div>
-        <div class="overlay_popup"> a ggg 7</div>
+        <div class="overlay_popup_cover"></div>
+        <div class="overlay_popup"> a ggg 8</div>
     </div>    
 </template>
 
@@ -32,10 +32,10 @@ module.exports = {
     width:100%;
     height:100%;
 }
-/*
+
 .popupWindow {
     background-color: #ff0000;
     width : 640px;
 }
-*/
+
 </style>
