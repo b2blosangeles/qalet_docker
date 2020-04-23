@@ -24,7 +24,7 @@ module.exports = {
             localSpinner = true;
             spinner = true;
         } else {
-            localSpinner = false;
+            localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner;
             spinner = false;        
         }
         return {
