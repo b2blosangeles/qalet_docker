@@ -13,6 +13,7 @@ module.exports = {
           console.log(newVal);
           console.log(oldVal);
           console.log('<---------');
+          this.config.id = 0;
         }
     },
     data: {
