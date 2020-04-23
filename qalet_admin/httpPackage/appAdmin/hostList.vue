@@ -45,7 +45,7 @@ module.exports = {
                 id  : 0,
                 url : '/api'
             },
-            resultData : {}
+            resultData : ''
         }
     },
     components : {
