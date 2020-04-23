@@ -1,5 +1,6 @@
 <template>
-    <span>ttt</span>
+    <div class="overlay_popup">ttt a</div>
+    <div class="overlay_popup_cover"></div>
 </template>
 
 <script>
