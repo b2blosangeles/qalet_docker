@@ -39,11 +39,12 @@ module.exports = {
         loadItems(o) {
            this.spinnerTrigger = true;
            var me = this;
-           me.config.id = 0;
-           me.result.respId = '676767';
+
            
             this.$http.post('/api', {code: 'vhosts'}). then(function (response) {
                 me.result.respId = '8888888';
+                me.config.id = 0;
+                
                 console.log(this.result);
                 this.spinnerTrigger = false;
             }).catch((err) => {
