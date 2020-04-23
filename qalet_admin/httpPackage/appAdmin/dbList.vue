@@ -1,7 +1,7 @@
 <template>
     <span>
         <pop-up>test</pop-up>
-        <h3>QALET Databases 2</h3>
+        <h3>QALET Databases 3</h3>
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
          <table class="table" v-if="currentAction==''">
             <thead>
