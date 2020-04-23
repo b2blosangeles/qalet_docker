@@ -13,7 +13,8 @@ module.exports = {
             if (newVal) {
                 this.config.id = 0;
                // this.result.respId = newVal;
-                this.loadItems();
+               // this.loadItems();
+                this.result = 'bbb';
             }
           }
     },
