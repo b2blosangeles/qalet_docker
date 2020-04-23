@@ -33,6 +33,7 @@
 module.exports = {
     props: ["postTitle"],
     data: function() {  
+        return { 
             currentAction : '',
             items : [],
             dataEngineConfig : {
@@ -41,6 +42,7 @@ module.exports = {
                 postData : {code: 'dbs'}
             },
             resultData : {}
+        }
     },
     components : {
          dataEngine : QALETCOMM.dataEngine
