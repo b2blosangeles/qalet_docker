@@ -52,9 +52,9 @@ module.exports = {
                 //   this.result.items = [1, 2];
                     console.log('--this.result--->');
                    // console.log(response.body.results);
-                })(me)
+                }})(me)
             
-            }, response => {
+            , response => {
                 this.spinnerTrigger = false;    
                 console.log('--error---');
             });
