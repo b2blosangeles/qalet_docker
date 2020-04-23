@@ -19,7 +19,7 @@ module.exports = {
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : true,
+                localSpinner    : (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
                 spinner         : true  
             }
         }
