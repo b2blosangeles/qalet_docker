@@ -40,7 +40,9 @@ module.exports = {
                 id  : 0,
                 uri : '/api',
                 postData : {code: 'vhosts'},
-                spinner : true
+                spinner : {
+                    local : false
+                }
             },
             resultData : {}
         }
