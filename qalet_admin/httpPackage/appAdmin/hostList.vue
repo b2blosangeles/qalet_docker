@@ -65,6 +65,7 @@ module.exports = {
         },
         loadItems() {
             return true;
+            /*
             this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
@@ -74,6 +75,7 @@ module.exports = {
                 this.spinnerTrigger = false;    
                 console.log('--error---');
             });
+            */
         }
     }
 }
