@@ -17,7 +17,7 @@
                 <tr v-for="item in resultData.items">
                     <td>{{item.serverName}}</td>
                     <td>{{item.gitHub}}</td>
-                    <td></td>
+                    <td>{{item.innerPort}}</td>
                     <td></td>
                     <td></td>
                 </tr>
