@@ -11,6 +11,7 @@ module.exports = {
 }
 </script>
 <style>
+/*
 .overlay_popup {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
@@ -34,4 +35,5 @@ module.exports = {
     background-color: #ff0000;
     width : 640px;
 }
+*/
 </style>
