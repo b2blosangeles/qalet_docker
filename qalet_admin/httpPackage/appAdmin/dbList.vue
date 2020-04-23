@@ -1,6 +1,6 @@
 <template>
     <span>
-        <pop-up>test</pop-up>
+ 
         <h3>QALET Databases 3</h3>
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
          <table class="table" v-if="currentAction==''">
@@ -23,6 +23,9 @@
                 </tr>
             </tbody>
           </table>
+          
+          <pop-up>test</pop-up>
+                 
           <div v-if="currentAction!=''">
             <button type="button" class="btn btn-warning"  v-on:click="setAction('')"><i class="icon-plus-sign-alt"></i> Cancel</button>
           </div>
