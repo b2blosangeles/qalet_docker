@@ -22,8 +22,8 @@ module.exports = {
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : false,
-                spinner         : false 
+                localSpinner    : true,
+                spinner         : true 
             }
         }
     },
