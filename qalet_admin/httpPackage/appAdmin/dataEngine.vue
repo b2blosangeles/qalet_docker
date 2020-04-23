@@ -29,11 +29,7 @@ module.exports = {
         loadItems(id) {
            this.spinnerTrigger = true;
            var me = this;
-          // var config = this.config;
-    
-         //   var ajax =  (typeof this.config.postData == 'undefined') ? this.$http.get(this.config.uri) : this.$http.post(this.config.uri, this.config.postData);
-        //    console.log(this.config);
-         //   console.log(typeof this.config.postData)
+
             if (!this.config) {
                 return true;
             }
@@ -56,7 +52,7 @@ module.exports = {
                 }).catch((err) => {
                   console.log(err)
                 });
-          //  }
+            }
         }
     }
 }
