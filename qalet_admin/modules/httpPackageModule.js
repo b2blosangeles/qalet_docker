@@ -89,7 +89,7 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += nameSpace + '.' + fileName + ' = ';
-						str += "codeVeuSFCLoader(decodeURIComponent('" + CP.data['_' + i] + "')); \n";
+						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
 					}
 					res.send(str);
 			   	},
