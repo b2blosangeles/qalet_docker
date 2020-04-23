@@ -28,6 +28,7 @@ module.exports = {
     methods : {
         loadItems(id) {
            this.spinnerTrigger = true;
+           var me = this;
            if (!this.config.postData) {
                 this.$http.get(this.config.uri).then(function (response) {
                     this.result.items = response.body.results;
