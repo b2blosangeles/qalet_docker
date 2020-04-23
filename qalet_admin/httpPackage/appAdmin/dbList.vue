@@ -2,7 +2,7 @@
     <span>
         <message-section-a postTitle="niu bi"></message-section-a>
         <h3>QALET Databases 2</h3>
-         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
+        <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
@@ -14,7 +14,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr v-for="item in items">
+                <tr v-for="item in resultData.items">
                     <td>{{item.serverName}}</td>
                     <td>{{item.gitHub}}</td>
                     <td></td>
@@ -33,35 +33,32 @@
 module.exports = {
     props: ["postTitle"],
     data: function() {  
-        return {
             currentAction : '',
-            items : []
-        }
+            items : [],
+            dataEngineConfig : {
+                id  : 0,
+                uri : '/api',
+                postData : {code: 'vhosts'}
+            },
+            resultData : {}
     },
     components : {
-        spinner : QALETCOMM.spinner
+        dataEngine : QALETCOMM.dataEngine
     },
     created()  {
-        this.loadItems();
-        console.log("==created==a");
     },
     mounted ()  {
-        console.log("==mounted==a");
+        var me = this;
+        setTimeout(function() {
+            me.loadData();
+        }, 1000); 
     },
     methods : {
         setAction(v) {
             this.currentAction = v;
         },
-        loadItems() {
-            this.spinnerTrigger = true;
-            this.$http.post('/api', {code: 'dbs'}).then(response => {
-               this.spinnerTrigger = false;
-               this.items = response.body.results;
-                console.log(response.body);
-            }, response => {
-                this.spinnerTrigger = false;
-                console.log('--error---');
-            });
+        loadData() {
+            this.dataEngineConfig.id = new Date().getTime();
         }
     }
 }
