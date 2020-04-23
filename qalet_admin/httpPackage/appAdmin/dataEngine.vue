@@ -6,7 +6,7 @@
  
 <script>
 module.exports = {
-    props: ["config", "id", "parent"],
+    props: ["config", "id", "result"],
     watch: { 
       	id: function(newVal, oldVal) { 
             if (newVal) {
