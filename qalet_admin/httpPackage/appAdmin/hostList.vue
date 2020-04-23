@@ -19,7 +19,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr v-for="item in items">
+                <tr v-for="item in resultData">
                     <td>{{item.serverName}}</td>
                     <td>{{item.gitHub}}</td>
                     <td></td>
