@@ -1,6 +1,6 @@
 <template>
     <span>
-        test--==>--{{config.url}}--=C-C=-test-dataEngine
+        test--==>--{{config.url}}--=E-E=-test-dataEngine
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
     </span>
 </template>
