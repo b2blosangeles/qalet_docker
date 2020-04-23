@@ -1,6 +1,5 @@
 <template>
     <span>
-        test--==>--{{config.url}}--==-test-dataEngine
         <spinner v-bind:trigger="spinnerTrigger"></spinner>
     </span>
 </template>
@@ -12,10 +11,6 @@ module.exports = {
     watch: { 
       	id: function(newVal, oldVal) { 
             if (newVal) {
-                console.log('==chnaged===>');
-                console.log(newVal);
-                console.log(oldVal);
-                console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
                 this.loadItems();
