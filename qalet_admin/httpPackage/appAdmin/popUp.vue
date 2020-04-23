@@ -1,10 +1,7 @@
 <template>
-    <span>ttt
-        <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup">uuu</div>
-    </span>
+    <span>ttt</span>
 </template>
- 
+
 <script>
 module.exports = {
     props: []
