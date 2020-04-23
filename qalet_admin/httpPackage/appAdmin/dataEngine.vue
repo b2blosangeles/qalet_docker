@@ -10,7 +10,7 @@ module.exports = {
     obj  : this,
     props: ["config", "id", "result"],
     watch: { 
-      	id: function(newVal, oldVal) { 
+      	id: (function(obj) { return  function(newVal, oldVal) { 
             if (newVal) {
                 console.log('==chnaged===>');
                 console.log(newVal);
@@ -20,7 +20,8 @@ module.exports = {
                 this.result.respId = newVal;
                 this.loadItems(this);
             }
-        }
+          }
+        })(this)
     },
     data: {
         spinnerTrigger : false
