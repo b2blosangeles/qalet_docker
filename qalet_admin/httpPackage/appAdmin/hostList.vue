@@ -20,8 +20,8 @@
             </thead>
             <tbody>
                 <tr v-for="item in resultData.items">
-                    <td>--item.serverName--</td>
-                    <td>--item.gitHub--</td>
+                    <td>{{item.serverName}}</td>
+                    <td>{{item.gitHub}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
