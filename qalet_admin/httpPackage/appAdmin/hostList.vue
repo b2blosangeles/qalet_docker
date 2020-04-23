@@ -53,7 +53,7 @@ module.exports = {
         var me = this;
         setTimeout(function() {
             me.loadData();
-        }); 
+        }, 1000); 
     },
     methods : {
         setAction(v) {
