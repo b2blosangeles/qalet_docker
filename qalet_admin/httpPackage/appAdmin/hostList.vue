@@ -49,15 +49,12 @@ module.exports = {
     created()  {
     var me = this;
         console.log("==created==");
-       // setTimeout(function() {
-            me.loadData();
-      //  }, 3000);
-        
-        console.log('loadData(===');
     },
     mounted ()  {
         console.log("==mounted==");
-        
+     // setTimeout(function() {
+            me.loadData();
+      //  }, 3000); 
     },
     methods : {
         setAction(v) {
