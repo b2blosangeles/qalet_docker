@@ -44,11 +44,11 @@ module.exports = {
         },
         loadItems(obj) {
         
-           obj.spinnerTrigger = true;
+           this.obj.spinnerTrigger = true;
            this.spinnerTrigger = true;
-           alert(obj.spinnerTrigger);
+           alert(this.obj.spinnerTrigger);
            alert(this.niu + '---' + obj.niu);
-            alert(this.niu);
+
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
