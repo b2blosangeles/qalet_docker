@@ -1,6 +1,6 @@
 <template>
     <span>
-        <spinner v-bind:trigger="spinnerTrigger"></spinner>
+        <spinner v-bind:trigger="spinnerTrigger" v-bind:cfg="spinnerConfig"></spinner>
     </span>
 </template>
  
@@ -18,8 +18,10 @@ module.exports = {
     data: function() {  
         return {
             spinnerTrigger  : false,
-            localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
-            spinner         : (this.config.spinner) ? this.config.spinner : false
+            spinnerConfig   : {
+                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
+                spinner         : (this.config.spinner) ? this.config.spinner : false 
+            }
         }
     },
     components : {
