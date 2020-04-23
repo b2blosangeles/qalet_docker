@@ -53,9 +53,9 @@ module.exports = {
     mounted ()  {
         var me = this;
         console.log("==mounted==");
-      //  setTimeout(function() {
+        setTimeout(function() {
             me.loadData();
-     //   }); 
+        }); 
     },
     methods : {
         setAction(v) {
