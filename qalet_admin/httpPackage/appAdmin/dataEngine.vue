@@ -15,7 +15,7 @@ module.exports = {
                 console.log(oldVal);
                 console.log('<---------');
                 this.config.id = 0;
-                parent.data.respId = newVal;
+                result.respId = newVal;
             }
         }
     },
