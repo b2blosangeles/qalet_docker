@@ -42,7 +42,7 @@ module.exports = {
            me.result.respId = '676767';
            
             this.$http.post('/api', {code: 'vhosts'}). then(function (response) {
-                this.result.respId = '8888888';
+                me.result.respId = '8888888';
                 console.log(this.result);
                 this.spinnerTrigger = false;
             }).catch((err) => {
