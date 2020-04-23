@@ -1,6 +1,6 @@
 <template>
     <span>mmm=={{trigger}}--nnn
-    <div class="overlay_spin_cover" v-if="trigger"><div class="section-spinner"></div></div></div>
+    <div class="overlay_spin_cover" v-if="trigger.status"><div class="section-spinner"></div></div></div>
     </span>
 </template>
  
