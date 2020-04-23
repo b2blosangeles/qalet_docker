@@ -107,7 +107,7 @@ module.exports = {
     height:100%;
 }
 
-
+/*
 .overlay_popup_page {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
@@ -127,4 +127,5 @@ module.exports = {
     width:100%;
     height:100%;
 }
+*/
 </style>
