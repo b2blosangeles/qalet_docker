@@ -42,7 +42,7 @@ module.exports = {
                 postData : {code: 'vhosts'},
                 spinner : {
                     inSection : true,
-                    noCover   : true
+                    noCover   : false
                 }
             },
             resultData : {}
