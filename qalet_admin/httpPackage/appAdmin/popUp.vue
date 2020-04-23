@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div>uuu</div>
-        <div class="overlay_popup"> a ggg 6</div>
+        <div class="overlay_popup_cover">uuu</div>
+        <div class="overlay_popup"> a ggg 7</div>
     </div>    
 </template>
 
