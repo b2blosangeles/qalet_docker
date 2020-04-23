@@ -41,7 +41,6 @@ module.exports = {
                 uri : '/api',
                 postData : {code: 'dbs'},
                 spinner : {
-                    inSection : true,
                     noCover   : true
                 }
             },
