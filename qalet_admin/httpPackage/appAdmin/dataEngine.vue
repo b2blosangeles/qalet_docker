@@ -16,18 +16,18 @@ module.exports = {
           }
     },          
     data: function() {
-        var localSpinner, spinner;
+        var inSection, spinner;
         if (typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') {
-            localSpinner = false;
+            inSection = false;
             spinner = false;   
         } else {
-            localSpinner = this.config.spinner.local;
+            inSection = this.config.spinner.inSection;
             spinner = true;      
         }
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : localSpinner,
+                inSection    : inSection,
                 spinner         : spinner
             }
         }
