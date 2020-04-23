@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="overlay_popup">ggg</div>
+        <div>ggg</div>
     </div>    
 </template>
 
