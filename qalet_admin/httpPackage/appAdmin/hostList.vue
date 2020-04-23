@@ -64,6 +64,7 @@ module.exports = {
             this.currentAction = v;
         },
         loadItems() {
+            return true;
             this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
