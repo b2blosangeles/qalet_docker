@@ -43,13 +43,13 @@ module.exports = {
            else config.url;
         },
         loadItems() {
-           this.spinnerTrigger = {status : true};
+           this.spinnerTrigger.status = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
-               this.spinnerTrigger = false;
+               this.spinnerTrigger.status = false;
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnerTrigger = false;    
+                this.spinnerTrigger.status = false;    
                 console.log('--error---');
             });
         }
