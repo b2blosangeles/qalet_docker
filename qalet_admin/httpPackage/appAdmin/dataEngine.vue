@@ -32,6 +32,7 @@ module.exports = {
        // dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
+        this.niu = 'SSSS';
         this.spinnerTrigger = false;
         console.log(this.showConfig());
         this.config.id = 0;
@@ -42,10 +43,11 @@ module.exports = {
            else config.url;
         },
         loadItems(obj) {
+        
            obj.spinnerTrigger = true;
            this.spinnerTrigger = true;
            alert(obj.spinnerTrigger);
-            alert(this.spinnerTrigger);
+            alert(this.niu);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
