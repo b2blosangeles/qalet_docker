@@ -16,7 +16,7 @@ module.exports = {
 /*---- overlay and spinner ---*/
 
 .spinner {
-   position: absolute;
+   position: fixed;
    left: 50%;
    top: 15%;
    height:60px;
@@ -34,7 +34,7 @@ module.exports = {
 }
 
 .section-spinner {
-   position: relative;
+   position: absolute;
    left: 50%;
    top: 20%;
    height:60px;
