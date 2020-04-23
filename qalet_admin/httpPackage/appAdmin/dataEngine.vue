@@ -19,8 +19,7 @@ module.exports = {
     },
     data: function() {  
         return {
-            spinnerTrigger : false,
-            result : {}
+            spinnerTrigger : false
         }
     },
     components : {
