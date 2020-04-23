@@ -15,12 +15,15 @@ module.exports = {
             }
           }
     },
+    //                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
+    //            spinner         : (this.config.spinner) ? this.config.spinner : false 
+                
     data: function() {  
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
-                spinner         : (this.config.spinner) ? this.config.spinner : false 
+                localSpinner    : false,
+                spinner         : false 
             }
         }
     },
