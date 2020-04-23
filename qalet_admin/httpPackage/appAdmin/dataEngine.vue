@@ -47,6 +47,7 @@ module.exports = {
            obj.spinnerTrigger = true;
            this.spinnerTrigger = true;
            alert(obj.spinnerTrigger);
+           alert(this.niu + '---' + obj.niu);
             alert(this.niu);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
