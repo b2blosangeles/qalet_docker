@@ -1,5 +1,5 @@
 <template>
-    <!--spinner v-bind:['trigger']="spinnerTrigger"></spinner-->
+    <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
     <span>
         test-->--{{config.url}}--==-test-dataEngine
     </span>
