@@ -42,7 +42,7 @@ module.exports = {
         },
         loadItems(obj) {
            obj.spinnerTrigger = true;
-             alert(this.spinnerTrigger);
+            alert(this.spinnerTrigger);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
