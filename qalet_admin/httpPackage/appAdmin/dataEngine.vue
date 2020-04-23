@@ -40,7 +40,7 @@ module.exports = {
                this.spinnerTrigger = false;
                this.result.items = response.body.results;
                 console.log('--this.result--->');
-                console.log(this.result);
+                console.log(this.result.toJSON());
             }, response => {
                 this.spinnerTrigger = false;    
                 console.log('--error---');
