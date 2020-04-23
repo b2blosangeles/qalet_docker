@@ -34,7 +34,7 @@ module.exports = {
     created ()  {
         this.niu = new Date().getTime();
         alert('niu:' + this.niu);
-        this.spinnerTrigger = false;
+        this.spinnerTrigger = true;
         console.log(this.showConfig());
         this.config.id = 0;
     },
