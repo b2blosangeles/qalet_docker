@@ -16,19 +16,22 @@ module.exports = {
           }
     },          
     data: function() {
-        var inSection, spinner;
+        var inSection, spinner, noCover;
         if (typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') {
             inSection = false;
-            spinner = false;   
+            spinner = false; 
+            noCover = true;
         } else {
             inSection = this.config.spinner.inSection;
+            noCover = this.config.spinner.noCover;
             spinner = true;      
         }
         return {
             spinnerTrigger  : false,
             spinnerConfig   : {
-                inSection    : inSection,
-                spinner         : spinner
+                inSection   : inSection,
+                spinner     : spinner,
+                noCover     : noCover
             }
         }
     },
