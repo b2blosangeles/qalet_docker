@@ -1,7 +1,7 @@
 <template>
     <span>
         test--==>--{{config.url}}--=AA=-test-dataEngine
-        <!--spinner v-bind:['trigger']="spinnerTrigger"></spinner-->
+        <--spinner v-bind:['trigger']="spinnerTrigger"></spinner>
     </span>
 </template>
  
@@ -29,6 +29,7 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
+        this.spinnerTrigger = false;
         console.log(this.showConfig());
         this.config.id = 0;
     },
