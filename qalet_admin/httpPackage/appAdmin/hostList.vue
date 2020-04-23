@@ -7,7 +7,7 @@
         <button type="button" class="btn btn-warning"  v-on:click="dataEngineConfig.id = new Date().getTime()">Call Engine</button>
         --{{dataEngineConfig}}--==={{resultData}}===
         <hr/>
-        <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
+        <!--spinner v-bind:['trigger']="spinnerTrigger"></spinner-->
          <table class="table" v-if="currentAction==''">
             <thead>
               <tr>
