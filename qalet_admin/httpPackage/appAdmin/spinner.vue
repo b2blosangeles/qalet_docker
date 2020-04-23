@@ -9,7 +9,7 @@
  
 <script>
 module.exports = {
-    props: ["trigger"]
+    props: ["trigger", "config"]
 }
 </script>
 <style>
