@@ -13,6 +13,7 @@ module.exports = {
             if (newVal) {
                 this.config.id = 0;
                 this.result.respId = newVal;
+                
                  this.result.items = [{serverName: "www.shusiou.winAPOSTb", serverAlias: "shusiou.win"}, {serverName: "www.shusiou.winAPOSTa", serverAlias: "shusiou.win"}];
                 this.loadItems();
             }
@@ -38,7 +39,7 @@ module.exports = {
         loadItems() {
            this.spinnerTrigger = true;
            var me = this;
-           me.result.respId = '77887788';
+           me.result.respId = '676767';
            this.$http.post('/api', {code: 'vhosts'}).then(
             
                 (function(me) {
