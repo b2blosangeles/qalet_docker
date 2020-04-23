@@ -34,7 +34,7 @@ module.exports = {
 }
 
 .section-spinner {
-   position: absolute;
+   position: relative;
    left: 50%;
    top: 20%;
    height:60px;
