@@ -46,6 +46,7 @@ module.exports = {
         loadItems() {
            this.spinnerTrigger = true;
            alert('niu:' + this.niu);
+           this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
