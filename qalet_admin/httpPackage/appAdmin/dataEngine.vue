@@ -10,7 +10,7 @@ module.exports = {
     obj  : this,
     props: ["config", "id", "result"],
     watch: { 
-      	id: (function(obj) { return  function(newVal, oldVal) { 
+      	id: function(newVal, oldVal) { 
             if (newVal) {
                 console.log('==chnaged===>');
                 console.log(newVal);
@@ -18,10 +18,9 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                this.loadItems(obj);
+                this.loadItems();
             }
           }
-        })(this)
     },
     data: {
         spinnerTrigger : false
@@ -42,13 +41,8 @@ module.exports = {
            if (typeof config == 'undefined') return '-- created --';  
            else config.url;
         },
-        loadItems(obj) {
-        
-           this.obj.spinnerTrigger = true;
+        loadItems() {
            this.spinnerTrigger = true;
-           alert(this.obj.spinnerTrigger);
-           alert(this.niu + '---' + obj.niu);
-
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
