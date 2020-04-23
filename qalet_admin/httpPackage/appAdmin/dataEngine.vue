@@ -23,9 +23,12 @@ module.exports = {
         if (typeof this.config == 'undefined') {
             localSpinner = true;
             spinner = true;
+      //  } else if (typeof this.config.localSpinner == 'undefined') {
+      //      localSpinner = false;
+     //       spinner = false;        
         } else {
             localSpinner = this.config.localSpinner;
-            spinner = false;        
+            spinner = this.config.spinner;      
         }
         return {
             spinnerTrigger  : false,
