@@ -17,7 +17,9 @@ module.exports = {
     },
     data: function() {  
         return {
-            spinnerTrigger : false
+            spinnerTrigger  : false,
+            localSpinner    : (this.config.localSpinner) ? this.config.localSpinner : false,
+            spinner         : (this.config.spinner) ? this.config.spinner : false
         }
     },
     components : {
