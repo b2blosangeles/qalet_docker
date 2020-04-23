@@ -1,7 +1,9 @@
 <template>
     <span v-if="trigger">
         <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup">test</div>
+        <div class="overlay_popup">
+            <div class="popupWindow"></div>
+        </div>
     </span>
 </template>
  
@@ -31,5 +33,9 @@ module.exports = {
     z-index:5000;
     width:100%;
     height:100%;
+}
+.popupWindow {
+    background-color: #fff;
+    width : 640px;
 }
 </style>
