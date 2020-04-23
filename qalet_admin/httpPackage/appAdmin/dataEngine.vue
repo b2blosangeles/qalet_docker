@@ -30,9 +30,9 @@ module.exports = {
            this.spinnerTrigger = true;
            var me = this;
 
-            if (!this.config) {
-                return true;
-            }
+           // if (!this.config) {
+            //    return true;
+          //  }
          //   console.log(this.config);
          //   console.log(typeof this.config.postData)
          
