@@ -18,23 +18,19 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                // this.spinnerTrigger = true;
                 this.loadItems();
             }
           }
     },
     data: function() {  
         return {
-            spinnerTrigger : {status : false}
+            spinnerTrigger : false
         }
     },
     components : {
         spinner : QALETCOMM.spinner
-        // ,
-       // dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
-       // this.spinnerTrigger = {status : false};
         console.log(this.showConfig());
         this.config.id = 0;
     },
@@ -44,13 +40,13 @@ module.exports = {
            else config.url;
         },
         loadItems() {
-           this.spinnerTrigger.status = true;
+           this.spinnerTrigger = true;
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
-               this.spinnerTrigger.status = false;
+               this.spinnerTrigger = false;
                this.items = response.body.results;
                 console.log(response.body);
             }, response => {
-                this.spinnerTrigger.status = false;    
+                this.spinnerTrigger = false;    
                 console.log('--error---');
             });
         }
