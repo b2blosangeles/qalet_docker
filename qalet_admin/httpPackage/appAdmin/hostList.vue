@@ -5,7 +5,6 @@
         <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
         <hr/>
         <button type="button" class="btn btn-warning"  v-on:click="dataEngineConfig.id = new Date().getTime()">Call Engine</button>
-        --{{dataEngineConfig}}--==={{resultData}}=>00>=={{resultData.items}}
         <hr/>
         <!--spinner v-bind:['trigger']="spinnerTrigger"></spinner-->
          <table class="table" v-if="currentAction==''">
@@ -61,20 +60,6 @@ module.exports = {
     methods : {
         setAction(v) {
             this.currentAction = v;
-        },
-        loadItems() {
-            return true;
-            /*
-            this.spinnerTrigger = true;
-            this.$http.post('/api', {code: 'vhosts'}).then(response => {
-               this.spinnerTrigger = false;
-               this.items = response.body.results;
-                console.log(response.body);
-            }, response => {
-                this.spinnerTrigger = false;    
-                console.log('--error---');
-            });
-            */
         }
     }
 }
