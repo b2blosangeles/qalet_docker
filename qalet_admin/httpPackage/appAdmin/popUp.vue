@@ -1,7 +1,6 @@
 <template>
     <div>ttt a
-        <div class="overlay_popup"></div>
-        <div class="overlay_popup_cover"></div>
+
     </div>    
 </template>
 
