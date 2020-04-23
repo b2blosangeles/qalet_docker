@@ -18,7 +18,6 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
-                alert('niu:' + this.niu);
                 // this.spinnerTrigger = true;
                 this.loadItems();
             }
