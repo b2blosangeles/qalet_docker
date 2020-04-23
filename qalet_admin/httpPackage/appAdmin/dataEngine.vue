@@ -27,20 +27,21 @@ module.exports = {
     },
     methods : {
         loadItems(id) {
-           this.spinnerTrigger = true;
+           
            var me = this;
-           if (!this.config.postData) {
-                this.$http.get(this.config.uri).then(function (response) {
-                    this.result.items = response.body.results;
-                    this.spinnerTrigger = false;
+           me.spinnerTrigger = true;
+           if (!me.config.postData) {
+                me.$http.get(me.config.uri).then(function (response) {
+                    me.result.items = response.body.results;
+                    me.spinnerTrigger = false;
                     me.config.id = 0;
                 }).catch((err) => {
                   console.log(err)
                 });
              } else {    
-                this.$http.post(this.config.uri, this.config.postData).then(function (response) {
-                    this.result.items = response.body.results;
-                    this.spinnerTrigger = false;
+                me.$http.post(me.config.uri, me.config.postData).then(function (response) {
+                    me.result.items = response.body.results;
+                    me.spinnerTrigger = false;
                     me.config.id = 0;
                 }).catch((err) => {
                   console.log(err)
