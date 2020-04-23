@@ -37,7 +37,7 @@ module.exports = {
             currentAction : '',
             items : [],
             dataEngineConfig : {
-                id  : new Date().getTime(),
+                id  : 0,
                 url : '/api'
             },
             resultData : {}
