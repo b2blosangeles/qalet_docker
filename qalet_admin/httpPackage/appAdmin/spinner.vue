@@ -18,7 +18,7 @@ module.exports = {
 .spinner {
    position: absolute;
    left: 50%;
-   top: 15%;
+   top: 10%;
    height:60px;
    width:60px;
    margin:0px auto;
@@ -36,7 +36,7 @@ module.exports = {
 .section-spinner {
    position: absolute;
    left: 50%;
-   top: 10%;
+   top: 25%;
    height:60px;
    width:60px;
    margin:0px auto;
