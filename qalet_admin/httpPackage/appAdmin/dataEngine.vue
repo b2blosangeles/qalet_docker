@@ -30,7 +30,8 @@ module.exports = {
            this.spinnerTrigger = true;
            var me = this;
           // var config = this.config;
-            var ajax =  (!this.config.postData) ? this.$http.get(this.config.uri) : this.$http.post(this.config.uri, this.config.postData);
+    
+            var ajax =  (typeof this.config.postData == 'undefined') ? this.$http.get(this.config.uri) : this.$http.post(this.config.uri, this.config.postData);
             console.log(this.config);
             this.$http.post(this.config.uri, this.config.postData).then(function (response) {
                 this.result.items = response.body.results;
