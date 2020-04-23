@@ -34,7 +34,7 @@ module.exports = {
             //    return true;
           //  }
          //   console.log(this.config);
-         //   console.log(typeof this.config.postData)
+            console.log(typeof this.config.postData)
          
           //  if (typeof this.config.postData == 'object') {
                 this.$http.post(this.config.uri, this.config.postData).then(function (response) {
