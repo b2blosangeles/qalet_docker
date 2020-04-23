@@ -47,14 +47,15 @@ module.exports = {
         dataEngine : QALETCOMM.dataEngine
     },
     created()  {
-    var me = this;
+    
         console.log("==created==");
     },
     mounted ()  {
+        var me = this;
         console.log("==mounted==");
-        setTimeout(function() {
+      //  setTimeout(function() {
             me.loadData();
-        }); 
+     //   }); 
     },
     methods : {
         setAction(v) {
