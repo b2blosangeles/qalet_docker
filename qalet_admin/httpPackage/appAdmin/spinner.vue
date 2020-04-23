@@ -1,8 +1,8 @@
 <template>
     <span v-if="trigger && config.spinner">
-        <div class="overlay_spin_cover" v-if="!config.inSection"></div>
+        <div class="overlay_spin_cover" v-if="!config.inSection && !config.noCover"></div>
         <div class="spinner" v-if="!config.inSection"></div>
-        <div class="section_spin_cover" v-if="config.inSection"></div>
+        <div class="section_spin_cover" v-if="config.inSection && !config.noCover"></div>
         <div class="section-spinner"  v-if="config.inSection"></div>
     </span>
 </template>
