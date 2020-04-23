@@ -43,7 +43,7 @@ module.exports = {
             resultData : {}
     },
     components : {
-        dataEngine : QALETCOMM.dataEngine
+         dataEngine : QALETCOMM.dataEngine
     },
     created()  {
     },
