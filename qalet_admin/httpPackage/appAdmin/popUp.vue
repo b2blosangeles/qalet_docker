@@ -12,7 +12,7 @@ module.exports = {
 </script>
 
 <style>
-/*
+
 .overlay_popup {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
@@ -32,6 +32,7 @@ module.exports = {
     width:100%;
     height:100%;
 }
+/*
 .popupWindow {
     background-color: #ff0000;
     width : 640px;
