@@ -49,9 +49,9 @@ module.exports = {
     created()  {
     var me = this;
         console.log("==created==");
-        setTimeout(function() {
+       // setTimeout(function() {
             me.loadData();
-        }, 3000);
+      //  }, 3000);
         
         console.log('loadData(===');
     },
