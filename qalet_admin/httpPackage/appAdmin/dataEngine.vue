@@ -16,16 +16,11 @@ module.exports = {
           }
     },          
     data: function() {
-    //    var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
-   //     spinner = (!this.config || !this.config.spinner) ? false :  this.config.spinner;
         var localSpinner, spinner;
         
         if (typeof this.config == 'undefined') {
             localSpinner = true;
-            spinner = true;
-      //  } else if (typeof this.config.localSpinner == 'undefined') {
-      //      localSpinner = false;
-     //       spinner = false;        
+            spinner = true;   
         } else {
             localSpinner = this.config.localSpinner;
             spinner = this.config.spinner;      
