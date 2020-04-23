@@ -9,11 +9,7 @@
                   </a>
                   <div class="media-body">
                     <h4 class="media-heading">Media heading</h4>
-                    ...
-
-                    <!-- Nested media object -->
                     <div class="media">
-                      ...
                     </div>
                   </div>
                 </div-->
