@@ -27,8 +27,9 @@ module.exports = {
         spinnerTrigger : false
     },
     components : {
-        spinner : QALETCOMM.spinner,
-        dataEngine : QALETCOMM.dataEngine
+        spinner : QALETCOMM.spinner
+        // ,
+       // dataEngine : QALETCOMM.dataEngine
     },
     created ()  {
         this.spinnerTrigger = false;
