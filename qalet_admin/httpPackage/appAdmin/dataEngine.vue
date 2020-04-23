@@ -33,7 +33,7 @@ module.exports = {
            // if (!this.config) {
             //    return true;
           //  }
-            console.log(this.config);
+            console.log(!this.config.postData);
          //   console.log(typeof this.config.postData)
          
           //  if (typeof this.config.postData == 'object') {
