@@ -1,6 +1,6 @@
 <template>
     <span>
-        test--==>--{{config.url}}--=CC=-test-dataEngine
+        test--==>--{{config.url}}--=C-C=-test-dataEngine
         <spinner v-bind:['trigger']="spinnerTrigger"></spinner>
     </span>
 </template>
@@ -40,6 +40,7 @@ module.exports = {
         },
         loadItems() {
             this.spinnerTrigger = true;
+            alert(12);
             this.$http.post('/api', {code: 'vhosts'}).then(response => {
                this.spinnerTrigger = false;
                this.items = response.body.results;
