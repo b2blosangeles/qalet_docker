@@ -37,7 +37,7 @@ module.exports = {
             currentAction : '',
             items : [],
             dataEngineConfig : {
-                id  : 0,
+                id  : new Date().getTime(),
                 url : '/api'
             },
             resultData : {}
@@ -52,7 +52,7 @@ module.exports = {
     },
     mounted ()  {
         console.log("==mounted==");
-        this.dataEngineConfig.id = new Date().getTime();
+      //  this.dataEngineConfig.id = new Date().getTime();
     },
     methods : {
         setAction(v) {
