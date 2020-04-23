@@ -25,8 +25,8 @@ module.exports = {
             localSpinner = this.config.spinner.local;
             spinner = true;      
         }*/
-        localSpinner = (typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') ? false :  this.config.spinner.local;
-        spinner = (typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') ? false  : true;
+        localSpinner = ((typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') ? false :  this.config.spinner.local);
+        spinner = ((typeof this.config === 'undefined' || typeof this.config.spinner === 'undefined') ? false  : true);
         
         return {
             spinnerTrigger  : false,
