@@ -2,7 +2,7 @@
     <span>
         <h3>QALET Virtual Hosts</h3>
 
-        <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:parent="resultData"></data-engine>
+        <data-engine  v-bind:config="dataEngineConfig"  v-bind:id="dataEngineConfig.id" v-bind:result="resultData"></data-engine>
         <hr/>
         <button type="button" class="btn btn-warning"  v-on:click="dataEngineConfig.id = new Date().getTime()">Call Engine</button>
         --{{dataEngineConfig}}--
