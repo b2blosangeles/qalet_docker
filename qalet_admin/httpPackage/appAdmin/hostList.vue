@@ -41,7 +41,8 @@ module.exports = {
                 uri : '/api',
                 postData : {code: 'vhosts'},
                 spinner : {
-                    local : false
+                    inSection : true,
+                    noCover   : true
                 }
             },
             resultData : {}
