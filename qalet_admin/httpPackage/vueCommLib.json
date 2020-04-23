@@ -1,7 +1,7 @@
 {
   "folder"  : "/appAdmin",
   "files"   : [
-        "pppUp.vue",
+        "popUp.vue",
         "spinner.vue",
         "dataEngine.vue",
         "dbList.vue",
