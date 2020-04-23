@@ -18,6 +18,7 @@ module.exports = {
                 console.log('<---------');
                 this.config.id = 0;
                 this.result.respId = newVal;
+                alert(this.niu);
                 this.loadItems();
             }
           }
