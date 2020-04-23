@@ -13,6 +13,7 @@ module.exports = {
             if (newVal) {
                 this.config.id = 0;
                 this.result.respId = newVal;
+                 this.result.items = [3, 4];
                 this.loadItems();
             }
           }
