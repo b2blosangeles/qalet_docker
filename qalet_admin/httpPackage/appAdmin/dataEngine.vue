@@ -16,11 +16,11 @@ module.exports = {
           }
     },          
     data: function() {
-        var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
-        spinner = (!this.config || !this.config.spinner) ? false :  this.config.spinner;
+    //    var localSpinner = (!this.config || !this.config.localSpinner) ? false : this.config.localSpinner,
+   //     spinner = (!this.config || !this.config.spinner) ? false :  this.config.spinner;
         
-        localSpinner = true;
-        spinner = true;
+        var localSpinner = true;
+        var spinner = true;
         
         return {
             spinnerTrigger  : false,
