@@ -62,7 +62,7 @@
 							
 						//	data = data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							
-							var template = data.match(/\<template\>(.*)\<\/template\>/igm);
+							var template = data.match(/\<template\>((.|\n)*)\<\/template\>/igm);
 							var templateCode = (!template[0]) ? '<template></template>' : template[0];
 							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							
