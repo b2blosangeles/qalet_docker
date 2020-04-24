@@ -68,7 +68,7 @@
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							// template : encodeURIComponent(template[0]),
 							cbk ({
-								template : template : encodeURIComponent(template[0]),
+								template : encodeURIComponent(template[0]),
 								script : (!script) ? null : script,
 								style : (!style) ? '' : style[1]
 							});
