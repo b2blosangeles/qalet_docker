@@ -1,14 +1,15 @@
 $(document).ready(function(){
-          var todoItem  = Vue.component('todoItem', {
-                    props: ['todo'],
-                    template: '<h3>-8-{{ todo }}-9- {{message}} -</h3>',
-                    components : {
-                          message   : QALETCOMMA.messageA
-                     }    
+
           });
           setTimeout(
                     function() {
-
+                              var todoItem  = Vue.component('todoItem', {
+                                        props: ['todo'],
+                                        template: '<h3>-8-{{ todo }}-9- {{message}} -</h3>',
+                                        components : {
+                                              message   : QALETCOMMA.messageA
+                                         };
+                                        
                               var app2 = new Vue({
                                 el: '#jxutest',
                                 data: {
