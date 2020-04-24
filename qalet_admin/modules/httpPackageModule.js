@@ -58,11 +58,11 @@
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
 							var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
 							var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im);
-							var script = mscript0[1];
+							var script = mscript0[4];
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							cbk ({
 								template : encodeURIComponent(template[0]),
-								script : mscript0,
+								script : script,
 								style : style[1]
 							});
 						}); 
