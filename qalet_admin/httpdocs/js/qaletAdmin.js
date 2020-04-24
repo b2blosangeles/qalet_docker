@@ -54,7 +54,7 @@ $(document).ready(function(){
           '/dbs'            : Databases,
           '/virtualHosts'   : virtualHosts
         }
-    /*
+    
         new Vue({
           el: '#app',
           data: {
@@ -67,11 +67,11 @@ $(document).ready(function(){
           },
           render (h) { return h(this.ViewComponent) }
         });
-    */
+   
           var app2 = new Vue({
             el: '#jxutest',
             data: {
-              message: 'Hello Vue 3!'
+              message: 'Hello Vue 6!'
             }
           });
     
