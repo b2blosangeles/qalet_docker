@@ -26,8 +26,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-			res.send(list);
-			return true;
+			
 			list = ["message.vue","popUp.vue","spinner.vue","dbList.vue","hostList.vue"];
 			// ["message.vue","popUp.vue","spinner.vue","dataEngine.vue","dbList.vue","hostList.vue"]
 			
