@@ -26,10 +26,7 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-			
-			// list = ["message.vue", "dataEngine.vue"];
-			// ["message.vue","popUp.vue","spinner.vue","dataEngine.vue","dbList.vue","hostList.vue"]
-			
+
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
