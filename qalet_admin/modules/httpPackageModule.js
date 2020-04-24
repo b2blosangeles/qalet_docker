@@ -106,7 +106,7 @@
 						
 						str += 'try { ' + nameSpace + '.' + fileName + 
 							' = new Function("Vue", decodeURIComponent("' + encodeURIComponent(tmp) + '"))(Vue) }';
-						str += 'cache (e) { console.log(e.toString()); }' + "\n";
+						str += '} cache (e) { console.log(e.toString()); }' + "\n";
 						
 						//str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
 						//str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
