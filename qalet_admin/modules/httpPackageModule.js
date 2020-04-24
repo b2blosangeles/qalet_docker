@@ -90,7 +90,7 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += nameSpace + '.' + fileName + ' = ';
-						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
+						str += 'codeVeuSFCLoader("' + CP.data['_' + i] + '"); ' + "\n";
 					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
