@@ -65,7 +65,7 @@ module.exports = {
         },
         loadData() {
             this.dataEngineConfig.id = new Date().getTime();
-        } ]
+        } 
     }
 }
 </script>
