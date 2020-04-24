@@ -244,7 +244,7 @@
 			return this._scopeId;
 		},
 
-		load: function(componentURL) {
+		loadCode: function(componentURL) {
 
 			return codeVeuSFCLoader.httpRequest(componentURL)
 			.then(function(responseText) {
@@ -372,7 +372,7 @@
 
 		return function() {
 
-			return new Component(name).load(url)
+			return new Component(name).loadCode(url)
 			.then(function(component) {
 
 				return component.normalize();
