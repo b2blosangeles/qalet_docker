@@ -102,8 +102,8 @@
 						tmp += CP.data['_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
 						try {
-							var vv = new Function('Vue', decodeURIComponent(tmp));
-							res.send(vv(Vue));
+							var vv = new Function(decodeURIComponent(tmp));
+							res.send(vv());
 						} catch (e) { 
 							res.send(e.toString());
 						}
