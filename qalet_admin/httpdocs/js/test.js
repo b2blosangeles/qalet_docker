@@ -12,7 +12,8 @@ $(document).ready(function(){
                                   message: 'Hello Vue : ' + new Date()
                                 },
                                 components : {
-                                      todoItem :todoItem
+                                      todoItem :todoItem,
+                                      dbList   : QALETCOMM.dbList
                                 }
                     });
                     });
