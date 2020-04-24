@@ -84,11 +84,11 @@
 					
 					for (var i = 0; i < list.length; i++) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
 						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
-						str += CP.data['_' + i].script + ' ' +  +  ' }); ' + "\n";
+						str += CP.data['_' + i].script + '}); ' + "\n";
 					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
