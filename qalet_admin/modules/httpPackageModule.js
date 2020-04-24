@@ -101,12 +101,12 @@
 						tmp += 'template : "' + CP.data['_' + i].template + '", '; 
 						// tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
-						// tmp = encodeURIComponent(tmp);
+						tmp = encodeURIComponent(tmp);
 
 						
 						str += 'try { ' + nameSpace + '.' + fileName;
-						str +=	' = new Function("'+ tmp + '")() ';
-						// str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
+						// str +=	' = new Function("'+ tmp + '")() ';
+						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
 												
 						css_str += CP.data['_' + i].style;
