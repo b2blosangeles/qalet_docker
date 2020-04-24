@@ -79,8 +79,6 @@
 			CP.serial(
 				_f,
 				function(data) {
-					var Vue = new require(env.adminFolder  + '/httpPackage/lib/vue.min.js')();
-				
 					var css_str = '', 
 					str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
@@ -102,17 +100,12 @@
 						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
-						try {
-							var vv = new Function(decodeURIComponent(tmp));
-							res.send(vv());
-						} catch (e) { 
-							res.send(e.toString());
-						}
-						/*
+
+						
 						str += 'try { ' + nameSpace + '.' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
-						*/						
+												
 						css_str += CP.data['_' + i].style;
 						
 					}
