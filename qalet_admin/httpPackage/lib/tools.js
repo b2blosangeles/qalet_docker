@@ -1,6 +1,6 @@
-function addcss(css){
-    console.log('---css--->');
-    console.log(css);
+if (!Vue.tools) Vue.tools = {};
+Vue.tools.addcss = function (css){
+    css = decodeURIComponent(css);
     var head = document.getElementsByTagName('head')[0];
     var s = document.createElement('style');
     s.setAttribute('type', 'text/css');
@@ -10,4 +10,4 @@ function addcss(css){
         s.appendChild(document.createTextNode(css));
     }
     head.appendChild(s);
- }
+}
