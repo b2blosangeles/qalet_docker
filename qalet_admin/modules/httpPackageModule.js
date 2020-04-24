@@ -59,7 +59,7 @@
 							var script = data.match(/\<script\>(.*?)\<\/script\>/im);
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							cbk ({
-								template : template[1],
+								template : template[0],
 								script : script[1],
 								style : style[1]
 							});
