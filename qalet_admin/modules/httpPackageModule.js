@@ -70,7 +70,7 @@
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							cbk ({
 								template : encodeURIComponent(template[0]),
-								script : script0[1],
+								script : script,
 								style : (!style) ? null : style[1]
 							});
 						}); 
