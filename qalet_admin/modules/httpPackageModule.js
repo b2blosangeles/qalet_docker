@@ -72,7 +72,7 @@
 							cbk ({
 								template : encodeURIComponent(template[0]),
 								script : (!script) ? null : script,
-								style : (!style) ? null : style[1]
+								style : (!style) ? '' : style[1]
 							});
 						}); 
 					}
@@ -108,7 +108,7 @@
 						
 					}
 					css_str = encodeURIComponent(css_str);
-					str += 'addcss(decodeURIComponent("' + css_str + '");' + "\n";
+					str += "addcss(decodeURIComponent('" + css_str + "');" + "\n";
 					
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
