@@ -7,7 +7,7 @@ $(document).ready(function(){
                                         props: ['todo'],
                                         template: '<h3>-8-{{ todo }}-9- <message title="KAI"></message> -</h3>',
                                         components : {
-                                              message   : QALETCOMMA.message
+                                              message   : QALETCOMM.message
                                          }
                                 });        
                               var app2 = new Vue({
@@ -17,7 +17,7 @@ $(document).ready(function(){
                                 },
                                 components : {
                                       todoItem :todoItem,
-                                      message   : QALETCOMMA.messageA
+                                      message   : QALETCOMM.message
                                 }
                     });
                     });
