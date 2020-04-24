@@ -100,10 +100,12 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
+						str += 'try { ';
 						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
 						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						str += CP.data['_' + i].script + '}); ' + "\n";
-						
+						str += ' } catch  (e) { ';
+						str += ' console.log(e.message) }; ' + "\n";
 						css_str += CP.data['_' + i].style;
 						
 					}
