@@ -1,4 +1,6 @@
 function addcss(css){
+    console.log('---css--->');
+    console.log(css);
     var head = document.getElementsByTagName('head')[0];
     var s = document.createElement('style');
     s.setAttribute('type', 'text/css');
