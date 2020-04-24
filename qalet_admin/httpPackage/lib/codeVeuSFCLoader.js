@@ -477,6 +477,7 @@
 	codeVeuSFCLoader.scriptExportsHandler = identity;
 
 	function codeVeuSFCLoader(url, name) {
+		var comp = parseComponentURL(url);
 		return codeVeuSFCLoader.load(url, name);
 	}
 
