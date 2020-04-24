@@ -105,8 +105,8 @@
 						tmp += CP.data['_' + i].script + '}); ';
 						
 						str += 'try { ' + nameSpace + '.' + fileName;
-						str +=	' = new Function("Vue", decodeURIComponent("';
-						str +=	encodeURIComponent(tmp) + '"))(Vue) '; 
+						str +=	' = new Function("Vue", "';
+						str +=	tmp + '")(Vue) '; 
 						str += '} catch (e) { console.log(e.toString() + " at ' + list[i] + '"); }' + "\n";
 						
 						//str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
