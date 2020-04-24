@@ -26,9 +26,6 @@
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
-
-			// list = ["message.vue", "popUp.vue","spinner.vue","dataEngine.vue"];
-			// ["message.vue","popUp.vue","spinner.vue","dataEngine.vue","dbList.vue","hostList.vue"]
 			
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
@@ -47,7 +44,7 @@
 				}); 
 				return true;
 			}
-			
+			/*
 			_f['codeVeuSFCLoader'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -55,7 +52,7 @@
 					cbk(data);
 				}); 
 				return true;
-			}	
+			}	*/
 			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
@@ -86,7 +83,7 @@
 					
 					str += "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
 					
-					str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
+					// str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
