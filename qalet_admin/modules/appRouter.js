@@ -196,7 +196,7 @@
 					}
 			}
 			
-			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage|httpPackage2)(\/.+|)', 'i');
+			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage|AhttpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
 			if (!v) {
 				if (TPA[p]) {
@@ -251,7 +251,7 @@
 						httpPackage.call(v[2]);
 						break;
 
-					case 'httpPackage2':
+					case 'AhttpPackage':
 						delete require.cache[__dirname + '/httpPackageModule.js'];
 						var httpPackageModule  = require(__dirname + '/httpPackageModule.js');
 						var httpPackage = new httpPackageModule(env, pkg, req, res);
