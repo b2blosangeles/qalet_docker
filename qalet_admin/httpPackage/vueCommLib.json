@@ -1,6 +1,7 @@
 {
   "folder"  : "/appAdmin",
   "files"   : [
+        "message.vue",
         "popUp.vue",
         "spinner.vue",
         "dataEngine.vue",
