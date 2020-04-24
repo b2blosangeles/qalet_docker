@@ -56,20 +56,16 @@
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
-							var script = data.match(/\<script\>(.*?)\<\/script\>/im);
+							var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
+							var mscript0 = script0.match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im
+							var script = mscript0[1];
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							cbk ({
-								template : template[0],
-								script : script[1],
+								template : encodeURIComponent(template[0]),
+								script : mscript0,
 								style : style[1]
 							});
-							return true;
-							
-							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							data = data.replace(/\#/gm, '[%23]');
-							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
 						}); 
-						return true;
 					}
 				})(i)
 			}
@@ -77,9 +73,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send(data);
-					return true;
-					var str = "/*--- vue.min.js ---*/\n";
+					var str = "/*------------*/\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
