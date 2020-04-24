@@ -478,7 +478,7 @@
 
 	function codeVeuSFCLoader(url, name) {
 		var comp = parseComponentURL(url);
-		return codeVeuSFCLoader.load(url, name);
+		return codeVeuSFCLoader.load(comp.url, name);
 	}
 
 	return codeVeuSFCLoader;
