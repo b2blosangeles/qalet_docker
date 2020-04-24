@@ -2,6 +2,7 @@
           props: ['todo'],
           template: '<h2>{{ todo }}</h2>'
         });
+$(document).ready(function(){
         new Vue({
           el: '#jxutest',
           data: {
@@ -19,3 +20,4 @@
            //,
          // render (h) { return h() }
         });
+});
