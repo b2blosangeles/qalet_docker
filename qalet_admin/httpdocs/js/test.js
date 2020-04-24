@@ -4,6 +4,7 @@
         });
         */
 $(document).ready(function(){
+          /*
         new Vue({
           el: '#jxutest',
           data: {
@@ -15,5 +16,11 @@ $(document).ready(function(){
           computed: {
 
           }
-        });
+        });*/
+          var app2 = new Vue({
+            el: '#jxutest',
+            data: {
+              message: 'Hello Vue!'
+            }
+          })
 });
