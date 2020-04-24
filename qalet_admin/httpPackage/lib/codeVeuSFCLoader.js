@@ -368,11 +368,11 @@
 	}
 
 
-	codeVeuSFCLoader.load = function(url, name) {
+	codeVeuSFCLoader.loadCode = function(url, name) {
 
 		return function() {
 
-			return new Component(name).load(url)
+			return new Component(name).loadCode(url)
 			.then(function(component) {
 
 				return component.normalize();
@@ -403,7 +403,7 @@
 	codeVeuSFCLoader.register = function(Vue, url) {
 
 		var comp = parseComponentURL(url);
-		Vue.component(comp.name, codeVeuSFCLoader.load(comp.url));
+		Vue.component(comp.name, codeVeuSFCLoader.loadCode(comp.url));
 	};
 
 	codeVeuSFCLoader.install = function(Vue) {
@@ -423,9 +423,9 @@
 						var componentURL = ('_baseURI' in this.$options) ? resolveURL(this.$options._baseURI, comp.url) : comp.url;
 
 						if ( isNaN(componentName) )
-							components[componentName] = codeVeuSFCLoader.load(componentURL, componentName);
+							components[componentName] = codeVeuSFCLoader.loadCode(componentURL, componentName);
 						else
-							components[componentName] = Vue.component(comp.name, codeVeuSFCLoader.load(componentURL, comp.name));
+							components[componentName] = Vue.component(comp.name, codeVeuSFCLoader.loadCode(componentURL, comp.name));
 					}
 				}
 			}
@@ -478,7 +478,7 @@
 
 	function codeVeuSFCLoader(url, name) {
 		var comp = parseComponentURL(url);
-		return codeVeuSFCLoader.load(comp.url, name);
+		return codeVeuSFCLoader.loadCode(comp.url, name);
 	}
 
 	return codeVeuSFCLoader;
