@@ -1,5 +1,5 @@
 <template>
-    <span>hello {{title}}</span>
+    <span>hello friend {{title}}</span>
 </template>
  
 <script>
