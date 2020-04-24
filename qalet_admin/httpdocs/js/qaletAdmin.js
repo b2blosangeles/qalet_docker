@@ -68,11 +68,6 @@ $(document).ready(function(){
           render (h) { return h(this.ViewComponent) }
         });
    
-          var app2 = new Vue({
-            el: '#jxutest',
-            data: {
-              message: 'Hello Vue 6!'
-            }
-          });
+
     
 });
