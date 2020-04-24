@@ -1,7 +1,7 @@
 $(document).ready(function(){
           var todoItem  = Vue.component('todoItem', {
                     props: ['todo'],
-                    template: '<h3>{{ todo }}</h3>'
+                    template: '<h3>--{{ todo }}--</h3>'
           });
           setTimeout(
                     function() {
