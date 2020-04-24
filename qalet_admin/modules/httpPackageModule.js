@@ -136,15 +136,20 @@
 			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
-					return function(cbk) {
-						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							data = data.replace(/\#/gm, '[%23]');
-							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
-						}); 
-						return true;
-					}
+					let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+					pkg.fs.readFile(lfn, 'utf8', function(err, data){
+						data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+						var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
+						var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
+						var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im);
+						var script = mscript0[4];
+						var style = data.match(/\<style\>(.*?)\<\/style\>/im);
+						cbk ({
+							template : encodeURIComponent(template[0]),
+							script : script,
+							style : style[1]
+						});
+					}); 
 				})(i)
 			}
 			
@@ -166,11 +171,13 @@
 					
 					for (var i = 0; i < list.length; i++) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
-						str += nameSpace + '.' + fileName + ' = ';
-						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
+						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
+						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
+						str += CP.data['_' + i].script + '}); ' + "\n";
 					}
+					
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
