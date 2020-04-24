@@ -372,7 +372,7 @@
 
 		return function() {
 
-			return new Component(name).loadCode(url)
+			return new Component(name).load(url)
 			.then(function(component) {
 
 				return component.normalize();
