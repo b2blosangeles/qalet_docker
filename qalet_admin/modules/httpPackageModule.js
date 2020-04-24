@@ -103,17 +103,11 @@
 						var tmp = 'return Vue.component("' + fileName + '", {';
 						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
-						
+						tmp = encodeURIComponent(tmp);
 						str += 'try { ' + nameSpace + '.' + fileName;
-						str +=	' = new Function(decodeURIComponent("';
-						str +=	encodeURIComponent(tmp) + '"))() '; 
+						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
-						
-						//str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
-						//str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
-						// str += CP.data['_' + i].script + '}); ' + "\n";
-						// str += ' } catch  (e) { ';
-						// str += ' console.log(e.message) }; ' + "\n";
+												
 						css_str += CP.data['_' + i].style;
 						
 					}
