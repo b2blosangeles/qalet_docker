@@ -101,11 +101,13 @@
 						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
-						var v = new Function(decodeURIComponent(tmp));
+						var vv = new Function(decodeURIComponent(tmp));
+						str += vv();
+						/*
 						str += 'try { ' + nameSpace + '.' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
-												
+						*/						
 						css_str += CP.data['_' + i].style;
 						
 					}
