@@ -9,10 +9,7 @@ $(document).ready(function(){
             message : 'niu'
           },
           components : {
-                todoItem : Vue.component('todo-item', {
-                          props: ['todo'],
-                          template: '<h2>{{ todo }}</h2>'
-                        })
+                todoItem :todoItem
           },
           computed: {
 
