@@ -27,14 +27,16 @@
 	
 		
 		this.veuFiles = function(cfg) {
-			//res.send(cfg);
-			// return true;
+		
 			
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 			
 			list = ["message.vue"];
+			
+			res.send(list);
+			return true;
 			
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
