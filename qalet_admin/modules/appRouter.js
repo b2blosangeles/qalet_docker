@@ -196,7 +196,7 @@
 					}
 			}
 			
-			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage|AhttpPackage)(\/.+|)', 'i');
+			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage)(\/.+|)', 'i');
 			var v = p.match(patt);
 			if (!v) {
 				if (TPA[p]) {
@@ -250,14 +250,6 @@
 						var httpPackage = new httpPackageModule(env, pkg, req, res);
 						httpPackage.call(v[2]);
 						break;
-
-					case 'AhttpPackage':
-						delete require.cache[__dirname + '/httpPackageModule.js'];
-						var httpPackageModule  = require(__dirname + '/httpPackageModule.js');
-						var httpPackage = new httpPackageModule(env, pkg, req, res);
-						httpPackage.callA(v[2]);
-						break;	
-						
 					default:
 						res.render('html/page404.ect');
 						break;	
