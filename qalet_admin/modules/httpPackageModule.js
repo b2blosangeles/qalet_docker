@@ -76,7 +76,7 @@
 							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							// template : encodeURIComponent(template[0]),
 							cbk ({
-								template : encodeURIComponent(templateCode]),
+								template : encodeURIComponent(templateCode),
 								script : scriptCode,
 								style : styleCode
 							});
