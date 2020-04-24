@@ -21,7 +21,60 @@
 			      }
 			});
 		}
-
+		this.plusFiles = function(cfg) {
+			
+			var me = this;
+			var CP = new pkg.crowdProcess(),_f = {}; 
+			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;	
+			list = ["message.vue"];
+			for (var i = 0; i < list.length; i++) {
+				_f['_' + i] = (function(i) {
+					return function(cbk) {
+						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+						pkg.fs.readFile(lfn, 'utf8', function(err, data){
+							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+							data = data.replace(/\#/gm, '[%23]');
+							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
+						}); 
+						return true;
+					}
+				})(i)
+			}
+			
+			CP.serial(
+				_f,
+				function(data) {
+					
+					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
+					
+					str += "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
+					
+					str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
+					
+					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
+					
+					str += "/*--- " + nameSpace + " code ---*/\n"
+					
+					str += "var " + nameSpace + " = {}; \n";
+					
+					for (var i = 0; i < list.length; i++) {
+						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
+						
+						str += nameSpace + '.' + fileName + ' = ';
+						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
+					}
+					res.header("Access-Control-Allow-Origin", "*");
+					res.header("Access-Control-Allow-Headers", "X-Requested-With");
+					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
+					res.setHeader('Content-Type', "application/javascript");			
+					res.send(str);
+			   	},
+			   	6000
+			);
+			
+		}
+		
 		this.veuFiles = function(cfg) {
 			
 			var me = this;
