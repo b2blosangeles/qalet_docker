@@ -142,7 +142,7 @@
 
 		setContent: function(content) {
 
-			this.elt.textContent = content;
+			this.elt.textContent = content.replace('%23', '#');
 		},
 
 		compile: function(module) {
