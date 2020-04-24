@@ -45,7 +45,6 @@ module.exports = {
         
            var me = this;
            me.spinnerTrigger = true;
-         /*
            if (!me.config.postData) {
                 me.$http.get(me.config.uri).then(function (response) {
                     me.result.items = response.body.results;
@@ -63,7 +62,7 @@ module.exports = {
                   console.log(err)
                 });
             } 
-           */
         }
     }
-}</script>
+}
+</script>
