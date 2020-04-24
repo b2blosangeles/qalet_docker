@@ -60,6 +60,8 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
+							res.send(data);
+							return true;
 							
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
 							var templateCode = (!template[0]) ? '<template></template>' : template[0];
