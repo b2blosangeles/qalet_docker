@@ -68,7 +68,7 @@
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							// template : encodeURIComponent(template[0]),
 							cbk ({
-								template : encodeURIComponent(template[0]),
+								template : template[0],
 								script : (!script) ? null : script,
 								style : (!style) ? '' : style[1]
 							});
@@ -98,8 +98,8 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						var tmp = 'return Vue.component("' + fileName + '", {';
-						// tmp += 'template : "' + CP.data['_' + i].template + '", '; 
-						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
+						tmp += 'template : "' + CP.data['_' + i].template + '", '; 
+						// tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
 
