@@ -79,7 +79,8 @@
 			CP.serial(
 				_f,
 				function(data) {
-					var Vue = require(env.adminFolder  + '/httpPackage/lib/vue.min.js');
+					var vue = require(env.adminFolder  + '/httpPackage/lib/vue.min.js');
+					var Vue = new vue();
 					var css_str = '', 
 					str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
