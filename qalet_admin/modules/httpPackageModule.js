@@ -72,8 +72,8 @@
 							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
-							var styleCode = (!style) ? '' : style[1];
-							styleCode =styleCode..replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+							var styleCode = (!style[1]) ? '' : style[1];
+							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							// template : encodeURIComponent(template[0]),
 							cbk ({
 								template : encodeURIComponent(templateCode]),
