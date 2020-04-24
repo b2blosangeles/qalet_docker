@@ -54,6 +54,10 @@
 					return function(cbk) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
+							var m = data.match(/\<template\>(.*?)\<\/template\>/gm);
+							cbk (m)
+							return true;
+							
 							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							data = data.replace(/\#/gm, '[%23]');
 							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
@@ -66,7 +70,8 @@
 			CP.serial(
 				_f,
 				function(data) {
-					
+					res.send(data);
+					return true;
 					var str = "/*--- vue.min.js ---*/\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
