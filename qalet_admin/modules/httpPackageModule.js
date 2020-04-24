@@ -66,9 +66,7 @@
 							var templateCode = (!template[0]) ? '<template></template>' : template[0];
 							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							
-							cbk(templateCode);
-							return true;
-							/*
+						
 							var script_a = data.match(/\<script\>((.|\r|\n|\r\n|\n\r)*)\<\/script\>/im);
 							var script =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							script = script.replace(/\s+$/,"")
@@ -76,6 +74,9 @@
 							var scriptCode = mscript[4];
 							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
+							cbk(scriptCode);
+							return true;
+							/*
 							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
 							var styleCode = (!style[1]) ? '' : style[1];
 							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
