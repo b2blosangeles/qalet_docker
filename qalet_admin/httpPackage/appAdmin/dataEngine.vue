@@ -42,7 +42,7 @@ module.exports = {
     },
     methods : {
         loadItems(id) {
-           
+        
            var me = this;
            me.spinnerTrigger = true;
          /*
@@ -65,6 +65,5 @@ module.exports = {
             } 
            */
         }
-    }}
-
-</script>
+    }
+}</script>
