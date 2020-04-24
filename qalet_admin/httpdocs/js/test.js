@@ -23,12 +23,13 @@ $(document).ready(function(){
               message: 'Hello Vue!'
             }
           })*/
+          var todoItem  = Vue.component('todo-item', {
+                    props: ['todo'],
+                    template: '<h2>{{ todo }}</h2>'
+          });
           setTimeout(
                     function() {
-                              var todoItem  = Vue.component('todo-item', {
-                                        props: ['todo'],
-                                        template: '<h2>{{ todo }}</h2>'
-                              });
+
                               var app2 = new Vue({
                                 el: '#jxutest',
                                 data: {
@@ -38,8 +39,6 @@ $(document).ready(function(){
                                       todoItem :todoItem
                                 }
                     });
-                    }, 3000
-          
-          );
+                    });
 
 });
