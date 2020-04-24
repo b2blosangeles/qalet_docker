@@ -61,7 +61,7 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							data = data.replace(/\#/gm, '[%23]');
+							// data = data.replace(/\#/gm, '[%23]');
 							cbk(encodeURIComponent(data.replace(/(\r|\n|\r\n|\n\r)/gm,' '))); 
 						}); 
 						return true;
@@ -95,7 +95,7 @@
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
-					res.setHeader('Content-Type', "text/javascrip");			
+					res.setHeader('Content-Type', "Content-Type: text/jscript;charset=UTF-8: PASS");			
 					res.send(str);
 			   	},
 			   	6000
