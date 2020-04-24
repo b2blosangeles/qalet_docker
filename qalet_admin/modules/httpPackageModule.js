@@ -92,6 +92,10 @@
 						str += nameSpace + '.' + fileName + ' = ';
 						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
 					}
+					res.header("Access-Control-Allow-Origin", "*");
+					res.header("Access-Control-Allow-Headers", "X-Requested-With");
+					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
+					res.setHeader('Content-Type', "text/javascrip");			
 					res.send(str);
 			   	},
 			   	6000
