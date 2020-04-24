@@ -1,5 +1,5 @@
 $(document).ready(function(){
-          var todoItem  = Vue.component('todo-item', {
+          var todoItem  = Vue.component('todoItem', {
                     props: ['todo'],
                     template: '<h3>{{ todo }}</h3>'
           });
