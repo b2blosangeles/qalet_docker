@@ -69,9 +69,9 @@ $(document).ready(function(){
         });
     */
           var app2 = new Vue({
-            el: '#app',
+            el: '#jxutest',
             data: {
-              message: 'Hello Vue!'
+              message: 'Hello Vue 3!'
             }
           });
     
