@@ -25,12 +25,19 @@ $(document).ready(function(){
           })*/
           setTimeout(
                     function() {
+                              var todoItem  = Vue.component('todo-item', {
+                                        props: ['todo'],
+                                        template: '<h2>{{ todo }}</h2>'
+                              });
                               var app2 = new Vue({
                                 el: '#jxutest',
                                 data: {
                                   message: 'Hello Vue 8!'
+                                },
+                                components : {
+                                      todoItem :todoItem
                                 }
-                              });
+                    });
                     }, 3000
           
           );
