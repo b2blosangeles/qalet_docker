@@ -442,7 +442,7 @@
 	        if (!url.match(/^(\.\.\/|\.\/|\/|http\:\/\/|https\:\/\/|\/\/)/) && url.match(/\</)) {
 		// if (!url.match(/^(.*?)([^/]+?)\/?(\.vue)?(\?.*|#.*|$)/)) {
 		    return new Promise(function(resolve, reject) {
-			resolve(url);
+			resolve(url.replace(/\[\%23\]/gm, '#'));
 		    });
 		} else {
 		    return new Promise(function(resolve, reject) {
