@@ -23,10 +23,16 @@ $(document).ready(function(){
               message: 'Hello Vue!'
             }
           })*/
-          var app2 = new Vue({
-            el: '#jxutest',
-            data: {
-              message: 'Hello Vue 8!'
-            }
-          });
+          setTimeout(
+                    function() {
+                              var app2 = new Vue({
+                                el: '#jxutest',
+                                data: {
+                                  message: 'Hello Vue 8!'
+                                }
+                              });
+                    }, 3000
+          
+          );
+
 });
