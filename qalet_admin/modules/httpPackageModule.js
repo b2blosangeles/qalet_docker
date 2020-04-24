@@ -22,88 +22,13 @@
 			});
 		}
 		this.callA = function(p) {
-			var me = this;
-			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
-			pkg.fs.stat(fn, function(err, stat) {
-			      if(err == null) {
-				  if (stat.isDirectory()) {
-					res.render('html/page404.ect');
-				  } else {
-					let cfg = {};
-					try {
-						delete require.cache[fn];
-						cfg = require(fn);
-					}  catch (err) {}
-
-					me.plusFiles(cfg);
-				  }
-			      } else if(err.code === 'ENOENT') {
-				  res.render('html/page404.ect');
-			      }
-			});
+			return true;
 		}
 	
-		this.plusFiles = function(cfg) {
-			
-			var me = this;
-			var CP = new pkg.crowdProcess(),_f = {}; 
-			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;	
-			list = ["message.vue"];
-			for (var i = 0; i < list.length; i++) {
-				_f['_' + i] = (function(i) {
-					return function(cbk) {
-						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
-							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
-							var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
-							var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im);
-							var script = mscript0[4];
-							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
-							cbk ({
-								template : encodeURIComponent(template[0]),
-								script : script,
-								style : style[1]
-							});
-						}); 
-					}
-				})(i)
-			}
-			
-			CP.serial(
-				_f,
-				function(data) {
-
-					var str = "/*------------*/\n";
-					
-					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
-					
-					str += "/*--- " + nameSpace + " code ---*/\n"
-					
-					str += "var " + nameSpace + " = {}; \n";
-					
-					for (var i = 0; i < list.length; i++) {
-						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
-						
-						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
-						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
-						str += CP.data['_' + i].script + '}); ' + "\n";
-					}
-					res.header("Access-Control-Allow-Origin", "*");
-					res.header("Access-Control-Allow-Headers", "X-Requested-With");
-					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
-					res.setHeader('Content-Type', "application/javascript");			
-					res.send(str);
-			   	},
-			   	6000
-			);
-			
-		}
 		
 		this.veuFiles = function(cfg) {
-			res.send(cfg);
-			return true;
+			//res.send(cfg);
+			// return true;
 			
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
