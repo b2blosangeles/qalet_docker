@@ -108,7 +108,7 @@
 						
 					}
 					css_str = encodeURIComponent(css_str);
-					str += "addcss(decodeURIComponent('" + css_str + "'));" + "\n";
+					str += "Vue.tools.addcss('" + css_str + "');" + "\n";
 					
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
