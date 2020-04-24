@@ -65,7 +65,8 @@
 							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
 							var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
-							var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}(\s)/im);
+							var nscript = script0[1].replace(/\s+$/,"");
+							var mscript0 = nscript.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
 							var script = mscript0[4];
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							cbk ({
