@@ -142,7 +142,7 @@
 
 		setContent: function(content) {
 
-			this.elt.textContent = content.replace('%23', '#');
+			this.elt.textContent = content;
 		},
 
 		compile: function(module) {
@@ -191,12 +191,12 @@
 
 		getContent: function() {
 
-			return this.elt.innerHTML;
+			return this.elt.innerHTML.replace('%23', '#');
 		},
 
 		setContent: function(content) {
 
-			this.elt.innerHTML = content.replace('%23', '**');
+			this.elt.innerHTML = content;
 		},
 
 		getRootElt: function() {
