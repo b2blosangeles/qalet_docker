@@ -1,10 +1,15 @@
+        Vue.component('todo-item', {
+          props: ['todo'],
+          template: '<h2>{{ todo }}</h2>'
+        });
         new Vue({
-          el: '#foot',
+          el: '#jxutest',
           data: {
             
           },
           computed: {
 
-          },
-          render (h) { return h(this.ViewComponent) }
-        }) 
+          }
+           //,
+         // render (h) { return h() }
+        });
