@@ -87,7 +87,7 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
 						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
-						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '", '; 
+						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						str += CP.data['_' + i].script + ' ' +  +  ' }); ' + "\n";
 					}
 					res.header("Access-Control-Allow-Origin", "*");
