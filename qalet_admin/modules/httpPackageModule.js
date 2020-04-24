@@ -66,8 +66,9 @@
 							var mscript0 = nscript.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
 							var script = mscript0[4];
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
+							// template : encodeURIComponent(template[0]),
 							cbk ({
-								template : encodeURIComponent(template[0]),
+								template :template[0],
 								script : (!script) ? null : script,
 								style : (!style) ? '' : style[1]
 							});
