@@ -1,7 +1,7 @@
 $(document).ready(function(){
           var todoItem  = Vue.component('todoItem', {
                     props: ['todo'],
-                    template: '<h3>--{{ todo }}--</h3>'
+                    template: '<h3>-7-{{ todo }}--</h3>'
           });
           setTimeout(
                     function() {
@@ -13,7 +13,7 @@ $(document).ready(function(){
                                 },
                                 components : {
                                       todoItem :todoItem,
-                                      message   : QALETCOMM.message
+                                      message   : QALETCOMMA.messageA
                                 }
                     });
                     });
