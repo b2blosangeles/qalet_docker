@@ -13,7 +13,7 @@ $(document).ready(function(){
                                 },
                                 components : {
                                       todoItem :todoItem,
-                                      dbList   : QALETCOMM.dbList
+                                      message   : QALETCOMM.message
                                 }
                     });
                     });
