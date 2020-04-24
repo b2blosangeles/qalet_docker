@@ -102,6 +102,8 @@
 		}
 		
 		this.veuFiles = function(cfg) {
+			res.send(cfg);
+			return true;
 			
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
