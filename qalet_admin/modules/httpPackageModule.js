@@ -101,8 +101,12 @@
 						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
-						var vv = new Function(decodeURIComponent(tmp));
-						str += vv();
+						try {
+							var vv = new Function(decodeURIComponent(tmp));
+							res.send(vv());
+						} catch (e) { 
+							res.send(e.toString());
+						}
 						/*
 						str += 'try { ' + nameSpace + '.' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
