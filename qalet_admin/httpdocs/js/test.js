@@ -5,7 +5,7 @@
         new Vue({
           el: '#jxutest',
           data: {
-            
+            message : 'niu'
           },
           components : {
                 todoItem : Vue.component('todo-item', {
