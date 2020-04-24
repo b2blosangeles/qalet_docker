@@ -2,8 +2,6 @@
 	var obj =  function (env, pkg, req, res) {
 		this.call = function(p) {
 			var me = this;
-			res.send("==p==");
-			return true
 			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
 			pkg.fs.stat(fn, function(err, stat) {
 			      if(err == null) {
@@ -25,7 +23,7 @@
 		}
 		this.callA = function(p) {
 			var me = this;
-			res.send("==p==");
+			res.send("==pa==");
 			return true;
 
 		}
