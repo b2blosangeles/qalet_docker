@@ -27,7 +27,7 @@
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 
-			list = ["message.vue", "popUp.vue","spinner.vue","dataEngine.vue"];
+			// list = ["message.vue", "popUp.vue","spinner.vue","dataEngine.vue"];
 			// ["message.vue","popUp.vue","spinner.vue","dataEngine.vue","dbList.vue","hostList.vue"]
 			
 			_f['vue.min.js'] = function(cbk) {
