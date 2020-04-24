@@ -58,7 +58,7 @@ module.exports = {
         setTimeout(function() {
             me.loadData();
         }); 
-    },
+    },{
     methods : {
         setAction(v) {
             this.currentAction = v;
