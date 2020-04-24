@@ -33,7 +33,7 @@ $(document).ready(function(){
                               var app2 = new Vue({
                                 el: '#jxutest',
                                 data: {
-                                  message: 'Hello Vue 8!'
+                                  message: 'Hello Vue : ' + new Date()
                                 },
                                 components : {
                                       todoItem :todoItem
