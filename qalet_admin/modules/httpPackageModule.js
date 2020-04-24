@@ -73,8 +73,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send(data);
-					return true;
+
 					var str = "/*------------*/\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
@@ -87,8 +86,8 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,' ');
 						
-						str += nameSpace + '.' + fileName + ' = ';
-						str += 'codeVeuSFCLoader(decodeURIComponent("' + CP.data['_' + i] + '")); ' + "\n";
+						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
+						str += CP.data['_' + i].script + '") }; ' + "\n";
 					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
