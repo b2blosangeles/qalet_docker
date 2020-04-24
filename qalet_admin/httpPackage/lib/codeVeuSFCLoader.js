@@ -191,7 +191,7 @@
 
 		getContent: function() {
 
-			return this.elt.innerHTML.replace('%23', '#');
+			return this.elt.innerHTML;
 		},
 
 		setContent: function(content) {
@@ -442,7 +442,7 @@
 	        if (!url.match(/^(\.\.\/|\.\/|\/|http\:\/\/|https\:\/\/|\/\/)/) && url.match(/\</)) {
 		// if (!url.match(/^(.*?)([^/]+?)\/?(\.vue)?(\?.*|#.*|$)/)) {
 		    return new Promise(function(resolve, reject) {
-			resolve(url);
+			resolve(url.replace('%23', '#'));
 		    });
 		} else {
 		    return new Promise(function(resolve, reject) {
