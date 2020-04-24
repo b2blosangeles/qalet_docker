@@ -59,14 +59,19 @@
 					return function(cbk) {
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+							
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
+							template = template.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							var script_a = data.match(/\<script\>(.*?)\<\/script\>/im);
 							var scriptCode =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							scriptCode = scriptCode.replace(/\s+$/,"")
 							var mscript0 = scriptCode.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
 							var script = mscript0[4];
+							script = script.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+							
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
+							var styleCode = (!style) ? '' : style[1];
+							styleCode =styleCode..replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							// template : encodeURIComponent(template[0]),
 							cbk ({
 								template : encodeURIComponent(template[0]),
