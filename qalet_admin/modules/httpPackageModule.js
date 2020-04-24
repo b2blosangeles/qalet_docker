@@ -105,7 +105,7 @@
 						tmp += CP.data['_' + i].script + '}); ';
 						
 						str += 'try { ' + nameSpace + '.' + fileName + 
-							' = new Function("' + tmp + '")() }';
+							' = new Function(decodeURIComponent("' + encodeURIComponent(tmp) + '"))() }';
 						str += 'cache (e) { console.log(e.toString()); }' + "\n";
 						
 						//str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
