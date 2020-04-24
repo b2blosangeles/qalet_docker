@@ -60,9 +60,9 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
-							res.send(data);
+							cbk(true);
 							return true;
-							
+							/*
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
 							var templateCode = (!template[0]) ? '<template></template>' : template[0];
 							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
@@ -83,6 +83,7 @@
 								script : scriptCode,
 								style : styleCode
 							});
+							*/
 						}); 
 					}
 				})(i)
@@ -91,6 +92,9 @@
 			CP.serial(
 				_f,
 				function(data) {
+					res.send(data);
+					return true;
+					
 					var css_str = '', 
 					str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
