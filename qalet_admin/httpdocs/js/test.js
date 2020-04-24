@@ -23,4 +23,10 @@ $(document).ready(function(){
               message: 'Hello Vue!'
             }
           })*/
+          var app2 = new Vue({
+            el: '#jxutest',
+            data: {
+              message: 'Hello Vue 8!'
+            }
+          });
 });
