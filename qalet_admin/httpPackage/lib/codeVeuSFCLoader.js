@@ -196,7 +196,7 @@
 
 		setContent: function(content) {
 
-			this.elt.innerHTML = content;
+			this.elt.innerHTML = content.replace('%23', '#');
 		},
 
 		getRootElt: function() {
@@ -442,7 +442,7 @@
 	        if (!url.match(/^(\.\.\/|\.\/|\/|http\:\/\/|https\:\/\/|\/\/)/) && url.match(/\</)) {
 		// if (!url.match(/^(.*?)([^/]+?)\/?(\.vue)?(\?.*|#.*|$)/)) {
 		    return new Promise(function(resolve, reject) {
-			resolve(url.replace('%23', '#'));
+			resolve(url);
 		    });
 		} else {
 		    return new Promise(function(resolve, reject) {
