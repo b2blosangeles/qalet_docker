@@ -8,7 +8,10 @@
             
           },
           components : {
-                todoItem : todoItem
+                todoItem : Vue.component('todo-item', {
+                          props: ['todo'],
+                          template: '<h2>{{ todo }}</h2>'
+                        })
           },
           computed: {
 
