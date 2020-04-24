@@ -23,9 +23,24 @@
 		}
 		this.callA = function(p) {
 			var me = this;
-			res.send("==pa==");
-			return true;
+			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
+			pkg.fs.stat(fn, function(err, stat) {
+			      if(err == null) {
+				  if (stat.isDirectory()) {
+					res.render('html/page404.ect');
+				  } else {
+					let cfg = {};
+					try {
+						delete require.cache[fn];
+						cfg = require(fn);
+					}  catch (err) {}
 
+					me.plusFiles(cfg);
+				  }
+			      } else if(err.code === 'ENOENT') {
+				  res.render('html/page404.ect');
+			      }
+			});
 		}
 	
 		this.plusFiles = function(cfg) {
