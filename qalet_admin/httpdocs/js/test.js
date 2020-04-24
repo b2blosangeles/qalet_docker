@@ -1,7 +1,8 @@
-        var todoItem  = Vue.component('todo-item', {
+/*        var todoItem  = Vue.component('todo-item', {
           props: ['todo'],
           template: '<h2>{{ todo }}</h2>'
         });
+        */
 $(document).ready(function(){
         new Vue({
           el: '#jxutest',
@@ -9,7 +10,7 @@ $(document).ready(function(){
             message : 'niu'
           },
           components : {
-                todoItem :todoItem
+          //      todoItem :todoItem
           },
           computed: {
 
