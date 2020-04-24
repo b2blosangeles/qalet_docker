@@ -47,15 +47,15 @@
 				}); 
 				return true;
 			}
-			/*
-			_f['codeVeuSFCLoader'] = function(cbk) {
-				let lfn = env.adminFolder  + '/httpPackage/lib/codeVeuSFCLoader.js'; 
+
+			_f['tools'] = function(cbk) {
+				let lfn = env.adminFolder  + '/httpPackage/lib/tools.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
 					data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 					cbk(data);
 				}); 
 				return true;
-			}	*/
+			}	
 			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
@@ -83,11 +83,12 @@
 				_f,
 				function(data) {
 
-					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
+					var css_str = '', 
+					str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
 					str += "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
 					
-					// str += "/*--- codeVeuSFCLoader.js ---*/\n" +  CP.data['codeVeuSFCLoader'] + "\n";
+					str += "/*--- tools.js ---*/\n" +  CP.data['tools'] + "\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
@@ -102,7 +103,12 @@
 						str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
 						str += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						str += CP.data['_' + i].script + '}); ' + "\n";
+						
+						css_str += CP.data['_' + i].style;
+						
 					}
+					css_str = encodeURIComponent(css_str);
+					str += 'addcss(decodeURIComponent("' + css_str + '");' + "\n";
 					
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
