@@ -17,7 +17,5 @@ $(document).ready(function(){
           computed: {
 
           }
-           //,
-         // render (h) { return h() }
         });
 });
