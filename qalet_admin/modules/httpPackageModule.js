@@ -61,22 +61,24 @@
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							
 							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
-							template = template.replace(/(\r|\n|\r\n|\n\r)/gim,'');
+							var templateCode = (!template[0]) ? '<template></template>' : template[0];
+							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
+							
 							var script_a = data.match(/\<script\>(.*?)\<\/script\>/im);
-							var scriptCode =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							scriptCode = scriptCode.replace(/\s+$/,"")
-							var mscript0 = scriptCode.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
-							var script = mscript0[4];
-							script = script.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+							var script =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+							script = script.replace(/\s+$/,"")
+							var mscript = script.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
+							var scriptCode = mscript[4];
+							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
 							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
 							var styleCode = (!style) ? '' : style[1];
 							styleCode =styleCode..replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							// template : encodeURIComponent(template[0]),
 							cbk ({
-								template : encodeURIComponent(template[0]),
-								script : (!script) ? null : script,
-								style : (!style) ? '' : style[1]
+								template : encodeURIComponent(templateCode]),
+								script : scriptCode,
+								style : styleCode
 							});
 						}); 
 					}
