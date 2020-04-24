@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-          
           setTimeout(
                     function() {
                               var todoItem  = Vue.component('todoItem', {
