@@ -85,7 +85,7 @@
 								script : scriptCode,
 								style : styleCode
 							});
-							*/
+							
 						}); 
 					}
 				})(i)
