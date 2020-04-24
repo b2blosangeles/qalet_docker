@@ -23,7 +23,7 @@
 		}
 		this.callA = function(p) {
 			var me = this;
-			res.send(p);
+			res.send("==p==");
 			return true;
 			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
 			pkg.fs.stat(fn, function(err, stat) {
