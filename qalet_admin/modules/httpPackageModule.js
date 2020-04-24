@@ -95,7 +95,7 @@
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
-					res.setHeader('Content-Type', "text/jscript;charset=UTF-8: PASS");			
+					res.setHeader('Content-Type', "application/javascript");			
 					res.send(str);
 			   	},
 			   	6000
