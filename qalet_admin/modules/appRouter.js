@@ -196,7 +196,7 @@
 					}
 			}
 			
-			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage)(\/.+|)', 'i');
+			var patt = new RegExp('^/(dbs|addHost|checkCodeUpdate|vhost|startup|api|httpPackage|httpPackage2)(\/.+|)', 'i');
 			var v = p.match(patt);
 			if (!v) {
 				if (TPA[p]) {
@@ -242,13 +242,22 @@
 						var API  = require(__dirname + '/apiModule.js');
 						var api = new API(env, pkg, req, res);
 						api.get(v[2]);
-						break;	
+						break;
+						
 					case 'httpPackage':
 						delete require.cache[__dirname + '/httpPackageModule.js'];
 						var httpPackageModule  = require(__dirname + '/httpPackageModule.js');
 						var httpPackage = new httpPackageModule(env, pkg, req, res);
 						httpPackage.call(v[2]);
+						break;
+
+					case 'httpPackage2':
+						delete require.cache[__dirname + '/httpPackageModule.js'];
+						var httpPackageModule  = require(__dirname + '/httpPackageModule.js');
+						var httpPackage = new httpPackageModule(env, pkg, req, res);
+						httpPackage.call2(v[2]);
 						break;	
+						
 					default:
 						res.render('html/page404.ect');
 						break;	
