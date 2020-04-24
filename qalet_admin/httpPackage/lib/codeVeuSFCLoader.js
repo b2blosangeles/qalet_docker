@@ -196,7 +196,7 @@
 
 		setContent: function(content) {
 
-			this.elt.innerHTML = content.replace('%23', '#');
+			this.elt.innerHTML = content.replace('%23', '**');
 		},
 
 		getRootElt: function() {
