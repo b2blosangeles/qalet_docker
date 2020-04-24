@@ -73,6 +73,8 @@
 			CP.serial(
 				_f,
 				function(data) {
+					res.send(data);
+					return true;
 					var str = "/*------------*/\n";
 					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
