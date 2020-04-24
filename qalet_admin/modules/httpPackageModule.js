@@ -61,26 +61,28 @@
 				}); 
 				return true;
 			}	
-			/*
+			
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
-					let lfn =  _folder + '/' + list[i].replace(/^\//, '');
-					pkg.fs.readFile(lfn, 'utf8', function(err, data){
-						data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
-						var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
-						var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
-						var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im);
-						var script = mscript0[4];
-						var style = data.match(/\<style\>(.*?)\<\/style\>/im);
-						cbk ({
-							template : encodeURIComponent(template[0]),
-							script : script,
-							style : style[1]
-						});
-					}); 
+					return function(cbk) {
+						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+						pkg.fs.readFile(lfn, 'utf8', function(err, data){
+							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
+							var script0 = data.match(/\<script\>(.*?)\<\/script\>/im);
+							var mscript0 = script0[1].match(/(\s)module\.exports(\s)\=(\s){(.*?)}(\s)/im);
+							var script = mscript0[4];
+							var style = data.match(/\<style\>(.*?)\<\/style\>/im);
+							cbk ({
+								template : encodeURIComponent(template[0]),
+								script : script,
+								style : style[1]
+							});
+						}); 
+					}
 				})(i)
 			}
-			*/
+			
 			CP.serial(
 				_f,
 				function(data) {
