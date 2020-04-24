@@ -55,8 +55,14 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							data = (err) ? '' : data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
-							var m = data.match(/\<template\>(.*?)\<\/template\>/igm);
-							cbk (m)
+							var template = data.match(/\<template\>(.*?)\<\/template\>/igm);
+							var script = data.match(/\<script\>(.*?)\<\/script\>/igm);
+							var style = data.match(/\<style\>(.*?)\<\/style\>/igm);
+							cbk ({
+								template : template,
+								script : script,
+								style : style
+							});
 							return true;
 							
 							data = (err) ? '' : data.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
