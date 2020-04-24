@@ -156,6 +156,9 @@
 			CP.serial(
 				_f,
 				function(data) {
+					res.send(data);
+					return true;
+					
 					
 					var str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
 					
