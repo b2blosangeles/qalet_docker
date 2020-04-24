@@ -104,8 +104,9 @@
 						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
 						tmp += CP.data['_' + i].script + '}); ';
 						
-						str += 'try { ' + nameSpace + '.' + fileName ; 
-						str +=	' = new Function("Vue", decodeURIComponent("' + encodeURIComponent(tmp) + '"))(Vue) }';
+						str += 'try { ' + nameSpace + '.' + fileName;
+						str +=	' = new Function("Vue", decodeURIComponent("';
+						str +=	encodeURIComponent(tmp) + '"))(Vue) '; 
 						str += '} catch (e) { console.log(e.toString()); }' + "\n";
 						
 						//str += nameSpace + '.' + fileName + ' = Vue.component("' + fileName + '", {';
