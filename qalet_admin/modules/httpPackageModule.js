@@ -34,10 +34,7 @@
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 			
 			list = ["message.vue"];
-			
-			res.send(list);
-			return true;
-			
+
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
 				pkg.fs.readFile(lfn, 'utf8', function(err, data){
@@ -64,7 +61,7 @@
 				}); 
 				return true;
 			}	
-			
+			/*
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					let lfn =  _folder + '/' + list[i].replace(/^\//, '');
@@ -83,7 +80,7 @@
 					}); 
 				})(i)
 			}
-			
+			*/
 			CP.serial(
 				_f,
 				function(data) {
