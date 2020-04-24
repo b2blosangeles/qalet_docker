@@ -255,7 +255,7 @@
 						delete require.cache[__dirname + '/httpPackageModule.js'];
 						var httpPackageModule  = require(__dirname + '/httpPackageModule.js');
 						var httpPackage = new httpPackageModule(env, pkg, req, res);
-						httpPackage.call2(v[2]);
+						httpPackage.callA(v[2]);
 						break;	
 						
 					default:
