@@ -23,8 +23,6 @@
 		}
 
 		this.veuFiles = function(cfg) {
-		
-			
 			var me = this;
 			var CP = new pkg.crowdProcess(),_f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
