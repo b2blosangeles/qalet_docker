@@ -1,7 +1,10 @@
 $(document).ready(function(){
           var todoItem  = Vue.component('todoItem', {
                     props: ['todo'],
-                    template: '<h3>-8-{{ todo }}--</h3>'
+                    template: '<h3>-8-{{ todo }}-9- {{message}} -</h3>',
+                    components : {
+                          message   : QALETCOMMA.messageA
+                     }    
           });
           setTimeout(
                     function() {
