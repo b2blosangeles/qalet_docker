@@ -8,24 +8,29 @@
 				pkg.fs.readdir(dirname, (err, files) => {
 				  cbk((!err) ? files : [])
 				});
+				for (var i = 0; i < files.length; i++) {
+					files[i] = dirname + '/' + files[i];
+				}
 				return true;
 			}
 			_f['app'] = function(cbk) {
-				var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
+				var appName = p.replace(/^\//, ''),
+				    dirName = env.adminFolder + '/httpPackage/' + appName,
+				    fn = env.adminFolder + '/httpPackage/' + appName + '.json';
 				pkg.fs.stat(fn, function(err, stat) {
-					let cfg = {}
+					let files = []
 					if(err == null) {
-						if (stat.isDirectory()) {
-							cbk(false);
-						} else {
+						if (!stat.isDirectory()) {
 							try {
 								delete require.cache[fn];
 								cfg = require(fn);
-							}  catch (err) {}
-							cbk(cfg);
+							}  catch (err) {};
 						}
 					}
-					cbk(cfg);
+					for (var i = 0; i < files.length; i++) {
+						files[i] = dirname + '/' + files[i];
+					}
+					cbk(files);
 				});
 			} 
 			CP.serial(
