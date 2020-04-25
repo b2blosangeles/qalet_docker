@@ -63,22 +63,19 @@
 						//	data = data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							
 							var template = data.match(/\<template\>((.|\r|\n|\r\n|\n\r)*)\<\/template\>/igm);
-							var templateCode = (!template[0]) ? '<template></template>' : template[0];
+							var templateCode = (!template || !template[0]) ? '<template></template>' : template[0];
 							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
 							
 						
 							var script_a = data.match(/\<script\>((.|\r|\n|\r\n|\n\r)*)\<\/script\>/im);
-							var script =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+							var script =  (!script_a || !script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							script = script.replace(/\s+$/,"")
 							var mscript = script.match(/(\s)module\.exports(\s)\=(\s)\{((.|\r|\n|\r\n|\n\r)*)\}$/im);
-							var scriptCode = mscript[4];
+							var scriptCode = (!mscript || !mscript[4]) ? '' : mscript[4];
 							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
-							cbk(scriptCode);
-							return true;
-							/*
 							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
-							var styleCode = (!style[1]) ? '' : style[1];
+							var styleCode = (!style || !style[1]) ? '' : style[1];
 							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							// template : encodeURIComponent(template[0]),
 							cbk ({
@@ -86,7 +83,7 @@
 								script : scriptCode,
 								style : styleCode
 							});
-							*/
+							
 						}); 
 					}
 				})(i)
