@@ -49,7 +49,7 @@ module.exports = {
         }
     },
     components : {
-        dataEngine : commonModul.dataEngine
+        dataEngine : commModul.dataEngine
     },
     created()  {
     },
