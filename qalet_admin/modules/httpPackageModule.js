@@ -6,13 +6,12 @@
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
-					let list = (!err) ? files;
+					let list = (!err) ? files : [];
 				  	for (var i = 0; i < list.length; i++) {
-						files[i] = dirname + '/' + list[i];
+						list[i] = dirname + '/' + list[i];
 					}
 					cbk(list);
 				});
-
 				return true;
 			}
 			_f['app'] = function(cbk) {
