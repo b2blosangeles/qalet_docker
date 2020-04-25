@@ -36,7 +36,7 @@ module.exports = {
         }
     },
     components : {
-        spinner : QALETCOMM.spinner
+        spinner : commonModule.spinner
     },
     created ()  {
     },
