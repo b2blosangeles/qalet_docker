@@ -35,15 +35,47 @@
 				_f,
 				function(data) {
 					me.veuFiles({
-						modules : CP.data.common.concat(CP.data.app)
+						common 	: CP.data.common,
+						app	: CP.data.app
 					});
 				}, 1000
 			)
 		}
+		this.vueFile = function(list, idx) {
+			return function(cbk) {
+				let lfn =  list[idx];
+				pkg.fs.readFile(lfn, 'utf8', function(err, data){
+
+					var template = data.match(/\<template\>((.|\r|\n|\r\n|\n\r)*)\<\/template\>/igm);
+					var templateCode = (!template || !template[0]) ? '<template></template>' : template[0];
+					templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
+
+
+					var script_a = data.match(/\<script\>((.|\r|\n|\r\n|\n\r)*)\<\/script\>/im);
+					var script =  (!script_a || !script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+					script = script.replace(/\s+$/,"")
+					var mscript = script.match(/(\s)module\.exports(\s)\=(\s)\{((.|\r|\n|\r\n|\n\r)*)\}$/im);
+					var scriptCode = (!mscript || !mscript[4]) ? '' : mscript[4];
+					scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+
+					var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
+					var styleCode = (!style || !style[1]) ? '' : style[1];
+					styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
+					cbk ({
+						template : encodeURIComponent(templateCode),
+						script : scriptCode,
+						style : styleCode
+					});
+
+				}); 
+			}
+		}
 		this.veuFiles = function(cfg) {
 			var me = this;
 			var _f = {}; 
-			var list = cfg.modules;
+			var listComm	= cfg.common,
+			    listApp	= cfg.app
+			    
 
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
@@ -72,36 +104,12 @@
 				return true;
 			}	
 			
-			for (var i = 0; i < list.length; i++) {
-				_f['_' + i] = (function(i) {
-					return function(cbk) {
-						let lfn =  list[i];
-						pkg.fs.readFile(lfn, 'utf8', function(err, data){
-							
-							var template = data.match(/\<template\>((.|\r|\n|\r\n|\n\r)*)\<\/template\>/igm);
-							var templateCode = (!template || !template[0]) ? '<template></template>' : template[0];
-							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
-							
-						
-							var script_a = data.match(/\<script\>((.|\r|\n|\r\n|\n\r)*)\<\/script\>/im);
-							var script =  (!script_a || !script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							script = script.replace(/\s+$/,"")
-							var mscript = script.match(/(\s)module\.exports(\s)\=(\s)\{((.|\r|\n|\r\n|\n\r)*)\}$/im);
-							var scriptCode = (!mscript || !mscript[4]) ? '' : mscript[4];
-							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
-							
-							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
-							var styleCode = (!style || !style[1]) ? '' : style[1];
-							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							cbk ({
-								template : encodeURIComponent(templateCode),
-								script : scriptCode,
-								style : styleCode
-							});
-							
-						}); 
-					}
-				})(i)
+			for (var i = 0; i < listComm.length; i++) {
+				_f['comm_' + i] = me.vueFile(listComm, i);
+			}
+	
+			for (var i = 0; i < listApp.length; i++) {
+				_f['app_' + i] = me.vueFile(listApp, i);
 			}
 			
 			CP.serial(
