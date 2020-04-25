@@ -134,17 +134,17 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						var tmp = 'return Vue.component("' + fileName + '", {';
-						tmp += 'template : "' + CP.data['_' + i].template + '", '; 
-						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
-						tmp += CP.data['_' + i].script + '}); ';
+						tmp += 'template : "' + CP.data['app_' + i].template + '", '; 
+						tmp += 'template : decodeURIComponent("' + CP.data['app_' + i].template + '"), '; 
+						tmp += CP.data['app_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
 
 						
 						str += 'try { .' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
-						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
+						str += '} catch (e) { console.log("' + listApp[i] + '::" + e.toString()); }' + "\n";
 												
-						css_str += CP.data['_' + i].style;
+						css_str += CP.data['app_' + i].style;
 						
 					}
 					
@@ -157,9 +157,9 @@
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						var tmp = 'return Vue.component("' + fileName + '", {';
-						tmp += 'template : "' + CP.data['_' + i].template + '", '; 
-						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
-						tmp += CP.data['_' + i].script + '}); ';
+						tmp += 'template : "' + CP.data['comm_' + i].template + '", '; 
+						tmp += 'template : decodeURIComponent("' + CP.data['comm_' + i].template + '"), '; 
+						tmp += CP.data['comm_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
 
 						
