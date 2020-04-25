@@ -19,6 +19,8 @@
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
 				    fn = dirName + '.json',
 				    list = [];
+				cbk(fn);
+				/*
 				try {
 					delete require.cache[fn];
 					list = require(fn);
@@ -27,6 +29,7 @@
 					list[i] = dirname + '/' + list[i];
 				}
 				cbk(list);
+				*/
 			} 
 			CP.serial(
 				_f,
