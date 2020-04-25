@@ -74,7 +74,7 @@
 							// var scriptCode = mscript[4];
 							// scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
-							cbk(script);
+							cbk(mscript);
 							return true;
 							/*
 							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
