@@ -167,7 +167,7 @@
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
 												
-						css_str += CP.data['_' + i].style;
+						css_str += CP.data['comm_' + i].style;
 						
 					}
 					
