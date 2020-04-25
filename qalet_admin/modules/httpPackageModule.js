@@ -34,15 +34,16 @@
 			CP.serial(
 				_f,
 				function(data) {
-					// res.send(data);
-					res.send(CP.data.common.concat(CP.data.app));
+					me.veuFiles({
+						modules : CP.data.common.concat(CP.data.app)
+					});
 				}, 1000
 			)
 		}
 		this.veuFiles = function(cfg) {
 			var me = this;
 			var _f = {}; 
-			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
+			var list = cfg.list, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
@@ -74,7 +75,7 @@
 			for (var i = 0; i < list.length; i++) {
 				_f['_' + i] = (function(i) {
 					return function(cbk) {
-						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+						let lfn =  list[i];
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							
 							var template = data.match(/\<template\>((.|\r|\n|\r\n|\n\r)*)\<\/template\>/igm);
@@ -121,7 +122,7 @@
 					str += "var " + nameSpace + " = {}; \n";
 					
 					for (var i = 0; i < list.length; i++) {
-						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
+						let lfn =  list[i];
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						var tmp = 'return Vue.component("' + fileName + '", {';
