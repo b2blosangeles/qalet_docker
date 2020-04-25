@@ -51,8 +51,8 @@ module.exports = {
         }
     },
     components : {
-         dataEngine : appAdmin.dataEngine,
-         popUp      : appAdmin.popUp
+         dataEngine : commonModul.dataEngine,
+         popUp      : commonModul.popUp
     },
     created()  {
     },
