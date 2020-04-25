@@ -23,8 +23,7 @@
 				try {
 					delete require.cache[fn];
 					var cfg = require(fn);
-					// list = (!cfg.files) ? [] : cfg.files;
-					list = cfg;
+					list = (!cfg.files) ? [] : cfg.files;
 				}  catch (err) {};
 				for (var i = 0; i < list.length; i++) {
 					list[i] =  dirName + '/' + list[i];
