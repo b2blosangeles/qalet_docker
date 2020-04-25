@@ -118,14 +118,10 @@
 				
 					var css_str = '', 
 					str = "/*--- vue.min.js ---*/\n" + CP.data['vue.min.js'] + "\n";
-					
 					str += "/*--- vue-resource.1.5.1.min.js ---*/\n" + CP.data['vue-resource.1.5.1.min.js'] + "\n";
-					
 					str += "/*--- tools.js ---*/\n" +  CP.data['tools'] + "\n";
 					
-					
 					str += "/*--- commModule code ---*/\n"
-					
 					str += "var commModule = {}; \n";
 					
 					for (var i = 0; i < listComm.length; i++) {
@@ -150,7 +146,6 @@
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
 					str += "/*--- " + nameSpace + " code ---*/\n"
-					
 					str += "var " + nameSpace + " = {}; \n";
 					
 					for (var i = 0; i < listApp.length; i++) {
@@ -173,7 +168,7 @@
 					}
 					
 					css_str = encodeURIComponent(css_str);
-					str += "Vue.tools.addcss('" + css_str + "');" + "\n";
+					str += "Vue.tools.addcss('" + css_str + "'); console.log('" + css_str + "'); " + "\n";
 					
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
