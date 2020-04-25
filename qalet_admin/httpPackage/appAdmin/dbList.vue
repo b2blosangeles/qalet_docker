@@ -51,8 +51,8 @@ module.exports = {
         }
     },
     components : {
-         dataEngine : QALETCOMM.dataEngine,
-         popUp      : QALETCOMM.popUp
+         dataEngine : appAdmin.dataEngine,
+         popUp      : appAdmin.popUp
     },
     created()  {
     },
