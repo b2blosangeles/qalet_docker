@@ -8,7 +8,7 @@
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
-				  cbk(files)
+				  cbk((!err) ? [] : files)
 				});
 				return true;
 			}
