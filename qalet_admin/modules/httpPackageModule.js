@@ -15,9 +15,9 @@
 				return true;
 			}
 			_f['app'] = function(cbk) {
-				var appName = p.replace(/^\//, ''),
-				    dirName = env.adminFolder + '/httpPackage/' + appName,
-				    fn = dirName + '.json',
+				var appName = p.replace(/^\//, '');
+				var dirName = env.adminFolder + '/httpPackage/' + appName;
+				var fn = dirName + '.json',
 				    list = [];
 				try {
 					delete require.cache[fn];
