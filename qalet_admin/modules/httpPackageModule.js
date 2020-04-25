@@ -43,7 +43,7 @@
 		this.veuFiles = function(cfg) {
 			var me = this;
 			var _f = {}; 
-			var list = cfg.list, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
+			var list = cfg.modules;
 
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
