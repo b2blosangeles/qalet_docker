@@ -20,7 +20,8 @@ if (!_qalet) var _qalet = {};
 
 // $(document).ready(function(){
         var globalComponents = {
-            dbList : QALETCOMM.dbList;
+            dbList : QALETCOMM.dbList,
+            hostList : QALETCOMM.hostList
         }
         var NotFound = { 
             template: '<message postTitle="Page not found"></message>',
