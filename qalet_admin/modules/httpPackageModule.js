@@ -140,7 +140,7 @@
 						tmp = encodeURIComponent(tmp);
 
 						
-						str += 'try { .' + fileName;
+						str += 'try { ' + nameSpace + '.' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + listApp[i] + '::" + e.toString()); }' + "\n";
 												
