@@ -22,7 +22,7 @@
 			
 				try {
 					delete require.cache[fn];
-					var cfg = require(fn)
+					var cfg = require(fn);
 					list = (!cfg.files) ? [] : cfg.files;
 				}  catch (err) {};
 				for (var i = 0; i < list.length; i++) {
