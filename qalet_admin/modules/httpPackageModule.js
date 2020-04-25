@@ -15,12 +15,11 @@
 				return true;
 			}
 			_f['app'] = function(cbk) {
-				var appName = p.replace(/^\//, ''),
+				var appName = req.query.nameSpace,
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
 				    fn = dirName + '.json',
 				    list = [];
-				cbk(fn);
-				
+			
 				try {
 					delete require.cache[fn];
 					var cfg = require(fn)
