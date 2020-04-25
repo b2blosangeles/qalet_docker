@@ -36,7 +36,7 @@ module.exports = {
         }
     },
     components : {
-        spinner : commonModule.spinner
+        spinner : commModule.spinner
     },
     created ()  {
     },
