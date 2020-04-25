@@ -23,7 +23,7 @@
 				try {
 					delete require.cache[fn];
 					var cfg = require(fn);
-					list = (!cfg.files) ? [] : cfg.files;
+					list = (!cfg.modules) ? [] : cfg.modules;
 				}  catch (err) {};
 				for (var i = 0; i < list.length; i++) {
 					list[i] =  dirName + '/' + list[i];
@@ -34,9 +34,9 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send(data);
-					// res.send(CP.data.common.concat(CP.data.app);
-				}, 6000
+					// res.send(data);
+					res.send(CP.data.common.concat(CP.data.app);
+				}, 1000
 			)
 		}
 		this.veuFiles = function(cfg) {
