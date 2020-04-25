@@ -2,9 +2,7 @@
 	var obj =  function (env, pkg, req, res) {
 		var CP = new pkg.crowdProcess(); 
 		this.call = function(p) {
-			var me = this;
-			
-			var _f = {};
+			var me = this, _f = {};
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
@@ -12,6 +10,7 @@
 				});
 				return true;
 			}
+			/*
 			_f['app'] = function(cbk) {
 				var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
 				pkg.fs.stat(fn, function(err, stat) {
@@ -31,12 +30,13 @@
 					  res.render('html/page404.ect');
 				      }
 				});
-			} CP.serial(
+			} */
+			CP.serial(
 				_f,
 				function(data) {
 					res.send(data);
 				}, 6000
-			}
+			)
 		}
 		this.veuFiles = function(cfg) {
 			var me = this;
