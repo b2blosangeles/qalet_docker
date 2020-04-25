@@ -6,26 +6,28 @@
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
-				  cbk((!err) ? files : [])
+					let list = (!err) ? files;
+				  	for (var i = 0; i < list.length; i++) {
+						files[i] = dirname + '/' + list[i];
+					}
+					cbk(list);
 				});
-				for (var i = 0; i < files.length; i++) {
-					files[i] = dirname + '/' + files[i];
-				}
+
 				return true;
 			}
 			_f['app'] = function(cbk) {
 				var appName = p.replace(/^\//, ''),
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
-				    fn = dirName + '.json';
-				var files = []
+				    fn = dirName + '.json',
+				    list = []
 				try {
 					delete require.cache[fn];
-					files = require(fn);
+					list = require(fn);
 				}  catch (err) {};
-				for (var i = 0; i < files.length; i++) {
-					files[i] = dirname + '/' + files[i];
+				for (var i = 0; i < list.length; i++) {
+					list[i] = dirname + '/' + list[i];
 				}
-				cbk(files);
+				cbk(list);
 			} 
 			CP.serial(
 				_f,
