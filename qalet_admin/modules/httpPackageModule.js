@@ -36,7 +36,7 @@
 			CP.serial(
 				_f,
 				function(data) {
-					res.send(children = CP.data.common.concat(CP.data.app);
+					res.send(CP.data.common.concat(CP.data.app);
 				}, 6000
 			)
 		}
