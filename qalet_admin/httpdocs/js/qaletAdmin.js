@@ -18,7 +18,7 @@ if (!_qalet) var _qalet = {};
     };
 })(jQuery);
 
-// $(document).ready(function(){
+$(document).ready(function(){
         var globalComponents = {
               dbList         : QALETCOMM.dbList,
               hostList       : QALETCOMM.hostList,
@@ -69,4 +69,4 @@ if (!_qalet) var _qalet = {};
    
 
     
-// });
+});
