@@ -123,6 +123,30 @@
 					
 					str += "/*--- tools.js ---*/\n" +  CP.data['tools'] + "\n";
 					
+					
+					str += "/*--- commModule code ---*/\n"
+					
+					str += "var commModule = {}; \n";
+					
+					for (var i = 0; i < listComm.length; i++) {
+						let lfn =  listComm[i];
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
+						
+						var tmp = 'return Vue.component("' + fileName + '", {';
+						tmp += 'template : "' + CP.data['comm_' + i].template + '", '; 
+						tmp += 'template : decodeURIComponent("' + CP.data['comm_' + i].template + '"), '; 
+						tmp += CP.data['comm_' + i].script + '}); ';
+						tmp = encodeURIComponent(tmp);
+
+						
+						str += 'try { commModule.' + fileName;
+						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
+						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
+												
+						css_str += CP.data['comm_' + i].style;
+						
+					}
+					
 					var nameSpace = (req.query.nameSpace) ? req.query.nameSpace : 'vueCommon';
 					
 					str += "/*--- " + nameSpace + " code ---*/\n"
@@ -145,29 +169,6 @@
 						str += '} catch (e) { console.log("' + listApp[i] + '::" + e.toString()); }' + "\n";
 												
 						css_str += CP.data['app_' + i].style;
-						
-					}
-					
-					str += "/*--- commModule code ---*/\n"
-					
-					str += "var commModule = {}; \n";
-					
-					for (var i = 0; i < listComm.length; i++) {
-						let lfn =  listComm[i];
-						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
-						
-						var tmp = 'return Vue.component("' + fileName + '", {';
-						tmp += 'template : "' + CP.data['comm_' + i].template + '", '; 
-						tmp += 'template : decodeURIComponent("' + CP.data['comm_' + i].template + '"), '; 
-						tmp += CP.data['comm_' + i].script + '}); ';
-						tmp = encodeURIComponent(tmp);
-
-						
-						str += 'try { commModule.' + fileName;
-						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
-						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
-												
-						css_str += CP.data['comm_' + i].style;
 						
 					}
 					
