@@ -16,22 +16,16 @@
 			_f['app'] = function(cbk) {
 				var appName = p.replace(/^\//, ''),
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
-				    fn = env.adminFolder + '/httpPackage/' + appName + '.json';
-				pkg.fs.stat(fn, function(err, stat) {
-					let files = []
-					if(err == null) {
-						if (!stat.isDirectory()) {
-							try {
-								delete require.cache[fn];
-								cfg = require(fn);
-							}  catch (err) {};
-						}
-					}
-					for (var i = 0; i < files.length; i++) {
-						files[i] = dirname + '/' + files[i];
-					}
-					cbk(files);
-				});
+				    fn = dirName + '.json';
+				var files = []
+				try {
+					delete require.cache[fn];
+					files = require(fn);
+				}  catch (err) {};
+				for (var i = 0; i < files.length; i++) {
+					files[i] = dirname + '/' + files[i];
+				}
+				cbk(files);
 			} 
 			CP.serial(
 				_f,
