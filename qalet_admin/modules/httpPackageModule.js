@@ -18,7 +18,7 @@
 				var appName = p.replace(/^\//, ''),
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
 				    fn = dirName + '.json',
-				    list = []
+				    list = [];
 				try {
 					delete require.cache[fn];
 					list = require(fn);
