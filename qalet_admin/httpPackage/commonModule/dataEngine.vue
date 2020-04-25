@@ -1,7 +1,7 @@
 <template>
     <span>
     BPINNER
-        <spinner v-bind:trigger="spinnerTrigger" v-bind:config="spinnerConfig"></spinner>
+        <spinner v-bind:trigger="spinnerTrigger" v-bind:config="spinnerConfig">CPINNER</spinner>
     </span>
 </template>
  
