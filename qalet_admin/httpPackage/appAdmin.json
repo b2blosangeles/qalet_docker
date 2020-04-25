@@ -1,6 +1,8 @@
-[
-        "message.vue",
-        "dataEngine.vue",
-        "dbList.vue",
-        "hostList.vue"
-]
+{
+        files:[
+                "message.vue",
+                "dataEngine.vue",
+                "dbList.vue",
+                "hostList.vue"
+       ]
+}
