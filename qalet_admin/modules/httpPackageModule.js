@@ -1,30 +1,46 @@
 (function () { 
 	var obj =  function (env, pkg, req, res) {
+		var CP = new pkg.crowdProcess(); 
 		this.call = function(p) {
 			var me = this;
-			var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
-			pkg.fs.stat(fn, function(err, stat) {
-			      if(err == null) {
-				  if (stat.isDirectory()) {
-					res.render('html/page404.ect');
-				  } else {
-					let cfg = {};
-					try {
-						delete require.cache[fn];
-						cfg = require(fn);
-					}  catch (err) {}
-
-					me.veuFiles(cfg);
-				  }
-			      } else if(err.code === 'ENOENT') {
-				  res.render('html/page404.ect');
-			      }
-			});
+			
+			var _f = {};
+			_f['common'] = function(cbk) {
+				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
+				pkg.fs.readdir(dirname, (err, files) => {
+				  cbk(files)
+				});
+				return true;
+			}
+			_f['app'] = function(cbk) {
+				var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
+				pkg.fs.stat(fn, function(err, stat) {
+				      if(err == null) {
+					  if (stat.isDirectory()) {
+						res.render('html/page404.ect');
+					  } else {
+						let cfg = [];
+						try {
+							delete require.cache[fn];
+							cfg = require(fn);
+						}  catch (err) {}
+						cbk(cfg);
+						// me.veuFiles(cfg);
+					  }
+				      } else if(err.code === 'ENOENT') {
+					  res.render('html/page404.ect');
+				      }
+				});
+			} CP.serial(
+				_f,
+				function(data) {
+					res.send(data);
+				}, 6000
+			}
 		}
-
 		this.veuFiles = function(cfg) {
 			var me = this;
-			var CP = new pkg.crowdProcess(),_f = {}; 
+			var _f = {}; 
 			var list = cfg.files, _folder = env.adminFolder + '/httpPackage' + cfg.folder;
 
 			_f['vue.min.js'] = function(cbk) {
