@@ -29,7 +29,7 @@
 				for (var i = 0; i < list.length; i++) {
 					list[i] = dirname + '/' + list[i];
 				}
-				cbk(list);
+				cbk(fn);
 				
 			} 
 			CP.serial(
