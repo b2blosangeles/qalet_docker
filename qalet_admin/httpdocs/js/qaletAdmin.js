@@ -21,10 +21,7 @@ if (!_qalet) var _qalet = {};
 $(document).ready(function(){
         var globalComponents = {
               dbList         : appAdmin.dbList,
-              hostList       : appAdmin.hostList,
-              messageSectionA: appAdmin.componentA,
-              messageSectionB: appAdmin.componentB,
-              messageSectionC: appAdmin.componentC
+              hostList       : appAdmin.hostList
         }
         var NotFound = { 
             template: '<message postTitle="Page not found"></message>',
