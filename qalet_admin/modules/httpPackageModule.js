@@ -20,16 +20,17 @@
 				    fn = dirName + '.json',
 				    list = [];
 				cbk(fn);
-				/*
+				
 				try {
 					delete require.cache[fn];
-					list = require(fn);
+					var cfg = require(fn)
+					list = (!cfg.files) ? [] : cfg.files;
 				}  catch (err) {};
 				for (var i = 0; i < list.length; i++) {
 					list[i] = dirname + '/' + list[i];
 				}
 				cbk(list);
-				*/
+				
 			} 
 			CP.serial(
 				_f,
