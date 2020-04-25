@@ -14,7 +14,6 @@
 				});
 				return true;
 			}
-			/*
 			_f['app'] = function(cbk) {
 				var appName = p.replace(/^\//, ''),
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
@@ -28,7 +27,7 @@
 					list[i] = dirname + '/' + list[i];
 				}
 				cbk(list);
-			} */
+			} 
 			CP.serial(
 				_f,
 				function(data) {
