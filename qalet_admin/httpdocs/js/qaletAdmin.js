@@ -28,15 +28,15 @@ if (!_qalet) var _qalet = {};
                 }
     
         var NotFound = { 
-            template: '<message-section-a postTitle="Page not found"></message-section-a>',
+            template: '<message postTitle="Page not found"></message>',
             components : globalComponents 
          },
          Home = { 
-            template: '<message-section-b postTitle="Home"></message-section-b>',
+            template: '<message postTitle="Home"></message>',
             components : globalComponents 
          },
          About = { 
-            template: '<message-section-c postTitle="About"> </message-section-c>',
+            template: '<message postTitle="About"> </message>',
             components : globalComponents 
          },
          Databases = { 
