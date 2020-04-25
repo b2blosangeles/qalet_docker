@@ -60,8 +60,6 @@
 						let lfn =  _folder + '/' + list[i].replace(/^\//, '');
 						pkg.fs.readFile(lfn, 'utf8', function(err, data){
 							
-						//	data = data.replace(/(\r|\n|\r\n|\n\r)/gim,'');
-							
 							var template = data.match(/\<template\>((.|\r|\n|\r\n|\n\r)*)\<\/template\>/igm);
 							var templateCode = (!template || !template[0]) ? '<template></template>' : template[0];
 							templateCode = templateCode.replace(/(\r|\n|\r\n|\n\r)/gim,'');
@@ -77,7 +75,6 @@
 							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
 							var styleCode = (!style || !style[1]) ? '' : style[1];
 							styleCode =styleCode.replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
-							// template : encodeURIComponent(template[0]),
 							cbk ({
 								template : encodeURIComponent(templateCode),
 								script : scriptCode,
@@ -118,7 +115,6 @@
 
 						
 						str += 'try { ' + nameSpace + '.' + fileName;
-						// str +=	' = new Function("'+ tmp + '")() ';
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
 												
