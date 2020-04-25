@@ -26,7 +26,7 @@
 					list = (!cfg.files) ? [] : cfg.files;
 				}  catch (err) {};
 				for (var i = 0; i < list.length; i++) {
-					list[i] = dirname + '/' + list[i];
+					list[i] =  dirName + '/' + list[i];
 				}
 				cbk(list);
 				
