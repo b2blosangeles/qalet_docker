@@ -129,8 +129,8 @@
 					
 					str += "var " + nameSpace + " = {}; \n";
 					
-					for (var i = 0; i < list.length; i++) {
-						let lfn =  list[i];
+					for (var i = 0; i < listApp.length; i++) {
+						let lfn =  listApp[i];
 						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
 						
 						var tmp = 'return Vue.component("' + fileName + '", {';
@@ -140,13 +140,37 @@
 						tmp = encodeURIComponent(tmp);
 
 						
-						str += 'try { ' + nameSpace + '.' + fileName;
+						str += 'try { .' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
-						str += '} catch (e) { console.log("' + list[i] + '::" + e.toString()); }' + "\n";
+						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
 												
 						css_str += CP.data['_' + i].style;
 						
 					}
+					
+					str += "/*--- commModule code ---*/\n"
+					
+					str += "var commModule = {}; \n";
+					
+					for (var i = 0; i < listComm.length; i++) {
+						let lfn =  listComm[i];
+						let fileName = lfn.substring(lfn.lastIndexOf('/')+1).replace(/\..*$/,'');
+						
+						var tmp = 'return Vue.component("' + fileName + '", {';
+						tmp += 'template : "' + CP.data['_' + i].template + '", '; 
+						tmp += 'template : decodeURIComponent("' + CP.data['_' + i].template + '"), '; 
+						tmp += CP.data['_' + i].script + '}); ';
+						tmp = encodeURIComponent(tmp);
+
+						
+						str += 'try { commModule.' + fileName;
+						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
+						str += '} catch (e) { console.log("' + listComm[i] + '::" + e.toString()); }' + "\n";
+												
+						css_str += CP.data['_' + i].style;
+						
+					}
+					
 					css_str = encodeURIComponent(css_str);
 					str += "Vue.tools.addcss('" + css_str + "');" + "\n";
 					
