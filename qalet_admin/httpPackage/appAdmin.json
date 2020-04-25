@@ -1,6 +1,9 @@
-[
-        "message.vue",
-        "dataEngine.vue",
-        "dbList.vue",
-        "hostList.vue"
-]
+{
+        "main" : "",
+        "modules" : [
+                "message.vue",
+                "dataEngine.vue",
+                "dbList.vue",
+                "hostList.vue"
+        ]
+}
