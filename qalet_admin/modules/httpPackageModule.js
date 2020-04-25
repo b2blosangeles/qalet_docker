@@ -34,8 +34,8 @@
 			CP.serial(
 				_f,
 				function(data) {
-					// res.send(data);
-					res.send(CP.data.common.concat(CP.data.app);
+					res.send(data);
+					// res.send(CP.data.common.concat(CP.data.app);
 				}, 1000
 			)
 		}
