@@ -6,31 +6,28 @@
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
-				  cbk((!err) ? [] : files)
+				  cbk((!err) ? files : [])
 				});
 				return true;
 			}
-			/*
 			_f['app'] = function(cbk) {
 				var fn = env.adminFolder + '/httpPackage/' + p.replace(/^\//, '') + '.json';
 				pkg.fs.stat(fn, function(err, stat) {
-				      if(err == null) {
-					  if (stat.isDirectory()) {
-						res.render('html/page404.ect');
-					  } else {
-						let cfg = [];
-						try {
-							delete require.cache[fn];
-							cfg = require(fn);
-						}  catch (err) {}
-						cbk(cfg);
-						// me.veuFiles(cfg);
-					  }
-				      } else if(err.code === 'ENOENT') {
-					  res.render('html/page404.ect');
-				      }
+					let cfg = {}
+					if(err == null) {
+						if (stat.isDirectory()) {
+							cbk(false);
+						} else {
+							try {
+								delete require.cache[fn];
+								cfg = require(fn);
+							}  catch (err) {}
+							cbk(cfg);
+						}
+					}
+					cbk(cfg);
 				});
-			} */
+			} 
 			CP.serial(
 				_f,
 				function(data) {
