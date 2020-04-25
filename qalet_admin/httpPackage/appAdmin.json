@@ -2,7 +2,6 @@
         "main" : "",
         "modules" : [
                 "message.vue",
-                "dataEngine.vue",
                 "dbList.vue",
                 "hostList.vue"
         ]
