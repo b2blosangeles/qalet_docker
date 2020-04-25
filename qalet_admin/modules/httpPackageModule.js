@@ -71,10 +71,10 @@
 							var script =  (!script_a[1]) ? '' : script_a[1].replace(/\/\*[\s\S]*?\*\/|^(\s*|^)\/\/.*$/gm, '');
 							script = script.replace(/\s+$/,"")
 							var mscript = script.match(/(\s)module\.exports(\s)\=(\s)\{(.*?)\}$/im);
-							var scriptCode = mscript[4];
-							scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
+							// var scriptCode = mscript[4];
+							// scriptCode = scriptCode.replace(/(\r|\n|\r\n|\n\r)/gim,' ');
 							
-							cbk(scriptCode);
+							cbk(mscript);
 							return true;
 							/*
 							var style = data.match(/\<style\>((.|\r|\n|\r\n|\n\r)*)\<\/style\>/im);
