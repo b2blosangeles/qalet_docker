@@ -19,13 +19,7 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 // $(document).ready(function(){
-        var globalComponents = {
-                  dbList         : QALETCOMM.dbList,
-                  hostList       : QALETCOMM.hostList,
-                  messageSectionA: QALETCOMM.componentA,
-                  messageSectionB: QALETCOMM.componentB,
-                  messageSectionC: QALETCOMM.componentC
-                }
+        var globalComponents = QALETCOMM;
     
         var NotFound = { 
             template: '<message postTitle="Page not found"></message>',
