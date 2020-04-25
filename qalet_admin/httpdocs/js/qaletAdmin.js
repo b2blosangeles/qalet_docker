@@ -19,8 +19,9 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 
 // $(document).ready(function(){
-        var globalComponents = QALETCOMM;
-    
+        var globalComponents = {
+            dbList : QALETCOMM.dbList;
+        }
         var NotFound = { 
             template: '<message postTitle="Page not found"></message>',
             components : globalComponents 
