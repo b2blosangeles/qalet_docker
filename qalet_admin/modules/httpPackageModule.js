@@ -6,7 +6,7 @@
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
-					let list = (!err) ? files : [];
+					var list = (!err) ? files : [];
 				  	for (var i = 0; i < list.length; i++) {
 						list[i] = dirname + '/' + list[i];
 					}
@@ -15,9 +15,9 @@
 				return true;
 			}
 			_f['app'] = function(cbk) {
-				var appName = p.replace(/^\//, '');
-				var dirName = env.adminFolder + '/httpPackage/' + appName;
-				var fn = dirName + '.json',
+				var appName = p.replace(/^\//, ''),
+				    dirName = env.adminFolder + '/httpPackage/' + appName,
+				    fn = dirName + '.json',
 				    list = [];
 				try {
 					delete require.cache[fn];
