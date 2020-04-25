@@ -49,7 +49,7 @@ module.exports = {
         }
     },
     components : {
-        dataEngine : QALETCOMM.dataEngine
+        dataEngine : appAdmin.dataEngine
     },
     created()  {
     },
