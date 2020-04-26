@@ -1,7 +1,17 @@
 <template>
     <div>
         <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup"><div class="popupWindow"> popups  </div></div>
+        <div class="overlay_popup">
+            <div class="popupBody">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>           
+            </div>
+        </div>
     </div>    
 </template>
 
@@ -33,7 +43,7 @@ module.exports = {
 }
 
  
-.popupWindow {
+.popupBody {
     background-color: #ffff;
     width : 640px;
     margin: 0 auto;
