@@ -1,5 +1,5 @@
 <template>
-    <div v-if="true">
+    <div v-if="false">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popupBody">
