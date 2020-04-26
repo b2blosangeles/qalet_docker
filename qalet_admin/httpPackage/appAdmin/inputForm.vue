@@ -1,6 +1,6 @@
 <template>
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
+        <div class="card-body card-body-height">
           <h5 class="card-title">Input Form keep-alive v9</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <button class="btn btn-primary" v-on:click="closePopup()">clost popup</button>
@@ -28,4 +28,5 @@ module.exports = {
 </script>
 
 <style>
+. card-body-height { min-height : 80%}
 </style>
