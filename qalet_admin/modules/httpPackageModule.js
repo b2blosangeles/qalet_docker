@@ -16,7 +16,7 @@
 			
 			res.send(cfg);
 			return true;
-			
+			/*
 			_f['common'] = function(cbk) {
 				var dirCommon = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirCommon, (err, files) => {
@@ -37,7 +37,7 @@
 				cbk(list);
 				
 			}
-			/*
+			
 			_f['main'] = function(cbk) {
 				if (!cfg.main) {
 					cbk(false)
@@ -46,7 +46,7 @@
 						cbk ((err)? false :data);
 					});
 				}
-			} */
+			} 
 			CP.serial(
 				_f,
 				function(data) {
@@ -57,6 +57,7 @@
 					});
 				}, 1000
 			)
+			*/
 		}
 		this.vueFile = function(list, idx) {
 			return function(cbk) {
