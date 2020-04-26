@@ -14,7 +14,7 @@ module.exports = {
             popUpOn : false
         }
     },
-    method : {
+    methods : {
         popUp() {
             popUpOn = true
         }
