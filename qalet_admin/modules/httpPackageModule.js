@@ -171,7 +171,6 @@
 						tmp += CP.data['app_' + i].script + '}); ';
 						tmp = encodeURIComponent(tmp);
 
-						
 						str += 'try { ' + nameSpace + '.' + fileName;
 						str +=	' = new Function(decodeURIComponent("'+ tmp + '"))() '; 
 						str += '} catch (e) { console.log("' + listApp[i] + '::" + e.toString()); }' + "\n";
@@ -183,11 +182,11 @@
 					
 					css_str = encodeURIComponent(css_str);
 					str += "Vue.tools.addcss('" + css_str + "'); " + "\n";
-					
+					/*
 					if (CP.data.main) {
-						str += "/*--- App main code ---*/\n"
+						// str += "/*--- App main code ---*/\n"
 						str += CP.data.main;
-					}
+					}*/
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
