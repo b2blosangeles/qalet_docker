@@ -31,6 +31,7 @@
 				cbk(list);
 				
 			}
+			/*
 			_f['main'] = function(cbk) {
 				var appName = req.query.nameSpace,
 				    dirName = env.adminFolder + '/httpPackage/' + appName;
@@ -41,7 +42,7 @@
 						cbk ((err)? false :data);
 					});
 				}
-			} 
+			} */
 			CP.serial(
 				_f,
 				function(data) {
