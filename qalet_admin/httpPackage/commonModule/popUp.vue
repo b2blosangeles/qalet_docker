@@ -3,7 +3,7 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popup_body rounded shadow">
-                <button type="button" class="close m-2" aria-label="Close">
+                <button type="button" class="close m-2" aria-label="Close" v-click="closePopup()">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <keep-alive>
