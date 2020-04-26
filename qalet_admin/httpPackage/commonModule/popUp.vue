@@ -18,7 +18,7 @@ module.exports = {
     height: 100%; width: 100%;
     z-index: 5001;
     top: 0; left: 0;
-    float: left;
+    // float: left;
     text-align: center;
     padding-top: 6em;
     opacity: 1
