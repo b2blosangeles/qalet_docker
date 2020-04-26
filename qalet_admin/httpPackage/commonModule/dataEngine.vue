@@ -36,9 +36,10 @@ module.exports = {
             }
         }
     },
-    components : {
-        spinner : commModule.spinner
-    },
+     components  : commModule,
+ //   components : {
+ //       spinner : commModule.spinner
+ //   },
     created ()  {
     },
     methods : {
