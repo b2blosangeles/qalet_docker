@@ -3,27 +3,28 @@
 		var CP = new pkg.crowdProcess(); 
 		this.call = function(p) {
 			var me = this, _f = {}, cfg = {};
+			
+			var appName = req.query.nameSpace,
+				    dirName = env.adminFolder + '/httpPackage/' + appName,
+				    fn = dirName + '.json';
 			try {
 				delete require.cache[fn];
 				var cfg = require(fn);
 			}  catch (err) {};
 			
 			_f['common'] = function(cbk) {
-				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
-				pkg.fs.readdir(dirname, (err, files) => {
+				var dirCommon = env.adminFolder + '/httpPackage/commonModule'; 
+				pkg.fs.readdir(dirCommon, (err, files) => {
 					var list = (!err) ? files : [];
 				  	for (var i = 0; i < list.length; i++) {
-						list[i] = dirname + '/' + list[i];
+						list[i] = dirCommon + '/' + list[i];
 					}
 					cbk(list);
 				});
 				return true;
 			}
-			_f['app'] = function(cbk) {
-				var appName = req.query.nameSpace,
-				    dirName = env.adminFolder + '/httpPackage/' + appName,
-				    fn = dirName + '.json',
-				    list = (!cfg.modules) ? [] : cfg.modules;
+			_f['app']  = function(cbk) {
+				var list = (!cfg.modules) ? [] : cfg.modules;
 		
 				for (var i = 0; i < list.length; i++) {
 					list[i] =  dirName + '/' + list[i];
@@ -31,10 +32,8 @@
 				cbk(list);
 				
 			}
-			/*
+			
 			_f['main'] = function(cbk) {
-				var appName = req.query.nameSpace,
-				    dirName = env.adminFolder + '/httpPackage/' + appName;
 				if (!cfg.main) {
 					cbk(false)
 				} else {
@@ -42,7 +41,7 @@
 						cbk ((err)? false :data);
 					});
 				}
-			} */
+			} 
 			CP.serial(
 				_f,
 				function(data) {
