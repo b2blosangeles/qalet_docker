@@ -3,6 +3,9 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popup_body rounded shadow">
+                <button type="button" class="close" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
                 <keep-alive>
                   <component :is="config.dynamicPlugin"></component>
                 </keep-alive>          
