@@ -1,7 +1,7 @@
 <template>
    <span>
         hello friend {{title}}
-        <pop-up ref="popUp1" v-bind:config={{}}></pop-up>
+        <pop-up ref="popUp1" v-bind:config="popupConfig"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="callPopUp()">Pop Up</button>
    </span>
 </template>
@@ -11,6 +11,7 @@ module.exports = {
     props: ['title'],
     data: function() {  
         return { 
+         popupConfig : {}
         }
     },
     components : {
