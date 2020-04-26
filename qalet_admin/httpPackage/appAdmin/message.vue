@@ -23,9 +23,10 @@ module.exports = {
                dynamicPlugin  :  appAdmin.inputForm
            };
            if (this.formCode === 'A') {
-               v.dynamicPlugin = appAdmin.inputFormA
+               v.noCloseIcon = true;
+               v.dynamicPlugin = appAdmin.inputFormA;
            } else {
-               v.dynamicPlugin = appAdmin.inputForm
+               v.dynamicPlugin = appAdmin.inputForm;
            }
            return v
         },
