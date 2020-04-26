@@ -11,13 +11,10 @@ module.exports = {
     props: ['title'],
     data: function() {  
         return {
-           dynamicPopup : appAdmin.inputForm,
-           config : {
-               dynamicPopup : appAdmin.inputForm
-           }
+           dynamicPlugin : appAdmin.inputForm
         }
     },
-    components : {dynamicPlugin : appAdmin.inputForm },
+    components : {},
     methods : {
         activePopUp() {
            this.$refs.popUp1.activePopUp();
