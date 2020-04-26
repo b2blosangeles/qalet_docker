@@ -2,17 +2,10 @@
     <div v-if="showPopup">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popup_body r-3">
+            <div class="popup_body rounded r-3">
                 <keep-alive>
                   <component :is="config.dynamicPlugin"></component>
-                </keep-alive>
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button class="btn btn-primary" v-on:click="closePopup()">clost popup</button>
-                  </div>
-                </div>           
+                </keep-alive>          
             </div>
         </div>
     </div>    
