@@ -15,6 +15,7 @@ module.exports = {
             formCode : ''
         }
     },
+    components : [ commModule.popUp ],
     methods : {
         popUpConfig() {
            let v = {
