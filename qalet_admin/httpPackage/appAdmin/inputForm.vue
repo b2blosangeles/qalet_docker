@@ -1,7 +1,7 @@
 <template>
       <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Input Form</h5>
+          <h5 class="card-title">Input Form keep-alive</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <button class="btn btn-primary" v-on:click="setPopupStatus(false)">clost popup</button>
         </div>
@@ -19,7 +19,7 @@ module.exports = {
     },
     methods : {
         setPopupStatus(v) {
-            this.$parent.setPopupStatus(false);
+            this.$parent.showPopup = false;
         }
     }
 }
