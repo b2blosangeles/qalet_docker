@@ -21,7 +21,7 @@ module.exports = {
 
         closePopupA() {
             alert('appAdmin.inputForm');
-            this.$parent.$parent.closePopup = false;
+            this.$parent.closePopup();
         }
      
     }
