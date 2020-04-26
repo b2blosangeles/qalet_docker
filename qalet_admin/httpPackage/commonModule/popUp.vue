@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup"><div class="popupWindow"> v-wt-v#v# &  </div></div>
+        <div class="overlay_popup"><div class="popupWindow"> popups  </div></div>
     </div>    
 </template>
 
@@ -18,7 +18,6 @@ module.exports = {
     height: 100%; width: 100%;
     z-index: 5001;
     top: 0; left: 0;
-    // float: left;
     text-align: center;
     padding-top: 6em;
     opacity: 1
