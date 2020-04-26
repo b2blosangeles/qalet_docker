@@ -89,8 +89,8 @@
 			var me = this;
 			var _f = {}; 
 			var listComm	= cfg.common,
-			    listApp	= cfg.app
-			    
+			    listApp	= cfg.app,
+			    mainCode	= cfg.main;
 
 			_f['vue.min.js'] = function(cbk) {
 				let lfn = env.adminFolder  + '/httpPackage/lib/vue.min.js'; 
@@ -185,8 +185,8 @@
 					css_str = encodeURIComponent(css_str);
 					str += "Vue.tools.addcss('" + css_str + "'); " + "\n";
 					
-					if (CP.data.main) {
-						str += CP.data.main;
+					if (mainCode) {
+						str += mainCode;
 					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
