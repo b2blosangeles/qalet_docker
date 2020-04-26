@@ -19,7 +19,7 @@ module.exports = {
     methods : {
         popUpConfig() {
            let v = {
-               isCloseIcon    : false,
+               noCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
            };
            if (this.formCode === 'A') {
