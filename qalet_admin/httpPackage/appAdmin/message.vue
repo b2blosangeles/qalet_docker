@@ -3,7 +3,7 @@
         hello friend {{title}}  
         <pop-up ref="popUp1" v-bind:config="popUpConfig()"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="activePopUp('')">Form</button>
-        <button type="button" class="btn btn-success"  v-on:click="activePopUp('A')">Form A</button>
+        <button type="button" class="btn btn-warning"  v-on:click="activePopUp('A')">Form A</button>
    </span>
 </template>
  
@@ -22,7 +22,7 @@ module.exports = {
                isCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
            };
-           if (formCode === 'A') {
+           if (this.formCode === 'A') {
                v.dynamicPlugin = appAdmin.inputFormA
            } else {
                v.dynamicPlugin = appAdmin.inputForm
@@ -30,7 +30,7 @@ module.exports = {
            return v
         },
         activePopUp(code) {
-           this.ormCode = code;
+           this.formCode = code;
            this.$refs.popUp1.activePopUp();
         }
     }
