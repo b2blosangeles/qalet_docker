@@ -2,7 +2,12 @@
 	var obj =  function (env, pkg, req, res) {
 		var CP = new pkg.crowdProcess(); 
 		this.call = function(p) {
-			var me = this, _f = {};
+			var me = this, _f = {}, cfg = {};
+			try {
+				delete require.cache[fn];
+				var cfg = require(fn);
+			}  catch (err) {};
+			
 			_f['common'] = function(cbk) {
 				var dirname = env.adminFolder + '/httpPackage/commonModule'; 
 				pkg.fs.readdir(dirname, (err, files) => {
@@ -18,25 +23,32 @@
 				var appName = req.query.nameSpace,
 				    dirName = env.adminFolder + '/httpPackage/' + appName,
 				    fn = dirName + '.json',
-				    list = [];
-			
-				try {
-					delete require.cache[fn];
-					var cfg = require(fn);
-					list = (!cfg.modules) ? [] : cfg.modules;
-				}  catch (err) {};
+				    list = (!cfg.modules) ? [] : cfg.modules;
+		
 				for (var i = 0; i < list.length; i++) {
 					list[i] =  dirName + '/' + list[i];
 				}
 				cbk(list);
 				
+			}
+			_f['main'] = function(cbk) {
+				var appName = req.query.nameSpace,
+				    dirName = env.adminFolder + '/httpPackage/' + appName;
+				if (!cfg.main) {
+					cbk(false)
+				} else {
+					pkg.fs.readFile(dirName + '/' + cfg.main, 'utf8', function (err,data) {
+						cbk ((err)? false :data);
+					});
+				}
 			} 
 			CP.serial(
 				_f,
 				function(data) {
 					me.veuFiles({
 						common 	: CP.data.common,
-						app	: CP.data.app
+						app	: CP.data.app,
+						main	: 
 					});
 				}, 1000
 			)
@@ -166,10 +178,15 @@
 						css_str += CP.data['app_' + i].style;
 						
 					}
+					 
 					
 					css_str = encodeURIComponent(css_str);
 					str += "Vue.tools.addcss('" + css_str + "'); " + "\n";
 					
+					if (CP.data.main) {
+						str += "/*--- App main code ---*/\n"
+						str += CP.data.main;
+					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
