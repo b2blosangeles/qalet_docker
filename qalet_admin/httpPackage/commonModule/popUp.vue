@@ -4,7 +4,7 @@
         <div class="overlay_popup">
             <div class="popup_body r-3">
                 <keep-alive>
-                  <component :is="appAdmin.inputForm"></component>
+                  <component :is="dynamicPopup"></component>
                 </keep-alive>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
@@ -25,8 +25,6 @@ module.exports = {
         return {
             showPopup : false
         }
-    },
-    components : {
     },
     methods : {
         closePopup() {
