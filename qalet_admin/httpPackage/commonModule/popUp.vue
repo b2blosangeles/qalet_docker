@@ -3,7 +3,7 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popup_body r-3">
-                <keep-alive v-if="false">
+                <keep-alive>
                   <component :is="dynamicPlugin"></component>
                 </keep-alive>
                 <div class="card" style="width: 18rem;">
