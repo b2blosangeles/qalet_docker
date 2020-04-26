@@ -18,7 +18,8 @@ module.exports = {
     components : {
     },
     methods : {
-        closePopup(v) {
+        closePopup() {
+            alert('appAdmin.inputForm');
             this.$parent.closePopup = false;
         }
     }
