@@ -28,5 +28,5 @@ module.exports = {
 </script>
 
 <style>
-. card-body-height { min-height : 80%}
+.card-body-height { min-height : 80%}
 </style>
