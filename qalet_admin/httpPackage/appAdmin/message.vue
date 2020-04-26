@@ -1,7 +1,7 @@
 <template>
    <span>
         hello friend {{title}}  
-        <pop-up ref="popUp1" dynamicPlugin="dynamicPlugin"></pop-up>
+        <pop-up ref="popUp1" v-bind:dynamicPlugin="dynamicPlugin"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="activePopUp()">Pop Up</button>
    </span>
 </template>
