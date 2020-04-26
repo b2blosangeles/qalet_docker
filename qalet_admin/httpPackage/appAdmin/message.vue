@@ -1,5 +1,8 @@
 <template>
-    <span>hello friend {{title}}</span>
+    <span>
+        hello friend {{title}}
+        <pop-up></pop-up>
+    </span>
 </template>
  
 <script>
