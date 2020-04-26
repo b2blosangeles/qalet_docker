@@ -1,8 +1,8 @@
 <template>
    <span>
         hello friend {{title}}
-        <pop-up ref="popUp1" v-bind:config="popupConfig"></pop-up>
-        <button type="button" class="btn btn-success"  v-on:click="callPopUp()">Pop Up</button>
+        <pop-up ref="popUp1" v-bind:dynamicPopup="dynamicPopup"></pop-up>
+        <button type="button" class="btn btn-success"  v-on:click="activePopUp()">Pop Up</button>
    </span>
 </template>
  
@@ -14,12 +14,13 @@ module.exports = {
            popupConfig : {inputForm : appAdmin.inputForm}
         }
     },
-    components : {
-         popUp      : commModule.popUp
-    },
+    components : {},
     methods : {
-        callPopUp() {
-           this.$refs.popUp1.setPopupStatus(true);
+        dynamicPopup () {
+            return commModule.popUp
+        },
+        activePopUp() {
+           this.$refs.popUp1.activePopUp();
         }
     }
 }
