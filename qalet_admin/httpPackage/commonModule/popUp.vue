@@ -27,7 +27,6 @@ module.exports = {
         }
     },
     components : {
-     //   insideContent : appAdmin.inputForm
     },
     methods : {
         closePopup() {
