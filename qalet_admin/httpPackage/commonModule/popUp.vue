@@ -21,6 +21,9 @@ module.exports = {
     methods : {
         closePopup() {
             this.$parent.setPopUp(false);
+        },
+        fromParent() {
+            alert('fromParent');
         }
     }
 }
