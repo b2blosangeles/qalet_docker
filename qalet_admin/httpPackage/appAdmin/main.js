@@ -1,3 +1,4 @@
+/*
 if (!_qalet) var _qalet = {};
 
 (function ($) {
@@ -17,8 +18,8 @@ if (!_qalet) var _qalet = {};
         return o;
     };
 })(jQuery);
-
-$(document).ready(function(){
+*/
+// $(document).ready(function(){
         var globalComponents = {
               dbList         : appAdmin.dbList,
               hostList       : appAdmin.hostList
@@ -66,4 +67,4 @@ $(document).ready(function(){
    
 
     
-});
+// });
