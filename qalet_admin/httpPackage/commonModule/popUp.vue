@@ -24,7 +24,7 @@ module.exports = {
         }
     },
     components : {
-        insideContent : this.config.insideContent
+    //    insideContent : this.config.insideContent
     },
     methods : {
         setPopupStatus(v) {
