@@ -20,7 +20,7 @@ module.exports = {
                isCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
            }
-           return appAdmin.inputForm
+           return v
         },
         activePopUp() {
            this.$refs.popUp1.activePopUp();
