@@ -24,7 +24,7 @@ module.exports = {
             this.$refs.ppp.fromParent();
         },
         callPopUp(v) {
-           this.$refs.ppp.fromParent()
+           this.$refs[ppp].fromParent()
         }
     }
 }
