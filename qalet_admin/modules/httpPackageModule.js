@@ -11,10 +11,7 @@
 			try {
 				delete require.cache[fn];
 				var cfg = require(fn);
-			}  catch (err) {};
-			res.send(cfg);
-			return true;
-					
+			}  catch (err) {};	
 
 			_f['common'] = function(cbk) {
 				var dirCommon = env.adminFolder + '/httpPackage/commonModule'; 
@@ -46,18 +43,18 @@
 					});
 				}
 			} 
-			/*
+			
 			CP.serial(
 				_f,
 				function(data) {
 					me.veuFiles({
 						common 	: CP.data.common,
 						app	: CP.data.app,
-						main	: 
+						main	: CP.data.main
 					});
 				}, 1000
 			)
-			*/
+			
 		}
 		this.vueFile = function(list, idx) {
 			return function(cbk) {
@@ -187,10 +184,10 @@
 					
 					css_str = encodeURIComponent(css_str);
 					str += "Vue.tools.addcss('" + css_str + "'); " + "\n";
-					/*
+					
 					if (CP.data.main) {
 						str += CP.data.main;
-					}*/
+					}
 					res.header("Access-Control-Allow-Origin", "*");
 					res.header("Access-Control-Allow-Headers", "X-Requested-With");
 					res.header('Access-Control-Allow-Headers', 'Content-Type'); 
