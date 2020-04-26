@@ -3,7 +3,7 @@
         <div class="card-body">
           <h5 class="card-title">Input Form keep-alive</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button class="btn btn-primary" v-on:click="setPopupStatus(false)">clost popup</button>
+          <button class="btn btn-primary" v-on:click="closePopup()">clost popup</button>
         </div>
       </div>
 </template>
@@ -18,8 +18,8 @@ module.exports = {
     components : {
     },
     methods : {
-        setPopupStatus(v) {
-            this.$parent.showPopup = false;
+        closePopup(v) {
+            this.$parent.closePopup = false;
         }
     }
 }
