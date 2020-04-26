@@ -1,5 +1,5 @@
 <template>
-    <div v-if="popupStatus">
+    <div v-if="true">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popupBody">
