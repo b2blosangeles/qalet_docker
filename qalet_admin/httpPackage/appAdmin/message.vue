@@ -19,7 +19,6 @@ module.exports = {
     },
     methods : {
         setPopUp(v) {
-            alert(v);
             this.popUpOn = v
         }
     }
