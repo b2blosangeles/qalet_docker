@@ -31,7 +31,7 @@ module.exports = {
     methods : {
         closePopup() {
             this.showPopup = false;
-        }      
+        },    
         activePopUp() {
             this.showPopup = true;
         }
