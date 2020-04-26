@@ -25,7 +25,7 @@ module.exports = {
         }
     },
     components : {
-        insideContent : config.inputFrom
+        insideContent : appAdmin.inputFrom
     },
     methods : {
         setPopupStatus(v) {
