@@ -20,6 +20,7 @@ if (!_qalet) var _qalet = {};
 })(jQuery);
 */
 // $(document).ready(function(){
+window.addEventListener("load", function(event) {
         var globalComponents = {
               dbList         : appAdmin.dbList,
               hostList       : appAdmin.hostList
@@ -64,7 +65,7 @@ if (!_qalet) var _qalet = {};
           },
           render (h) { return h(this.ViewComponent) }
         });
-   
+});   
 
     
 // });
