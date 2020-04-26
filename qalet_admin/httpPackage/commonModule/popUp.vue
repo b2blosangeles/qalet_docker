@@ -17,11 +17,11 @@
 
 <script>
 module.exports = {
-    props: []
-}
-methods : {
-    closePopup() {
-        this.$parent.setPopUp(false);
+    props: [],
+    methods : {
+        closePopup() {
+            this.$parent.setPopUp(false);
+        }
     }
 }
 </script>
