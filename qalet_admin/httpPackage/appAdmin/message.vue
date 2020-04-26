@@ -19,7 +19,7 @@ module.exports = {
            var v = {
                isCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
-           }
+           };
            return v
         },
         activePopUp() {
