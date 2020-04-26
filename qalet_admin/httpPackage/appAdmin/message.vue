@@ -20,7 +20,8 @@ module.exports = {
     },
     methods : {
         setPopUp(v) {
-            this.popUpOn = v
+            this.popUpOn = v;
+            this.$refs.ppp.fromParent();
         },
         callPopUp(v) {
            this.$refs.ppp.fromParent()
