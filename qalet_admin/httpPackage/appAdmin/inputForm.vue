@@ -20,7 +20,7 @@ module.exports = {
     methods : {
         closePopup() {
             alert('appAdmin.inputForm');
-            this.$parent.closePopup = false;
+            this.$parent.$parent.closePopup = false;
         }
     }
 }
