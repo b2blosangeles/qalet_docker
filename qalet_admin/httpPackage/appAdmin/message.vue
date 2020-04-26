@@ -11,7 +11,7 @@ module.exports = {
     props: ['title'],
     data: function() {  
         return { 
-           popupConfig : {inputFrom : appadmin.inputFrom}
+           popupConfig : {inputForm : appadmin.inputForm}
         }
     },
     components : {
