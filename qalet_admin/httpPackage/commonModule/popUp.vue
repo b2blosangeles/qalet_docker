@@ -32,8 +32,8 @@ module.exports = {
         closePopup() {
             this.showPopup = false;
         }      
-        setPopupStatus(v) {
-            this.showPopup = v;
+        activePopUp() {
+            this.showPopup = true;
         }
     }
 }
