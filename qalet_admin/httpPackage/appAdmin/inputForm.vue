@@ -18,6 +18,9 @@ module.exports = {
     components : {
     },
     methods : {
+        setPopupStatus(v) {
+            this.$parent.setPopupStatus(false);
+        }
     }
 }
 </script>
