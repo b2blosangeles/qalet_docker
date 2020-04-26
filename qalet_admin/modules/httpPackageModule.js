@@ -73,7 +73,7 @@
 		this.veuFiles = function(cfg) {
 			var me = this;
 			var _f = {}; 
-			var listComm	= cfg.common.reverse(),
+			var listComm	= cfg.common,
 			    listApp	= cfg.app
 			    
 
