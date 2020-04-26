@@ -18,7 +18,7 @@ module.exports = {
     },
     methods : {
         callPopUp() {
-           this.$refs[popUp1].setPopupStatus(true)
+           this.$refs.popUp1.setPopupStatus(true);
         }
     }
 }
