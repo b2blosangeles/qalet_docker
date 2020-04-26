@@ -14,6 +14,9 @@ module.exports = {
             popUpOn : false
         }
     },
+    components : {
+         popUp      : commModule.popUp
+    },
     methods : {
         setPopUp() {
             popUpOn = true
