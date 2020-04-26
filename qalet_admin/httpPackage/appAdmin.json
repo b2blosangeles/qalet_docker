@@ -1,6 +1,7 @@
 {
         "main" : "main.js",
         "modules" : [
+                "inputFrom.vue",
                 "message.vue",
                 "dbList.vue",
                 "hostList.vue"
