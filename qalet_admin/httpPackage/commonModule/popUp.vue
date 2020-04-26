@@ -3,8 +3,9 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popup_body r-3">
-                <inside-content>insideContent</inside-content>
-                {{appAdmin.inputForm()}}
+                <keep-alive>
+                  <component :is="appAdmin.inputForm"></component>
+                </keep-alive>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
