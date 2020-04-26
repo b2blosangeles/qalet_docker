@@ -2,7 +2,7 @@
     <div v-if="showPopup">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popupBody">
+            <div class="popup_body r-3">
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -53,7 +53,7 @@ module.exports = {
 }
 
  
-.popupBody {
+.popup_body {
     background-color: #ffff;
     width : 80%;
     margin: 0 auto;
