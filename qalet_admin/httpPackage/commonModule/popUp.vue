@@ -3,6 +3,7 @@
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popup_body r-3">
+                <inside-content>insideContent</inside-content>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -24,7 +25,7 @@ module.exports = {
         }
     },
     components : {
-    //    insideContent : this.config.insideContent
+        insideContent : config.inputFrom
     },
     methods : {
         setPopupStatus(v) {
