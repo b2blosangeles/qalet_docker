@@ -21,7 +21,7 @@ module.exports = {
     methods : {
         setPopUp(v) {
             this.popUpOn = v
-        }
+        },
         callPopUp(v) {
            this.popup.fromParent()
         }
