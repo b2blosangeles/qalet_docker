@@ -20,7 +20,7 @@
 
 <script>
 module.exports = {
-    props: ["config"],
+    props: ["dynamicPopup"],
    data: function() {  
         return {
             showPopup : false
