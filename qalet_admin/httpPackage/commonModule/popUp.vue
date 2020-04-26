@@ -10,7 +10,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button class="btn btn-primary" v-on:click="setPopupStatus(false)">clost popup</button>
+                    <button class="btn btn-primary" v-on:click="closePopup()">clost popup</button>
                   </div>
                 </div>           
             </div>
@@ -30,6 +30,9 @@ module.exports = {
      //   insideContent : appAdmin.inputForm
     },
     methods : {
+        closePopup() {
+            this.showPopup = false;
+        }      
         setPopupStatus(v) {
             this.showPopup = v;
         }
