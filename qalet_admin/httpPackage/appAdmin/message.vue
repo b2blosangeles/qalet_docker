@@ -2,7 +2,8 @@
    <span>
         hello friend {{title}}  
         <pop-up ref="popUp1" v-bind:config="popUpConfig()"></pop-up>
-        <button type="button" class="btn btn-success"  v-on:click="activePopUp()">Pop Up</button>
+        <button type="button" class="btn btn-success"  v-on:click="activePopUp('')">Form</button>
+        <button type="button" class="btn btn-success"  v-on:click="activePopUp('A')">Form A</button>
    </span>
 </template>
  
@@ -11,7 +12,7 @@ module.exports = {
     props: ['title'],
     data: function() {  
         return {
-          
+            formCode : ''
         }
     },
     methods : {
@@ -20,9 +21,15 @@ module.exports = {
                isCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
            };
+           if (formCode === 'A') {
+               v.dynamicPlugin = appAdmin.inputFormA
+           } else {
+               v.dynamicPlugin = appAdmin.inputForm
+           }
            return v
         },
-        activePopUp() {
+        activePopUp(code) {
+           this.ormCode = code;
            this.$refs.popUp1.activePopUp();
         }
     }
