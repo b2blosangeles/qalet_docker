@@ -25,7 +25,7 @@ module.exports = {
     },
     methods : {
         setPopupStatus(v) {
-            showPopup;
+            this.showPopup = v;
         }
     }
 }
