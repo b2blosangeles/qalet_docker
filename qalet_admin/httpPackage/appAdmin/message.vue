@@ -16,7 +16,7 @@ module.exports = {
     },
     methods : {
         popUpConfig() {
-           var v = {
+           let v = {
                isCloseIcon    : false,
                dynamicPlugin  :  appAdmin.inputForm
            };
