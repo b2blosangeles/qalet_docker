@@ -2,6 +2,7 @@
         "main" : "main.js",
         "modules" : [
                 "inputForm.vue",
+                "inputFormA.vue",
                 "message.vue",
                 "dbList.vue",
                 "hostList.vue"
