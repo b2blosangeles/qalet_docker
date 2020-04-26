@@ -5,8 +5,9 @@
 			var me = this, _f = {}, cfg = {};
 			
 			var appName = req.query.nameSpace,
-				    dirName = env.adminFolder + '/httpPackage/' + appName,
-				    fn = dirName + '.json';
+			    dirName = env.adminFolder + '/httpPackage/' + appName,
+			    fn = dirName + '.json';
+			
 			try {
 				delete require.cache[fn];
 				var cfg = require(fn);
@@ -32,7 +33,7 @@
 				cbk(list);
 				
 			}
-			
+			/*
 			_f['main'] = function(cbk) {
 				if (!cfg.main) {
 					cbk(false)
@@ -41,7 +42,7 @@
 						cbk ((err)? false :data);
 					});
 				}
-			} 
+			} */
 			CP.serial(
 				_f,
 				function(data) {
