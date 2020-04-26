@@ -3,7 +3,7 @@
         hello friend {{title}}
         <pop-up v-if="popUpOn"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="setPopUp(true)">Pop Up</button>
-        <button type="button" class="btn btn-warning"  v-on:click="popup.fromParent()">callSub</button>
+        <button type="button" class="btn btn-warning"  v-on:click="callPopUp()">callSub</button>
    </span>
 </template>
  
@@ -21,6 +21,9 @@ module.exports = {
     methods : {
         setPopUp(v) {
             this.popUpOn = v
+        }
+        callPopUp(v) {
+           this.popup.fromParent()
         }
     }
 }
