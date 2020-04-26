@@ -14,7 +14,7 @@
 			}  catch (err) {};
 			res.send(cfg);
 			return true;
-			/*		
+					
 
 			_f['common'] = function(cbk) {
 				var dirCommon = env.adminFolder + '/httpPackage/commonModule'; 
@@ -46,6 +46,7 @@
 					});
 				}
 			} 
+			/*
 			CP.serial(
 				_f,
 				function(data) {
