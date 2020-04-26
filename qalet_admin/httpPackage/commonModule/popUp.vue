@@ -17,11 +17,14 @@
 
 <script>
 module.exports = {
-    props: [],
+    props: [config],
    data: function() {  
         return {
             showPopup : false
         }
+    },
+    components : {
+        insideContent : config.insideContent
     },
     methods : {
         setPopupStatus(v) {
