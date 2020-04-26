@@ -4,7 +4,7 @@
         <div class="overlay_popup">
             <div class="popup_body r-3">
                 <keep-alive>
-                  <component :is="dynamicPlugin"></component>
+                  <component :is="config.dynamicPlugin"></component>
                 </keep-alive>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
@@ -20,7 +20,7 @@
 
 <script>
 module.exports = {
-   props: ["dynamicPlugin"],
+   props: ["config"],
    data: function() {  
         return {
             showPopup : false
