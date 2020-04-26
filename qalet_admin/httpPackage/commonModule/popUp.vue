@@ -58,7 +58,7 @@ module.exports = {
 .popup_body {
     background-color: #ffff;
     width : 80%;
-    min-height : 80%;
+    min-height : 6em;
     margin: 0 auto;
 }
 
