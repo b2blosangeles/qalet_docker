@@ -8,10 +8,14 @@
 			    dirName = env.adminFolder + '/httpPackage/' + appName,
 			    fn = dirName + '.json';
 			
+			
 			try {
 				delete require.cache[fn];
 				var cfg = require(fn);
 			}  catch (err) {};
+			
+			res.send(cfg);
+			return true;
 			
 			_f['common'] = function(cbk) {
 				var dirCommon = env.adminFolder + '/httpPackage/commonModule'; 
