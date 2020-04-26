@@ -1,5 +1,5 @@
 <template>
-    <div v-if="true">
+    <div v-if="showPopup">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="popupBody">
@@ -7,7 +7,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button class="btn btn-primary" v-on:click="closePopup(true)">clost popup</button>
+                    <button class="btn btn-primary" v-on:click="setPopupStatus(false)">clost popup</button>
                   </div>
                 </div>           
             </div>
@@ -18,12 +18,14 @@
 <script>
 module.exports = {
     props: [],
+   data: function() {  
+        return {
+            showPopup : false
+        }
+    },
     methods : {
-        closePopup() {
-            this.$parent.setPopUp(false);
-        },
-        fromParent() {
-            alert('fromParent');
+        setPopupStatus(v) {
+            showPopup;
         }
     }
 }
