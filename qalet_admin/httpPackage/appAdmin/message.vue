@@ -11,7 +11,7 @@ module.exports = {
     props: ['title'],
     data: function() {  
         return { 
-            popUpOn : false
+            popUpOn : true
         }
     },
     components : {
@@ -19,7 +19,6 @@ module.exports = {
     },
     methods : {
         setPopUp() {
-        
             this.popUpOn = true
         }
     }
