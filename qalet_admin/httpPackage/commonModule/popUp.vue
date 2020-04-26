@@ -36,6 +36,7 @@ module.exports = {
 .popupWindow {
     background-color: #ffff;
     width : 640px;
+    margin: 0 auto;
 }
 
 </style>
