@@ -3,7 +3,7 @@
         <div class="card-body">
           <h5 class="card-title">Input Form keep-alive v2</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <button class="btn btn-primary" v-on:click="closePopupA()">clost popup</button>
+          <button class="btn btn-primary" v-on:click="closePopup()">clost popup</button>
         </div>
       </div>
 </template>
@@ -19,8 +19,7 @@ module.exports = {
     },
     methods : {
 
-        closePopupA() {
-            alert('appAdmin.inputForm');
+        closePopup() {
             this.$parent.closePopup();
         }
      
