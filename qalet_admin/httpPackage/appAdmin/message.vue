@@ -23,7 +23,7 @@ module.exports = {
             this.popUpOn = v
         },
         callPopUp(v) {
-           this.popup.fromParent()
+           this.$children.popup.fromParent()
         }
     }
 }
