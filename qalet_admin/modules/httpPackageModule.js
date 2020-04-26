@@ -39,7 +39,7 @@
 			
 			_f['main'] = function(cbk) {
 				if (!cfg.main) {
-					cbk(false)
+					cbk(false);
 				} else {
 					pkg.fs.readFile(dirName + '/' + cfg.main, 'utf8', function (err,data) {
 						cbk ((err)? false :data);
