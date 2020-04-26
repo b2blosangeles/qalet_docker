@@ -184,7 +184,6 @@
 					str += "Vue.tools.addcss('" + css_str + "'); " + "\n";
 					/*
 					if (CP.data.main) {
-						// str += "/*--- App main code ---*/\n"
 						str += CP.data.main;
 					}*/
 					res.header("Access-Control-Allow-Origin", "*");
