@@ -1,7 +1,7 @@
 <template>
    <span>
         hello friend {{title}}
-        <pop-up popupStatus="true"></pop-up>
+        <pop-up popUpOn="true"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="setPopUp()">Pop Up</button>
    </span>
 </template>
