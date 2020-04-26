@@ -1,7 +1,7 @@
 <template>
    <span>
         hello friend {{title}}
-        <pop-up ref="popUp1" v-bind:dynamicPopup="dynamicPopup"><vv></vv></pop-up>
+        <pop-up ref="popUp1" v-bind:dynamicPlugin="dynamicPlugin"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="activePopUp()">Pop Up</button>
    </span>
 </template>
@@ -17,7 +17,7 @@ module.exports = {
            }
         }
     },
-    components : {vv : appAdmin.inputForm },
+    components : {dynamicPlugin : appAdmin.inputForm },
     methods : {
         activePopUp() {
            this.$refs.popUp1.activePopUp();
