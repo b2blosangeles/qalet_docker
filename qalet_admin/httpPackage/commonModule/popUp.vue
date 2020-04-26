@@ -2,7 +2,7 @@
     <div v-if="showPopup">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popup_body rounded r-3">
+            <div class="popup_body rounded shadow">
                 <keep-alive>
                   <component :is="config.dynamicPlugin"></component>
                 </keep-alive>          
