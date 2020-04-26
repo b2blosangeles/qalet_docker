@@ -1,7 +1,7 @@
 <template>
    <span>
         hello friend {{title}}
-        <pop-up v-if="popUpOn"></pop-up>
+        <pop-up v-if="popUpOn" ref="popUp"></pop-up>
         <button type="button" class="btn btn-success"  v-on:click="setPopUp(true)">Pop Up</button>
         <button type="button" class="btn btn-warning"  v-on:click="callPopUp()">callSub</button>
    </span>
