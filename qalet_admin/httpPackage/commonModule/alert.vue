@@ -2,13 +2,8 @@
     <div v-if="showPopup">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="popup_body rounded shadow">
-                <button type="button" class="close m-2" aria-label="Close" v-on:click="closePopup()" v-if="!config.noCloseIcon">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <keep-alive>
-                  <component :is="config.dynamicPlugin"></component>
-                </keep-alive>          
+            <div class="alert alert-primary" role="alert">
+              This is a primary alert—check it out!
             </div>
         </div>
     </div>    
