@@ -1,5 +1,5 @@
 <template>
-    <div v-if="showPopup">
+    <div v-if="showAlert">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
             <div class="alert alert-primary" role="alert">
@@ -14,14 +14,14 @@ module.exports = {
    props: ["text"],
    data: function() {  
         return {
-            showPopup : false
+            showAlert : false
         }
     },
     methods : {
-        closePopup() {
-            this.showPopup = false;
+        closeAlert() {
+            this.showAlert = false;
         },    
-        activePopUp() {
+        activeAlert() {
             this.showPopup = true;
         }
     }
