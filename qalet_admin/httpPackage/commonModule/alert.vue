@@ -3,7 +3,7 @@
         <div class="overlay_alert_cover"></div>
         <div class="overlay_alert">
             <div class="alert_body">
-                <div class="alert alert-primary" role="alert">
+                <div class="alert alert-success" role="alert">
                   This is a primary alert—check it out!
                 </div>
             </div>
