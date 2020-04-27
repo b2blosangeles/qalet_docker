@@ -32,7 +32,7 @@ module.exports = {
 
 <style>
 
-.overlay_slert {
+.overlay_alert {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
     z-index: 5001;
