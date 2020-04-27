@@ -4,6 +4,7 @@
         <pop-up ref="popUp1" v-bind:config="popUpConfig()"></pop-up>
         <button type="button" class="btn btn-success m-2"  v-on:click="activePopUp('')">Form</button>
         <button type="button" class="btn btn-warning m-2"  v-on:click="activePopUp('A')">Form A</button>
+        <button type="button" class="btn btn-success m-2"  v-on:click="activePopUp('A')">Alert</button>
    </span>
 </template>
  
