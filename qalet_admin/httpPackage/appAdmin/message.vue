@@ -44,7 +44,7 @@ module.exports = {
            return v
         },
         activeAlert(code) {
-           this.$refs.popUp1.activePopUp();
+           this.$refs.popUp1.activeAlert();
         }      
         
     }
