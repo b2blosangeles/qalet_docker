@@ -155,3 +155,33 @@
       </div>
     </div>
   </div>
+
+
+----------------
+body{
+  text-align:center;
+  padding:50px;
+}
+.modal.fade{
+  opacity:1;
+}
+.modal.fade .modal-dialog {
+   -webkit-transform: translate(0);
+   -moz-transform: translate(0);
+   transform: translate(0);
+}
+
+
+----------------------
+
+function testAnim(x) {
+    $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
+};
+$('#myModal').on('show.bs.modal', function (e) {
+  var anim = $('#entrance').val();
+      testAnim(anim);
+})
+$('#myModal').on('hide.bs.modal', function (e) {
+  var anim = $('#exit').val();
+      testAnim(anim);
+})
