@@ -5,7 +5,7 @@
         <alert ref="alert1" v-bind:config=alertConfig()"></alert>
         <button type="button" class="btn btn-success m-2"  v-on:click="activePopUp('')">Form</button>
         <button type="button" class="btn btn-warning m-2"  v-on:click="activePopUp('A')">Form A</button>
-        <button type="button" class="btn btn-success m-2"  v-on:click="activePopUp('A')">Alert</button>
+        <button type="button" class="btn btn-success m-2"  v-on:click="activeAlert()">Alert</button>
    </span>
 </template>
  
@@ -17,7 +17,7 @@ module.exports = {
             formCode : ''
         }
     },
-    components : [ commModule.popUp ],
+    components : [ commModule.popUp, commModule.alert ],
     methods : {
         popUpConfig() {
            let v = {
