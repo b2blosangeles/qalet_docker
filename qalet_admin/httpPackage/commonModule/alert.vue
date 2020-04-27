@@ -38,7 +38,7 @@ module.exports = {
     z-index: 5001;
     top: 0; left: 0;
     text-align: center;
-    padding-top: 6em;
+    padding-top: 3em;
     opacity: 1
 }
 .overlay_alert_cover {
@@ -54,7 +54,7 @@ module.exports = {
  
 .alert_body {
     background-color: transparent;
-    width : 80%;
+    width : 90%;
     min-height : 1em;
     margin: 0 auto;
 }
