@@ -1,8 +1,8 @@
 <template>
     <div v-if="showAlert">
-        <div class="overlay_popup_cover"></div>
-        <div class="overlay_popup">
-            <div class="popup_body">
+        <div class="overlay_alert_cover"></div>
+        <div class="overlay_alert">
+            <div class="alert_body">
                 <div class="alert alert-primary" role="alert">
                   This is a primary alert—check it out!
                 </div>
@@ -32,7 +32,7 @@ module.exports = {
 
 <style>
 
-.overlay_popup {
+.overlay_slert {
     background: transparent; position: fixed;
     height: 100%; width: 100%;
     z-index: 5001;
@@ -41,7 +41,7 @@ module.exports = {
     padding-top: 6em;
     opacity: 1
 }
-.overlay_popup_cover {
+.overlay_alert_cover {
     position:fixed;
     top:0;
     left:0;
@@ -52,10 +52,10 @@ module.exports = {
 }
 
  
-.popup_body {
-    background-color: #ffff;
+.alert_body {
+    background-color: transparent;
     width : 80%;
-    min-height : 6em;
+    min-height : 1em;
     margin: 0 auto;
 }
 
