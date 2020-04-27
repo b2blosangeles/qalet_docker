@@ -11,7 +11,7 @@
 
 <script>
 module.exports = {
-   props: ["config"],
+   props: ["text"],
    data: function() {  
         return {
             showPopup : false
