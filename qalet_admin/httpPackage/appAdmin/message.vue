@@ -35,7 +35,7 @@ module.exports = {
         activePopUp(code) {
            this.formCode = code;
            this.$refs.popUp1.activePopUp();
-        }
+        },
         /* ---- */
         alertConfig() {
            let v = {
