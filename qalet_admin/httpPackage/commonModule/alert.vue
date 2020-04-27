@@ -2,8 +2,10 @@
     <div v-if="showAlert">
         <div class="overlay_popup_cover"></div>
         <div class="overlay_popup">
-            <div class="alert alert-primary" role="alert">
-              This is a primary alert—check it out!
+            <div class="popup_body">
+                <div class="alert alert-primary" role="alert">
+                  This is a primary alert—check it out!
+                </div>
             </div>
         </div>
     </div>    
