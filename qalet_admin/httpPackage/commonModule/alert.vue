@@ -22,7 +22,7 @@ module.exports = {
             this.showAlert = false;
         },    
         activeAlert() {
-            this.showPopup = true;
+            this.showAlert = true;
         }
     }
 }
